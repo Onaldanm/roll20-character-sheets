@@ -65,23 +65,23 @@
 {
     width: 500px;
 }
-.charsheet .sheet-row {
-    display: flex !important;
+.charsheet .sheet-tg-row {
+    display: flex;
     justify-content: space-between;
     vertical-align: middle;
     flex-direction: row;
     line-height: 30px;
     padding-bottom: 5px;
 }
-.charsheet .sheet-row > span {
+.charsheet .sheet-tg-row > span {
     flex: 2 1 auto;
     font-size: 15px;
     font-weight: 500;
 }
-.charsheet .sheet-row .autoExpand {
+.charsheet .sheet-tg-row .autoExpand {
     flex: 3 5 auto;
 }
-.charsheet .sheet-row .autoExpand > input {
+.charsheet .sheet-tg-row .autoExpand > input {
     width: 100%;
 }
 .charsheet .big-box {
@@ -107,7 +107,7 @@
     margin-left: 5px;
 }
 .charsheet .skills {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
     margin-left: 5px;
     width: 100%;
 }
@@ -121,7 +121,7 @@
     margin-left: 5px;
     width: 150px;
 }
-.charsheet .sheet-row span.title {
+.charsheet .sheet-tg-row span.title {
     font-weight: bold;
 }
 .charsheet .charsheet .domains
