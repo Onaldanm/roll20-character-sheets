@@ -1,7 +1,7 @@
 <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
 <div class="tabs">
-    <button type="action" class="tab" name="act_character" data-i18n="character"></button>
-    <button type="action" class="tab" name="act_journal" data-i18n="book"></button>
+    <button type="action" class="tab tab-character" name="act_character" data-i18n="character"></button>
+    <button type="action" class="tab tab-journal" name="act_journal" data-i18n="book"></button>
 </div>
 
 <div class="character">
@@ -1104,7 +1104,7 @@
 
 
 <script type="text/worker">
-    const buttonlist = ["character","journal","configuration"];
+    const buttonlist = ["character","journal"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
