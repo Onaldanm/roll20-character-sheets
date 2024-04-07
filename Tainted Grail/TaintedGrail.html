@@ -841,184 +841,42 @@
                 </div>
             </div>
         </div>
-        <h2 data-i18n="combat"></h2>
-        <div class="character-combat big-box">
-            <div class="attack box">
-                <div class="sheet-tg-row">
-                    <span class="title" data-i18n="attitudes"></span>
-                </div>
-                <div class="box-content">
-                    <div class="sheet-tg-row">
-                        <span data-i18n="style"></span>
-                        <select class="skills-large" name="attr_attack_domain">
-                            <option value="@{skill_close_combat}+@{skill_close_combat_bonus}" selected data-i18n="skill_close_combat"></option>
-                            <option value="@{skill_mounted_combat}+@{skill_mounted_combat_bonus}" data-i18n="skill_mounted_combat"></option>
-                            <option value="@{skill_shooting}+@{skill_shooting_bonus}" data-i18n="skill_shooting"></option>
-                        </select>
-                        <select class="skills-large" name="attr_attack_way">
-                            <option value="@{combativeness}" data-i18n="way_combativeness_short"></option>
-                            <option value="@{awareness}" data-i18n="way_awareness_short"></option>
-                            <option value="@{creativity}" data-i18n="way_creativity_short"></option>
-                            <option value="@{conviction}" data-i18n="way_conviction_short"></option>
-                            <option value="@{reason}" data-i18n="way_reason_short"></option>
-                        </select>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <div class="roll">
-                            <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
-                            <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
-                        </div>
-                    </div>
-                    <div class="attitudes-box">
-                        <div class="attitudes">
-                            <div class="attitude-title sheet-tg-row">
-                                <input type="radio" name="attr_attitude_mode" value="standard" checked="true"></input>
-                                <span class="domain-label" data-i18n="attitude_standard"></span>
-                                </div>
-                            <div class="sheet-tg-row attitude-attributes">
-                                <span data-i18n="attack"></span>
-                                <input type="number" readonly name="attr_attack_standard" value="@{attack_base}" disabled="true">
-                                <span data-i18n="defense"></span>
-                                <input type="number" readonly name="attr_defense_standard" value="@{defense_base}" disabled="true">
-                                <span data-i18n="speed"></span>
-                                <input type="number" name="attr_speed_standard" value="@{speed_base}" disabled="true">
-                            </div>
-                        </div>
-                        <div class="attitudes">
-                            <div class="attitude-title sheet-tg-row">
-                                <input type="radio" name="attr_attitude_mode" value="offensive"></input>
-                                <span class="domain-label" data-i18n="attitude_offensive"></span>
-                                </div>
-                            <div class="sheet-tg-row attitude-attributes">
-                                <span data-i18n="attack"></span>
-                                <input type="number" readonly name="attr_attack_offensive" value="@{attack_base}+@{potential}[@{potential_text}]" disabled="true">
-                                <span data-i18n="defense"></span>
-                                <input type="number" readonly name="attr_defense_offensive" value="@{defense_base}-@{potential}" disabled="true">
-                                <span data-i18n="speed"></span>
-                                <input type="number" name="attr_speed_offensive" value="@{speed_base}" disabled="true">
-                            </div>
-                        </div>
-                        <div class="attitudes">
-                            <div class="attitude-title sheet-tg-row">
-                                <input type="radio" name="attr_attitude_mode" value="defensive"></input>
-                                <span class="domain-label" data-i18n="attitude_defensive"></span>
-                                </div>
-                            <div class="sheet-tg-row attitude-attributes">
-                                <span data-i18n="attack"></span>
-                                <input type="number" readonly name="attr_attack_defensive" value="@{attack_base}-@{potential}[@{potential_text}]" disabled="true">
-                                <span data-i18n="defense"></span>
-                                <input type="number" readonly name="attr_defense_defensive" value="@{defense_base}+@{potential}" disabled="true">
-                                <span data-i18n="speed"></span>
-                                <input type="number" name="attr_speed_defensive" value="@{speed_base}" disabled="true">
-                            </div>
-                        </div>
-                        <div class="attitudes">
-                            <div class="attitude-title sheet-tg-row">
-                                <input type="radio" name="attr_attitude_mode" value="quickattack"></input>
-                                <span class="domain-label" data-i18n="attitude_quickattack"></span>
-                                </div>
-                            <div class="sheet-tg-row attitude-attributes">
-                                <span data-i18n="attack"></span>
-                                <input type="number" readonly name="attr_attack_quickattack" value="@{attack_base}" disabled="true">
-                                <span data-i18n="defense"></span>
-                                <input type="number" readonly name="attr_defense_quickattack" value="@{defense_base}-@{potential}" disabled="true">
-                                <span data-i18n="speed"></span>
-                                <input type="number" name="attr_speed_quickattack" value="@{speed_base}+@{potential}" disabled="true">
-                            </div>
-                        </div>
-                        <div class="attitudes">
-                            <div class="attitude-title sheet-tg-row">
-                                <input type="radio" name="attr_attitude_mode" value="movement"></input>
-                                <span class="domain-label" data-i18n="attitude_movement"></span>
-                                </div>
-                            <div class="sheet-tg-row attitude-attributes">
-                                <span data-i18n="attack"></span>
-                                <input type="number" readonly name="attr_attack_movement" value="0" disabled="true">
-                                <span data-i18n="defense"></span>
-                                <input type="number" readonly name="attr_defense_movement" value="@{defense_base}+@{potential}" disabled="true">
-                                <span data-i18n="speed"></span>
-                                <input type="number" name="attr_speed_movement" value="@{speed_base}" disabled="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="attribut box">
-                <div class="sheet-tg-row">
-                    <span class="title" data-i18n="attitudes"></span>
-                </div>
-                <div class="box-content">
-                    <input type="number" readonly name="attr_attack_base" value="@{attack_domain}+@{attack_way}" disabled="true" hidden></input>
-                    <div class="sheet-tg-row">
-                        <span class="skill-label"><span class="domain-label" data-i18n="speed"></span><span
-                                class="sheet-tooltip">?<span><strong data-i18n="speed"></strong><br>
-                                    <p data-i18n="speed_desc"></p>
-                                    </p>
-                                </span></span></span>
-                        <input type="number" name="attr_speed_base" value="@{combativeness}+@{awareness}+@{health_mod}" disabled="true"></input>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <span class="skill-label"><span class="domain-label" data-i18n="defense"></span><span
-                        class="sheet-tooltip">?<span><strong data-i18n="defense"></strong><br>
-                            <p data-i18n="defense_desc"></p>
-                            </p>
-                        </span></span></span>
-                        <input type="number" name="attr_defense_base" value="@{reason}+@{awareness}+5+@{health_mod}" disabled="true"></input>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <span class="skill-label"><span class="domain-label" data-i18n="potential"></span><span
-                        class="sheet-tooltip">?<span><strong data-i18n="potential"></strong><br>
-                            <p data-i18n="potential_desc"></p>
-                            </p>
-                        </span></span></span>
-                        <input type="number" name="attr_potential" value="1" readonly></input>
-                    </div>
-                </div>
-                <div class="sheet-tg-row">
-                    <span class="title" data-i18n="equipment"></span>
-                </div>
-                <div class="box-content">
-                    <div class="sheet-tg-row">
-                        <span data-i18n="protection"></span>
-                        <input type="number" name="attr_protection" value="0"></input>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <span class="equip-checkbox"></span><span class="equip-name" data-i18n="protection_name">Nom</span><span data-i18n="protection_def" class="equip-bonus">Def.</span>
-                    </div>
-                    <fieldset class="repeating_Protections">
-                        <div class="protection sheet-tg-row">
-                            <input class="equip-checkbox"type="checkbox" name="attr_protection_equipped" value="1"></input>
-                            <input class="equip-name" name="attr_protection_name" type="text"></input>
-                            <input class="equip-bonus"type="number" name="attr_protection" value="0"></input>
-                        </div>
-                    </fieldset>
-                    <br />
-                    <div class="sheet-tg-row">
-                        <span data-i18n="damage"></span>
-                        <input type="number" name="attr_dmg" value="0"></input>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <span class="equip-checkbox"></span><span class="equip-name" data-i18n="weapon_name">Nom</span><span data-i18n="weapon_dmg" class="equip-bonus">Def.</span>
-                    </div>
-                    <fieldset class="repeating_Weapons">
-                        <div class="protection sheet-tg-row">
-                            <input class="equip-checkbox"type="checkbox" name="attr_weapon_equipped" value="1"></input>
-                            <input class="equip-name" name="attr_weapon_name" type="text"></input>
-                            <input class="equip-bonus"type="number" name="attr_damage" value="0"></input>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <div class="character2">
     <div class="character-skills big-box">
         <div class="concept box">
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="ways"></span>
+                <span class="title" data-i18n="attitudes"></span>
             </div>
-            <div class="box-content ways_skills" data-i18n-list="ways-list">
+            <div class="box-content">
+                <input type="number" readonly name="attr_attack_total" value="@{attack_domain}+@{attack_way}" disabled="true" hidden></input>
+                <div class="sheet-tg-row">
+                    <span class="domain-label" data-i18n="speed"></span>
+                    <div class="combat_attrs">
+                    <span>Base</span><input type="number" name="attr_speed_base" value="0"></input>
+                    <span>Mod.</span><input type="number" name="attr_speed_modifier" value="0"></input>
+                    <span>Total</span><input type="number" name="attr_speed_total" value="@{speed_base}+@{speed_modifier}+@{health_mod}" disabled="true"></input>
+                    </div>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="domain-label" data-i18n="defense"></span>
+                    <div class="combat_attrs">
+                        <span>Base</span><input type="number" name="attr_defense_base" value="0"></input>
+                        <span>Mod.</span><input type="number" name="attr_defense_modifier" value="0"></input>
+                        <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{defense_modifier}+@{health_mod}"
+                            disabled="true"></input>
+                    </div>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="domain-label" data-i18n="potential"></span>
+                    <div class="combat_attrs">
+                        <span>Base</span><input type="number" name="attr_potential_base" value="0"></input>
+                        <span>Mod.</span><input type="number" name="attr_potential_modifier" value="0"></input>
+                        <span>Total</span><input type="number" name="attr_potential" value="@{potential_base}+@{potential_modifier}+@{health_mod}"
+                            disabled="true"></input>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="health box">
@@ -1033,6 +891,145 @@
                     </button>
                     <input type="number" name="attr_mentalresist" value="9">
                 </div>
+            </div>
+        </div>
+    </div>
+    <h2 data-i18n="combat"></h2>
+    <div class="character-combat big-box">
+        <div class="attack box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="attitudes"></span>
+            </div>
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span data-i18n="style"></span>
+                    <select class="skills-large" name="attr_attack_domain">
+                        <option value="@{skill_close_combat}+@{skill_close_combat_bonus}" selected data-i18n="skill_close_combat"></option>
+                        <option value="@{skill_mounted_combat}+@{skill_mounted_combat_bonus}" data-i18n="skill_mounted_combat"></option>
+                        <option value="@{skill_shooting}+@{skill_shooting_bonus}" data-i18n="skill_shooting"></option>
+                    </select>
+                    <select class="skills-large" name="attr_attack_way">
+                        <option value="@{combativeness}" data-i18n="way_combativeness_short"></option>
+                        <option value="@{awareness}" data-i18n="way_awareness_short"></option>
+                        <option value="@{creativity}" data-i18n="way_creativity_short"></option>
+                        <option value="@{conviction}" data-i18n="way_conviction_short"></option>
+                        <option value="@{reason}" data-i18n="way_reason_short"></option>
+                    </select>
+                </div>
+                <div class="sheet-tg-row">
+                    <div class="roll">
+                        <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
+                        <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
+                    </div>
+                </div>
+                <div class="attitudes-box">
+                    <div class="attitudes">
+                        <div class="attitude-title sheet-tg-row">
+                            <input type="radio" name="attr_attitude_mode" value="standard" checked="true"></input>
+                            <span class="domain-label" data-i18n="attitude_standard"></span>
+                            </div>
+                        <div class="sheet-tg-row attitude-attributes">
+                            <span data-i18n="attack"></span>
+                            <input type="number" readonly name="attr_attack_standard" value="@{attack_total}" disabled="true">
+                            <span data-i18n="defense"></span>
+                            <input type="number" readonly name="attr_defense_standard" value="@{defense_total}" disabled="true">
+                            <span data-i18n="speed"></span>
+                            <input type="number" name="attr_speed_standard" value="@{speed_total}" disabled="true">
+                        </div>
+                    </div>
+                    <div class="attitudes">
+                        <div class="attitude-title sheet-tg-row">
+                            <input type="radio" name="attr_attitude_mode" value="offensive"></input>
+                            <span class="domain-label" data-i18n="attitude_offensive"></span>
+                            </div>
+                        <div class="sheet-tg-row attitude-attributes">
+                            <span data-i18n="attack"></span>
+                            <input type="number" readonly name="attr_attack_offensive" value="@{attack_total}+@{potential}[@{potential_text}]" disabled="true">
+                            <span data-i18n="defense"></span>
+                            <input type="number" readonly name="attr_defense_offensive" value="@{defense_total}-@{potential}" disabled="true">
+                            <span data-i18n="speed"></span>
+                            <input type="number" name="attr_speed_offensive" value="@{speed_total}" disabled="true">
+                        </div>
+                    </div>
+                    <div class="attitudes">
+                        <div class="attitude-title sheet-tg-row">
+                            <input type="radio" name="attr_attitude_mode" value="defensive"></input>
+                            <span class="domain-label" data-i18n="attitude_defensive"></span>
+                            </div>
+                        <div class="sheet-tg-row attitude-attributes">
+                            <span data-i18n="attack"></span>
+                            <input type="number" readonly name="attr_attack_defensive" value="@{attack_total}-@{potential}[@{potential_text}]" disabled="true">
+                            <span data-i18n="defense"></span>
+                            <input type="number" readonly name="attr_defense_defensive" value="@{defense_total}+@{potential}" disabled="true">
+                            <span data-i18n="speed"></span>
+                            <input type="number" name="attr_speed_defensive" value="@{speed_total}" disabled="true">
+                        </div>
+                    </div>
+                    <div class="attitudes">
+                        <div class="attitude-title sheet-tg-row">
+                            <input type="radio" name="attr_attitude_mode" value="quickattack"></input>
+                            <span class="domain-label" data-i18n="attitude_quickattack"></span>
+                            </div>
+                        <div class="sheet-tg-row attitude-attributes">
+                            <span data-i18n="attack"></span>
+                            <input type="number" readonly name="attr_attack_quickattack" value="@{attack_total}" disabled="true">
+                            <span data-i18n="defense"></span>
+                            <input type="number" readonly name="attr_defense_quickattack" value="@{defense_total}-@{potential}" disabled="true">
+                            <span data-i18n="speed"></span>
+                            <input type="number" name="attr_speed_quickattack" value="@{speed_total}+@{potential}" disabled="true">
+                        </div>
+                    </div>
+                    <div class="attitudes">
+                        <div class="attitude-title sheet-tg-row">
+                            <input type="radio" name="attr_attitude_mode" value="movement"></input>
+                            <span class="domain-label" data-i18n="attitude_movement"></span>
+                            </div>
+                        <div class="sheet-tg-row attitude-attributes">
+                            <span data-i18n="attack"></span>
+                            <input type="number" readonly name="attr_attack_movement" value="0" disabled="true">
+                            <span data-i18n="defense"></span>
+                            <input type="number" readonly name="attr_defense_movement" value="@{defense_total}+@{potential}" disabled="true">
+                            <span data-i18n="speed"></span>
+                            <input type="number" name="attr_speed_movement" value="@{speed_total}" disabled="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="attribut box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="equipment"></span>
+            </div>
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span data-i18n="protection"></span>
+                    <input type="number" name="attr_protection" value="0"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="equip-checkbox"></span><span class="equip-name" data-i18n="protection_name">Nom</span><span data-i18n="protection_def" class="equip-bonus">Def.</span>
+                </div>
+                <fieldset class="repeating_Protections">
+                    <div class="protection sheet-tg-row">
+                        <input class="equip-checkbox"type="checkbox" name="attr_protection_equipped" value="1"></input>
+                        <input class="equip-name" name="attr_protection_name" type="text"></input>
+                        <input class="equip-bonus"type="number" name="attr_protection" value="0"></input>
+                    </div>
+                </fieldset>
+                <br />
+                <div class="sheet-tg-row">
+                    <span data-i18n="damage"></span>
+                    <input type="number" name="attr_dmg" value="0"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="equip-checkbox"></span><span class="equip-name" data-i18n="weapon_name">Nom</span><span data-i18n="weapon_dmg" class="equip-bonus">Def.</span>
+                </div>
+                <fieldset class="repeating_Weapons">
+                    <div class="protection sheet-tg-row">
+                        <input class="equip-checkbox"type="checkbox" name="attr_weapon_equipped" value="1"></input>
+                        <input class="equip-name" name="attr_weapon_name" type="text"></input>
+                        <input class="equip-bonus"type="number" name="attr_damage" value="0"></input>
+                    </div>
+                </fieldset>
             </div>
         </div>
     </div>
