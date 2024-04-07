@@ -81,7 +81,7 @@
   "author": "Fiche de personnage développée par Sébastien Miquerolle.",
   "ways": "Voies",
   "way": "Voie",
-  "domains": "Domaines",
+  "domains": "Domaines et Disciplines",
   "combat": "Combat",
   "speed": "Rapidité",
   "attack": "Attaque",
@@ -109,8 +109,8 @@
   "way_reason_desc": "Désigne la rationalisation, l'intellect, mais aussi la malléabilité de l'esprit et des perceptions, ainsi que la capacité d'apprentissage d'un Personnage, sa curiosité et son appétence générale pour les affaires de l'esprit.",
   "critfail_confirm_text": "Jet de confirmation",
   "health_mod_text": "Mod. Santé",
-  "afflicted_mod_text": "Mod. Affligé",
-  "skill_bonus_text": "Bonus",
+  "skill_bonus_text": "Bonus de domaine",
+  "skill_malus_text": "Malus de domaine",
   "attributs": "Attributs",
   "potential": "Potentiel",
   "attitude_standard": "Standard",
@@ -145,6 +145,10 @@
   "defense_desc": "Raison + Conscience + 5 (base). S'oppose à l'attaque de l'adversaire pour toucher.",
   "potential_desc": "Valeur calculée par rapport à votre créativité. Vous permet de plus ou moins modifier votre attaque/défense/rapidité en fonction de votre Attitude en combat.",
   "gender": "Genre",
-  "value": "Value",
-  "bonus": "Bonus"
+  "value": "Val.",
+  "bonus": "Bonus",
+  "malus": "Malus",
+  "occupation": "Fonction",
+  "origins": "Peuple",
+  "name": "Nom"
 }
