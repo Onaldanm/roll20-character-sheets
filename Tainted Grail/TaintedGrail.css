@@ -3,7 +3,6 @@
 .charsheet .character2,
 .charsheet .journal {
     display: none;
-    padding: 5px;
     border: 1px solid #ccc;
 }
 .charsheet .tab {

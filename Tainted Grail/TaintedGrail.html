@@ -1,19 +1,19 @@
+<div class="character-info one-box">
+    <div class="character-box">
+        <h2>
+        <span class="left"><span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span></span>
+        <div class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></div>
+    </h2>
+    </div>
+</div>
+
 <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
 <div class="tabs">
     <button type="action" class="tab tab-character" name="act_character" data-i18n="character"></button>
     <button type="action" class="tab tab-character2" name="act_character2" data-i18n="character2"></button>
     <button type="action" class="tab tab-journal" name="act_journal" data-i18n="book"></button>
 </div>
-
 <div class="character">
-    <div class="character-info one-box">
-        <div class="character-box">
-            <h2>
-            <span class="left"><span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span></span>
-            <div class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></div>
-        </h2>
-        </div>
-    </div>
     <div class="character-skills big-box">
         <div class="concept box">
             <div class="sheet-tg-row">
@@ -847,34 +847,55 @@
     <div class="character-skills big-box">
         <div class="concept box">
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="attitudes"></span>
+                <span class="title" data-i18n="combat"></span>
             </div>
             <div class="box-content">
                 <input type="number" readonly name="attr_attack_total" value="@{attack_domain}+@{attack_way}" disabled="true" hidden></input>
                 <div class="sheet-tg-row">
-                    <span class="domain-label" data-i18n="speed"></span>
+                    <span class="domain-label" data-i18n="potential"></span>
                     <div class="combat_attrs">
-                    <span>Base</span><input type="number" name="attr_speed_base" value="0"></input>
-                    <span>Mod.</span><input type="number" name="attr_speed_modifier" value="0"></input>
-                    <span>Total</span><input type="number" name="attr_speed_total" value="@{speed_base}+@{speed_modifier}+@{health_mod}" disabled="true"></input>
+                        <span>Base</span><input type="number" name="attr_potential_base" value="0" min="0"></input>
+                        <span>Mod.</span><input type="number" name="attr_potential_modifier" value="0"></input>
+                        <span>Total</span><input type="number" name="attr_potential" value="@{potential_base}+@{potential_modifier}+@{health_mod}"
+                            disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
                     <span class="domain-label" data-i18n="defense"></span>
                     <div class="combat_attrs">
-                        <span>Base</span><input type="number" name="attr_defense_base" value="0"></input>
+                        <span>Base</span><input type="number" name="attr_defense_base" value="0" min="0"></input>
                         <span>Mod.</span><input type="number" name="attr_defense_modifier" value="0"></input>
                         <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{defense_modifier}+@{health_mod}"
                             disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
-                    <span class="domain-label" data-i18n="potential"></span>
+                    <span class="domain-label" data-i18n="speed"></span>
                     <div class="combat_attrs">
-                        <span>Base</span><input type="number" name="attr_potential_base" value="0"></input>
-                        <span>Mod.</span><input type="number" name="attr_potential_modifier" value="0"></input>
-                        <span>Total</span><input type="number" name="attr_potential" value="@{potential_base}+@{potential_modifier}+@{health_mod}"
-                            disabled="true"></input>
+                    <span>Base</span><input type="number" name="attr_speed_base" value="0" min="0"></input>
+                    <span>Mod.</span><input type="number" name="attr_speed_modifier" value="0"></input>
+                    <span>Total</span><input type="number" name="attr_speed_total" value="@{speed_base}+@{speed_modifier}+@{health_mod}" disabled="true"></input>
+                    </div>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="style"></span>
+                    <select class="skills-large" name="attr_attack_domain">
+                        <option value="@{skill_close_combat}+@{skill_close_combat_bonus}" selected data-i18n="skill_close_combat"></option>
+                        <option value="@{skill_mounted_combat}+@{skill_mounted_combat_bonus}" data-i18n="skill_mounted_combat"></option>
+                        <option value="@{skill_shooting}+@{skill_shooting_bonus}" data-i18n="skill_shooting"></option>
+                    </select>
+                    <select class="skills-large" name="attr_attack_way">
+                        <option value="@{combativeness}" data-i18n="way_combativeness_short"></option>
+                        <option value="@{awareness}" data-i18n="way_awareness_short"></option>
+                        <option value="@{creativity}" data-i18n="way_creativity_short"></option>
+                        <option value="@{conviction}" data-i18n="way_conviction_short"></option>
+                        <option value="@{reason}" data-i18n="way_reason_short"></option>
+                    </select>
+                </div>
+                <div class="sheet-tg-row attack">
+                    <div class="roll">
+                        <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
+                        <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
                     </div>
                 </div>
             </div>
@@ -891,6 +912,11 @@
                     </button>
                     <input type="number" name="attr_mentalresist" value="9">
                 </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="tourments"></span>
+                </div>
+                <div class="sheet-tg-row"><textarea></textarea></div>
+            </div>
             </div>
         </div>
     </div>
@@ -901,27 +927,6 @@
                 <span class="title" data-i18n="attitudes"></span>
             </div>
             <div class="box-content">
-                <div class="sheet-tg-row">
-                    <span data-i18n="style"></span>
-                    <select class="skills-large" name="attr_attack_domain">
-                        <option value="@{skill_close_combat}+@{skill_close_combat_bonus}" selected data-i18n="skill_close_combat"></option>
-                        <option value="@{skill_mounted_combat}+@{skill_mounted_combat_bonus}" data-i18n="skill_mounted_combat"></option>
-                        <option value="@{skill_shooting}+@{skill_shooting_bonus}" data-i18n="skill_shooting"></option>
-                    </select>
-                    <select class="skills-large" name="attr_attack_way">
-                        <option value="@{combativeness}" data-i18n="way_combativeness_short"></option>
-                        <option value="@{awareness}" data-i18n="way_awareness_short"></option>
-                        <option value="@{creativity}" data-i18n="way_creativity_short"></option>
-                        <option value="@{conviction}" data-i18n="way_conviction_short"></option>
-                        <option value="@{reason}" data-i18n="way_reason_short"></option>
-                    </select>
-                </div>
-                <div class="sheet-tg-row">
-                    <div class="roll">
-                        <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
-                        <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
-                    </div>
-                </div>
                 <div class="attitudes-box">
                     <div class="attitudes">
                         <div class="attitude-title sheet-tg-row">
