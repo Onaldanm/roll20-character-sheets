@@ -1,9 +1,9 @@
-<div class="character-info one-box">
-    <div class="character-box">
-        <h2>
-        <span class="left"><span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span></span>
-        <div class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></div>
-    </h2>
+<div class="high-title">
+    <div class="title" data-i18n="character_name">
+        <span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span>
+    </div>
+    <div class="right">
+        <select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select>
     </div>
 </div>
 
@@ -156,7 +156,12 @@
     </div>
     <div>
         <div class="character-domains domains-box">
-            <h2 data-i18n="domains"></h2>
+            <div class="high-title">
+                <div class="title" data-i18n="domains"></div>
+                <div class="right">
+                    <select name="attr_skilldice" class="underlined" title="@{whispertype}"> <option value="1d10" data-i18n="skilldice-normal" selected="selected"></option> <option value="?{@{ask_skill_with_help}|1}d10k1" data-i18n="skilldice-withhelp"></option></select>
+                </div>
+            </div>
             <div class="domain_skills" data-i18n-list="skills-list">
                 <div class="domain-box" data-i18n-list-item="skill_craft">
                     <div class="domain-title sheet-tg-row">
@@ -166,7 +171,7 @@
                                     </p>
                                 </span></span></span>
                         <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_craft}}} {{way=@{skill_craft_way_mod_text}}} {{roll=[[1d10+@{skill_craft}[@{skill_craft_text}]+@{skill_craft_way_mod}[@{skill_craft_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_craft_bonus}[@{skill_bonus_text}]+@{skill_craft_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_craft}}} {{way=@{skill_craft_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_craft}[@{skill_craft_text}]+@{skill_craft_way_mod}[@{skill_craft_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_craft_bonus}[@{skill_bonus_text}]+@{skill_craft_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_craft" value="0" max="5">
@@ -188,7 +193,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_craft_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_craft_way_mod}[@{skill_craft_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_craft_bonus}[@{skill_bonus_text}]+@{skill_craft_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_craft_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_craft_way_mod}[@{skill_craft_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_craft_bonus}[@{skill_bonus_text}]+@{skill_craft_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -201,7 +206,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_close_combat}}} {{way=@{skill_close_combat_way_mod_text}}} {{roll=[[1d10+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_way_mod}[@{skill_close_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_close_combat}}} {{way=@{skill_close_combat_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_way_mod}[@{skill_close_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_close_combat" value="0" max="5">
@@ -223,7 +228,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_close_combat_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_close_combat_way_mod}[@{skill_close_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_close_combat_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_close_combat_way_mod}[@{skill_close_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -235,7 +240,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_mounted_combat}}} {{way=@{skill_mounted_combat_way_mod_text}}} {{roll=[[1d10+@{skill_mounted_combat}[@{skill_mounted_combat_text}]+@{skill_mounted_combat_way_mod}[@{skill_mounted_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_mounted_combat_bonus}[@{skill_bonus_text}]+@{skill_mounted_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_mounted_combat}}} {{way=@{skill_mounted_combat_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_mounted_combat}[@{skill_mounted_combat_text}]+@{skill_mounted_combat_way_mod}[@{skill_mounted_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_mounted_combat_bonus}[@{skill_bonus_text}]+@{skill_mounted_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_mounted_combat" value="0" max="5">
@@ -257,7 +262,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_mounted_combat_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_mounted_combat_way_mod}[@{skill_mounted_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_mounted_combat_bonus}[@{skill_bonus_text}]+@{skill_mounted_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_mounted_combat_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_mounted_combat_way_mod}[@{skill_mounted_combat_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_mounted_combat_bonus}[@{skill_bonus_text}]+@{skill_mounted_combat_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -269,7 +274,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_leadership}}} {{way=@{skill_leadership_way_mod_text}}} {{roll=[[1d10+@{skill_leadership}[@{skill_leadership_text}]+@{skill_leadership_way_mod}[@{skill_leadership_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_leadership_bonus}[@{skill_bonus_text}]+@{skill_leadership_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_leadership}}} {{way=@{skill_leadership_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_leadership}[@{skill_leadership_text}]+@{skill_leadership_way_mod}[@{skill_leadership_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_leadership_bonus}[@{skill_bonus_text}]+@{skill_leadership_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_leadership" value="0" max="5">
@@ -291,7 +296,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_leadership_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_leadership_way_mod}[@{skill_leadership_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_leadership_bonus}[@{skill_bonus_text}]+@{skill_leadership_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_leadership_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_leadership_way_mod}[@{skill_leadership_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_leadership_bonus}[@{skill_bonus_text}]+@{skill_leadership_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -303,7 +308,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_communication}}} {{way=@{skill_communication_way_mod_text}}} {{roll=[[1d10+@{skill_communication}[@{skill_communication_text}]+@{skill_communication_way_mod}[@{skill_communication_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_communication_bonus}[@{skill_bonus_text}]+@{skill_communication_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_communication}}} {{way=@{skill_communication_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_communication}[@{skill_communication_text}]+@{skill_communication_way_mod}[@{skill_communication_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_communication_bonus}[@{skill_bonus_text}]+@{skill_communication_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_communication" value="0" max="5">
@@ -325,7 +330,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_communication_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_communication_way_mod}[@{skill_communication_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_communication_bonus}[@{skill_bonus_text}]+@{skill_communication_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_communication_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_communication_way_mod}[@{skill_communication_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_communication_bonus}[@{skill_bonus_text}]+@{skill_communication_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -337,7 +342,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_compassion}}} {{way=@{skill_compassion_way_mod_text}}} {{roll=[[1d10+@{skill_compassion}[@{skill_compassion_text}]+@{skill_compassion_way_mod}[@{skill_compassion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_compassion_bonus}[@{skill_bonus_text}]+@{skill_compassion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_compassion}}} {{way=@{skill_compassion_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_compassion}[@{skill_compassion_text}]+@{skill_compassion_way_mod}[@{skill_compassion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_compassion_bonus}[@{skill_bonus_text}]+@{skill_compassion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_compassion" value="0" max="5">
@@ -359,7 +364,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_compassion_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_compassion_way_mod}[@{skill_compassion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_compassion_bonus}[@{skill_bonus_text}]+@{skill_compassion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_compassion_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_compassion_way_mod}[@{skill_compassion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_compassion_bonus}[@{skill_bonus_text}]+@{skill_compassion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -371,7 +376,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_stealth}}} {{way=@{skill_stealth_way_mod_text}}} {{roll=[[1d10+@{skill_stealth}[@{skill_stealth_text}]+@{skill_stealth_way_mod}[@{skill_stealth_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_stealth_bonus}[@{skill_bonus_text}]+@{skill_stealth_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_stealth}}} {{way=@{skill_stealth_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_stealth}[@{skill_stealth_text}]+@{skill_stealth_way_mod}[@{skill_stealth_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_stealth_bonus}[@{skill_bonus_text}]+@{skill_stealth_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_stealth" value="0" max="5">
@@ -393,7 +398,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_stealth_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_stealth_way_mod}[@{skill_stealth_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_stealth_bonus}[@{skill_bonus_text}]+@{skill_stealth_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_stealth_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_stealth_way_mod}[@{skill_stealth_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_stealth_bonus}[@{skill_bonus_text}]+@{skill_stealth_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -405,7 +410,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_erudition}}} {{way=@{skill_erudition_way_mod_text}}} {{roll=[[1d10+@{skill_erudition}[@{skill_erudition_text}]+@{skill_erudition_way_mod}[@{skill_erudition_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_erudition_bonus}[@{skill_bonus_text}]+@{skill_erudition_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_erudition}}} {{way=@{skill_erudition_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_erudition}[@{skill_erudition_text}]+@{skill_erudition_way_mod}[@{skill_erudition_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_erudition_bonus}[@{skill_bonus_text}]+@{skill_erudition_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_erudition" value="0" max="5">
@@ -427,7 +432,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_erudition_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_erudition_way_mod}[@{skill_erudition_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_erudition_bonus}[@{skill_bonus_text}]+@{skill_erudition_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_erudition_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_erudition_way_mod}[@{skill_erudition_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_erudition_bonus}[@{skill_bonus_text}]+@{skill_erudition_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -439,7 +444,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_inspiration}}} {{way=@{skill_inspiration_way_mod_text}}} {{roll=[[1d10+@{skill_inspiration}[@{skill_inspiration_text}]+@{skill_inspiration_way_mod}[@{skill_inspiration_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_inspiration_bonus}[@{skill_bonus_text}]+@{skill_inspiration_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_inspiration}}} {{way=@{skill_inspiration_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_inspiration}[@{skill_inspiration_text}]+@{skill_inspiration_way_mod}[@{skill_inspiration_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_inspiration_bonus}[@{skill_bonus_text}]+@{skill_inspiration_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_inspiration" value="0" max="5">
@@ -461,7 +466,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_inspiration_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_inspiration_way_mod}[@{skill_inspiration_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_inspiration_bonus}[@{skill_bonus_text}]+@{skill_inspiration_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_inspiration_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_inspiration_way_mod}[@{skill_inspiration_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_inspiration_bonus}[@{skill_bonus_text}]+@{skill_inspiration_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -473,7 +478,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_magic}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[1d10+@{skill_magic}[@{skill_magic_text}]+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_magic}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_magic}[@{skill_magic_text}]+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_magic" value="0" max="5">
@@ -495,7 +500,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -507,7 +512,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_natural_environment}}} {{way=@{skill_natural_environment_way_mod_text}}} {{roll=[[1d10+@{skill_natural_environment}[@{skill_natural_environment_text}]+@{skill_natural_environment_way_mod}[@{skill_natural_environment_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_natural_environment_bonus}[@{skill_bonus_text}]+@{skill_natural_environment_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_natural_environment}}} {{way=@{skill_natural_environment_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_natural_environment}[@{skill_natural_environment_text}]+@{skill_natural_environment_way_mod}[@{skill_natural_environment_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_natural_environment_bonus}[@{skill_bonus_text}]+@{skill_natural_environment_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_natural_environment" value="0" max="5">
@@ -529,7 +534,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_natural_environment_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_natural_environment_way_mod}[@{skill_natural_environment_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_natural_environment_bonus}[@{skill_bonus_text}]+@{skill_natural_environment_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_natural_environment_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_natural_environment_way_mod}[@{skill_natural_environment_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_natural_environment_bonus}[@{skill_bonus_text}]+@{skill_natural_environment_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -541,7 +546,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_monsters}}} {{way=@{skill_monsters_way_mod_text}}} {{roll=[[1d10+@{skill_monsters}[@{skill_monsters_text}]+@{skill_monsters_way_mod}[@{skill_monsters_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_monsters_bonus}[@{skill_bonus_text}]+@{skill_monsters_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_monsters}}} {{way=@{skill_monsters_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_monsters}[@{skill_monsters_text}]+@{skill_monsters_way_mod}[@{skill_monsters_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_monsters_bonus}[@{skill_bonus_text}]+@{skill_monsters_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_monsters" value="0" max="5">
@@ -563,7 +568,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_monsters_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_monsters_way_mod}[@{skill_monsters_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_monsters_bonus}[@{skill_bonus_text}]+@{skill_monsters_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_monsters_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_monsters_way_mod}[@{skill_monsters_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_monsters_bonus}[@{skill_bonus_text}]+@{skill_monsters_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -575,7 +580,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_wyrd_mysteries}}} {{way=@{skill_wyrd_mysteries_way_mod_text}}} {{roll=[[1d10+@{skill_wyrd_mysteries}[@{skill_wyrd_mysteries_text}]+@{skill_wyrd_mysteries_way_mod}[@{skill_wyrd_mysteries_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_wyrd_mysteries_bonus}[@{skill_bonus_text}]+@{skill_wyrd_mysteries_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_wyrd_mysteries}}} {{way=@{skill_wyrd_mysteries_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_wyrd_mysteries}[@{skill_wyrd_mysteries_text}]+@{skill_wyrd_mysteries_way_mod}[@{skill_wyrd_mysteries_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_wyrd_mysteries_bonus}[@{skill_bonus_text}]+@{skill_wyrd_mysteries_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_wyrd_mysteries" value="0" max="5">
@@ -597,7 +602,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_wyrd_mysteries_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_wyrd_mysteries_way_mod}[@{skill_wyrd_mysteries_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_wyrd_mysteries_bonus}[@{skill_bonus_text}]+@{skill_wyrd_mysteries_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_wyrd_mysteries_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_wyrd_mysteries_way_mod}[@{skill_wyrd_mysteries_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_wyrd_mysteries_bonus}[@{skill_bonus_text}]+@{skill_wyrd_mysteries_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -609,7 +614,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_perception}}} {{way=@{skill_perception_way_mod_text}}} {{roll=[[1d10+@{skill_perception}[@{skill_perception_text}]+@{skill_perception_way_mod}[@{skill_perception_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_perception_bonus}[@{skill_bonus_text}]+@{skill_perception_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_perception}}} {{way=@{skill_perception_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_perception}[@{skill_perception_text}]+@{skill_perception_way_mod}[@{skill_perception_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_perception_bonus}[@{skill_bonus_text}]+@{skill_perception_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_perception" value="0" max="5">
@@ -631,7 +636,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_perception_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_perception_way_mod}[@{skill_perception_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_perception_bonus}[@{skill_bonus_text}]+@{skill_perception_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_perception_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_perception_way_mod}[@{skill_perception_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_perception_bonus}[@{skill_bonus_text}]+@{skill_perception_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -643,7 +648,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_feats}}} {{way=@{skill_feats_way_mod_text}}} {{roll=[[1d10+@{skill_feats}[@{skill_feats_text}]+@{skill_feats_way_mod}[@{skill_feats_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_feats_bonus}[@{skill_bonus_text}]+@{skill_feats_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_feats}}} {{way=@{skill_feats_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_feats}[@{skill_feats_text}]+@{skill_feats_way_mod}[@{skill_feats_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_feats_bonus}[@{skill_bonus_text}]+@{skill_feats_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_feats" value="0" max="5">
@@ -665,7 +670,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_feats_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_feats_way_mod}[@{skill_feats_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_feats_bonus}[@{skill_bonus_text}]+@{skill_feats_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_feats_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_feats_way_mod}[@{skill_feats_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_feats_bonus}[@{skill_bonus_text}]+@{skill_feats_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -677,7 +682,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_religion}}} {{way=@{skill_religion_way_mod_text}}} {{roll=[[1d10+@{skill_religion}[@{skill_religion_text}]+@{skill_religion_way_mod}[@{skill_religion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_religion_bonus}[@{skill_bonus_text}]+@{skill_religion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_religion}}} {{way=@{skill_religion_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_religion}[@{skill_religion_text}]+@{skill_religion_way_mod}[@{skill_religion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_religion_bonus}[@{skill_bonus_text}]+@{skill_religion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_religion" value="0" max="5">
@@ -699,7 +704,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_religion_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_religion_way_mod}[@{skill_religion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_religion_bonus}[@{skill_bonus_text}]+@{skill_religion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_religion_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_religion_way_mod}[@{skill_religion_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_religion_bonus}[@{skill_bonus_text}]+@{skill_religion_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -711,7 +716,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_performance}}} {{way=@{skill_performance_way_mod_text}}} {{roll=[[1d10+@{skill_performance}[@{skill_performance_text}]+@{skill_performance_way_mod}[@{skill_performance_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_performance_bonus}[@{skill_bonus_text}]+@{skill_performance_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_performance}}} {{way=@{skill_performance_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_performance}[@{skill_performance_text}]+@{skill_performance_way_mod}[@{skill_performance_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_performance_bonus}[@{skill_bonus_text}]+@{skill_performance_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_performance" value="0" max="5">
@@ -733,7 +738,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_performance_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_performance_way_mod}[@{skill_performance_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_performance_bonus}[@{skill_bonus_text}]+@{skill_performance_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_performance_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_performance_way_mod}[@{skill_performance_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_performance_bonus}[@{skill_bonus_text}]+@{skill_performance_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -745,7 +750,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_healing}}} {{way=@{skill_healing_way_mod_text}}} {{roll=[[1d10+@{skill_healing}[@{skill_healing_text}]+@{skill_healing_way_mod}[@{skill_healing_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_healing_bonus}[@{skill_bonus_text}]+@{skill_healing_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_healing}}} {{way=@{skill_healing_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_healing}[@{skill_healing_text}]+@{skill_healing_way_mod}[@{skill_healing_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_healing_bonus}[@{skill_bonus_text}]+@{skill_healing_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_healing" value="0" max="5">
@@ -767,7 +772,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_healing_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_healing_way_mod}[@{skill_healing_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_healing_bonus}[@{skill_bonus_text}]+@{skill_healing_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_healing_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_healing_way_mod}[@{skill_healing_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_healing_bonus}[@{skill_bonus_text}]+@{skill_healing_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -779,7 +784,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_shooting}}} {{way=@{skill_shooting_way_mod_text}}} {{roll=[[1d10+@{skill_shooting}[@{skill_shooting_text}]+@{skill_shooting_way_mod}[@{skill_shooting_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_shooting_bonus}[@{skill_bonus_text}]+@{skill_shooting_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_shooting}}} {{way=@{skill_shooting_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_shooting}[@{skill_shooting_text}]+@{skill_shooting_way_mod}[@{skill_shooting_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_shooting_bonus}[@{skill_bonus_text}]+@{skill_shooting_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_shooting" value="0" max="5">
@@ -801,7 +806,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_shooting_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_shooting_way_mod}[@{skill_shooting_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_shooting_bonus}[@{skill_bonus_text}]+@{skill_shooting_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_shooting_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_shooting_way_mod}[@{skill_shooting_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_shooting_bonus}[@{skill_bonus_text}]+@{skill_shooting_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -813,7 +818,7 @@
                                 </p>
                             </span></span></span>
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_travel}}} {{way=@{skill_travel_way_mod_text}}} {{roll=[[1d10+@{skill_travel}[@{skill_travel_text}]+@{skill_travel_way_mod}[@{skill_travel_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_travel_bonus}[@{skill_bonus_text}]+@{skill_travel_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{skill_travel}}} {{way=@{skill_travel_way_mod_text}}} {{roll=[[@{skilldice}+@{skill_travel}[@{skill_travel_text}]+@{skill_travel_way_mod}[@{skill_travel_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_travel_bonus}[@{skill_bonus_text}]+@{skill_travel_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                     </div>
                     <div class="domain-way sheet-tg-row">
                         <input type="number" name="attr_skill_travel" value="0" max="5">
@@ -835,7 +840,7 @@
                             <input class="disc_name" name="attr_disc_name" type="text"></input>
                             <input type="number" name="attr_disc" value="6" min="6" max="15">
                             <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_travel_way_mod_text}}} {{roll=[[1d10+@{disc}+@{skill_travel_way_mod}[@{skill_travel_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_travel_bonus}[@{skill_bonus_text}]+@{skill_travel_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_travel_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_travel_way_mod}[@{skill_travel_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_travel_bonus}[@{skill_bonus_text}]+@{skill_travel_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
                         </div>
                     </fieldset>
                 </div>
@@ -1185,6 +1190,7 @@
             "potential_text": getTranslationByKey("potential"),
             "ask_public_roll": getTranslationByKey("ask_public_roll"),
             "ask_whisper": getTranslationByKey("ask_whisper"),
+            "ask_skill_with_help": getTranslationByKey("ask_entraide"),
             "ask_whisper_roll": getTranslationByKey("ask_whisper_roll"),
             "mental_resist_text": getTranslationByKey("mental_resist"),
             "combativeness_text": getTranslationByKey("way_combativeness_short")
