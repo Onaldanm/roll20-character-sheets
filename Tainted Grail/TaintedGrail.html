@@ -850,7 +850,6 @@
                 <span class="title" data-i18n="combat"></span>
             </div>
             <div class="box-content">
-                <input type="number" readonly name="attr_attack_total" value="@{attack_domain}+@{attack_way}" disabled="true" hidden></input>
                 <div class="sheet-tg-row">
                     <span class="domain-label" data-i18n="potential"></span>
                     <div class="combat_attrs">
@@ -878,24 +877,17 @@
                     </div>
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="style"></span>
-                    <select class="skills-large" name="attr_attack_domain">
-                        <option value="@{skill_close_combat}+@{skill_close_combat_bonus}" selected data-i18n="skill_close_combat"></option>
-                        <option value="@{skill_mounted_combat}+@{skill_mounted_combat_bonus}" data-i18n="skill_mounted_combat"></option>
-                        <option value="@{skill_shooting}+@{skill_shooting_bonus}" data-i18n="skill_shooting"></option>
-                    </select>
-                    <select class="skills-large" name="attr_attack_way">
-                        <option value="@{combativeness}" data-i18n="way_combativeness_short"></option>
-                        <option value="@{awareness}" data-i18n="way_awareness_short"></option>
-                        <option value="@{creativity}" data-i18n="way_creativity_short"></option>
-                        <option value="@{conviction}" data-i18n="way_conviction_short"></option>
-                        <option value="@{reason}" data-i18n="way_reason_short"></option>
-                    </select>
+                    <span data-i18n="way_combativeness_short"></span><input type="number" name="attr_combativeness" readonly>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="attack_way"></span><input type="number" name="attr_attack_domain" value="0"></input>
+                    <input type="number" readonly name="attr_attack_total" value="@{attack_domain}+@{combativeness}" disabled="true" hidden></input>
                 </div>
                 <div class="sheet-tg-row attack">
                     <div class="roll">
                         <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
                         <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
+                        <button type="roll" data-i18n="parade_roll" class="d10-dice btn ui-draggable" name="act_roll_parade" value="@{whispertype} &{template:d10roll} {{title=^{parade_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{combativeness}[@{combativeness_text}]+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]+@{parade_mod}+@{health_mod}[@{health_mod_text}]]]}}"></button>
                     </div>
                 </div>
             </div>
@@ -918,9 +910,7 @@
                 <div class="sheet-tg-row"><textarea></textarea></div>
             </div>
             </div>
-        </div>
     </div>
-    <h2 data-i18n="combat"></h2>
     <div class="character-combat big-box">
         <div class="attack box">
             <div class="sheet-tg-row">
@@ -940,6 +930,7 @@
                             <input type="number" readonly name="attr_defense_standard" value="@{defense_total}" disabled="true">
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_standard" value="@{speed_total}" disabled="true">
+                            <input type="number" name="attr_parademod_standard" value="0" disabled="true" hidden>
                         </div>
                     </div>
                     <div class="attitudes">
@@ -954,6 +945,7 @@
                             <input type="number" readonly name="attr_defense_offensive" value="@{defense_total}-@{potential}" disabled="true">
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_offensive" value="@{speed_total}" disabled="true">
+                            <input type="number" name="attr_parademod_offensive" value="0" disabled="true" hidden>
                         </div>
                     </div>
                     <div class="attitudes">
@@ -968,6 +960,7 @@
                             <input type="number" readonly name="attr_defense_defensive" value="@{defense_total}+@{potential}" disabled="true">
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_defensive" value="@{speed_total}" disabled="true">
+                            <input type="number" name="attr_parademod_defensive" value="@{potential}" disabled="true" hidden>
                         </div>
                     </div>
                     <div class="attitudes">
@@ -982,6 +975,7 @@
                             <input type="number" readonly name="attr_defense_quickattack" value="@{defense_total}-@{potential}" disabled="true">
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_quickattack" value="@{speed_total}+@{potential}" disabled="true">
+                            <input type="number" name="attr_parademod_quickattack" value="0" disabled="true" hidden>
                         </div>
                     </div>
                     <div class="attitudes">
@@ -996,6 +990,7 @@
                             <input type="number" readonly name="attr_defense_movement" value="@{defense_total}+@{potential}" disabled="true">
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_movement" value="@{speed_total}" disabled="true">
+                            <input type="number" name="attr_parademod_movement" value="0" disabled="true" hidden>
                         </div>
                     </div>
                 </div>
@@ -1191,7 +1186,8 @@
             "ask_public_roll": getTranslationByKey("ask_public_roll"),
             "ask_whisper": getTranslationByKey("ask_whisper"),
             "ask_whisper_roll": getTranslationByKey("ask_whisper_roll"),
-            "mental_resist_text": getTranslationByKey("mental_resist")
+            "mental_resist_text": getTranslationByKey("mental_resist"),
+            "combativeness_text": getTranslationByKey("way_combativeness_short")
         });
     });
     const domains = ['craft', 'close_combat', 'mounted_combat', 'leadership', 'communication', 'compassion', 'stealth', 'erudition', 'inspiration', 'magic', 'natural_environment', 'monsters', 'wyrd_mysteries', 'perception', 'feats', 'religion', 'performance', 'healing', 'shooting', 'travel'];
@@ -1293,11 +1289,12 @@
         // Retrieve Attitude Mode
         getAttrs(['attitude_mode'], (v) => {
             const attitude = v.attitude_mode;
-            getAttrs([`attack_${attitude}`,`defense_${attitude}`,`speed_${attitude}`], (a) => {
+            getAttrs([`attack_${attitude}`,`defense_${attitude}`,`speed_${attitude}`,`parademod_${attitude}`], (a) => {
                 const output = {};
                 output.attack_mod = a[`attack_${attitude}`];
                 output.defense_mod = a[`defense_${attitude}`];
                 output.speed_mod = a[`speed_${attitude}`];
+                output.parade_mod = a[`parademod_${attitude}`];
                 setAttrs(output, {silent: true});
             });
         });

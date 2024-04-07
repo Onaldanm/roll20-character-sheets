@@ -91,6 +91,7 @@
   "protection": "Protection",
   "initiative_roll": " Jet d'initiative",
   "initiative_button": " Initiative",
+  "parade_roll": "Parade",
   "way_awareness": "La Conscience",
   "way_combativeness": "La Combativité",
   "way_creativity": "La Créativité",
@@ -164,4 +165,5 @@
   "color_red": "Rouge",
   "color_green": "Vert",
   "tourments": "Tourments & Déroutes",
+  "attack_way": "Domaine ou Discipline utilisé pour le combat"
 }
