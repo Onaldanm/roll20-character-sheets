@@ -35,7 +35,12 @@
 }
 
 /* CUSTOMS */
-
+.character-infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    max-width: 100%;
+}
 .character h2 {
     display: flex;
     justify-content: space-between;

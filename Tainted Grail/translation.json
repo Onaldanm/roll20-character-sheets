@@ -11,7 +11,7 @@
   "health_condition_bad": "(G)",
   "health_condition_critical": "(C)",
   "age": "Age",
-  "health_and_sanity": "Santé",
+  "sanity": "Santé mentale",
   "healthpoints": "Points de vie",
   "mental_resist": "Resistance mentale",
   "afflicted": "Affligé",
@@ -150,5 +150,9 @@
   "malus": "Malus",
   "occupation": "Fonction",
   "origins": "Peuple",
-  "name": "Nom"
+  "name": "Nom",
+  "experience": "Expérience",
+  "character2": "Page 2",
+  "vigor": "Vigeur",
+  "survie": "Survie"
 }

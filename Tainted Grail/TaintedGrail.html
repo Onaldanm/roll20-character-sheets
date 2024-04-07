@@ -1,6 +1,7 @@
 <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
 <div class="tabs">
     <button type="action" class="tab tab-character" name="act_character" data-i18n="character"></button>
+    <button type="action" class="tab tab-character2" name="act_character2" data-i18n="character2"></button>
     <button type="action" class="tab tab-journal" name="act_journal" data-i18n="book"></button>
 </div>
 
@@ -10,14 +11,7 @@
             <h2>
             <span class="left"><span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span></span>
             <span class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></span></h2>
-        </div>
-    </div>
-    <div class="character-skills big-box">
-        <div class="concept box">
-            <div class="sheet-tg-row">
-                <span class="title" data-i18n="personality"></span>
-            </div>
-            <div class="box-content">
+            <div class="character-infos box-content">
                 <div class="sheet-tg-row">
                     <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
                 </div>
@@ -25,10 +19,10 @@
                     <span data-i18n="age"></span><input type="text" name="attr_info_age" value="">
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="gender"></span><input type="text" name="attr_info_gender" value="">
+                    <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
+                    <span data-i18n="gender"></span><input type="text" name="attr_info_gender" value="">
                 </div>
                 <div class="sheet-tg-row">
                     <span data-i18n="traits"></span><input type="text" name="attr_info_trait" value="">
@@ -39,7 +33,14 @@
                 <div class="sheet-tg-row">
                     <span data-i18n="occupation"></span><input type="text" name="attr_info_occupation" value="">
                 </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="experience"></span><input type="number" name="attr_info_experience" value="0">
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="character-skills big-box">
+        <div class="concept box">
             <div class="sheet-tg-row">
                 <span class="title" data-i18n="ways"></span>
             </div>
@@ -83,7 +84,7 @@
         </div>
         <div class="health box">
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="health_and_sanity"></span>
+                <span class="title" data-i18n="health"></span>
             </div>
             <div class="box-content box-health-condition">
             <div class="sheet-tg-row">
@@ -106,13 +107,16 @@
             <div class="sheet-tg-row">
                 <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
             </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="mental_resist"></span>
-                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=Resistance mentale}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                    </button>
-                    <input type="number" name="attr_mentalresist" value="9">
-                </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="vigor"></span>
+                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                        value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                </button>
+                <input type="number" name="attr_vigor" value="10">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0" max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
+            </div>
             </div>
         </div>
     </div>
@@ -974,6 +978,31 @@
         </div>
     </div>
 </div>
+<div class="character2">
+    <div class="character-skills big-box">
+        <div class="concept box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="ways"></span>
+            </div>
+            <div class="box-content ways_skills" data-i18n-list="ways-list">
+            </div>
+        </div>
+        <div class="health box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="sanity"></span>
+            </div>
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span data-i18n="mental_resist"></span>
+                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                        value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                    </button>
+                    <input type="number" name="attr_mentalresist" value="9">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="journal">
     <h2 data-i18n="book"></h2>
     <textarea name="attr_journal"></textarea>
@@ -1102,7 +1131,7 @@
 
 
 <script type="text/worker">
-    const buttonlist = ["character","journal"];
+    const buttonlist = ["character","character2","journal"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -1116,6 +1145,7 @@
         setAttrs({
             "critfail_confirm_text": getTranslationByKey("critfail_confirm_text"),
             "health_mod_text": getTranslationByKey("health_mod_text"),
+            "vigor_text": getTranslationByKey("vigor"),
             "skill_bonus_text": getTranslationByKey("skill_bonus_text"),
             "skill_malus_text": getTranslationByKey("skill_malus_text"),
             "speed_text": getTranslationByKey("speed"),
