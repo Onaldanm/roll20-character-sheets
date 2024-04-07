@@ -1,5 +1,6 @@
 /* TABS */
 .charsheet .character,
+.charsheet .character2,
 .charsheet .journal {
     display: none;
     padding: 5px;
@@ -17,10 +18,12 @@
     background: linear-gradient(to bottom, #f2f2f2, #ffffff);
 }
 .charsheet .tabstoggle[value="character"]~.tabs .tab-character,
+.charsheet .tabstoggle[value="character2"]~.tabs .tab-character2,
 .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     background: linear-gradient(to bottom, #f2f2f2, #ffffff);
 }
 .charsheet .tabstoggle[value="character"]~div.character,
+.charsheet .tabstoggle[value="character2"]~div.character2,
 .charsheet .tabstoggle[value="journal"]~div.journal {
     display: block;
 }
@@ -35,6 +38,32 @@
 }
 
 /* CUSTOMS */
+.colors {
+    width: 166px;
+}
+
+input.character-color[value="red"]~.circle {
+    background-color: #FF6666;
+}
+input.character-color[value="grey"]~.circle {
+    background-color: #808080;
+}
+input.character-color[value="blue"]~.circle {
+    background-color: #6699CC;
+}
+input.character-color[value="green"]~.circle {
+    background-color: #008000;
+}
+input.character-color[value="brown"]~.circle {
+    background-color: #964B00;
+}
+.circle {
+    margin-left: 15px;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+}
 .character-infos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -43,7 +72,6 @@
 }
 .character h2 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 20px 0;

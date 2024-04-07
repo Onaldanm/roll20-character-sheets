@@ -10,16 +10,24 @@
         <div class="character-box">
             <h2>
             <span class="left"><span class="title" data-i18n="character_name"></span> - <span name="attr_character_name"></span></span>
-            <span class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></span></h2>
-            <div class="character-infos box-content">
+            <div class="right"><select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select></div>
+        </h2>
+        </div>
+    </div>
+    <div class="character-skills big-box">
+        <div class="concept box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="character"></span>
+            </div>
+            <div class="box-content">
                 <div class="sheet-tg-row">
                     <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="age"></span><input type="text" name="attr_info_age" value="">
+                    <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
+                    <span data-i18n="age"></span><input type="text" name="attr_info_age" value="">
                 </div>
                 <div class="sheet-tg-row">
                     <span data-i18n="gender"></span><input type="text" name="attr_info_gender" value="">
@@ -36,6 +44,32 @@
                 <div class="sheet-tg-row">
                     <span data-i18n="experience"></span><input type="number" name="attr_info_experience" value="0">
                 </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="color"></span>
+                    <input type="hidden" name="attr_color" class="character-color"></input>
+                    <select class="colors" name="attr_color">
+                        <option value="blue" data-i18n="color_blue"></option>
+                        <option value="brown" data-i18n="color_brown"></option>
+                        <option value="grey" data-i18n="color_grey"></option>
+                        <option value="red" data-i18n="color_red"></option>
+                        <option value="green" data-i18n="color_green"></option>
+                    </select>
+                    <span class="circle"></span>
+                </div>
+            </div>
+        </div>
+        <div class="health box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="advantages"></span>
+            </div>
+            <div class="box-content">
+                <textarea></textarea>
+            </div>
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="disadvantages"></span>
+            </div>
+            <div class="box-content">
+                <textarea></textarea>
             </div>
         </div>
     </div>

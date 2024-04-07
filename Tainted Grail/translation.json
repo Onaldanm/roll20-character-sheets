@@ -154,5 +154,13 @@
   "experience": "Expérience",
   "character2": "Page 2",
   "vigor": "Vigeur",
-  "survie": "Survie"
+  "survie": "Survie",
+  "advantages": "Avantages",
+  "disadvantages": "Désavantage",
+  "color": "Couleur",
+  "color_blue": "Bleu",
+  "color_brown": "Brown",
+  "color_grey": "Gris",
+  "color_red": "Rouge",
+  "color_green": "Vert"
 }
