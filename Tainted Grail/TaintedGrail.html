@@ -858,39 +858,34 @@
                 <div class="sheet-tg-row">
                     <span class="domain-label" data-i18n="potential"></span>
                     <div class="combat_attrs">
-                        <span>Base</span><input type="number" name="attr_potential_base" value="0" min="0"></input>
+                        <span>Base</span><input type="number" name="attr_potential_base" readonly></input>
                         <span>Mod.</span><input type="number" name="attr_potential_modifier" value="0"></input>
-                        <span>Total</span><input type="number" name="attr_potential" value="@{potential_base}+@{potential_modifier}+@{health_mod}"
-                            disabled="true"></input>
+                        <span>Total</span><input type="number" name="attr_potential" value="@{potential_base}+@{potential_modifier}+@{health_mod}" disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
                     <span class="domain-label" data-i18n="defense"></span>
                     <div class="combat_attrs">
-                        <span>Base</span><input type="number" name="attr_defense_base" value="0" min="0"></input>
+                        <span>Base</span><input type="number" name="attr_defense_base" value="5+@{reason}+@{awareness}"  disabled="true"></input>
                         <span>Mod.</span><input type="number" name="attr_defense_modifier" value="0"></input>
-                        <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{defense_modifier}+@{health_mod}"
-                            disabled="true"></input>
+                        <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{defense_modifier}+@{health_mod}" disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
                     <span class="domain-label" data-i18n="speed"></span>
                     <div class="combat_attrs">
-                    <span>Base</span><input type="number" name="attr_speed_base" value="0" min="0"></input>
+                    <span>Base</span><input type="number" name="attr_speed_base" value="@{combativeness}+@{awareness}"  disabled="true"></input>
                     <span>Mod.</span><input type="number" name="attr_speed_modifier" value="0"></input>
                     <span>Total</span><input type="number" name="attr_speed_total" value="@{speed_base}+@{speed_modifier}+@{health_mod}" disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
-                    <span data-i18n="way_combativeness_short"></span><input type="number" name="attr_combativeness" readonly>
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="attack_way"></span><input type="number" name="attr_attack_domain" value="0"></input>
-                    <input type="number" readonly name="attr_attack_total" value="@{attack_domain}+@{combativeness}" disabled="true" hidden></input>
-                </div>
-                <div class="sheet-tg-row">
-                    <select class="attackModeSelect" name="attr_attack_mode"></select>
-                    <input type="number" name="attr_attack_mode"></input>
+                    <span data-i18n="attack"></span>
+                    <div class="combat_attrs">
+                        <select class="attackModeSelect" name="attr_attack_base"></select>
+                        <input type="number" name="attr_d_attack_base" value="@{attack_base}" disabled="true"></input>
+                        <input type="number" hidden="true" name="attr_attack_total" value="@{attack_base}+@{health_mod}" disabled="true"></input>
+                    </div>
                 </div>
                 <div class="sheet-tg-row attack">
                     <div class="roll">
@@ -970,21 +965,6 @@
                             <span data-i18n="speed"></span>
                             <input type="number" name="attr_speed_defensive" value="@{speed_total}" disabled="true">
                             <input type="number" name="attr_parademod_defensive" value="@{potential}" disabled="true" hidden>
-                        </div>
-                    </div>
-                    <div class="attitudes">
-                        <div class="attitude-title sheet-tg-row">
-                            <input type="radio" name="attr_attitude_mode" value="quickattack"></input>
-                            <span class="domain-label" data-i18n="attitude_quickattack"></span>
-                            </div>
-                        <div class="sheet-tg-row attitude-attributes">
-                            <span data-i18n="attack"></span>
-                            <input type="number" readonly name="attr_attack_quickattack" value="@{attack_total}" disabled="true">
-                            <span data-i18n="defense"></span>
-                            <input type="number" readonly name="attr_defense_quickattack" value="@{defense_total}-@{potential}" disabled="true">
-                            <span data-i18n="speed"></span>
-                            <input type="number" name="attr_speed_quickattack" value="@{speed_total}+@{potential}" disabled="true">
-                            <input type="number" name="attr_parademod_quickattack" value="0" disabled="true" hidden>
                         </div>
                     </div>
                     <div class="attitudes">
@@ -1407,7 +1387,7 @@ function getSectionIDsAsync(sectionName){
         });
     });
 
-    on("sheet:opened change:creativity change:potential", function() {
+    on("sheet:opened change:creativity change:potential_base", function() {
         getAttrs(["creativity"], function(values) {
             var cr = parseInt(values.creativity);
             var pot = 1;
@@ -1415,7 +1395,7 @@ function getSectionIDsAsync(sectionName){
             if ( cr >= 2 ) pot = 2;
             if ( cr >= 5 ) pot = 3;
             setAttrs({
-                potential: pot
+                potential_base: pot
             });
         });
         populateSelectionFunct();
@@ -1440,50 +1420,60 @@ function getSectionIDsAsync(sectionName){
         });
     });
 
-    const addOption = (options, label, value) => {
-        options.push({ label: label, value: parseInt(value) });
-    };
-
     const populateAttackModeList = (options) => {
         populateListOptions({
             elemSelector: '.attackModeSelect, .attackModeSelectBlank',
             optionsArray: options,
             callback: () => {
-                console.log('Options should be populated')
+                // nothing
             }
         });
     };
 
-    on("sheet:opened change:repeating_CloseCombatDisc remove:repeating_CloseCombatDisc change:repeating_MonstersDisc remove:repeating_MonstersDisc change:repeating_ShootingDisc remove:repeating_ShootingDisc change:repeating_MountedCombatDisc remove:repeating_MountedCombatDisc", async function() {
+    on("sheet:opened change:repeating_CloseCombatDisc remove:repeating_CloseCombatDisc change:repeating_MonstersDisc remove:repeating_MonstersDisc change:repeating_ShootingDisc remove:repeating_ShootingDisc change:repeating_MountedCombatDisc remove:repeating_MountedCombatDisc change:skill_close_combat_bonus change:skill_close_combat_malus change:skill_close_combat change:skill_mounted_combat change:skill_monsters change:skill_shooting", async function() {
         await populateSelectionFunct();
     });
 
-    const addDiscOptionsToAttackMode = async (options, disc) => {
+    const addBaseOptionsToAttackMode = async (options, base, way) => {
+        const attrs = [
+              way,
+              `skill_${base}`,
+              `skill_${base}_bonus`,
+              `skill_${base}_malus`
+         ];
+         v = await getAttrsAsync(attrs);
+        const label = getTranslationByKey(`way_${way}_short`) + " + " + getTranslationByKey(`skill_${base}_short`);
+        const value = parseInt(v[`skill_${base}`]) + parseInt(v[way]) + parseInt(v[`skill_${base}_bonus`]) + parseInt(v[`skill_${base}_malus`]);
+        options.push({ label: label, value: value });
+    };
+    const addDiscOptionsToAttackMode = async (options, disc, base, way) => {
         d = await getSectionIDsAsync(disc);
         const attrs = [
               ...d.map(id => `repeating_${disc}_${id}_disc_name`),
               ...d.map(id => `repeating_${disc}_${id}_disc`),
+              way,
+              `skill_${base}_bonus`,
+              `skill_${base}_malus`
          ];
          v = await getAttrsAsync(attrs);
          d.forEach(id => {
             const discNameKey = `repeating_${disc}_${id}_disc_name`;
             const discKey = `repeating_${disc}_${id}_disc`;
-            const label = v[discNameKey];
-            const value = parseInt(v[discKey]);
-            if (!isNaN(value)) {
-                options.push({ label: label, value: value });
-            }
+            const label = getTranslationByKey(`way_${way}_short`) + " + " + v[discNameKey];
+            const value = parseInt(v[discKey]) + parseInt(v[way]) + parseInt(v[`skill_${base}_bonus`]) + parseInt(v[`skill_${base}_malus`]);
+            options.push({ label: label, value: value });
         });
     };
     const populateSelectionFunct = async () => {
-        
         let options = [];
-        await addDiscOptionsToAttackMode(options, "CloseCombatDisc");
-        await addDiscOptionsToAttackMode(options, "MonstersDisc");
-        await addDiscOptionsToAttackMode(options, "ShootingDisc");
-        await addDiscOptionsToAttackMode(options, "MountedCombatDisc");
-        
-        console.log(options)
+        await addBaseOptionsToAttackMode(options, "close_combat", "combativeness");
+        await addDiscOptionsToAttackMode(options, "CloseCombatDisc", "close_combat", "combativeness");
+        await addBaseOptionsToAttackMode(options, "monsters", "awareness");
+        await addDiscOptionsToAttackMode(options, "MonstersDisc", "monsters", "awareness");
+        await addBaseOptionsToAttackMode(options, "shooting", "combativeness");
+        await addDiscOptionsToAttackMode(options, "ShootingDisc", "shooting", "combativeness");
+        await addBaseOptionsToAttackMode(options, "mounted_combat", "combativeness");
+        await addDiscOptionsToAttackMode(options, "MountedCombatDisc", "mounted_combat", "combativeness");
         populateAttackModeList(options)
       };
       

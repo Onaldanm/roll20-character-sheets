@@ -117,7 +117,6 @@
   "attitude_standard": "Standard",
   "attitude_offensive": "Offensive",
   "attitude_defensive": "Défensive",
-  "attitude_quickattack": "Rapide",
   "attitude_movement": "Mouvement",
   "attitudes": "Attitudes",
   "attitude": "Attitude",
@@ -165,7 +164,6 @@
   "color_red": "Rouge",
   "color_green": "Vert",
   "tourments": "Tourments & Déroutes",
-  "attack_way": "Domaine ou Discipline utilisé pour le combat",
   "skilldice-normal": "Action seul",
   "skilldice-withhelp": "Entraide",
   "ask_entraide": "Nombre de participants"
