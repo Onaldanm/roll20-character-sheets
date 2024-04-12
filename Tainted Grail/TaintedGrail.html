@@ -118,39 +118,20 @@
         </div>
         <div class="health box">
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="health"></span>
+                <span class="title" data-i18n="sanity"></span>
             </div>
-            <div class="box-content box-health-condition">
-            <div class="sheet-tg-row">
-                <span class="skill-label"><span class="fixed" data-i18n="health"></span><span
-                class="sheet-tooltip">?<span><strong data-i18n="health_condition"></strong><br>
-                    <p data-i18n="health_condition_desc"></p>
-                </span></span></span>
-                    <span data-i18n="health_condition_good">(B)</span>
-                    <input type="number" name="attr_health_stage1" value="18">
-                    <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2" value="13">
-                    <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
-                    <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3" value="8">
-                    <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
-                    <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4" value="4">
-                    <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="vigor"></span>
-                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                </button>
-                <input type="number" name="attr_vigor" value="10">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0" max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
-            </div>
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span data-i18n="mental_resist"></span>
+                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                        value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                    </button>
+                    <input type="number" name="attr_mentalresist" value="9">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="tourments"></span>
+                </div>
+                <div class="sheet-tg-row"><textarea></textarea></div>
             </div>
         </div>
     </div>
@@ -868,7 +849,7 @@
                     <div class="combat_attrs">
                         <span>Base</span><input type="number" name="attr_defense_base" value="5+@{reason}+@{awareness}"  disabled="true"></input>
                         <span>Mod.</span><input type="number" name="attr_defense_modifier" value="0"></input>
-                        <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{defense_modifier}+@{health_mod}" disabled="true"></input>
+                        <span>Total</span><input type="number" name="attr_defense_total" value="@{defense_base}+@{blind}+@{defense_modifier}+@{health_mod}" disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row">
@@ -884,36 +865,66 @@
                     <div class="combat_attrs">
                         <select class="attackModeSelect" name="attr_attack_base"></select>
                         <input type="number" name="attr_d_attack_base" value="@{attack_base}" disabled="true"></input>
-                        <input type="number" hidden="true" name="attr_attack_total" value="@{attack_base}+@{health_mod}" disabled="true"></input>
+                        <input type="number" hidden="true" name="attr_attack_total" value="@{attack_base}+@{attack_behind}+@{blind}+@{health_mod}" disabled="true"></input>
                     </div>
                 </div>
                 <div class="sheet-tg-row attack">
                     <div class="roll">
                         <button type="roll" data-i18n="initiative_roll" class="d10-dice btn ui-draggable" name="act_roll_init" value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
                         <button type="action" data-i18n="attack_roll" class="d10-dice btn ui-draggable" name="act_roll_attack"></button>
-                        <button type="roll" data-i18n="parade_roll" class="d10-dice btn ui-draggable" name="act_roll_parade" value="@{whispertype} &{template:d10roll} {{title=^{parade_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{combativeness}[@{combativeness_text}]+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]+@{parade_mod}+@{health_mod}[@{health_mod_text}]]]}}"></button>
+                        <button type="roll" data-i18n="parade_roll" class="d10-dice btn ui-draggable" name="act_roll_parade" value="@{whispertype} &{template:d10roll} {{title=^{parade_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{combativeness}[@{combativeness_text}]+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]+@{parade_mod}+@{health_mod}[@{health_mod_text}]+@{blind}]]}}"></button>
                     </div>
+                </div>
+            </div>
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="combat_status"></span>
+            </div>
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span data-i18n="attack_behind"></span><input type="checkbox" name="attr_attack_behind" value="2"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="blind"></span><input type="checkbox" name="attr_blind" value="-4"></input>
                 </div>
             </div>
         </div>
         <div class="health box">
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="sanity"></span>
+                <span class="title" data-i18n="health"></span>
             </div>
-            <div class="box-content">
-                <div class="sheet-tg-row">
-                    <span data-i18n="mental_resist"></span>
-                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                    </button>
-                    <input type="number" name="attr_mentalresist" value="9">
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="tourments"></span>
-                </div>
-                <div class="sheet-tg-row"><textarea></textarea></div>
+            <div class="box-content box-health-condition">
+            <div class="sheet-tg-row">
+                <span class="skill-label"><span class="fixed" data-i18n="health"></span><span
+                class="sheet-tooltip">?<span><strong data-i18n="health_condition"></strong><br>
+                    <p data-i18n="health_condition_desc"></p>
+                </span></span></span>
+                    <span data-i18n="health_condition_good">(B)</span>
+                    <input type="number" name="attr_health_stage1" value="18">
+                    <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2" value="13">
+                    <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
+                    <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3" value="8">
+                    <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
+                    <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4" value="4">
+                    <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="vigor"></span>
+                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                        value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                </button>
+                <input type="number" name="attr_vigor" value="10">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0" max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
             </div>
             </div>
+        </div>
     </div>
     <div class="character-combat big-box">
         <div class="attack box">

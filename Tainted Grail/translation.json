@@ -166,5 +166,8 @@
   "tourments": "Tourments & Déroutes",
   "skilldice-normal": "Action seul",
   "skilldice-withhelp": "Entraide",
-  "ask_entraide": "Nombre de participants"
+  "ask_entraide": "Nombre de participants",
+  "blind": "Aveuglement / Dans le noir",
+  "attack_behind": "Frappe dans le dos",
+  "combat_status": "Statuts de combat spéciaux"
 }
