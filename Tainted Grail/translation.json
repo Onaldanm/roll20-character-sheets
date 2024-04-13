@@ -2,7 +2,7 @@
   "character": "Personnage",
   "book": "Journal",
   "concept": "Concept",
-  "traits": "Traits de caractère",
+  "traits": "Traits",
   "health": "Santé",
   "health_condition": "Conditions de Santé",
   "health_condition_desc": "Comment à l'état Bon. À partir de l'état « Moyen », chaque état de Santé correspond à un malus qui s'applique à tous les jets (-1 pour l'état Moyen, -2 pour l'état Grave, -3 pour l'état Critique) jusqu'à l'Agonie.",
@@ -189,5 +189,6 @@
   "spell_invocation_canalisation_desc": "Concentration durant cette passe d'armes. Lancé au début de la prochain",
   "spell_invocation_ritual_desc": "Concentration durant deux passe d'armes. Lancé ensuite",
   "magic_points": "Points de Magie",
-  "balance_wyrd_text": "Equilibre de toute chose"
+  "balance_wyrd_text": "Equilibre de toute chose",
+  "settings": "Configuration"
 }

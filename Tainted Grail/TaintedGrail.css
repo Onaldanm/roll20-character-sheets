@@ -43,20 +43,32 @@
     width: 166px;
 }
 
-input.character-color[value="red"]~.circle {
-    background-color: #FF6666;
+.character-color[value="red"] ~ .rect {
+    background: linear-gradient(#ff9999, #ff6666);
 }
-input.character-color[value="grey"]~.circle {
-    background-color: #808080;
+
+.character-color[value="grey"] ~ .rect {
+    background: linear-gradient(#bfbfbf, #808080);
 }
-input.character-color[value="blue"]~.circle {
-    background-color: #6699CC;
+
+.character-color[value="blue"] ~ .rect {
+    background: linear-gradient(#99b3cc, #6699cc);
 }
-input.character-color[value="green"]~.circle {
-    background-color: #008000;
+
+.character-color[value="green"] ~ .rect {
+    background: linear-gradient(#009933, #008000);
 }
-input.character-color[value="brown"]~.circle {
-    background-color: #964B00;
+
+.character-color[value="brown"] ~ .rect {
+    background: linear-gradient(#cc9966, #964b00);
+}
+.bio-rect {
+    width: 50px;
+    height: 18px;
+}
+.rect {
+    max-width: 60px;
+    max-height: 30px;
 }
 .circle {
     margin-left: 15px;
@@ -670,3 +682,277 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-arrow-right {
     border-left: 180px solid #8FD6E8;
 }
+
+/* HEADERS */
+.headeritem--motivation {
+    flex: 50% 1 1
+}
+
+.headeritem__value:empty:after {
+    content: "—"
+}
+.header {
+    display: grid;
+    grid-template-columns: 12.5rem 1fr .5fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, #261617, #594875);
+}
+
+.header__bio {
+    display: grid;
+    grid-gap: .25rem
+}
+
+.header__row,.header__row--name {
+    display: flex;
+    gap: 2rem;
+    align-items: center
+}
+
+.characterviewer .content {
+	margin-bottom: 20px;
+}
+
+.characterviewer .avatar {
+	float: left;
+	margin-right: 10px !important;
+	margin-bottom: 10px !important;
+	max-width: 250px;
+	position: relative;
+	z-index: 1;
+}
+
+.characterviewer .avatar video {
+	max-width: 100%;
+	height: auto;
+}
+.header__row--name {
+    gap: .5rem;
+    padding-top: 1rem;
+    cursor: pointer;
+    font-family: Quiza,Verdana,Geneva,Tahoma,sans-serif;
+    font-size: 3.2rem;
+    line-height: 1;
+    color: #FFF7E6;
+}
+
+.header__row--name:hover,.header__row--name:hover * {
+    color: #FEE2BB;
+}
+
+.header__avatar {
+    display: grid;
+    grid-template-areas: "avatar";
+    padding: .5rem
+}
+
+.header__avatar svg,.header__avatar img {
+    grid-area: avatar;
+    width: 100%;
+    height: auto
+}
+
+.header__avatar svg {
+    position: relative;
+    z-index: 100
+}
+
+.header__avatar path {
+    fill: #FFF7E6;
+}
+
+.header__avatar-img {
+    clip-path: polygon(15% 0%,35% 0%,50% 15%,65% 0%,85% 0%,100% 15%,100% 85%,85% 100%,65% 100%,50% 85%,35% 100%,15% 100%,0% 85%,0% 15%)
+}
+
+.header__edit {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #FFF7E6;
+}
+
+.header__boxes {
+    display: grid;
+}
+
+.header .headeritem__label {
+    display: flex;
+    align-items: center
+}
+
+.header__button {
+    width: 2rem;
+    height: 2rem;
+    align-self: end;
+    padding: 1.5rem;
+    font-family: Nunito Sans,Verdana,Geneva,Tahoma,sans-serif
+}
+ .toolbar__settings input[type=checkbox] {
+    display: none;
+  }
+ .toolbar__settings input[type=checkbox]:checked + .toolbar__settings--icon {
+    opacity: 1;
+  }
+ .toolbar__settings--icon {
+    font-family: pictos;
+  }
+  .toolbar__settings--icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+  }
+  .toggle-popup[value="0"] + .popup {
+    display: none;
+  }
+
+.headeritem__label {
+    font-family: Quiza,Verdana,Geneva,Tahoma,sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #FEE2BB;
+    text-shadow: 
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black; /* Définir le contour avec des ombres */
+}
+
+.headeritem__value {
+    font-size: 1.4rem;
+    text-transform: unset;
+    line-height: 1.4rem;
+    color: #fff
+}
+.title-name {
+    font-size: 2em;
+}
+.popup {
+    display: inline-flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10rem;
+    left: 50px;
+    border: 2px solid transparent;
+    padding: 0.5rem;
+    width: 80%;
+    z-index: 1000;
+    min-width: 255px;
+    min-height: 400px;
+    box-shadow: 5px 5px 6px rgba(23, 18, 18, 0.2);
+    background-color: #fff;
+  }
+  .popup__title {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
+    height: 2rem;
+    align-items: end;
+    text-align: center;
+  }
+  .popup__title--span {
+    padding: 0.2rem 0.5rem;
+    border: 2px solid transparent;
+    font-family: "Piazzolla", serif;
+    text-transform: uppercase;
+  }
+  .popup__close {
+    white-space: nowrap;
+    cursor: pointer;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    width: fit-content !important;
+  }
+  .popup__close:hover {
+    transition: all 1s;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+  .popup__close--btn {
+    display: none !important;
+  }
+  .popup__close--symbol {
+    float: right;
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+  }
+  .popup__close--symbol:hover {
+    opacity: 1;
+  }
+  .popup__header {
+    font-family: "Piazzolla", serif;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    display: flex;
+  }
+  .popup__header--span {
+    font-size: 1.33rem;
+    margin-right: 0.5rem;
+  }
+  .popup__content {
+    overflow-y: scroll;
+  }
+  .popup__content::first-letter {
+    font-family: "Piazzolla", serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+
+
+  /* Conteneur de la grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 15px); /* 5 colonnes de 50 pixels de large */
+    grid-gap: 5px; /* Espacement entre les carrés */
+    padding-top: 3px;
+  }
+  
+  /* Carré */
+  .square {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc; /* Couleur de fond des carrés */
+  }
+  
+  /* Masquer tous les carrés */
+  .square {
+    display: none;
+  }
+  
+  /* Afficher les carrés en fonction de la valeur de l'input */
+  /* Ici, nous utilisons la pseudo-classe :nth-child pour cibler les enfants spécifiques en fonction de leur position */
+  /* Par exemple, :nth-child(1) cible le premier enfant, :nth-child(2) cible le deuxième enfant, etc. */
+  /* Nous utilisons la valeur de l'input (1 à 5) pour déterminer quels enfants afficher */
+  /* Par exemple, si la valeur de l'input est 3, nous affichons les 3 premiers enfants */
+  .input-range[value="1"] ~ .grid-container .square:nth-child(-n+1),
+  .input-range[value="2"] ~ .grid-container .square:nth-child(-n+2),
+  .input-range[value="3"] ~ .grid-container .square:nth-child(-n+3),
+  .input-range[value="4"] ~ .grid-container .square:nth-child(-n+4),
+  .input-range[value="5"] ~ .grid-container .square:nth-child(-n+5) {
+    display: block;
+  }
+
+  .square-combativeness .square {
+    background: linear-gradient(#ff9999, #ff6666);
+  }
+  .square-awareness .square {
+    background: linear-gradient(#99ccff, #6699ff);
+  }
+  .square-creativity .square {
+    background: linear-gradient(#cc99ff, #9966ff);
+  }
+  .square-conviction .square {
+    background: linear-gradient(#ffff99, #ffff66);
+  }
+  .square-reason .square {
+    background: linear-gradient(#99ff99, #66ff66);
+  }
+  .stats__row .header__row {
+    gap: 15px;
+  }
