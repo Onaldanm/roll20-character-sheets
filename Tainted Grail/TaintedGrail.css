@@ -422,6 +422,13 @@ button.d10-dice::before {
 }
 
 /* ROLL TEMPLATES */
+.sheet-rolltemplate-d10roll .sheet-manaCost {
+    color: #5c9dc0;
+}
+
+.sheet-rolltemplate-d10roll .sheet-healthCost {
+    color: #b22222;
+}
 
 .sheet-rolltemplate-d10roll .sheet-container,
 .sheet-rolltemplate-attack .sheet-container {
@@ -519,7 +526,12 @@ button.d10-dice::before {
 {
     color: green;
 }
-
+.sheet-rolltemplate-d10roll .sheet-roll-spell .sheet-arrow-right {
+    border-left: 180px solid #3f7a9a;
+}
+.sheet-rolltemplate-d10roll .sheet-roll-spell h1 {
+    color: #3f7a9a
+}
 /* Dark mod adjustements */
 
 body.sheet-darkmode  .charactersheet {
