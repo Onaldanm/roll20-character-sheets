@@ -1043,7 +1043,7 @@
                 <div class="right mana">
                     <div class="sheet-tg-row mana_points">
                         <span data-i18n="magic_points"></span><input type="number" name="attr_magic_points" min="0"> / </span><input
-                            type="number" name="attr_magic_points_max" readonly>
+                            type="number" name="attr_magic_points_max">
                     </div>
                 </div>
             </div>
@@ -1470,16 +1470,6 @@ function getSectionIDsAsync(sectionName){
             });
         });
     });
-    on("sheet:opened change:disc_magic_base", function() {
-        getAttrs(["disc_magic_base"], function(values) {
-            var score = parseInt(values.disc_magic_base);
-            var mp = Math.min(Math.floor(score / 2) + 3, 10);
-            setAttrs({
-                magic_points_max: mp
-            });
-        });
-    });
-
     on("sheet:opened change:creativity change:potential_base", function() {
         getAttrs(["creativity"], function(values) {
             var cr = parseInt(values.creativity);
@@ -1492,7 +1482,6 @@ function getSectionIDsAsync(sectionName){
             });
         });
     });
-
     on("sheet:opened change:disc_magic_name", async function() {
         v = await getAttrsAsync(["disc_magic_name"]);
         form = v.disc_magic_name;

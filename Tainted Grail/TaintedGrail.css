@@ -1,3 +1,4 @@
+
 /* TABS */
 .charsheet .character,
 .charsheet .character2,
@@ -42,7 +43,7 @@
     width: 166px;
 }
 
-input.character-color[value="red"]+.circle {
+input.character-color[value="red"]~.circle {
     background-color: #FF6666;
 }
 input.character-color[value="grey"]~.circle {
