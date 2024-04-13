@@ -169,5 +169,22 @@
   "ask_entraide": "Nombre de participants",
   "blind": "Aveuglement / Dans le noir",
   "attack_behind": "Frappe dans le dos",
-  "combat_status": "Statuts de combat spéciaux"
+  "combat_status": "Statuts de combat spéciaux",
+  "spells": "Sorts",
+  "spell_form": "Forme",
+  "spell_name": "Nom du sort",
+  "spell_cost": "Coût",
+  "spell_mana_cost": "Coût en mana",
+  "spell_invocation_type": "Invocation",
+  "spell_form_low_magic": "Basse Magie",
+  "spell_form_druid": "Druidisme",
+  "spell_form_wyrd": "Magie du Wyrd",
+  "spell_form_sorcerer": "Sorcellerie",
+  "awake_magic": "Eveil",
+  "spell_invocation_instant": "Immédiat",
+  "spell_invocation_canalisation": "Canalisation",
+  "spell_invocation_ritual": "Rituel",
+  "spell_invocation_instant_desc": "Lancé immédiatement pendant la passe d'armes",
+  "spell_invocation_canalisation_desc": "Concentration durant cette passe d'armes. Lancé au début de la prochain",
+  "spell_invocation_ritual_desc": "Concentration durant deux passe d'armes. Lancé ensuite"
 }

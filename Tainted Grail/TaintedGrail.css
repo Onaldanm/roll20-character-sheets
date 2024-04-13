@@ -42,7 +42,7 @@
     width: 166px;
 }
 
-input.character-color[value="red"]~.circle {
+input.character-color[value="red"]+.circle {
     background-color: #FF6666;
 }
 input.character-color[value="grey"]~.circle {
@@ -142,6 +142,9 @@ input.character-color[value="brown"]~.circle {
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     max-width: 100%;
+}
+.charsheet .big-box-full {
+    grid-template-columns: 1fr;
 }
 .charsheet .big-box .box {
     border: 1px solid #ccc;
@@ -283,6 +286,10 @@ input.character-color[value="brown"]~.circle {
     font-size: 12px;
     margin-left: 5px;;
 }
+.charsheet .domains-box .domain-disc
+{
+    align-items: start;
+}
 .charsheet .domains-box .domain-disc .disc_name
 {
     width: 100%;
@@ -314,6 +321,44 @@ input.character-color[value="brown"]~.circle {
 }
 .charsheet span.equip-bonus  {
     font-weight: bold;
+}
+/* SPELLS */
+.spells .headers,
+.spells .repitem {
+    display: grid;
+    grid-template-columns: 150px auto 50px 130px 50px;;
+    grid-gap: 10px;
+    align-items: start;
+}
+.spells .headers .header {
+    font-weight: bold;
+}
+.spells .repcontainer input[type="text"] {
+    width: 100%;
+}
+.spells .repcontainer select {
+    width: 130px;
+}
+.spells .repcontainer select.spell_form {
+    width: 150px;
+}
+.spells .repcontainer input[type="text"],
+.spells .repcontainer input[type="number"],
+.spells .repcontainer select {
+  grid-column: span 1;
+}
+
+input.sheet-magicAwakeToggle[value="hidden"] ~ .domain-disc-magic {
+    display: none;
+}
+input.sheet-magicAwakeToggle[value="visible"] ~ .domain-disc-magic {
+    display: flex;
+}
+input.sheet-magicAwakeToggle[value="hidden"] ~ .spell-box {
+    display: none;
+}
+input.sheet-magicAwakeToggle[value="visible"] ~ .spell-box {
+    display: block;
 }
 /* TOOLTIPS */
 

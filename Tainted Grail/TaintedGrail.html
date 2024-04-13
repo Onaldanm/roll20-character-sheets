@@ -21,6 +21,18 @@
             </div>
             <div class="box-content">
                 <div class="sheet-tg-row">
+                    <span data-i18n="color"></span>
+                    <input type="hidden" name="attr_color" class="character-color"></input>
+                    <select class="colors" name="attr_color">
+                        <option value="blue" data-i18n="color_blue"></option>
+                        <option value="brown" data-i18n="color_brown"></option>
+                        <option value="grey" data-i18n="color_grey"></option>
+                        <option value="red" data-i18n="color_red"></option>
+                        <option value="green" data-i18n="color_green"></option>
+                    </select>
+                    <span class="circle"></span>
+                </div>
+                <div class="sheet-tg-row">
                     <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
                 </div>
                 <div class="sheet-tg-row">
@@ -40,21 +52,6 @@
                 </div>
                 <div class="sheet-tg-row">
                     <span data-i18n="occupation"></span><input type="text" name="attr_info_occupation" value="">
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="experience"></span><input type="number" name="attr_info_experience" value="0">
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="color"></span>
-                    <input type="hidden" name="attr_color" class="character-color"></input>
-                    <select class="colors" name="attr_color">
-                        <option value="blue" data-i18n="color_blue"></option>
-                        <option value="brown" data-i18n="color_brown"></option>
-                        <option value="grey" data-i18n="color_grey"></option>
-                        <option value="red" data-i18n="color_red"></option>
-                        <option value="green" data-i18n="color_green"></option>
-                    </select>
-                    <span class="circle"></span>
                 </div>
             </div>
         </div>
@@ -476,14 +473,19 @@
                         <span data-i18n="bonus"></span><input type="number" name="attr_skill_magic_bonus" value="0" min="0">
                         <span data-i18n="malus"></span><input type="number" name="attr_skill_magic_malus" value="0" max="0">
                     </div>
-                    <fieldset class="repeating_MagicDisc">
-                        <div class="domain-disc sheet-tg-row">
-                            <input class="disc_name" name="attr_disc_name" type="text"></input>
-                            <input type="number" name="attr_disc" value="6" min="6" max="15">
-                            <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_name}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[@{skilldice}+@{disc}+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
-                        </div>
-                    </fieldset>
+                    <input type="hidden" class="sheet-magicAwakeToggle" name="attr_magic_wake_toggle" value="hidden"/>
+                    <div class="domain-disc domain-disc-magic sheet-tg-row">
+                        <select class="disc_name" name="attr_disc_magic_name">
+                            <option data-i18n="spell_form_low_magic"></option>
+                            <option data-i18n="spell_form_druid"></option>
+                            <option data-i18n="spell_form_wyrd"></option>
+                            <option data-i18n="spell_form_sorcerer"></option>
+                        </select>
+                        <input type="number" name="attr_disc_magic_base" value="6" min="6" max="15">
+                        <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                        value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=@{disc_magic_name}}} {{way=@{skill_magic_way_mod_text}}} {{roll=[[@{skilldice}+@{disc_magic_base}+@{skill_magic_way_mod}[@{skill_magic_way_mod_text}]+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                    </div>
+                    <button type="action" class="btn sheet-magicAwakeToggleButton" name="act_awake_magic" data-i18n="awake_magic"></button>
                 </div>
                 <div class="domain-box" data-i18n-list-item="skill_natural_environment">
                     <div class="domain-title sheet-tg-row">
@@ -1033,6 +1035,40 @@
             </div>
         </div>
     </div>
+    <div class="character-combat big-box big-box-full">
+        <input type="hidden" class="sheet-magicAwakeToggle" name="attr_magic_wake_toggle" value="hidden"/>
+        <div class="spell-box box">
+            <div class="sheet-tg-row">
+                <span class="title" data-i18n="spells"></span>
+            </div>
+            <div class="box-content spells">
+                <div class="headers">
+                    <div class="header" data-i18n="spell_form"></div>
+                    <div class="header" data-i18n="spell_name"></div>
+                    <div class="header" data-i18n="spell_cost"></div>
+                    <div class="header" data-i18n="spell_invocation_type"></div>
+                    <div class="header"></div>
+                </div>
+                <fieldset class="repeating_Spells">
+                    <select class="spell_form" name="attr_spell_form">
+                        <option value="@{awareness}" data-i18n="spell_form_low_magic"></option>
+                        <option value="@{conviction}" data-i18n="spell_form_druid"></option>
+                        <option value="@{creativity}" data-i18n="spell_form_wyrd"></option>
+                        <option value="@{reason}" data-i18n="spell_form_sorcerer"></option>
+                    </select>
+                    <input class="spell_name" name="attr_spell_name" type="text"></input>
+                    <input type="number" name="attr_spell_mana_cost" value="0" min="1">
+                    <select class="spell_invoc" name="attr_spell_invocation">
+                        <option value="spell_invocation_instant_desc" data-i18n="spell_invocation_instant"></option>
+                        <option value="spell_invocation_canalisation_desc" data-i18n="spell_invocation_canalisation"></option>
+                        <option value="spell_invocation_ritual_desc" data-i18n="spell_invocation_ritual"></option>
+                    </select>
+                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{roll=[[1d10+@{spell_form}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="journal">
     <h2 data-i18n="book"></h2>
@@ -1055,6 +1091,12 @@
         {{#way}}
         <div><span class="subheader"><strong><span class="tcat" data-i18n="way"></span>:</strong> {{way}}</span></div>
         {{/way}}
+        {{#spell_mana_cost}}
+        <div><span class="subheader"><strong><span class="tcat" data-i18n="spell_mana_cost"></span>:</strong> {{spell_mana_cost}}</span></div>
+        {{/spell_mana_cost}}
+        {{#spell_invocation}}
+        <div><span class="subheader"><strong><span class="tcat" data-i18n="spell_invocation_type"></span>:</strong> {{spell_invocation}}</span></div>
+        {{/spell_invocation}}
         <div class="arrow-container">
             <div class="arrow-right"></div>
         </div>
@@ -1267,7 +1309,15 @@ function getSectionIDsAsync(sectionName){
             });
         });
     });
-
+    on(`clicked:awake_magic`, async function() {
+        getAttrs(['magic_wake_toggle'], (v) => {
+            let hiddenStatus = v.magic_wake_toggle;
+            hiddenStatus = hiddenStatus === "visible" ? "hidden" : "visible";
+            setAttrs({
+                magic_wake_toggle: hiddenStatus
+            });
+        });
+    });
     on("sheet:opened", function(eventInfo){
         // Init inline label with translations
         setAttrs({
@@ -1487,5 +1537,4 @@ function getSectionIDsAsync(sectionName){
         await addDiscOptionsToAttackMode(options, "MountedCombatDisc", "mounted_combat", "combativeness");
         populateAttackModeList(options)
       };
-      
 </script>
