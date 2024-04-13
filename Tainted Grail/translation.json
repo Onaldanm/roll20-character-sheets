@@ -186,5 +186,6 @@
   "spell_invocation_ritual": "Rituel",
   "spell_invocation_instant_desc": "Lancé immédiatement pendant la passe d'armes",
   "spell_invocation_canalisation_desc": "Concentration durant cette passe d'armes. Lancé au début de la prochain",
-  "spell_invocation_ritual_desc": "Concentration durant deux passe d'armes. Lancé ensuite"
+  "spell_invocation_ritual_desc": "Concentration durant deux passe d'armes. Lancé ensuite",
+  "magic_points": "Points de Magie"
 }

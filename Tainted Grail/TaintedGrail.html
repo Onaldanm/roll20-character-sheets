@@ -895,36 +895,36 @@
                 <span class="title" data-i18n="health"></span>
             </div>
             <div class="box-content box-health-condition">
-            <div class="sheet-tg-row">
-                <span class="skill-label"><span class="fixed" data-i18n="health"></span><span
-                class="sheet-tooltip">?<span><strong data-i18n="health_condition"></strong><br>
-                    <p data-i18n="health_condition_desc"></p>
-                </span></span></span>
-                    <span data-i18n="health_condition_good">(B)</span>
-                    <input type="number" name="attr_health_stage1" value="18">
-                    <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2" value="13">
-                    <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
-                    <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3" value="8">
-                    <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
-                    <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4" value="4">
-                    <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="vigor"></span>
-                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                </button>
-                <input type="number" name="attr_vigor" value="10">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0" max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
-            </div>
+                <div class="sheet-tg-row">
+                    <span class="skill-label"><span class="fixed" data-i18n="health"></span><span
+                    class="sheet-tooltip">?<span><strong data-i18n="health_condition"></strong><br>
+                        <p data-i18n="health_condition_desc"></p>
+                    </span></span></span>
+                        <span data-i18n="health_condition_good">(B)</span>
+                        <input type="number" name="attr_health_stage1" value="18">
+                        <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2" value="13">
+                        <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
+                        <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3" value="8">
+                        <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
+                        <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4" value="4">
+                        <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="vigor"></span>
+                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                            value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                    </button>
+                    <input type="number" name="attr_vigor" value="10">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0" max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
+                </div>
             </div>
         </div>
     </div>
@@ -1040,6 +1040,12 @@
         <div class="spell-box box">
             <div class="sheet-tg-row">
                 <span class="title" data-i18n="spells"></span>
+                <div class="right mana">
+                    <div class="sheet-tg-row mana_points">
+                        <span data-i18n="magic_points"></span><input type="number" name="attr_magic_points" min="0"> / </span><input
+                            type="number" name="attr_magic_points_max" readonly>
+                    </div>
+                </div>
             </div>
             <div class="box-content spells">
                 <div class="headers">
@@ -1057,7 +1063,7 @@
                         <option value="@{reason}" data-i18n="spell_form_sorcerer"></option>
                     </select>
                     <input class="spell_name" name="attr_spell_name" type="text"></input>
-                    <input type="number" name="attr_spell_mana_cost" value="0" min="1">
+                    <input type="number" name="attr_spell_mana_cost" value="1" min="1">
                     <select class="spell_invoc" name="attr_spell_invocation">
                         <option value="spell_invocation_instant_desc" data-i18n="spell_invocation_instant"></option>
                         <option value="spell_invocation_canalisation_desc" data-i18n="spell_invocation_canalisation"></option>
@@ -1447,7 +1453,17 @@ function getSectionIDsAsync(sectionName){
             });
         });
     });
+    on("sheet:opened change:disc_magic_base", function() {
+        getAttrs(["disc_magic_base"], function(values) {
+            var score = parseInt(values.disc_magic_base);
+            var mp = Math.min(Math.floor(score / 2) + 3, 10);
+            setAttrs({
+                magic_points_max: mp
+            });
+        });
+    });
 
+    
     on("sheet:opened change:creativity change:potential_base", function() {
         getAttrs(["creativity"], function(values) {
             var cr = parseInt(values.creativity);
@@ -1459,7 +1475,6 @@ function getSectionIDsAsync(sectionName){
                 potential_base: pot
             });
         });
-        populateSelectionFunct();
     });
     
     on('clicked:roll_attack', (info) => {

@@ -348,9 +348,11 @@ input.character-color[value="brown"]~.circle {
   grid-column: span 1;
 }
 
+input.sheet-magicAwakeToggle[value="hidden"] ~ .magic-points-box,
 input.sheet-magicAwakeToggle[value="hidden"] ~ .domain-disc-magic {
     display: none;
 }
+input.sheet-magicAwakeToggle[value="visible"] ~ .magic-points-box,
 input.sheet-magicAwakeToggle[value="visible"] ~ .domain-disc-magic {
     display: flex;
 }
@@ -359,6 +361,20 @@ input.sheet-magicAwakeToggle[value="hidden"] ~ .spell-box {
 }
 input.sheet-magicAwakeToggle[value="visible"] ~ .spell-box {
     display: block;
+}
+.mana {
+    display: grid;
+    background-color: #E6DFD9;
+    color: #000;
+    padding: 5px;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+}
+.mana span {
+    padding-right: 5px;
+}
+.mana .mana_points {
+    align-items: self-end;
 }
 /* TOOLTIPS */
 
