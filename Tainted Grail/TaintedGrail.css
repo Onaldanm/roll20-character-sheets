@@ -4,24 +4,37 @@
 .charsheet .character2,
 .charsheet .journal {
     display: none;
-    padding: 5px;
-    border: 1px solid #ccc;
 }
 .charsheet .tab {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid rgba(97, 70, 113, .15);
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
     cursor: pointer;
-    border: 1px solid #ccc;
-    border-bottom: 1px solid #fff;
-    padding: 10px;
+}
+.charsheet .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    font-family: Quiza, Times New Roman, Times, serif;
+    font-size: 1.2rem;
     background-color: #fff;
-    margin-bottom: -1px;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    border-bottom: 1px solid #432a77;
 }
 .charsheet .tab:hover {
-    background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    color: #d20bf2;
+    border-color: #d20bf2;
 }
 .charsheet .tabstoggle[value="character"]~.tabs .tab-character,
 .charsheet .tabstoggle[value="character2"]~.tabs .tab-character2,
 .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
-    background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+    color: #3066b1;
+    border-color: #3066b1;
 }
 .charsheet .tabstoggle[value="character"]~div.character,
 .charsheet .tabstoggle[value="character2"]~div.character2,
@@ -927,3 +940,34 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   .stats__row .header__row {
     gap: 15px;
   }
+
+  .header-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-title {
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: auto 2rem 1fr;
+    margin: 1rem 0;
+    align-items: center;
+  }
+  .health-box {
+    display: grid;
+  }
+  .skill-category__header--span {
+    grid-column: 1;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+  
+.header-title .skill-category__header--span + hr {
+    grid-column: 3;
+    border: none;
+    border-bottom: 2px solid #acb7b1;
+    align-self: center;
+    width: 100%;
+  }
+
