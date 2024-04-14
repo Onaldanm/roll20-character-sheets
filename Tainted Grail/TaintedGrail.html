@@ -5,97 +5,95 @@
     </div>
     <div class="header__bio">
         <div class="header__row">
-            <label class="toolbar__settings header__row--name">
-                <span class="title-name" name="attr_character_name"></span>
-                <input name="attr_show_settings" type="checkbox"/>
-              </label>
-              <input class="toggle-popup" name="attr_show_settings" value="0" type="hidden"/>
-              <article class="popup settings">
-                <div class="popup__title">
-                    <span class="popup__title--span" data-i18n="settings"></span>
-                </div>
-                <label class="popup__close">
-                    <input class="popup__close--btn" name="attr_show_settings" type="checkbox"/>
-                    <img class="popup__close--symbol" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/ARC/assets/close.svg" title="close">
-                    </img>
-                </label>
-                <div class="popup__content">
-                    <div class="box-content">
-                        <div class="sheet-tg-row">
-                            <span data-i18n="color"></span>
-                            <select class="colors" name="attr_color">
-                                <option value="blue" data-i18n="color_blue"></option>
-                                <option value="brown" data-i18n="color_brown"></option>
-                                <option value="grey" data-i18n="color_grey"></option>
-                                <option value="red" data-i18n="color_red"></option>
-                                <option value="green" data-i18n="color_green"></option>
-                            </select>
+            <a class="toolbar__settings header__row--name" href="#popup_settings"><span name="attr_character_name"></span></a>
+            <div id="popup_settings" class="overlay">
+                <div class="popup">
+                    <h2>Configuration</h2>
+                    <a class="close" href="#">×</a>
+                    <div class="content">
+                        <div class="box-content">
+                            <div class="sheet-tg-row">
+                                <span data-i18n="color"></span>
+                                <select class="colors" name="attr_color">
+                                    <option value="blue" data-i18n="color_blue"></option>
+                                    <option value="brown" data-i18n="color_brown"></option>
+                                    <option value="grey" data-i18n="color_grey"></option>
+                                    <option value="red" data-i18n="color_red"></option>
+                                    <option value="green" data-i18n="color_green"></option>
+                                </select>
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="age"></span><input type="text" name="attr_info_age" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="traits"></span><input type="text" name="attr_info_trait" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="origins"></span><input type="text" name="attr_info_origins" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <span data-i18n="occupation"></span><input type="text" name="attr_info_occupation" value="">
+                            </div>
+                            <div class="sheet-tg-row">
+                                <select name="attr_whispertype" class="underlined" title="@{whispertype}">
+                                    <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls
+                                    </option>
+                                    <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }"
+                                        data-i18n="query-whisper-roll">Query Whisper</option>
+                                    <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="sheet-tg-row">
-                            <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
+                            <span class="title" data-i18n="ways"></span>
                         </div>
-                        <div class="sheet-tg-row">
-                            <span data-i18n="concept"></span><input type="text" name="attr_info_concept" value="">
-                        </div>
-                        <div class="sheet-tg-row">
-                            <span data-i18n="age"></span><input type="text" name="attr_info_age" value="">
-                        </div>
-                        <div class="sheet-tg-row">
-                            <span data-i18n="traits"></span><input type="text" name="attr_info_trait" value="">
-                        </div>
-                        <div class="sheet-tg-row">
-                            <span data-i18n="origins"></span><input type="text" name="attr_info_origins" value="">
-                        </div>
-                        <div class="sheet-tg-row">
-                            <span data-i18n="occupation"></span><input type="text" name="attr_info_occupation" value="">
-                        </div>
-                        <div class="sheet-tg-row">
-                            <select name="attr_whispertype" class="underlined" title="@{whispertype}"> <option value="" data-i18n="never-whisper-roll" selected="selected">Never Whisper Rolls</option> <option value="?{@{ask_whisper}|@{ask_public_roll},|@{ask_whisper_roll},/w gm }" data-i18n="query-whisper-roll">Query Whisper</option> <option value="/w gm " data-i18n="always-whisper-roll">Always Whisper Rolls</option> </select>
-                        </div>
-                    </div>
-                    <div class="sheet-tg-row">
-                        <span class="title" data-i18n="ways"></span>
-                    </div>
-                    <div class="box-content ways_skills" data-i18n-list="ways-list">
-                        <div class="sheet-tg-row" data-i18n-list-item="way_combativeness">
-                            <span class="skill-label"><span data-i18n="way_combativeness"></span><span
-                                    class="sheet-tooltip">?<span><strong data-i18n="way_combativeness"></strong><br>
-                                        <p data-i18n="way_combativeness_desc"></p>
-                                    </span></span></span>
-                            <input type="number" name="attr_combativeness" value="1" min="1" max="5">
-                        </div>
-                        <div class="sheet-tg-row" data-i18n-list-item="way_awareness">
-                            <span class="skill-label"><span data-i18n="way_awareness"></span><span
-                                    class="sheet-tooltip">?<span><strong data-i18n="way_awareness"></strong><br>
-                                        <p data-i18n="way_awareness_desc"></p>
-                                    </span></span></span>
-                            <input type="number" name="attr_awareness" value="1" min="1" max="5">
-                        </div>
-                        <div class="sheet-tg-row" data-i18n-list-item="way_creativity">
-                            <span class="skill-label"><span data-i18n="way_creativity"></span><span
-                                    class="sheet-tooltip">?<span><strong data-i18n="way_creativity"></strong><br>
-                                        <p data-i18n="way_creativity_desc"></p>
-                                    </span></span></span>
-                            <input type="number" name="attr_creativity" value="1" min="1" max="5">
-                        </div>
-                        <div class="sheet-tg-row" data-i18n-list-item="way_conviction">
-                            <span class="skill-label"><span data-i18n="way_conviction"></span><span
-                                    class="sheet-tooltip">?<span><strong data-i18n="way_conviction"></strong><br>
-                                        <p data-i18n="way_conviction_desc"></p>
-                                    </span></span></span>
-                            <input type="number" name="attr_conviction" value="1" min="1" max="5">
-                        </div>
-                        <div class="sheet-tg-row" data-i18n-list-item="way_reason">
-                            <span class="skill-label"><span data-i18n="way_reason"></span><span
-                                    class="sheet-tooltip">?<span><strong data-i18n="way_reason"></strong><br>
-                                        <p data-i18n="way_reason_desc"></p>
-                                    </span></span></span>
-                            <input type="number" name="attr_reason" value="1" min="1" max="5">
+                        <div class="box-content ways_skills" data-i18n-list="ways-list">
+                            <div class="sheet-tg-row" data-i18n-list-item="way_combativeness">
+                                <span class="skill-label"><span data-i18n="way_combativeness"></span><span
+                                        class="sheet-tooltip">?<span><strong data-i18n="way_combativeness"></strong><br>
+                                            <p data-i18n="way_combativeness_desc"></p>
+                                        </span></span></span>
+                                <input type="number" name="attr_combativeness" value="1" min="1" max="5">
+                            </div>
+                            <div class="sheet-tg-row" data-i18n-list-item="way_awareness">
+                                <span class="skill-label"><span data-i18n="way_awareness"></span><span
+                                        class="sheet-tooltip">?<span><strong data-i18n="way_awareness"></strong><br>
+                                            <p data-i18n="way_awareness_desc"></p>
+                                        </span></span></span>
+                                <input type="number" name="attr_awareness" value="1" min="1" max="5">
+                            </div>
+                            <div class="sheet-tg-row" data-i18n-list-item="way_creativity">
+                                <span class="skill-label"><span data-i18n="way_creativity"></span><span
+                                        class="sheet-tooltip">?<span><strong data-i18n="way_creativity"></strong><br>
+                                            <p data-i18n="way_creativity_desc"></p>
+                                        </span></span></span>
+                                <input type="number" name="attr_creativity" value="1" min="1" max="5">
+                            </div>
+                            <div class="sheet-tg-row" data-i18n-list-item="way_conviction">
+                                <span class="skill-label"><span data-i18n="way_conviction"></span><span
+                                        class="sheet-tooltip">?<span><strong data-i18n="way_conviction"></strong><br>
+                                            <p data-i18n="way_conviction_desc"></p>
+                                        </span></span></span>
+                                <input type="number" name="attr_conviction" value="1" min="1" max="5">
+                            </div>
+                            <div class="sheet-tg-row" data-i18n-list-item="way_reason">
+                                <span class="skill-label"><span data-i18n="way_reason"></span><span
+                                        class="sheet-tooltip">?<span><strong data-i18n="way_reason"></strong><br>
+                                            <p data-i18n="way_reason_desc"></p>
+                                        </span></span></span>
+                                <input type="number" name="attr_reason" value="1" min="1" max="5">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </article>
-        </div>
+            </div>
+            </div>
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
                 <span data-i18n="gender" class="headeritem__label"></span>

@@ -707,7 +707,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .header__row,.header__row--name {
     display: flex;
     gap: 2rem;
-    align-items: center
+    align-items: center;
 }
 
 .characterviewer .content {
@@ -739,6 +739,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 
 .header__row--name:hover,.header__row--name:hover * {
     color: #FEE2BB;
+    text-decoration: none;
 }
 
 .header__avatar {
@@ -802,9 +803,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     height: 24px;
     opacity: 0.5;
   }
-  .toggle-popup[value="0"] + .popup {
-    display: none;
-  }
+
 
 .headeritem__label {
     font-family: Quiza,Verdana,Geneva,Tahoma,sans-serif;
@@ -827,83 +826,55 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .title-name {
     font-size: 2em;
 }
-.popup {
-    display: inline-flex;
-    flex-direction: column;
+  
+  .overlay {
     position: fixed;
-    top: 10rem;
-    left: 50px;
-    border: 2px solid transparent;
-    padding: 0.5rem;
-    width: 80%;
-    z-index: 1000;
-    min-width: 255px;
-    min-height: 400px;
-    box-shadow: 5px 5px 6px rgba(23, 18, 18, 0.2);
-    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
   }
-  .popup__title {
-    display: flex;
-    justify-content: center;
-    margin-top: -1.5rem;
-    height: 2rem;
-    align-items: end;
-    text-align: center;
-  }
-  .popup__title--span {
-    padding: 0.2rem 0.5rem;
-    border: 2px solid transparent;
-    font-family: "Piazzolla", serif;
-    text-transform: uppercase;
-  }
-  .popup__close {
-    white-space: nowrap;
-    cursor: pointer;
-    height: 2rem;
-    position: absolute;
-    right: 1rem;
-    width: fit-content !important;
-  }
-  .popup__close:hover {
-    transition: all 1s;
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-  }
-  .popup__close--btn {
-    display: none !important;
-  }
-  .popup__close--symbol {
-    float: right;
-    width: 18px;
-    height: 18px;
-    opacity: 0.5;
-  }
-  .popup__close--symbol:hover {
+  .overlay:target {
+    visibility: visible;
     opacity: 1;
   }
-  .popup__header {
-    font-family: "Piazzolla", serif;
-    text-transform: uppercase;
-    padding-bottom: 8px;
-    display: flex;
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
   }
-  .popup__header--span {
-    font-size: 1.33rem;
-    margin-right: 0.5rem;
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
   }
-  .popup__content {
-    overflow-y: scroll;
-  }
-  .popup__content::first-letter {
-    font-family: "Piazzolla", serif;
-    font-size: 1.5rem;
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
     font-weight: bold;
+    text-decoration: none;
+    color: #333;
   }
-
-
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
 
   /* Conteneur de la grille */
 .grid-container {
