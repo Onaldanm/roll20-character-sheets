@@ -23,6 +23,9 @@
                                 </select>
                             </div>
                             <div class="sheet-tg-row">
+                                <span data-i18n="gender"></span><input type="text" name="attr_info_gender" value="">
+                            </div>
+                            <div class="sheet-tg-row">
                                 <span data-i18n="name"></span><input type="text" name="attr_character_name" value="">
                             </div>
                             <div class="sheet-tg-row">
@@ -109,6 +112,11 @@
                 <span data-i18n="concept" class="headeritem__label"></span>
                 <span class="headeritem__value" name="attr_info_concept"></span>
             </div>
+            <div data-test="bio-field" class="headeritem__item">
+                <span data-i18n="color" class="headeritem__label"></span>
+                <input type="hidden" name="attr_color" class="character-color"></input>
+                <div class="rect bio-rect"></div>
+            </div>
         </div>
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
@@ -122,11 +130,6 @@
             <div data-test="bio-field" class="headeritem__item">
                 <span data-i18n="occupation" class="headeritem__label"></span>
                 <span class="headeritem__value" name="attr_info_occupation"></span>
-            </div>
-            <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="color" class="headeritem__label"></span>
-                <input type="hidden" name="attr_color" class="character-color"></input>
-                <div class="rect bio-rect"></div>
             </div>
         </div>
     </div>
@@ -195,63 +198,102 @@
 <div class="middle">
     <div class="header-box">
         <div class="health-box">
-            <header class="header-title">
-                <span class="skill-category__header--span" data-i18n="health">Titre de taille variable</span>
-                <hr>
-            </header>
-            <div class="box-content box-health-condition">
-                <div class="sheet-tg-row">
-                    <span class="skill-label"><span class="fixed" data-i18n="health"></span><span
-                            class="sheet-tooltip">?<span><strong data-i18n="health_condition"></strong><br>
-                                <p data-i18n="health_condition_desc"></p>
-                            </span></span></span>
-                    <span data-i18n="health_condition_good">(B)</span>
-                    <input type="number" name="attr_health_stage1" value="18">
-                    <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2"
-                        value="13">
-                    <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
-                    <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3"
-                        value="8">
-                    <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
-                    <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
-                        value="4">
-                    <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
+            <div class="health-header-bar">
+                <div class="hp-info-box">
+                    <input type="hidden" class="health-current-malus" name="attr_health_mod">
+                    <div class="stats__cell--derived-current hp-info-health">
+                        <div class="derived--current">
+                            <div class="derived__wrapper--soul">
+                                <a class="skill-category__header--span" href="#popup_health"><span data-i18n="health" class="derived__label"></span></a>
+                                <div class="derived__value">
+                                    <div class="number" optionvalue="10" data-test="soul-stat-current">
+                                        <button class="number__incrementor" type="action" name="act_sub_health"> -</button>
+                                        <input class="number__field" type="text" name="attr_healthpoints" value="18">
+                                        <button class="number__incrementor" type="action" name="act_add_health"> +</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="box-content box-health-condition">
+                    <div class="health-bar">
+                        <span class="health-status health-good" data-i18n="health_condition_good"></span>
+                        <span class="health-status health-okay" data-i18n="health_condition_okay"></span>
+                        <span class="health-status health-bad" data-i18n="health_condition_bad"></span>
+                        <span class="health-status health-critical" data-i18n="health_condition_critical"></span>
+                        <span class="health-status health-agony" data-i18n="health_condition_agony"></span>
+                        <input type="hidden" name="attr_health_good_current" value="0" class="current-health-good"></input>
+                        <input type="hidden" name="attr_health_good_max" value="5" class="input-range"></input>
+                        <div class="grid-container grid-break health-good">
+                            <div class="square square-health-good"></div>
+                            <div class="square square-health-good"></div>
+                            <div class="square square-health-good"></div>
+                            <div class="square square-health-good"></div>
+                            <div class="square square-health-good"></div>
+                        </div>
+                        <input type="hidden" name="attr_health_okay_current" value="0" class="current-health-okay"></input>
+                        <input type="hidden" name="attr_health_okay_max" value="5" class="input-range"></input>
+                        <div class="grid-container grid-break health-okay">
+                            <div class="square square-health-okay"></div>
+                            <div class="square square-health-okay"></div>
+                            <div class="square square-health-okay"></div>
+                            <div class="square square-health-okay"></div>
+                            <div class="square square-health-okay"></div>
+                        </div>
+                        <input type="hidden" name="attr_health_bad_current" value="0" class="current-health-bad"></input>
+                        <input type="hidden" name="attr_health_bad_max" value="4" class="input-range"></input>
+                        <div class="grid-container grid-break health-bad">
+                            <div class="square square-health-bad"></div>
+                            <div class="square square-health-bad"></div>
+                            <div class="square square-health-bad"></div>
+                            <div class="square square-health-bad"></div>
+                            <div class="square square-health-bad"></div>
+                        </div>
+                        <input type="hidden" name="attr_health_critical_current" value="0" class="current-health-critical"></input>
+                        <input type="hidden" name="attr_health_critical_max" value="4" class="input-range"></input>
+                        <div class="grid-container grid-break health-critical">
+                            <div class="square square-health-critical"></div>
+                            <div class="square square-health-critical"></div>
+                            <div class="square square-health-critical"></div>
+                            <div class="square square-health-critical"></div>
+                            <div class="square square-health-critical"></div>
+                        </div>
+                        <input type="hidden" name="attr_health_agony_current" value="0" class="current-health-agony"></input>
+                        <input type="hidden" name="attr_health_agony_max" value="1" class="input-range"></input>
+                        <div class="grid-container grid-break health-agony">
+                            <div class="square square-health-agony"></div>
+                            <div class="square square-health-agony"></div>
+                            <div class="square square-health-agony"></div>
+                            <div class="square square-health-agony"></div>
+                            <div class="square square-health-agony"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
+                <div class="hp-info-box">
+                    <div class="hp-info-square hp-info-health">
+                        <span data-i18n="vigor"></span>
+                        <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                            value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                        </button>
+                        <input type="number" name="attr_vigor" value="10">
+                    </div>
                 </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
+                <div class="hp-info-box">
+                    <div class="hp-info-square hp-info-health">
+                        <span data-i18n="mental_resist"></span>
+                        <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                            value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                        </button>
+                        <input type="number" name="attr_mentalresist" value="9">
+                    </div>
                 </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="vigor"></span>
-                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                    </button>
-                    <input type="number" name="attr_vigor" value="10">
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0"
+                <div class="hp-info-box">
+                    <div class="hp-info-square hp-info-health">
+                        <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0"
                         max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="health box">
-            <div class="sheet-tg-row">
-                <span class="title" data-i18n="sanity"></span>
-            </div>
-            <div class="box-content">
-                <div class="sheet-tg-row">
-                    <span data-i18n="mental_resist"></span>
-                    <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                        value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                    </button>
-                    <input type="number" name="attr_mentalresist" value="9">
-                </div>
-                <div class="sheet-tg-row">
-                    <span data-i18n="tourments"></span>
-                </div>
-                <div class="sheet-tg-row"><textarea></textarea></div>
             </div>
         </div>
     </div>
@@ -1309,7 +1351,51 @@
     <span data-i18n="copyright"></span>
     <span data-i18n="author"></span>
 </div>
-
+<div id="popup_health" class="overlay">
+    <div class="popup">
+        <h2>Santé</h2>
+        <a class="close" href="#">×</a>
+        <div class="content">
+            <div class="sheet-tg-row">
+                <span data-i18n="health_condition_good">(B)</span>
+                <input type="number" name="attr_health_stage1" value="18">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2"
+                    value="13">
+                <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3"
+                    value="8">
+                <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
+                    value="4">
+                <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
+            </div>
+            <div class="sheet-tg-row">
+                <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Case Bon</span><input type="number" name="attr_health_good_max" value="5"></input>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Case Moyen</span><input type="number" name="attr_health_okay_max" value="5"></input>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Case Grave</span><input type="number" name="attr_health_bad_max" value="4"></input>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Case Critique</span><input type="number" name="attr_health_critical_max" value="4"></input>
+            </div>
+        </div>
+    </div>
+</div>
 <rolltemplate class="sheet-rolltemplate-d10roll">
     <div class="container">
         {{#spell_mana_cost}}
@@ -1673,22 +1759,130 @@ function getSectionIDsAsync(sectionName){
          });
      });
 
-    on("sheet:opened change:healthpoints", function() {
-        getAttrs(["healthpoints", "health_stage2", "health_stage3", "health_stage4", "health_stage2_mod", "health_stage3_mod", "health_stage4_mod"], function(values) {
-            var hp =  parseInt(values["healthpoints"]);
-            var ok = parseInt(values["health_stage2"]);
-            var bad = parseInt(values["health_stage3"]);
-            var critical = parseInt(values["health_stage4"]);
-            var penalty=0;
-            if ( hp <= critical ) penalty = -3;
-            else if ( hp <= bad ) penalty = -2;
-            else if ( hp <= ok ) penalty = -1;
-            setAttrs({
+    const computeHp = async (hp, hp_max) => {
+        values = await getAttrsAsync(["health_good_max", "health_okay_max", "health_bad_max", "health_critical_max", "health_agony_max"]);
+        const health_good_max = parseInt(values["health_good_max"]);
+        const health_okay_max = parseInt(values["health_okay_max"]);
+        const health_bad_max = parseInt(values["health_bad_max"]);
+        const health_critical_max = parseInt(values["health_critical_max"]);
+        const health_agony_max = parseInt(values["health_agony_max"]);
+        // Calculer la différence entre la valeur maximale de HP et le nombre actuel de points de vie
+        health_good_current = 0;
+        health_okay_current = 0;
+        health_bad_current = 0;
+        health_critical_current = 0;
+        health_agony_current = 0;
+        if (hp > HP_max)
+            hp = HP_max;
+        const difference = HP_max - hp;
+        console.log(difference)
+        // Incrémenter les valeurs actuelles de chaque niveau de santé en fonction de la différence
+        if (difference <= health_good_max) {
+            health_good_current += difference;
+        } else if (difference <= health_good_max + health_okay_max) {
+            health_good_current = health_good_max;
+            health_okay_current += difference - health_good_max;
+        } else if (difference <= health_good_max + health_okay_max + health_bad_max) {
+            health_good_current = health_good_max;
+            health_okay_current = health_okay_max;
+            health_bad_current += difference - (health_good_max + health_okay_max);
+        } else if (difference <= health_good_max + health_okay_max + health_bad_max + health_critical_max) {
+            health_good_current = health_good_max;
+            health_okay_current = health_okay_max;
+            health_bad_current = health_bad_max;
+            health_critical_current += difference - (health_good_max + health_okay_max + health_bad_max);
+        } else {
+            health_good_current = health_good_max;
+            health_okay_current = health_okay_max;
+            health_bad_current = health_bad_max;
+            health_critical_current = health_critical_max;
+            health_agony_current = 1;
+        }
+        await setAttrsAsync(
+        {
+            "healthpoints": hp,
+            "health_good_current": health_good_current,
+            "health_okay_current": health_okay_current,
+            "health_bad_current": health_bad_current,
+            "health_critical_current": health_critical_current,
+            "health_agony_current": health_agony_current
+        });
+    };
+    const getMaxHealth = async () => {
+        values = await getAttrsAsync(["health_good_max", "health_okay_max", "health_bad_max", "health_critical_max", "health_agony_max"]);
+        const health_good_max = parseInt(values["health_good_max"]);
+        const health_okay_max = parseInt(values["health_okay_max"]);
+        const health_bad_max = parseInt(values["health_bad_max"]);
+        const health_critical_max = parseInt(values["health_critical_max"]);
+        const health_agony_max = parseInt(values["health_agony_max"]);
+        HP_max = health_good_max + health_okay_max + health_bad_max + health_critical_max + health_agony_max;
+        return HP_max; 
+    };
+    const computeHpMalus = async (hp) => {
+        values = await getAttrsAsync(["health_stage1", "health_stage2", "health_stage3", "health_stage4"]);
+        var ok = parseInt(values["health_stage2"]);
+        var bad = parseInt(values["health_stage3"]);
+        var critical = parseInt(values["health_stage4"]);
+        var penalty=0;
+        if ( hp <= critical ) penalty = -3;
+        else if ( hp <= bad ) penalty = -2;
+        else if ( hp <= ok ) penalty = -1;
+        await setAttrsAsync(
+            {
                 "health_mod": penalty
             });
+    };
+    const computeHpBox = async () => {
+        values = await getAttrsAsync(["health_stage1", "health_stage2", "health_stage3", "health_stage4"]);
+        var good = parseInt(values["health_stage1"]);
+        var ok = parseInt(values["health_stage2"]);
+        var bad = parseInt(values["health_stage3"]);
+        var critical = parseInt(values["health_stage4"]);
+        health_good_max = good - ok;
+        health_okay_max = ok - bad;
+        health_bad_max = bad - critical;
+        health_critical_max = critical - 1;
+        await setAttrsAsync(
+            {
+                "health_good_max": health_good_max,
+                "health_okay_max": health_okay_max,
+                "health_bad_max": health_bad_max,
+                "health_critical_max": health_critical_max
+            });
+    };
+    on("sheet:opened change:health_stage1 change:health_stage2 change:health_stage3 change:health_stage4", async function() {
+        await computeHpBox();
+    });
+    on("sheet:opened change:healthpoints", async function() {
+        values = await getAttrsAsync(["healthpoints"]);
+        var hp =  parseInt(values["healthpoints"]);
+        await computeHpMalus(hp);
+        var hp_max = await getMaxHealth();
+        await computeHp(hp, hp_max);
+      });
+
+      on("clicked:add_health", async function() {
+        values = await getAttrsAsync(["healthpoints"]);
+        var hp =  parseInt(values["healthpoints"]);
+        var hp_max = await getMaxHealth();
+        if (hp < hp_max) hp += 1;
+        await setAttrsAsync(
+        {
+            "healthpoints": hp
         });
       });
 
+      on("clicked:sub_health", async function() {
+        values = await getAttrsAsync(["healthpoints"]);
+        var hp =  parseInt(values["healthpoints"]);
+        var hp_max = await getMaxHealth();
+        if (hp > 0) hp -= 1;
+        await setAttrsAsync(
+        {
+            "healthpoints": hp
+        });
+      });
+      
       on('sheet:opened change:attitude_mode', (info) => {
         // Retrieve Attitude Mode
         getAttrs(['attitude_mode'], (v) => {

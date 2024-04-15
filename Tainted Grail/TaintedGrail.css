@@ -182,12 +182,6 @@
 .charsheet .skill-label {
     display: flex;
 }
-.charsheet .box-health-condition span.fixed {
-    margin-left: 0;
-}
-.charsheet .box-health-condition span {
-    margin-left: 5px;
-}
 .charsheet .skills {
     margin-bottom: 0;
     margin-left: 5px;
@@ -892,7 +886,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   /* Conteneur de la grille */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 15px); /* 5 colonnes de 50 pixels de large */
+    grid-template-columns: repeat(5, auto); /* 5 colonnes de 50 pixels de large */
     grid-gap: 5px; /* Espacement entre les carrés */
     padding-top: 3px;
   }
@@ -902,11 +896,13 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     width: 15px;
     height: 15px;
     background-color: #ccc; /* Couleur de fond des carrés */
+    display: contents;
   }
   
   /* Masquer tous les carrés */
   .square {
     display: none;
+    visibility: hidden;
   }
   
   /* Afficher les carrés en fonction de la valeur de l'input */
@@ -914,14 +910,24 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   /* Par exemple, :nth-child(1) cible le premier enfant, :nth-child(2) cible le deuxième enfant, etc. */
   /* Nous utilisons la valeur de l'input (1 à 5) pour déterminer quels enfants afficher */
   /* Par exemple, si la valeur de l'input est 3, nous affichons les 3 premiers enfants */
-  .input-range[value="1"] ~ .grid-container .square:nth-child(-n+1),
-  .input-range[value="2"] ~ .grid-container .square:nth-child(-n+2),
-  .input-range[value="3"] ~ .grid-container .square:nth-child(-n+3),
-  .input-range[value="4"] ~ .grid-container .square:nth-child(-n+4),
-  .input-range[value="5"] ~ .grid-container .square:nth-child(-n+5) {
+  .input-range[value="1"] + .grid-container .square:nth-child(-n+1),
+  .input-range[value="2"] + .grid-container .square:nth-child(-n+2),
+  .input-range[value="3"] + .grid-container .square:nth-child(-n+3),
+  .input-range[value="4"] + .grid-container .square:nth-child(-n+4),
+  .input-range[value="5"] + .grid-container .square:nth-child(-n+5) {
     display: block;
+    visibility: visible;
   }
 
+  .input-range[value="4"] + .grid-break {
+    margin-right: -5px;
+  }
+  .input-range[value="3"] + .grid-break {
+    margin-right: -10px;
+  }
+  .input-range[value="2"] + .grid-break {
+    margin-right: -15px;
+  }
   .square-combativeness .square {
     background: linear-gradient(#ff9999, #ff6666);
   }
@@ -943,9 +949,14 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 
   .header-box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
-
+.health-header-bar {
+    display: grid;
+    grid-template-columns: 120px auto 80px 80px 80px;
+    align-items: center;
+    gap: 10px;
+}
   .header-title {
     grid-column: 1 / 5;
     display: grid;
@@ -962,7 +973,41 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     text-transform: uppercase;
     white-space: nowrap;
 }
-  
+  .hp-info-square {
+    height: 80px;
+    width: 80px;
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    font-size: 1.44rem;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+
+  .hp-info-box .number input {
+    align-self: end;
+    padding: 0;
+    margin-top: .25rem;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: center;
+    background: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+  .hp-info-health {
+    color: #4f7172;
+    background: linear-gradient(#d6f2fd, #dbe5f1);
+    filter: drop-shadow(1px 1px #c9ccd1);
+  }
 .header-title .skill-category__header--span + hr {
     grid-column: 3;
     border: none;
@@ -971,3 +1016,216 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     width: 100%;
   }
 
+  .ui-dialog .charsheet .repcontainer .repitem {
+    position: initial !important;
+}
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol {
+    position: initial !important;
+}
+
+.health-bar  {
+    display: grid;
+    grid-template-columns: repeat(5, max-content); /* Cinq colonnes avec une largeur basée sur le contenu */
+    grid-template-rows: auto auto; /* Deux lignes de hauteur automatique */
+    row-gap: 0; /* Espacement entre les éléments */
+    column-gap: 5px;
+  }
+
+  .health-status {
+    text-transform: uppercase;
+    font-size: 1rem;
+
+  }
+  .health-bar .square {
+    background: none;
+    border-radius: 50%;
+  }
+  span.health-good {
+    color: #388E3C;
+  }
+  span.health-okay{
+    color: #FBC02D;
+  }
+  span.health-bad {
+    color: #EF6C00;
+  }
+  span.health-critical {
+    color: #D32F2F;
+  }
+  span.health-agony {
+    color: #7B1FA2;
+  }
+
+  .health-good .square {
+    border: 1px solid  #388E3C;
+  }
+  .health-okay .square {
+    border: 1px solid  #FBC02D;
+  }
+  .health-bad .square {
+    border: 1px solid  #EF6C00;
+  }
+  .health-critical .square {
+    border: 1px solid  #D32F2F;
+  }
+  .health-agony .square {
+    border: 1px solid  #7B1FA2;
+  }
+
+  .current-health-good[value="1"] ~ .grid-container .square-health-good:nth-child(-n+1),
+  .current-health-good[value="2"] ~ .grid-container .square-health-good:nth-child(-n+2),
+  .current-health-good[value="3"] ~ .grid-container .square-health-good:nth-child(-n+3),
+  .current-health-good[value="4"] ~ .grid-container .square-health-good:nth-child(-n+4),
+  .current-health-good[value="5"] ~ .grid-container .square-health-good:nth-child(-n+5) {
+    background: linear-gradient(#4CAF50, #388E3C);
+  }
+
+  .current-health-okay[value="1"] ~ .grid-container .square-health-okay:nth-child(-n+1),
+  .current-health-okay[value="2"] ~ .grid-container .square-health-okay:nth-child(-n+2),
+  .current-health-okay[value="3"] ~ .grid-container .square-health-okay:nth-child(-n+3),
+  .current-health-okay[value="4"] ~ .grid-container .square-health-okay:nth-child(-n+4),
+  .current-health-okay[value="5"] ~ .grid-container .square-health-okay:nth-child(-n+5) {
+    background: linear-gradient(#FFEB3B, #FBC02D);
+  }
+
+  .current-health-bad[value="1"] ~ .grid-container .square-health-bad:nth-child(-n+1),
+  .current-health-bad[value="2"] ~ .grid-container .square-health-bad:nth-child(-n+2),
+  .current-health-bad[value="3"] ~ .grid-container .square-health-bad:nth-child(-n+3),
+  .current-health-bad[value="4"] ~ .grid-container .square-health-bad:nth-child(-n+4),
+  .current-health-bad[value="5"] ~ .grid-container .square-health-bad:nth-child(-n+5) {
+    background: linear-gradient(#FF9800, #EF6C00);
+  }
+
+  .current-health-critical[value="1"] ~ .grid-container .square-health-critical:nth-child(-n+1),
+  .current-health-critical[value="2"] ~ .grid-container .square-health-critical:nth-child(-n+2),
+  .current-health-critical[value="3"] ~ .grid-container .square-health-critical:nth-child(-n+3),
+  .current-health-critical[value="4"] ~ .grid-container .square-health-critical:nth-child(-n+4),
+  .current-health-critical[value="5"] ~ .grid-container .square-health-critical:nth-child(-n+5) {
+    background: linear-gradient(#F44336, #D32F2F);
+  }
+
+  .current-health-agony[value="1"] ~ .grid-container .square-health-agony:nth-child(-n+1) {
+    background: linear-gradient(#B71C1C, #7B1FA2);
+  }
+
+
+  .stats__cell--derived-current, .stats__cell--corporeality {
+    align-self: stretch;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.derived--current, .derived--corporeality {
+    display: flex;
+    align-items: stretch;
+    font-size: 1.44rem !important;
+}
+
+.derived--current .derived__wrapper, .derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul, .derived--corporeality .derived__wrapper, .derived--corporeality .derived__wrapper--body, .derived--corporeality .derived__wrapper--mind, .derived--corporeality .derived__wrapper--soul {
+    aspect-ratio: unset;
+    padding: .5rem;
+}
+.derived__wrapper, .derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul, .derived--corporeality .derived__wrapper--body, .derived--corporeality .derived__wrapper--mind, .derived--corporeality .derived__wrapper--soul, .derived--total .derived__wrapper--body, .derived--total .derived__wrapper--mind, .derived--total .derived__wrapper--soul {
+    max-width: 100%;
+    max-height: 6rem;
+    min-height: 5rem;
+}
+.derived--current .derived__wrapper, .derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul {
+    max-width: 10rem;
+}
+.derived__wrapper, .derived--total .derived__wrapper--body, .derived--total .derived__wrapper--mind, .derived--total .derived__wrapper--soul, .derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul, .derived--corporeality .derived__wrapper--body, .derived--corporeality .derived__wrapper--mind, .derived--corporeality .derived__wrapper--soul {
+    max-height: 7rem;
+    padding: .5rem 1rem;
+    font-size: 1.44rem;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+    max-width: 10rem;
+}
+.derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul, .derived--corporeality .derived__wrapper--body, .derived--corporeality .derived__wrapper--mind, .derived--corporeality .derived__wrapper--soul {
+    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 1.5rem 100%, 0 calc(100% - 1.5rem));
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 1.5rem 100%, 0 calc(100% - 1.5rem));
+}
+.derived--current .derived__wrapper--body, .derived--corporeality .derived__wrapper--body {
+    color: #4f7172;
+    background: linear-gradient(#d6f2fd, #dbe5f1);
+}
+.derived__label {
+    font-size: 12px;
+}
+.derived__value {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.number {
+    display: grid;
+    grid-template-columns: minmax(3rem, min-content) minmax(calc(100% - 6rem), 1fr) minmax(3rem, min-content);
+    overflow: clip;
+    border: 1px solid #666;
+    border-radius: .3rem;
+}
+.stats__cell--derived-current .number, .stats__cell--corporeality .number, .stats__cell--notify .number {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 2.5rem 1fr 2.5rem;
+    align-items: center;
+    border: none;
+    font-size: inherit;
+}
+.number__incrementor, .number__decrementor {
+    padding: .5rem;
+    background-color: #eee;
+    border: 0px;
+    border-radius: 0;
+}
+.stats__cell--derived-current .number__incrementor, .stats__cell--derived-current .number__decrementor, .stats__cell--corporeality .number__incrementor, .stats__cell--corporeality .number__decrementor, .stats__cell--notify .number__incrementor, .stats__cell--notify .number__decrementor {
+    border: none;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    background-color: transparent !important;
+    color: inherit !important;
+    cursor: pointer;
+}
+.character .number__decrementor, .character .number__incrementor, .npc .number__decrementor, .npc .number__incrementor, .example .number__decrementor, .example .number__incrementor {
+    background-color: #7d3ba4;
+    color: #fff;
+    font-weight: 600;
+}
+.stats__cell--derived-current .number input, .stats__cell--corporeality .number input, .stats__cell--notify .number input {
+    align-self: end;
+    padding: 0;
+    margin-top: .25rem;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: center;
+    background: none;
+    color: inherit;
+}
+
+.health-current-malus[value="0"] + .hp-info-health {
+    background: linear-gradient(#D3E3D3, #C3EDC3);
+    color: #2E8B57;
+}
+.health-current-malus[value="-1"] + .hp-info-health {
+    background: linear-gradient(#FFFDE7, #FFF9C4);
+    color: #FFB300;
+}
+.health-current-malus[value="-2"] + .hp-info-health {
+    background: linear-gradient(#FFE0B2, #FFCC80);
+    color: #FF6F00;
+}
+.health-current-malus[value="-3"] + .hp-info-health {
+    background: linear-gradient(#FFCDD2, #FFAB91);
+    color: #D50000;
+}
