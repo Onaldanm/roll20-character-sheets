@@ -200,7 +200,6 @@
         <div class="health-box">
             <div class="health-header-bar">
                 <div class="hp-info-box">
-                    <input type="hidden" class="health-current-malus" name="attr_health_mod">
                     <div class="stats__cell--derived-current hp-info-health">
                         <div class="derived--current">
                             <div class="derived__wrapper--soul">
@@ -214,14 +213,20 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" class="health-current-malus" name="attr_health_mod">
+                    <div class="stats__cell--derived-current hp-info-health hp-info-malus">
+                        <div class="derived--current">
+                                <div class="derived__value">
+                                    <div class="number" optionvalue="10" data-test="soul-stat-current">
+                                        <input class="number__field" type="text" name="attr_health_mod" readonly>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                     </div>
                 <div class="box-content box-health-condition">
                     <div class="health-bar">
                         <span class="health-status health-good" data-i18n="health_condition_good"></span>
-                        <span class="health-status health-okay" data-i18n="health_condition_okay"></span>
-                        <span class="health-status health-bad" data-i18n="health_condition_bad"></span>
-                        <span class="health-status health-critical" data-i18n="health_condition_critical"></span>
-                        <span class="health-status health-agony" data-i18n="health_condition_agony"></span>
                         <input type="hidden" name="attr_health_good_current" value="0" class="current-health-good"></input>
                         <input type="hidden" name="attr_health_good_max" value="5" class="input-range"></input>
                         <div class="grid-container grid-break health-good">
@@ -231,6 +236,7 @@
                             <div class="square square-health-good"></div>
                             <div class="square square-health-good"></div>
                         </div>
+                        <span class="health-status health-okay" data-i18n="health_condition_okay"></span>
                         <input type="hidden" name="attr_health_okay_current" value="0" class="current-health-okay"></input>
                         <input type="hidden" name="attr_health_okay_max" value="5" class="input-range"></input>
                         <div class="grid-container grid-break health-okay">
@@ -240,6 +246,7 @@
                             <div class="square square-health-okay"></div>
                             <div class="square square-health-okay"></div>
                         </div>
+                        <span class="health-status health-bad" data-i18n="health_condition_bad"></span>
                         <input type="hidden" name="attr_health_bad_current" value="0" class="current-health-bad"></input>
                         <input type="hidden" name="attr_health_bad_max" value="4" class="input-range"></input>
                         <div class="grid-container grid-break health-bad">
@@ -249,6 +256,7 @@
                             <div class="square square-health-bad"></div>
                             <div class="square square-health-bad"></div>
                         </div>
+                        <span class="health-status health-critical" data-i18n="health_condition_critical"></span>
                         <input type="hidden" name="attr_health_critical_current" value="0" class="current-health-critical"></input>
                         <input type="hidden" name="attr_health_critical_max" value="4" class="input-range"></input>
                         <div class="grid-container grid-break health-critical">
@@ -258,6 +266,7 @@
                             <div class="square square-health-critical"></div>
                             <div class="square square-health-critical"></div>
                         </div>
+                        <span class="health-status health-agony" data-i18n="health_condition_agony"></span>
                         <input type="hidden" name="attr_health_agony_current" value="0" class="current-health-agony"></input>
                         <input type="hidden" name="attr_health_agony_max" value="1" class="input-range"></input>
                         <div class="grid-container grid-break health-agony">
@@ -1374,9 +1383,6 @@
                 <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
                     value="4">
                 <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="healthpoints"></span><input type="number" name="attr_healthpoints" value="18">
             </div>
             <div class="sheet-tg-row">
                 <span data-i18n="healthmalus"></span><input type="number" name="attr_health_mod" readonly>
