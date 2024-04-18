@@ -278,28 +278,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="hp-info-box">
-                    <div class="hp-info-square hp-info-health">
-                        <span data-i18n="vigor"></span>
-                        <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                <div class="health-right">
+                    <div class="hp-info-box">
+                        <div class="health-bar-rollable">
+                            <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
                             value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                        </button>
-                        <input type="number" name="attr_vigor" value="10">
+                            </button>
+                            <span data-i18n="vigor"></span>
+                            <input type="text" name="attr_vigor" value="10">
+                        </div>
                     </div>
-                </div>
-                <div class="hp-info-box">
-                    <div class="hp-info-square hp-info-health">
-                        <span data-i18n="mental_resist"></span>
-                        <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                    <div class="hp-info-box">
+                        <div class="health-bar-simple">
+                            <span data-i18n="survie"></span>
+                            <input type="text" name="attr_survie" value="10">
+                        </div>
+                    </div>
+                    <div class="hp-info-box">
+                        <div class="health-bar-rollable">
+                            <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
                             value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                        </button>
-                        <input type="number" name="attr_mentalresist" value="9">
+                            </button>
+                            <div><a class="skill-category__header--span" href="#popup_sanity"><span data-i18n="mental_resist"></span></a></div>
+                            <input type="text" name="attr_mentalresist" value="9">
+                        </div>
+                        <div class="sanity-issues">
+                            <input type="hidden" class="tourments-visible" name="attr_tourments_visible" value="0"></input>
+                            <div class="sanity">
+                                <span class="sanity-issue">Tourments :</span>
+                                <span class="sanity-list" name="attr_tourments"></span>
+                            </div>
+                            <input type="hidden" class="deroutes-visible"name="attr_deroutes_visible" value="0"></input>
+                            <div class="sanity">
+                                <span class="sanity-issue">Déroutes :</span>
+                                <span class="sanity-list" name="attr_deroutes"></span> 
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="hp-info-box">
-                    <div class="hp-info-square hp-info-health">
-                        <span data-i18n="survie"></span><input type="number" name="attr_survie" value="3" min="0"
-                        max="@{survie_max}"> / </span><input type="number" name="attr_survie_max" value="3" min="0">
+                    <div class="hp-info-box">
+                        <div class="health-bar-simple ignore-pain">
+                            <span data-i18n="ignore_pain"></span>
+                            <input type="checkbox" name="attr_ignore_pain"></input>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1399,6 +1419,26 @@
             <div class="sheet-tg-row">
                 <span>Case Critique</span><input type="number" name="attr_health_critical_max" value="4"></input>
             </div>
+            <div class="sheet-tg-row">
+                <span>Tourments</span><input type="text" name="attr_tourments"></input>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Deroute</span><input type="text" name="attr_deroutes"></input>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup_sanity" class="overlay">
+    <div class="popup">
+        <h2>Sanity</h2>
+        <a class="close" href="#">×</a>
+        <div class="content">
+            <div class="sheet-tg-row">
+                <span>Tourments</span><input type="text" name="attr_tourments"></input>
+            </div>
+            <div class="sheet-tg-row">
+                <span>Deroute</span><input type="text" name="attr_deroutes"></input>
+            </div>
         </div>
     </div>
 </div>
@@ -1830,9 +1870,9 @@ function getSectionIDsAsync(sectionName){
         var bad = parseInt(values["health_stage3"]);
         var critical = parseInt(values["health_stage4"]);
         var penalty=0;
-        if ( hp <= critical ) penalty = -3;
-        else if ( hp <= bad ) penalty = -2;
-        else if ( hp <= ok ) penalty = -1;
+        if ( hp < critical ) penalty = -3;
+        else if ( hp < bad ) penalty = -2;
+        else if ( hp < ok ) penalty = -1;
         await setAttrsAsync(
             {
                 "health_mod": penalty
@@ -2004,4 +2044,28 @@ function getSectionIDsAsync(sectionName){
         await addDiscOptionsToAttackMode(options, "MountedCombatDisc", "mounted_combat", "combativeness");
         populateAttackModeList(options)
       };
+
+      on("sheet:opened change:tourments change:deroutes", async function() {
+        v = await getAttrsAsync(["tourments", "deroutes"]);
+        tourments_visible = (v.tourments != null && v.tourments.trim() !== '') ? 1 : 0;
+        deroutes_visible = (v.deroutes != null && v.deroutes.trim() !== '') ? 1 : 0;
+        await setAttrsAsync({
+            "tourments_visible": tourments_visible,
+            "deroutes_visible": deroutes_visible
+        });
+    });
+
+      on("sheet:opened change:ignore_pain", async function() {
+            v = await getAttrsAsync(["ignore_pain", "healthpoints"]);
+            var checked = v.ignore_pain == "on" ? 1 : 0;
+            if (!checked) {
+                var hp =  parseInt(v["healthpoints"]);
+                await computeHpMalus(hp);
+            }
+            else {
+                await setAttrsAsync({
+                    "health_mod": 0
+                });
+            }
+    });
 </script>

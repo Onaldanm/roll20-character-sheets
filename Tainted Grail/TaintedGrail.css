@@ -5,6 +5,10 @@
 .charsheet .journal {
     display: none;
 }
+.charsheet {
+    max-width: 850px;
+    min-width: 850px;
+}
 .charsheet .tab {
     border: none;
     background: transparent;
@@ -941,12 +945,19 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   .header-box {
     display: grid;
     grid-template-columns: 1fr;
+    padding-top: 5px;
   }
 .health-header-bar {
     display: grid;
-    grid-template-columns: 120px auto 80px 80px 80px;
+    grid-template-columns: 120px 200px auto;
     align-items: start;
     gap: 10px;
+}
+.health-right {
+    display: grid;
+    grid-template-rows: auto auto; /* 4 lignes de hauteur automatique */
+    grid-template-columns: auto auto; /* 2 colonnes de largeur automatique */
+    gap: 2px;
 }
   .header-title {
     grid-column: 1 / 5;
@@ -994,11 +1005,6 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     overflow: hidden;
 }
 
-  .hp-info-health {
-    color: #4f7172;
-    background: linear-gradient(#d6f2fd, #dbe5f1);
-    filter: drop-shadow(1px 1px #c9ccd1);
-  }
 .header-title .skill-category__header--span + hr {
     grid-column: 3;
     border: none;
@@ -1136,17 +1142,6 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     z-index: 10;
     max-width: 10rem;
 }
-.derived--current .derived__wrapper--body, .derived--current .derived__wrapper--mind, .derived--current .derived__wrapper--soul, .derived--corporeality .derived__wrapper--body, .derived--corporeality .derived__wrapper--mind, .derived--corporeality .derived__wrapper--soul {
-    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 1.5rem 100%, 0 calc(100% - 1.5rem));
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 1.5rem 100%, 0 calc(100% - 1.5rem));
-}
-.derived--current .derived__wrapper--body, .derived--corporeality .derived__wrapper--body {
-    color: #4f7172;
-    background: linear-gradient(#d6f2fd, #dbe5f1);
-}
-.derived__label {
-    font-size: 12px;
-}
 .derived__value {
     font-size: 2rem;
     font-weight: 800;
@@ -1189,6 +1184,8 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     color: #fff;
     font-weight: 600;
 }
+.health-bar-simple input,
+.health-bar-rollable input,
 .stats__cell--derived-current .number input, .stats__cell--corporeality .number input, .stats__cell--notify .number input {
     align-self: end;
     padding: 0;
@@ -1204,9 +1201,17 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     background: none;
     color: inherit;
 }
+.health-bar-simple input,
+.health-bar-rollable input {
+    overflow: hidden;
+}
 .hp-info-malus .number {
     display: block;
 }
+.health-current-malus + .hp-info-health {
+    border-top: 1px solid #594875;
+}
+
 .health-current-malus[value="0"] + .hp-info-health {
     background: linear-gradient(#D3E3D3, #C3EDC3);
     color: #2E8B57;
@@ -1222,4 +1227,75 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .health-current-malus[value="-3"] + .hp-info-health {
     background: linear-gradient(#FFCDD2, #FFAB91);
     color: #D50000;
+}
+.health-bar-simple {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 5rem;
+    align-items: center;
+    align-content: center;
+    overflow: clip;
+    height: 80%;
+}
+.hp-info-box {
+    border: 1px solid #594875;
+}
+.health-bar-rollable {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 35px auto 5rem;
+    align-items: center;
+    overflow: clip;
+}
+.health-bar-simple span,
+.health-bar-rollable span {
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+.sanity-issues {
+    display: grid;
+    align-items: center;
+    padding-left: 10px;
+}
+.sanity-issue {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #FF6F00;
+}
+.sanity-list {
+    font-size: 12px;
+}
+.health-bar-simple.ignore-pain input[type="checkbox"] {
+    margin-left: 10px; /* Ajuster la marge à votre convenance */
+    vertical-align: middle; /* Alignement vertical par rapport au texte */
+}
+.health-bar-simple.ignore-pain input[type="checkbox"] {
+    /* Styles pour masquer la case à cocher par défaut */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; /* Largeur */
+    height: 20px; /* Hauteur */
+    border: 2px solid #ccc; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    background-color: #fff; /* Couleur de fond */
+    cursor: pointer; /* Curseur de la souris */
+}
+
+/* Style pour la case à cocher lorsque cochée */
+.health-bar-simple.ignore-pain input[type="checkbox"]:checked {
+    background-color: #2196F3; /* Couleur de fond */
+    border-color: #2196F3; /* Couleur de la bordure */
+}
+
+/* Style pour la case à cocher lorsque survolée */
+.health-bar-simple.ignore-pain input[type="checkbox"]:hover {
+    border-color: #999; /* Couleur de la bordure */
+}
+
+.tourments-visible[value="0"] + .sanity {
+    display: none;
+}
+.deroutes-visible[value="0"] + .sanity {
+    display: none;
 }

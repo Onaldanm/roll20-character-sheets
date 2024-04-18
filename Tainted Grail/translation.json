@@ -192,5 +192,6 @@
   "balance_wyrd_text": "Equilibre de toute chose",
   "settings": "Configuration",
   "domains_and_disciplines": "Domaines et Disciplines",
-  "combat_and_spells": "Combat et Sorts"
+  "combat_and_spells": "Combat et Sorts",
+  "ignore_pain": "Ignorer la douleur"
 }
