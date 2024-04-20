@@ -89,7 +89,7 @@
   "damage": "Dégats",
   "defense": "Défense",
   "protection": "Protection",
-  "initiative_roll": " Jet d'initiative",
+  "initiative_roll": " Initiative",
   "initiative_button": " Initiative",
   "parade_roll": "Parade",
   "way_awareness": "La Conscience",
@@ -122,7 +122,7 @@
   "attitude": "Attitude",
   "roll": "Jet",
   "detailled_attack": "Attaque ({{0}}) + Dommages de l'arme ({{1}}) - Défense de l'adversaire ({{2}}) - Protection du défenseur ({{3}})",
-  "attack_roll": " Jet d'attaque",
+  "attack_roll": " Attaque",
   "attack_result": "Résultat",
   "attack_result_success": "Ca touche !",
   "attack_result_fail": "Raté !",
@@ -167,7 +167,7 @@
   "skilldice-normal": "Action seul",
   "skilldice-withhelp": "Entraide",
   "ask_entraide": "Nombre de participants",
-  "blind": "Aveuglement / Dans le noir",
+  "blind": "Combat à l'aveugle",
   "attack_behind": "Frappe dans le dos",
   "combat_status": "Statuts de combat spéciaux",
   "spells": "Sorts",
@@ -193,5 +193,6 @@
   "settings": "Configuration",
   "domains_and_disciplines": "Domaines et Disciplines",
   "combat_and_spells": "Combat et Sorts",
-  "ignore_pain": "Ignorer la douleur"
+  "ignore_pain": "Ignorer la douleur",
+  "roll_for": "Lancement de dé"
 }
