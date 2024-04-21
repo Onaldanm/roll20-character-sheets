@@ -115,10 +115,8 @@
     <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
     <div class="character">
         <div class="high-title">
-            <div class="title" data-i18n="health_title"></div>
-            <div class="right">
-               
-            </div>
+            <a class="skill-button-popup" href="#popup_health"><div class="skill-button-settings"></div></a>
+            <span class="title" data-i18n="health_title"></span>
         </div>
         <div class="header-box">
             <div class="health-box">
@@ -127,11 +125,11 @@
                         <div class="stats__cell--derived-current hp-info-health">
                             <div class="derived--current">
                                 <div class="derived__wrapper--soul">
-                                    <a class="skill-category__header--span" href="#popup_health"><span data-i18n="health" class="derived__label"></span></a>
+                                    <span data-i18n="health" class="derived__label"></span>
                                     <div class="derived__value">
                                         <div class="number" optionvalue="10" data-test="soul-stat-current">
                                             <button class="number__incrementor" type="action" name="act_sub_health"> -</button>
-                                            <input class="number__field" type="text" name="attr_healthpoints" value="18">
+                                            <input class="number__field" type="text" name="attr_healthpoints" value="19">
                                             <button class="number__incrementor" type="action" name="act_add_health"> +</button></div>
                                     </div>
                                 </div>
@@ -205,7 +203,7 @@
                     <div class="health-right">
                         <div class="hp-info-box">
                             <div class="health-bar-rollable">
-                                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                                <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
                                 value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
                                 </button>
                                 <span data-i18n="vigor"></span>
@@ -215,15 +213,15 @@
                         <div class="hp-info-box">
                             <div class="health-bar-simple">
                                 <span data-i18n="survie"></span>
-                                <input type="text" name="attr_survie" value="10">
+                                <input type="text" name="attr_survie" value="3">
                             </div>
                         </div>
                         <div class="hp-info-box">
                             <div class="health-bar-rollable">
-                                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                                <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
                                 value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
                                 </button>
-                                <div><span data-i18n="mental_resist"></span>  <a class="skill-category__header--span" href="#popup_sanity"><span class="picto" style="font-family: 'Pictos'">y</span></a></div>
+                                <span data-i18n="mental_resist"></span>
                                 <input type="text" name="attr_mentalresist" value="9">
                             </div>
                             <div class="sanity-issues">
@@ -251,14 +249,12 @@
         </div>
         <div class="main-page">
             <div class="character-domains domains-box">
-                <div class="high-title">
-                    <div class="title" data-i18n="domains"></div>
-                    <div class="right">
-                        <select name="attr_skilldice" class="underlined" title="@{whispertype}">
-                            <option value="1d10" data-i18n="skilldice-normal" selected="selected"></option>
-                            <option value="?{@{ask_skill_with_help}|1}d10k1" data-i18n="skilldice-withhelp"></option>
-                        </select>
-                    </div>
+                <div class="high-title high-title-short">
+                    <span class="title" data-i18n="domains"></span>
+                    <select name="attr_skilldice" class="short-select" title="@{whispertype}">
+                        <option value="1d10" data-i18n="skilldice-normal" selected="selected"></option>
+                        <option value="?{@{ask_skill_with_help}|1}d10k1" data-i18n="skilldice-withhelp"></option>
+                    </select>
                 </div>
                 <div class="domain_skills" data-i18n-list="skills-list">
                     <div class="domain-box" data-i18n-list-item="skill_craft">
@@ -963,10 +959,8 @@
             </div>
             <div>
                 <div class="high-title">
+                    <a class="skill-button-popup" href="#popup_combat"><div class="skill-button-settings"></div></a>
                     <span class="title" data-i18n="combat_round"></span>
-                    <a href="#popup_combat">
-                        <span class="picto" style="font-family: 'Pictos'">y</span>
-                    </a>
                 </div>
                 <div class="attributes-box">
                     <div class="hp-info-box">
@@ -1003,13 +997,13 @@
                         </div>
                     </div>
                     <div class="hp-info-box">
-                        <div class="health-bar-simple ignore-pain combat-status">
+                        <div class="health-bar-simple combat-status">
                             <span data-i18n="attack_behind"></span>
                             <input type="checkbox" name="attr_attack_behind" value="2"></input>
                         </div>
                     </div>
                     <div class="hp-info-box">
-                        <div class="health-bar-simple ignore-pain combat-status">
+                        <div class="health-bar-simple combat-status">
                             <span data-i18n="blind"></span>
                             <input type="checkbox" name="attr_blind" value="-4"></input>
                         </div>
@@ -1154,10 +1148,14 @@
                 <input type="hidden" class="sheet-magicAwakeToggle" name="attr_magic_wake_toggle" value="hidden" />
                 <div class="spells-section">
                     <div class="high-title">
+                        <a class="skill-button-popup" href="#popup_spells"><div class="skill-button-settings"></div></a>
                         <span class="title" data-i18n="spells"></span>
-                        <a href="#popup_spells">
-                            <span class="picto" style="font-family: 'Pictos'">y</span>
-                        </a>
+                        <div class="hp-info-box">
+                            <div class="health-bar-simple">
+                                <span data-i18n="magic_points"></span>
+                                <input type="text" name="attr_magic_points" value="0">
+                            </div>
+                        </div>
                     </div>
                     <div class="spells-table-section readonly-rep">
                         <fieldset class="repeating_Spells">
@@ -1192,21 +1190,19 @@
                 </div>
                 <div class="equipments-box">
                     <div class="high-title">
+                        <a class="skill-button-popup" href="#popup_equipments"><div class="skill-button-settings"></div></a>
                         <span class="title" data-i18n="equipment"></span>
-                        <a href="#popup_equipments">
-                            <span class="picto" style="font-family: 'Pictos'">y</span>
-                        </a>
                     </div>
                     <div class="equipments-section">
                         <div class="protection-section readonly-rep">
                             <div class="hp-info-box">
-                                <div class="health-bar-simple">
+                                <div class="health-bar-simple input-ro">
                                     <span data-i18n="protection"></span>
-                                    <input type="number" name="attr_protection" value="0"></input>
+                                    <input type="text" name="attr_protection" value="0" readonly></input>
                                 </div>
                             </div>
                             <fieldset class="repeating_Protections">
-                                <div class="equipment-row equipments-selection">
+                                <div class="equipment-row equipments-selection input-ro">
                                     <input class="equip-checkbox" type="checkbox" name="attr_protection_equipped"
                                         value="1"></input>
                                     <span class="equip-name" name="attr_protection_name" type="text"></span>
@@ -1216,13 +1212,13 @@
                         </div>
                         <div class="weapons-section readonly-rep">
                             <div class="hp-info-box">
-                                <div class="health-bar-simple">
+                                <div class="health-bar-simple input-ro">
                                     <span data-i18n="damage"></span>
-                                    <input type="number" name="attr_dmg" value="0"></input>
+                                    <input type="text" name="attr_dmg" value="0" readonly></input>
                                 </div>
                             </div>
                             <fieldset class="repeating_Weapons">
-                                <div class="equipment-row equipments-selection">
+                                <div class="equipment-row equipments-selection input-ro">
                                     <input class="equip-checkbox" type="checkbox" name="attr_weapon_equipped"
                                         value="1"></input>
                                     <span class="equip-name" name="attr_weapon_name" type="text"></span>
@@ -1258,7 +1254,6 @@
     </div>
 </div>
 <div class="footer">
-    <span data-i18n="copyright"></span>
     <span data-i18n="author"></span>
 </div>
 <div id="popup_settings" class="overlay">
@@ -1360,21 +1355,21 @@
         <div class="content">
             <div class="sheet-tg-row">
                 <span data-i18n="health_condition_good">(B)</span>
-                <input type="number" name="attr_health_stage1" value="18">
+                <input type="number" name="attr_health_stage1" value="19">
             </div>
             <div class="sheet-tg-row">
                 <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2"
-                    value="13">
+                    value="14">
                 <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
             </div>
             <div class="sheet-tg-row">
                 <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3"
-                    value="8">
+                    value="9">
                 <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
             </div>
             <div class="sheet-tg-row">
                 <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
-                    value="4">
+                    value="5">
                 <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
             </div>
             <div class="sheet-tg-row">

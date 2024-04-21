@@ -69,14 +69,22 @@
 .high-title {
     display: grid;
     align-items: center;
-    justify-content: start;
-    grid-template-columns: auto 150px;
+    font-weight: 700;
+    grid-template-columns: 35px auto 190px;
     gap: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
+}
+select.short-select {
+    width: 100px;
+    margin-bottom: 0;
+}
+.high-title-short {
+    grid-template-columns: auto 100px;
+    padding-right: 15px;
 }
 .high-title .title {
     color: #594875;
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
 }
 .high-title .right {
@@ -1131,6 +1139,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     color: #fff;
     font-weight: 600;
 }
+.input-ro input,
 .skill-value input {
     cursor: initial;
 }
@@ -1183,13 +1192,12 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     color: #D50000;
 }
 .health-bar-simple {
-    padding: 5px;
+    padding: 2px 5px;
     display: grid;
     grid-template-columns: auto 5rem;
     align-items: center;
     align-content: center;
     overflow: clip;
-    height: 80%;
 }
 .hp-info-box {
     border: 1px solid #594875;
@@ -1205,6 +1213,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .health-bar-rollable span {
     text-transform: uppercase;
     padding-left: 5px;
+    padding-top: 5px;
 }
 .sanity-issues {
     display: grid;
@@ -1219,11 +1228,16 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .sanity-list {
     font-size: 12px;
 }
-.health-bar-simple.ignore-pain input[type="checkbox"] {
+.health-bar-simple.ignore-pain {
+    padding-top: 8px;
+}
+.health-bar-simple input[type="checkbox"] {
     margin-left: 10px;
     margin-top: -5px;
 }
-.health-bar-simple.ignore-pain input[type="checkbox"] {
+
+.equipments-selection input[type="checkbox"],
+.health-bar-simple input[type="checkbox"] {
     /* Styles pour masquer la case à cocher par défaut */
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1234,17 +1248,18 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     border-radius: 4px; /* Coins arrondis */
     background-color: #fff; /* Couleur de fond */
     cursor: pointer; /* Curseur de la souris */
+    border: 1px solid #594875;
 }
 
-/* Style pour la case à cocher lorsque cochée */
-.health-bar-simple.ignore-pain input[type="checkbox"]:checked {
-    background-color: #2196F3; /* Couleur de fond */
-    border-color: #2196F3; /* Couleur de la bordure */
+.equipments-selection input[type="checkbox"]:checked,
+.health-bar-simple input[type="checkbox"]:checked {
+    background-color: #847f8c; /* Couleur de fond */
+    border: 1px solid #594875;
 }
 
-/* Style pour la case à cocher lorsque survolée */
-.health-bar-simple.ignore-pain input[type="checkbox"]:hover {
-    border-color: #999; /* Couleur de la bordure */
+.equipments-selection input[type="checkbox"]:hover,
+.health-bar-simple input[type="checkbox"]:hover {
+    border: 1px solid #433e46;
 }
 
 .tourments-visible[value="0"] + .sanity {
@@ -1377,9 +1392,6 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     grid-template-columns: 35px auto 50px 50px;
     align-items: center;
 }
-.skill-row:hover {
-    background-color: #F9F9F9;
-}
 .skill-row:hover .skill-blank {
     background-color: #fff;
     width: 100%;
@@ -1467,6 +1479,11 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     color: #594875;
     background-color: #fff;
     padding: 0px;
+}
+.charsheet button[type=roll].skill-button-roll:hover,
+.skill-button-settings:hover,
+.attack-buttons:hover {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
 }
 .attack-attitudes {
     display: grid;
@@ -1563,32 +1580,10 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     font-weight: 400;
 }
 
-.equipments-selection input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* Style pour la case à cocher lorsque cochée */
-.equipments-selection input[type="checkbox"]:checked {
-    background-color: #2196F3; /* Couleur de fond */
-    border-color: #2196F3; /* Couleur de la bordure */
-}
-
-/* Style pour la case à cocher lorsque survolée */
-.equipments-selection input[type="checkbox"]:hover {
-    border-color: #999; /* Couleur de la bordure */
-}
-
 .spells-table-section {
     display: grid;
     row-gap: 5px;
+    padding-right: 5px;
 }
 
 .spells-row {
@@ -1625,7 +1620,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     letter-spacing: .1rem;
     line-height: 1;
     text-transform: uppercase;
-    color: #7d3ba4;
+    color: #3f7a9a;
     text-align: center;
 }
 
