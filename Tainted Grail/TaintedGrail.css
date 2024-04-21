@@ -1,46 +1,20 @@
 
 /* TABS */
 .charsheet .character,
-.charsheet .character2,
-.charsheet .journal {
+.charsheet .change-sheet-button[data-tabs="character"],
+.charsheet .change-sheet-button[data-tabs="ascension"],
+.charsheet .ascension {
     display: none;
 }
 .charsheet {
     max-width: 840px;
     min-width: 840px;
 }
-.charsheet .tab {
-    border: none;
-    background: transparent;
-    border-bottom: 2px solid rgba(97, 70, 113, .15);
-    text-transform: uppercase;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-}
-.charsheet .tabs {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 1rem;
-    font-size: 1.2rem;
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: .5rem;
-    border-bottom: 1px solid #432a77;
-}
-.charsheet .tab:hover {
-    color: #d20bf2;
-    border-color: #d20bf2;
-}
-.charsheet .tabstoggle[value="character"]~.tabs .tab-character,
-.charsheet .tabstoggle[value="character2"]~.tabs .tab-character2,
-.charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
-    color: #3066b1;
-    border-color: #3066b1;
-}
+
 .charsheet .tabstoggle[value="character"]~div.character,
-.charsheet .tabstoggle[value="character2"]~div.character2,
-.charsheet .tabstoggle[value="journal"]~div.journal {
+.charsheet .tabstoggle[value="character"]~.change-sheet-button[data-tabs="ascension"],
+.charsheet .tabstoggle[value="ascension"]~.change-sheet-button[data-tabs="character"],
+.charsheet .tabstoggle[value="ascension"]~div.ascension {
     display: block;
 }
 .charsheet textarea.textbox {

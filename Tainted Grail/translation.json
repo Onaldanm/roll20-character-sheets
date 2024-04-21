@@ -4,6 +4,7 @@
   "concept": "Concept",
   "traits": "Traits",
   "health": "Santé",
+  "health_title": "Etat de santé",
   "health_condition": "Conditions de Santé",
   "health_condition_good": "Bon",
   "health_condition_okay": "Moyen",

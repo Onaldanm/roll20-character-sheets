@@ -104,147 +104,151 @@
                 </div>
             </div>
         </div>
+        <div class="change-sheet">
+            <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
+            <button class="change-sheet-button" type="action" data-tabs="ascension" name="act_switch_sheet"> Ascension et Disgrace</button>
+            <button class="change-sheet-button" type="action" data-tabs="character" name="act_switch_sheet"> Retour à la feuille de personnage</button>
+        </div>
     </div>
 </div>
 <div class="middle">
-    <div class="header-box">
-        <div class="health-box">
-            <div class="health-header-bar">
-                <div class="hp-info-box">
-                    <div class="stats__cell--derived-current hp-info-health">
-                        <div class="derived--current">
-                            <div class="derived__wrapper--soul">
-                                <a class="skill-category__header--span" href="#popup_health"><span data-i18n="health" class="derived__label"></span></a>
-                                <div class="derived__value">
-                                    <div class="number" optionvalue="10" data-test="soul-stat-current">
-                                        <button class="number__incrementor" type="action" name="act_sub_health"> -</button>
-                                        <input class="number__field" type="text" name="attr_healthpoints" value="18">
-                                        <button class="number__incrementor" type="action" name="act_add_health"> +</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="hidden" class="health-current-malus" name="attr_health_mod">
-                    <div class="stats__cell--derived-current hp-info-health hp-info-malus">
-                        <div class="derived--current">
-                                <div class="derived__value">
-                                    <div class="number" optionvalue="10" data-test="soul-stat-current">
-                                        <input class="number__field" type="text" name="attr_health_mod" readonly>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                    </div>
-                <div class="box-content box-health-condition">
-                    <div class="health-bar">
-                        <span class="health-status health-good" data-i18n="health_condition_good"></span>
-                        <input type="hidden" name="attr_health_good_current" value="0" class="current-health-good"></input>
-                        <input type="hidden" name="attr_health_good_max" value="5" class="input-range"></input>
-                        <div class="grid-container grid-break health-good">
-                            <div class="square square-health-good"></div>
-                            <div class="square square-health-good"></div>
-                            <div class="square square-health-good"></div>
-                            <div class="square square-health-good"></div>
-                            <div class="square square-health-good"></div>
-                        </div>
-                        <span class="health-status health-okay" data-i18n="health_condition_okay"></span>
-                        <input type="hidden" name="attr_health_okay_current" value="0" class="current-health-okay"></input>
-                        <input type="hidden" name="attr_health_okay_max" value="5" class="input-range"></input>
-                        <div class="grid-container grid-break health-okay">
-                            <div class="square square-health-okay"></div>
-                            <div class="square square-health-okay"></div>
-                            <div class="square square-health-okay"></div>
-                            <div class="square square-health-okay"></div>
-                            <div class="square square-health-okay"></div>
-                        </div>
-                        <span class="health-status health-bad" data-i18n="health_condition_bad"></span>
-                        <input type="hidden" name="attr_health_bad_current" value="0" class="current-health-bad"></input>
-                        <input type="hidden" name="attr_health_bad_max" value="4" class="input-range"></input>
-                        <div class="grid-container grid-break health-bad">
-                            <div class="square square-health-bad"></div>
-                            <div class="square square-health-bad"></div>
-                            <div class="square square-health-bad"></div>
-                            <div class="square square-health-bad"></div>
-                            <div class="square square-health-bad"></div>
-                        </div>
-                        <span class="health-status health-critical" data-i18n="health_condition_critical"></span>
-                        <input type="hidden" name="attr_health_critical_current" value="0" class="current-health-critical"></input>
-                        <input type="hidden" name="attr_health_critical_max" value="4" class="input-range"></input>
-                        <div class="grid-container grid-break health-critical">
-                            <div class="square square-health-critical"></div>
-                            <div class="square square-health-critical"></div>
-                            <div class="square square-health-critical"></div>
-                            <div class="square square-health-critical"></div>
-                            <div class="square square-health-critical"></div>
-                        </div>
-                        <span class="health-status health-agony" data-i18n="health_condition_agony"></span>
-                        <input type="hidden" name="attr_health_agony_current" value="0" class="current-health-agony"></input>
-                        <input type="hidden" name="attr_health_agony_max" value="1" class="input-range"></input>
-                        <div class="grid-container grid-break health-agony">
-                            <div class="square square-health-agony"></div>
-                            <div class="square square-health-agony"></div>
-                            <div class="square square-health-agony"></div>
-                            <div class="square square-health-agony"></div>
-                            <div class="square square-health-agony"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="health-right">
-                    <div class="hp-info-box">
-                        <div class="health-bar-rollable">
-                            <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                            </button>
-                            <span data-i18n="vigor"></span>
-                            <input type="text" name="attr_vigor" value="10">
-                        </div>
-                    </div>
-                    <div class="hp-info-box">
-                        <div class="health-bar-simple">
-                            <span data-i18n="survie"></span>
-                            <input type="text" name="attr_survie" value="10">
-                        </div>
-                    </div>
-                    <div class="hp-info-box">
-                        <div class="health-bar-rollable">
-                            <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
-                            value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
-                            </button>
-                            <div><span data-i18n="mental_resist"></span>  <a class="skill-category__header--span" href="#popup_sanity"><span class="picto" style="font-family: 'Pictos'">y</span></a></div>
-                            <input type="text" name="attr_mentalresist" value="9">
-                        </div>
-                        <div class="sanity-issues">
-                            <input type="hidden" class="tourments-visible" name="attr_tourments_visible" value="0"></input>
-                            <div class="sanity">
-                                <span class="sanity-issue">Tourments :</span>
-                                <span class="sanity-list" name="attr_tourments"></span>
-                            </div>
-                            <input type="hidden" class="deroutes-visible"name="attr_deroutes_visible" value="0"></input>
-                            <div class="sanity">
-                                <span class="sanity-issue">Déroutes :</span>
-                                <span class="sanity-list" name="attr_deroutes"></span> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hp-info-box">
-                        <div class="health-bar-simple ignore-pain">
-                            <span data-i18n="ignore_pain"></span>
-                            <input type="checkbox" name="attr_ignore_pain"></input>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
+    <div class="character">
+        <div class="high-title">
+            <div class="title" data-i18n="health_title"></div>
+            <div class="right">
+               
             </div>
         </div>
-    </div>
-    <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
-
-    <div class="tabs">
-        <button type="action" class="tab tab-character" name="act_character" data-i18n="domains_and_disciplines"></button>
-        <button type="action" class="tab tab-character2" name="act_character2" data-i18n="combat_and_spells"></button>
-        <button type="action" class="tab tab-journal" name="act_journal" data-i18n="book"></button>
-    </div>
-    <div class="character">
+        <div class="header-box">
+            <div class="health-box">
+                <div class="health-header-bar">
+                    <div class="hp-info-box">
+                        <div class="stats__cell--derived-current hp-info-health">
+                            <div class="derived--current">
+                                <div class="derived__wrapper--soul">
+                                    <a class="skill-category__header--span" href="#popup_health"><span data-i18n="health" class="derived__label"></span></a>
+                                    <div class="derived__value">
+                                        <div class="number" optionvalue="10" data-test="soul-stat-current">
+                                            <button class="number__incrementor" type="action" name="act_sub_health"> -</button>
+                                            <input class="number__field" type="text" name="attr_healthpoints" value="18">
+                                            <button class="number__incrementor" type="action" name="act_add_health"> +</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" class="health-current-malus" name="attr_health_mod">
+                        <div class="stats__cell--derived-current hp-info-health hp-info-malus">
+                            <div class="derived--current">
+                                    <div class="derived__value">
+                                        <div class="number" optionvalue="10" data-test="soul-stat-current">
+                                            <input class="number__field" type="text" name="attr_health_mod" readonly>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="box-content box-health-condition">
+                        <div class="health-bar">
+                            <span class="health-status health-good" data-i18n="health_condition_good"></span>
+                            <input type="hidden" name="attr_health_good_current" value="0" class="current-health-good"></input>
+                            <input type="hidden" name="attr_health_good_max" value="5" class="input-range"></input>
+                            <div class="grid-container grid-break health-good">
+                                <div class="square square-health-good"></div>
+                                <div class="square square-health-good"></div>
+                                <div class="square square-health-good"></div>
+                                <div class="square square-health-good"></div>
+                                <div class="square square-health-good"></div>
+                            </div>
+                            <span class="health-status health-okay" data-i18n="health_condition_okay"></span>
+                            <input type="hidden" name="attr_health_okay_current" value="0" class="current-health-okay"></input>
+                            <input type="hidden" name="attr_health_okay_max" value="5" class="input-range"></input>
+                            <div class="grid-container grid-break health-okay">
+                                <div class="square square-health-okay"></div>
+                                <div class="square square-health-okay"></div>
+                                <div class="square square-health-okay"></div>
+                                <div class="square square-health-okay"></div>
+                                <div class="square square-health-okay"></div>
+                            </div>
+                            <span class="health-status health-bad" data-i18n="health_condition_bad"></span>
+                            <input type="hidden" name="attr_health_bad_current" value="0" class="current-health-bad"></input>
+                            <input type="hidden" name="attr_health_bad_max" value="4" class="input-range"></input>
+                            <div class="grid-container grid-break health-bad">
+                                <div class="square square-health-bad"></div>
+                                <div class="square square-health-bad"></div>
+                                <div class="square square-health-bad"></div>
+                                <div class="square square-health-bad"></div>
+                                <div class="square square-health-bad"></div>
+                            </div>
+                            <span class="health-status health-critical" data-i18n="health_condition_critical"></span>
+                            <input type="hidden" name="attr_health_critical_current" value="0" class="current-health-critical"></input>
+                            <input type="hidden" name="attr_health_critical_max" value="4" class="input-range"></input>
+                            <div class="grid-container grid-break health-critical">
+                                <div class="square square-health-critical"></div>
+                                <div class="square square-health-critical"></div>
+                                <div class="square square-health-critical"></div>
+                                <div class="square square-health-critical"></div>
+                                <div class="square square-health-critical"></div>
+                            </div>
+                            <span class="health-status health-agony" data-i18n="health_condition_agony"></span>
+                            <input type="hidden" name="attr_health_agony_current" value="0" class="current-health-agony"></input>
+                            <input type="hidden" name="attr_health_agony_max" value="1" class="input-range"></input>
+                            <div class="grid-container grid-break health-agony">
+                                <div class="square square-health-agony"></div>
+                                <div class="square square-health-agony"></div>
+                                <div class="square square-health-agony"></div>
+                                <div class="square square-health-agony"></div>
+                                <div class="square square-health-agony"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="health-right">
+                        <div class="hp-info-box">
+                            <div class="health-bar-rollable">
+                                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                                value="@{whispertype} &{template:d10roll} {{title=@{vigor_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{vigor}[@{vigor_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                                </button>
+                                <span data-i18n="vigor"></span>
+                                <input type="text" name="attr_vigor" value="10">
+                            </div>
+                        </div>
+                        <div class="hp-info-box">
+                            <div class="health-bar-simple">
+                                <span data-i18n="survie"></span>
+                                <input type="text" name="attr_survie" value="10">
+                            </div>
+                        </div>
+                        <div class="hp-info-box">
+                            <div class="health-bar-rollable">
+                                <button type="roll" class="d10-dice btn ui-draggable" name="act_roll_skill"
+                                value="@{whispertype} &{template:d10roll} {{title=@{mental_resist_text}}} {{character=@{character_name}}} {{roll=[[1d10+@{mentalresist}[@{mental_resist_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10]]}}">
+                                </button>
+                                <div><span data-i18n="mental_resist"></span>  <a class="skill-category__header--span" href="#popup_sanity"><span class="picto" style="font-family: 'Pictos'">y</span></a></div>
+                                <input type="text" name="attr_mentalresist" value="9">
+                            </div>
+                            <div class="sanity-issues">
+                                <input type="hidden" class="tourments-visible" name="attr_tourments_visible" value="0"></input>
+                                <div class="sanity">
+                                    <span class="sanity-issue">Tourments :</span>
+                                    <span class="sanity-list" name="attr_tourments"></span>
+                                </div>
+                                <input type="hidden" class="deroutes-visible"name="attr_deroutes_visible" value="0"></input>
+                                <div class="sanity">
+                                    <span class="sanity-issue">Déroutes :</span>
+                                    <span class="sanity-list" name="attr_deroutes"></span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hp-info-box">
+                            <div class="health-bar-simple ignore-pain">
+                                <span data-i18n="ignore_pain"></span>
+                                <input type="checkbox" name="attr_ignore_pain"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
         <div class="main-page">
             <div class="character-domains domains-box">
                 <div class="high-title">
@@ -1234,10 +1238,7 @@
             </div>     
         </div>
     </div>
-    <div class="character2">
-            
-    </div>
-    <div class="journal">
+    <div class="ascension">
         <h2 data-i18n="book"></h2>
         <textarea name="attr_journal"></textarea>
         <div class="health box">
@@ -2716,6 +2717,14 @@ function getSectionIDsAsync(sectionName){
         await setAttrsAsync(
         {
             "healthpoints": hp
+        });
+      });
+
+      on("clicked:switch_sheet", async function(info) {
+        let tabs = info.htmlAttributes["data-tabs"];
+        await setAttrsAsync(
+        {
+            "sheetTab": tabs
         });
       });
       
