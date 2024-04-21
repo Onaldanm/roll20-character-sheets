@@ -95,6 +95,7 @@
 .high-title {
     display: grid;
     align-items: center;
+    justify-content: start;
     grid-template-columns: auto 150px;
     gap: 10px;
     padding-bottom: 10px;
@@ -316,13 +317,6 @@
 .charsheet .attack .roll {
     margin: 0 auto;
 }
-.charsheet .equip-name  {
-    width: 100%;
-    margin: 0 5px;
-}
-.charsheet span.equip-name  {
-    font-weight: bold;
-}
 .charsheet .equip-checkbox  {
     width: 15px;
 }
@@ -357,12 +351,13 @@
 .spells .repcontainer select {
   grid-column: span 1;
 }
-
+input.sheet-magicAwakeToggle[value="hidden"] ~ .spells-section,
 input.sheet-magicAwakeToggle[value="hidden"] ~ .magic-points-box,
 input.sheet-magicAwakeToggle[value="hidden"] ~ .disc-row-magic,
 input.sheet-magicAwakeToggle[value="hidden"] ~ .domain-disc-magic {
     display: none;
 }
+input.sheet-magicAwakeToggle[value="visible"] ~ .spells-section,
 input.sheet-magicAwakeToggle[value="visible"] ~ .disc-row-magic {
     display: grid;
 }
@@ -935,7 +930,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   }
 .health-header-bar {
     display: grid;
-    grid-template-columns: 120px 200px auto;
+    grid-template-columns: 120px 210px auto;
     align-items: start;
     gap: 10px;
 }
@@ -1167,6 +1162,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 .skill-value input,
 .health-bar-simple input,
+.equipment-row input,
 .health-bar-rollable input,
 .stats__cell--derived-current .number input, .stats__cell--corporeality .number input, .stats__cell--notify .number input {
     align-self: end;
@@ -1185,6 +1181,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 .skill-value input,
 .health-bar-simple input,
+.equipment-row input,
 .health-bar-rollable input {
     overflow: hidden;
 }
@@ -1552,7 +1549,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .attitude-attributes {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    gap: 15px;
+    gap: 5px;
 }
 .attitude-attributes {
     display: none;
@@ -1568,4 +1565,108 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .attitude-current[value="offensive"] ~ .attack-stats .attitude-attributes[data-attitude="offensive"],
 .attitude-current[value="standard"] ~ .attack-stats .attitude-attributes[data-attitude="standard"] {
    display: grid;
+}
+
+.spells-section {
+    padding-top: 15px;
+}
+
+.equipments-section {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+}
+
+.equipment-row {
+    display: grid;
+    grid-template-columns: 30px auto 35px;
+    align-items: center;
+    justify-items: start;
+}
+
+.equipment-row .equip-name {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.equipments-selection input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Style pour la case à cocher lorsque cochée */
+.equipments-selection input[type="checkbox"]:checked {
+    background-color: #2196F3; /* Couleur de fond */
+    border-color: #2196F3; /* Couleur de la bordure */
+}
+
+/* Style pour la case à cocher lorsque survolée */
+.equipments-selection input[type="checkbox"]:hover {
+    border-color: #999; /* Couleur de la bordure */
+}
+
+.spells-table-section {
+    display: grid;
+    row-gap: 5px;
+}
+
+.spells-row {
+    display: grid;
+    grid-template-columns: auto 30px 30px;
+    gap: 5px;
+}
+
+.spells-infos {
+    display: grid;
+    grid-template-columns: auto 150px 100px;
+}
+
+.spell-name-info {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 5px;
+}
+.spell-form-info {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.specialized__ranks {
+    display: grid;
+}
+.specialized__value {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.specialized__label {
+    font-family: Quiza, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #7d3ba4;
+    text-align: center;
+}
+
+.spell_invoc_info {
+    display: grid;
+    justify-items: end;
+}
+.spell_name_info {
+    justify-items: start;
+}
+
+.spells-table-section .repcontainer {
+    display: grid;
+    row-gap: 5px;
+}
+.spells-table-section {
+    padding-bottom: 15px;
 }
