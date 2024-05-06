@@ -1726,3 +1726,12 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .health-mode[value="simple"] + .health-conditions-boxes {
     display: none;
 }
+.health-mode[value="simple"] ~ .box-health-condition {
+    display: none;
+}
+.health-mode[value="classic"] ~ .empty-box {
+    display: none;
+}
+.health-mode[value="simple"] ~ .empty-box {
+    display: block;
+}
