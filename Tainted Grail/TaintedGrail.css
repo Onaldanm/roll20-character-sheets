@@ -793,11 +793,6 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     font-size: 1rem;
     text-transform: uppercase;
     color: #FEE2BB;
-    text-shadow: 
-    -1px -1px 0 black,  
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black; /* Définir le contour avec des ombres */
 }
 
 .headeritem__value {
@@ -862,30 +857,23 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
   /* Conteneur de la grille */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 colonnes de 50 pixels de large */
-    grid-gap: 5px; /* Espacement entre les carrés */
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
     padding-top: 3px;
   }
   
-  /* Carré */
   .square {
     width: 15px;
     height: 15px;
-    background-color: #ccc; /* Couleur de fond des carrés */
+    background-color: #ccc;
     display: contents;
   }
   
-  /* Masquer tous les carrés */
   .square {
     display: none;
     visibility: hidden;
   }
   
-  /* Afficher les carrés en fonction de la valeur de l'input */
-  /* Ici, nous utilisons la pseudo-classe :nth-child pour cibler les enfants spécifiques en fonction de leur position */
-  /* Par exemple, :nth-child(1) cible le premier enfant, :nth-child(2) cible le deuxième enfant, etc. */
-  /* Nous utilisons la valeur de l'input (1 à 5) pour déterminer quels enfants afficher */
-  /* Par exemple, si la valeur de l'input est 3, nous affichons les 3 premiers enfants */
   .input-range[value="1"] + .grid-container .square:nth-child(-n+1),
   .input-range[value="2"] + .grid-container .square:nth-child(-n+2),
   .input-range[value="3"] + .grid-container .square:nth-child(-n+3),
@@ -927,8 +915,8 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 .health-right {
     display: grid;
-    grid-template-rows: auto auto; /* 4 lignes de hauteur automatique */
-    grid-template-columns: auto auto; /* 2 colonnes de largeur automatique */
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     gap: 2px;
 }
   .header-title {
@@ -987,9 +975,9 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 
 .health-bar  {
     display: grid;
-    grid-template-columns: 5rem 10rem; /* Cinq colonnes avec une largeur basée sur le contenu */
-    grid-template-rows: repeat(5, max-content); /* Deux lignes de hauteur automatique */
-    row-gap: 0; /* Espacement entre les éléments */
+    grid-template-columns: 5rem 10rem;
+    grid-template-rows: repeat(5, max-content);
+    row-gap: 0;
     column-gap: 5px;
     align-items: center;
   }
@@ -1246,23 +1234,23 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 
 .equipments-selection input[type="checkbox"],
+.equipments-selection input[type="checkbox"],
 .health-bar-simple input[type="checkbox"] {
-    /* Styles pour masquer la case à cocher par défaut */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 20px; /* Largeur */
-    height: 20px; /* Hauteur */
-    border: 2px solid #ccc; /* Bordure */
-    border-radius: 4px; /* Coins arrondis */
-    background-color: #fff; /* Couleur de fond */
-    cursor: pointer; /* Curseur de la souris */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    cursor: pointer;
     border: 1px solid #594875;
 }
 
 .equipments-selection input[type="checkbox"]:checked,
 .health-bar-simple input[type="checkbox"]:checked {
-    background-color: #847f8c; /* Couleur de fond */
+    background-color: #847f8c;
     border: 1px solid #594875;
 }
 
