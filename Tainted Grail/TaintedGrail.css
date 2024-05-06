@@ -260,7 +260,7 @@ select.short-select {
 }
 .charsheet .domains-box .domain-box .domain-label
 {
-    font-size: 13px;
+    font-size: 14px;
 }
 .charsheet .domains-box .domain-box .domain-values {
     padding: 5px;
@@ -536,17 +536,66 @@ body.sheet-darkmode  .charactersheet {
 }
 body.sheet-darkmode .box,
 body.sheet-darkmode .attitudes,
-body.sheet-darkmode .domains-box .domain-box {
+body.sheet-darkmode .hp-info-box {
     background-color: #11262E;
-    border: 1px solid #1D1D1D;
+}
+body.sheet-darkmode .hp-info-box select,
+body.sheet-darkmode .hp-info-box input {
+    background-color: #11262E;
+}
+body.sheet-darkmode .stats__cell--derived-current .number input {
+    background-color: initial;
+}
+body.sheet-darkmode .skill-button-settings
+{
+    background-color: #11262E;
+    color: #7e6395;
+}
+body.sheet-darkmode .high-title .title {
+    color: #7e6395;
+}
+body.sheet-darkmode .charsheet button[type=roll].skill-button-roll {
+    background-color: #11262E;
+    color: #b499cc;
+}
+body.sheet-darkmode .attitude-label
+{
+    color: #ccc;
+}
+body.sheet-darkmode .popup {
+    background-color: #11262E;
+    background-image: none;
+}
+body.sheet-darkmode .attitude-current[value="movement"] ~ .attack-attitudes .attack-attitudes-button[data-attitude="movement"],
+body.sheet-darkmode .attitude-current[value="defensive"] ~ .attack-attitudes .attack-attitudes-button[data-attitude="defensive"],
+body.sheet-darkmode .attitude-current[value="offensive"] ~ .attack-attitudes .attack-attitudes-button[data-attitude="offensive"],
+body.sheet-darkmode .attitude-current[value="standard"] ~ .attack-attitudes .attack-attitudes-button[data-attitude="standard"] {
+    border: 1px solid #f1eeee;
+    background-color: #11262E;
+    color: #f1eeee;
+}
+body.sheet-darkmode .attack-buttons
+{
+    background-color: #11262E;
+    color: #b499cc;
+}
+body.sheet-darkmode .charsheet button[type="action"].attack-button-roll,
+body.sheet-darkmode .charsheet button[type="roll"].attack-button-roll {
+    color: #b499cc;
+}
+body.sheet-darkmode .charsheet button[type=roll].skill-button-roll:hover,
+body.sheet-darkmode .skill-button-settings:hover,
+body.sheet-darkmode .attack-buttons:hover {
+    background: linear-gradient(to bottom, #11262E, #000);
 }
 body.sheet-darkmode .character-info {
     background-color: #03131A;
 }
+body.sheet-darkmode .popup .close {
+    color: #fff;
+}
 body.sheet-darkmode h2 {
-    border: 1px solid #1D1D1D;
-    background-color: #92DAEC;
-    color: #1A4651;
+    color: #b499cc;
 }
 body.sheet-darkmode .footer
 {
@@ -601,8 +650,6 @@ body.sheet-darkmode .character,
 body.sheet-darkmode .config,
 body.sheet-darkmode .journal {
     display: none;
-    padding: 5px;
-    border: 1px solid #1A4651;
 }
 body.sheet-darkmode .tab {
     cursor: pointer;
@@ -619,7 +666,10 @@ body.sheet-darkmode .charsheet .tabstoggle[value="character"]~.tabs .tab-charact
 body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     background: linear-gradient(to bottom, #1A4651, #03131A);
 }
-
+.sheet-darkmode .sheetform 
+{
+    background-color: initial;
+}
 /* DARK MODE ROLL TEMPLATES ADJUSTMENTS */
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll {
@@ -664,6 +714,19 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-arrow-right {
     border-left: 180px solid #8FD6E8;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* HEADERS */
 .headeritem--motivation {
@@ -1414,6 +1477,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     align-items: center;
     justify-content: start;
     align-content: center;
+    font-size: 14px;
     gap: 10px;
 }
 
@@ -1494,7 +1558,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .attack-attitudes {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 15px;
+    gap: 5px;
     padding-top: 15px;
 }
 .attitudes-pictos {
@@ -1577,7 +1641,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .equipment-row {
     display: grid;
     grid-template-columns: 30px auto 35px;
-    align-items: center;
+    align-items: end;
     justify-items: start;
 }
 
