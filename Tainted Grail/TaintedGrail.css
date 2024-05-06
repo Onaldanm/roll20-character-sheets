@@ -82,6 +82,10 @@ select.short-select {
     grid-template-columns: auto 100px;
     padding-right: 15px;
 }
+.high-title-long {
+    grid-template-columns: auto 250px;
+    padding-right: 15px;
+}
 .high-title .title {
     color: #594875;
     font-size: 15px;
@@ -1223,7 +1227,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 .sanity-issue {
     text-transform: uppercase;
     font-size: 1rem;
-    color: #FF6F00;
+    color: #3f7a9a;
 }
 .sanity-list {
     font-size: 12px;
@@ -1638,4 +1642,42 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 .spells-table-section {
     padding-bottom: 15px;
+}
+.adv-dis {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+.character-text-box {
+   display: grid;
+}
+.act-box,
+.character-text-box-content {
+    width: 95%;
+}
+.quests textarea,
+.character-text-box-content textarea {
+    height: 100px;
+}
+.quests {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.change-sheet {
+    display: grid;
+    justify-content: end;
+    align-items: end;
+}
+.change-sheet-button {
+    border: none;
+    padding: 0;
+    font-size: 15px;
+    background-color: transparent !important;
+    color: #fff;
+    cursor: pointer;
+}
+.change-sheet-button:hover {
+    text-decoration: underline;
 }

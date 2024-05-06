@@ -1192,6 +1192,12 @@
                     <div class="high-title">
                         <a class="skill-button-popup" href="#popup_equipments"><div class="skill-button-settings"></div></a>
                         <span class="title" data-i18n="equipment"></span>
+                        <div class="hp-info-box">
+                            <div class="health-bar-simple">
+                                <span data-i18n="richesses"></span>
+                                <input type="text" name="attr_richesses" value="0">
+                            </div>
+                        </div>
                     </div>
                     <div class="equipments-section">
                         <div class="protection-section readonly-rep">
@@ -1235,20 +1241,83 @@
         </div>
     </div>
     <div class="ascension">
-        <h2 data-i18n="book"></h2>
-        <textarea name="attr_journal"></textarea>
-        <div class="health box">
-            <div class="sheet-tg-row">
-                <span class="title" data-i18n="advantages"></span>
+        <div class="progress-section">
+            <div class="high-title high-title-long">
+                <span class="title" data-i18n="character"></span>
+                <div class="hp-info-box">
+                    <div class="health-bar-simple">
+                        <span data-i18n="experience_points"></span>
+                        <input type="text" name="attr_experience_points" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="box-content">
-                <textarea></textarea>
+            <div class="adv-dis">
+                <div class="character-text-box">
+                    <span class="character-text-box-title" data-i18n="advantages"></span>
+                    <div class="character-text-box-content">
+                        <textarea name="attr_advantages"></textarea>
+                    </div>
+                </div>
+                <div class="character-text-box">
+                    <span class="character-text-box-title" data-i18n="disadvantages"></span>
+                    <div class="character-text-box-content">
+                        <textarea name="attr_disadvantages"></textarea>
+                    </div>
+                </div>
             </div>
-            <div class="sheet-tg-row">
-                <span class="title" data-i18n="disadvantages"></span>
+        </div>
+        <div class="ascension-section">
+            <div class="high-title high-title-long">
+                <span class="title" data-i18n="ascension_disgrace"></span>
+                <div class="hp-info-box">
+                    <div class="health-bar-simple">
+                        <span data-i18n="ascension_points"></span>
+                        <input type="text" name="attr_ascension_points" value="0">
+                    </div>
+                </div>
             </div>
-            <div class="box-content">
-                <textarea></textarea>
+        </div>
+        <div class="ascension-section">
+            <div class="high-title high-title-long">
+                <span class="title" data-i18n="quest"></span>
+            </div>
+            <div class="quests">
+                <div class="act-box act-1">
+                    <span class="act-title" data-i18n="act1"></span>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act1-step1"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act1-step2"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act1-step3"></textarea>
+                    </div>
+                </div>
+                <div class="act-box act-2">
+                    <span class="act-title" data-i18n="act2"></span>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act2-step1"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act2-step2"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act2-step3"></textarea>
+                    </div>
+                </div>
+                <div class="act-box act-3">
+                    <span class="act-title" data-i18n="act3"></span>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act3-step1"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act3-step2"></textarea>
+                    </div>
+                    <div class="act-step">
+                        <span>Step: </span><textarea name="attr_act3-step3"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

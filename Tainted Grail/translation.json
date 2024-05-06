@@ -156,7 +156,7 @@
   "vigor": "Vigeur",
   "survie": "Survie",
   "advantages": "Avantages",
-  "disadvantages": "Désavantage",
+  "disadvantages": "Désavantages",
   "color": "Couleur",
   "color_blue": "Bleu",
   "color_brown": "Brown",
@@ -193,5 +193,13 @@
   "ignore_pain": "Ignorer la douleur",
   "roll_for": "Lancement de dé",
   "attack_base": "Base",
-  "combat_round": "Passes d'armes"
+  "combat_round": "Passes d'armes",
+  "richesses": "Richesses",
+  "experience_points": "Expérience",
+  "ascension_disgrace": "Ascension et Disgrâce",
+  "ascension_points": "Points d'Ascension",
+  "quest": "Quête",
+  "act1": "Acte 1",
+  "act2": "Acte 2",
+  "act3": "Acte 3"
 }
