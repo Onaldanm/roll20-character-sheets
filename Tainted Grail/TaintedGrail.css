@@ -1719,3 +1719,10 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     background: none;
     color: inherit;
 }
+
+.health-mode[value="classic"] + .health-conditions {
+    display: none;
+}
+.health-mode[value="simple"] + .health-conditions-boxes {
+    display: none;
+}

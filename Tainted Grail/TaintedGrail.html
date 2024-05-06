@@ -1413,48 +1413,58 @@
 </div>
 <div id="popup_health" class="overlay">
     <div class="popup">
-        <h2>Santé</h2>
+        <h2 data-i18n="health"></h2>
         <a class="close" href="#">×</a>
         <div class="content">
-            <div class="sheet-tg-row">
-                <span class="title" data-i18n="health_condition"></span>
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_condition_good">(B)</span>
-                <input type="number" name="attr_health_stage1" value="19">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2"
-                    value="14">
-                <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3"
-                    value="9">
-                <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
-                    value="5">
-                <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
-            </div>
             <div class="sheet-tg-row">
                 <span data-i18n="survie_max"></span><input type="number" name="attr_survie_max" value="0"></input>
             </div>
             <div class="sheet-tg-row">
-                <span class="title" data-i18n="health_condition_box"></span>
+                <span data-i18n="health_simple"></span>
+                <input type="checkbox" name="attr_health_simple">
             </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_good_box"></span><input type="number" name="attr_health_good_max" value="5"></input>
+            <input class="health-mode" type="hidden" name="attr_health_settings_mode">
+            <div class="health-conditions">
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="health_condition"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_condition_good">(B)</span>
+                    <input type="number" name="attr_health_stage1" value="19">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_condition_okay">(M)</span><input type="number" name="attr_health_stage2"
+                        value="14">
+                    <input type="number" name="attr_health_stage2_mod" hidden="true" value="-1">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_condition_bad">(G)</span><input type="number" name="attr_health_stage3"
+                        value="9">
+                    <input type="number" name="attr_health_stage3_mod" hidden="true" value="-2">
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_condition_critical">(C)</span><input type="number" name="attr_health_stage4"
+                        value="5">
+                    <input type="number" name="attr_health_stage4_mod" hidden="true" value="-3">
+                </div>
             </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_okay_box"></span><input type="number" name="attr_health_okay_max" value="5"></input>
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_bad_box"></span><input type="number" name="attr_health_bad_max" value="4"></input>
-            </div>
-            <div class="sheet-tg-row">
-                <span data-i18n="health_critical_box"></span><input type="number" name="attr_health_critical_max" value="4"></input>
+            <input class="health-mode" type="hidden" name="attr_health_settings_mode">
+            <div class="health-conditions-boxes">
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="health_condition"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_good_box"></span><input type="number" name="attr_health_good_max" value="5"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_okay_box"></span><input type="number" name="attr_health_okay_max" value="5"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_bad_box"></span><input type="number" name="attr_health_bad_max" value="4"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span data-i18n="health_critical_box"></span><input type="number" name="attr_health_critical_max" value="4"></input>
+                </div>
             </div>
             <div class="sheet-tg-row">
                 <span class="title" data-i18n="tourments_title"></span>
@@ -2954,4 +2964,16 @@ function getSectionIDsAsync(sectionName){
                 });
             }
     });
+
+    on("sheet:opened change:health_simple", async function() {
+        v = await getAttrsAsync(["health_simple"]);
+        var checked = v.health_simple == "on" ? 1 : 0;
+        let health_settings_mode = "classic";
+        if (checked) {
+            health_settings_mode = "simple";
+        }
+        await setAttrsAsync({
+            "health_settings_mode": health_settings_mode
+        });
+});
 </script>
