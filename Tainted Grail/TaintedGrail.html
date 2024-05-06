@@ -1137,7 +1137,7 @@
                         <span class="d10-dice-icon">k</span>
                         <button type="roll" data-i18n="initiative_roll" class="attack-button-roll"
                         name="act_roll_init"
-                        value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
+                        value="@{whispertype} &{template:d10roll} {{title=^{initiative_roll}}} {{type_attack=init}} {{character=@{character_name}}} {{roll=[[1d10+@{speed_mod}[@{speed_text}]+@{health_mod}[@{health_mod_text}] &{tracker}]]}}"></button>
                     </div>
                     <div class="attack-buttons">
                         <span class="d10-dice-icon">k</span>
@@ -1147,7 +1147,7 @@
                         <span class="d10-dice-icon">k</span>
                         <button type="roll" data-i18n="parade_roll" class="attack-button-roll"
                         name="act_roll_parade"
-                        value="@{whispertype} &{template:d10roll} {{title=^{parade_roll}}} {{character=@{character_name}}} {{roll=[[1d10+@{combativeness}[@{combativeness_text}]+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]+@{parade_mod}+@{health_mod}[@{health_mod_text}]+@{blind}]]}}"></button>
+                        value="@{whispertype} &{template:d10roll} {{title=^{parade_roll}}} {{type_attack=parade}} {{character=@{character_name}}} {{roll=[[1d10+@{combativeness}[@{combativeness_text}]+@{skill_close_combat}[@{skill_close_combat_text}]+@{skill_close_combat_bonus}[@{skill_bonus_text}]+@{skill_close_combat_malus}[@{skill_malus_text}]+@{parade_mod}+@{health_mod}[@{health_mod_text}]+@{blind}]]}}"></button>
                     </div>
                 </div>
                 <input type="hidden" class="sheet-magicAwakeToggle" name="attr_magic_wake_toggle" value="hidden" />
@@ -1191,7 +1191,7 @@
                                 <input name="attr_spell_invocation" type="hidden"></input>
                                 <input name="attr_spell_mana_cost" type="hidden"></input>
                                 <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
-                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[1d10cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_form=^{@{spell_form}}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[1d10cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
                             </div>
                         </fieldset>
                     </div>
@@ -2326,6 +2326,9 @@
 </div>
 <rolltemplate class="sheet-rolltemplate-d10roll">
     <div class="container">
+        {{#type_attack}}
+        <div class="roll-attack">
+        {{/type_attack}}
         {{#spell_mana_cost}}
         <div class="roll-spell">
             {{/spell_mana_cost}}
@@ -2340,6 +2343,10 @@
             <div><span class="subheader"><strong><span class="tcat" data-i18n="way"></span>:</strong> {{way}}</span>
             </div>
             {{/way}}
+            {{#spell_form}}
+            <div><span class="subheader"><strong><span class="tcat" data-i18n="spell_form"></span>:</strong>
+                    {{spell_form}}</span></div>
+            {{/spell_form}}
             {{#spell_invocation}}
             <div><span class="subheader"><strong><span class="tcat" data-i18n="spell_invocation_type"></span>:</strong>
                     {{spell_invocation}}</span></div>
@@ -2404,14 +2411,17 @@
             </div>
         </div>
         {{/spell_mana_cost}}
+        {{#type_attack}}
+        </div>
+        {{/type_attack}}
 </rolltemplate>
 
 <rolltemplate class="sheet-rolltemplate-attack">
     <div class="container">
         <div>
-            <h1>{{name}}</h1>
+            <h1 data-i18n="combat_round"></h1>
         </div>
-        <div><span class="subheader">vs {{target}}</span></div>
+        <div><span class="subheader">{{name}} vs {{target}}</span></div>
         <div class="arrow-container">
             <div class="arrow-right"></div>
         </div>

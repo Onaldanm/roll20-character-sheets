@@ -418,32 +418,29 @@ button.d10-dice::before {
 }
 
 /* ROLL TEMPLATES */
+.sheet-rolltemplate-attack,
+.sheet-rolltemplate-d10roll {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
 .sheet-rolltemplate-d10roll .sheet-manaCost {
     color: #5c9dc0;
 }
-
 .sheet-rolltemplate-d10roll .sheet-healthCost {
     color: #b22222;
 }
-
 .sheet-rolltemplate-d10roll .sheet-container,
 .sheet-rolltemplate-attack .sheet-container {
     background-color: #ffffff;
-    border: 1px solid;
-    padding: 2px;
-    width: 189px;
+    color: #000;
 }
 .sheet-rolltemplate-d10roll .sheet-container h1,
 .sheet-rolltemplate-attack .sheet-container h1 {
-    color: rgb(126, 45, 64);
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 20px;
+    font-size: 2rem;
+    line-height: 1;
+    color: #FFF7E6;
+    padding: 5px;
+    background: linear-gradient(180deg, #261617, #594875);
 }
-.sheet-rolltemplate-d10roll div,
-.sheet-rolltemplate-attack div {
-    padding: 2px;
-};
 .sheet-rolltemplate-d10roll span,
 .sheet-rolltemplate-attack span {
     color: rgb(126, 45, 64);
@@ -457,21 +454,15 @@ button.d10-dice::before {
 .sheet-rolltemplate-attack .sheet-subheader {
     color: #000;
     font-size: 1em;
-    font-style: italic;
 }
 .sheet-rolltemplate-d10roll .sheet-arrow-right,
 .sheet-rolltemplate-attack .sheet-arrow-right {
-    border-bottom: 2px solid transparent;
-    border-left: 180px solid #6F150C;
-    border-top: 2px solid transparent;
-}
-.sheet-rolltemplate-d10roll .sheet-tcat,
-.sheet-rolltemplate-attack .sheet-tcat {
-    font-style: italic;
+    height: 3px;
+    background: linear-gradient(180deg, #261617, #594875);
 }
 .sheet-rolltemplate-d10roll .inlinerollresult,
 .sheet-rolltemplate-attack .inlinerollresult  {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     border: none;
 }
 .sheet-rolltemplate-d10roll .inlinerollresult.fullcrit,
@@ -513,6 +504,9 @@ button.d10-dice::before {
     font-style: italic;
     font-size: 0.8em;
 }
+.sheet-rolltemplate-attack  .sheet-explain {
+    padding: 5px;
+}
 .sheet-rolltemplate-attack .sheet-attack-touch-fail
 {
     color: red !important;
@@ -522,10 +516,22 @@ button.d10-dice::before {
     color: green;
 }
 .sheet-rolltemplate-d10roll .sheet-roll-spell .sheet-arrow-right {
-    border-left: 180px solid #3f7a9a;
+    background: linear-gradient(180deg, #5c9dc0, #3f7a9a);
 }
 .sheet-rolltemplate-d10roll .sheet-roll-spell h1 {
-    color: #3f7a9a
+    background: linear-gradient(180deg, #5c9dc0, #3f7a9a);
+}
+.sheet-rolltemplate-d10roll .sheet-roll-attack h1,
+.sheet-rolltemplate-attack .sheet-container h1,
+.sheet-rolltemplate-attack .sheet-arrow-right,
+.sheet-rolltemplate-d10roll .sheet-roll-attack .sheet-arrow-right {
+    background: linear-gradient(180deg, #c05c5c, #9a3f3f);
+}
+.sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-d10roll .inlinerollresult {
+    background-color: transparent;
+    border: none !important;
+    color: #000;
 }
 /* Dark mod adjustements */
 
@@ -632,19 +638,10 @@ body.sheet-darkmode .sheet-tooltip:hover span {
     position: absolute;
 }
 body.sheet-darkmode .sheet-tooltip span {
-    display: none;
-    border-radius: 4px;
-    box-shadow: 5px 5px 8px #1A4651;
-    z-index: 10;
-    padding: 14px 20px;
-    margin-top: 10px;
-    margin-left: -150px;
-    width: 160px;
-    line-height: 16px;
+    box-shadow: none;
     color: #F8F8F8;
     border: 1px solid #1A4651;
     background: #1A4651;
-    text-align: justify;
 }
 body.sheet-darkmode .character,
 body.sheet-darkmode .config,
@@ -670,63 +667,6 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 {
     background-color: initial;
 }
-/* DARK MODE ROLL TEMPLATES ADJUSTMENTS */
-
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll {
-    display: block;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack h1,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll h1 {
-    color: #8FD6E8;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .sheet-container {
-    background-color: #1A4651;
-    color: #F8F8F8;
-    border: 1px solid #1D1D1D;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-subheader,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .sheet-subheader {
-    color: #F8F8F8;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .inlinerollresult,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .inlinerollresult {
-    background-color: transparent;
-    border: none;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .sheet-customHighlight .inlinerollresult.fullfail,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .sheet-customHighlight .inlinerollresult.fullcrit {
-    color: #F8F8F8;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-container {
-    background-color: #1A4651;
-    color: #F8F8F8;
-    border: 1px solid #1D1D1D;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-customHighlight .inlinerollresult.fullfail,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-customHighlight .inlinerollresult.fullcrit {
-    color: #F8F8F8;
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-attack-touch-success
-{
-    color: rgb(24, 238, 70);
-}
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-d10roll .sheet-arrow-right, 
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-attack .sheet-arrow-right {
-    border-left: 180px solid #8FD6E8;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* HEADERS */
 .headeritem--motivation {
