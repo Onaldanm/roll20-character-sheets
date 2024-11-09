@@ -2266,3 +2266,8 @@ textarea.act-area-small {
 .popup textarea {
     background-color: white;
 }
+
+.character-npc-toggle[value="false"]+.header .header__boxes.stats__row {
+    display: none;
+    visibility: hidden;
+}
