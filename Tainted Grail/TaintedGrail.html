@@ -8,7 +8,6 @@
                     name="attr_character_name"></span>
                     <span class="picto" style="font-family: 'Pictos'">y</span>
             </a>
-
         </div>
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
@@ -1075,7 +1074,7 @@
                             <div class="health-bar-simple">
                                 <span data-i18n="defense"></span>
                                 <input type="number" readonly name="attr_defense_offensive"
-                                value="@{defense_total}-(@{potential}[@{potential_text})" disabled="true">
+                                value="@{defense_total}-(@{potential}[@{potential_text}])" disabled="true">
                             </div>
                         </div>
                         <div class="hp-info-box">
@@ -1098,7 +1097,7 @@
                             <div class="health-bar-simple">
                                 <span data-i18n="defense"></span>
                                 <input type="number" readonly name="attr_defense_defensive"
-                                value="@{defense_total}+(@{potential}[@{potential_text})" disabled="true">
+                                value="@{defense_total}+(@{potential}[@{potential_text}])" disabled="true">
                             </div>
                         </div>
                         <div class="hp-info-box">
@@ -1120,7 +1119,7 @@
                             <div class="health-bar-simple">
                                 <span data-i18n="defense"></span>
                                 <input type="number" readonly name="attr_defense_movement"
-                                value="@{defense_total}+(@{potential}[@{potential_text})" disabled="true">
+                                value="@{defense_total}+(@{potential}[@{potential_text}])" disabled="true">
                             </div>
                         </div>
                         <div class="hp-info-box">
@@ -1952,7 +1951,7 @@
                 </select>
             </div>
             <div class="domain-values sheet-tg-row">
-                <span data-i18n="base"></span><input type="number" name="attr_skill_magic_bonus" value="0" max="5" min="0">
+                <span data-i18n="base"></span><input type="number" name="attr_skill_magic" value="0" max="5" min="0">
                 <span data-i18n="bonus"></span><input type="number" name="attr_skill_magic_bonus" value="0"
                     min="0">
                 <span data-i18n="malus"></span><input type="number" name="attr_skill_magic_malus" value="0"
@@ -2832,12 +2831,14 @@ function getSectionIDsAsync(sectionName){
         // Retrieve Attitude Mode
         getAttrs(['attitude_mode'], (v) => {
             const attitude = v.attitude_mode;
+            console.log(attitude)
             getAttrs([`attack_${attitude}`,`defense_${attitude}`,`speed_${attitude}`,`parademod_${attitude}`], (a) => {
                 const output = {};
                 output.attack_mod = a[`attack_${attitude}`];
                 output.defense_mod = a[`defense_${attitude}`];
                 output.speed_mod = a[`speed_${attitude}`];
                 output.parade_mod = a[`parademod_${attitude}`];
+                console.log(output)
                 setAttrs(output, {silent: true});
             });
         });
