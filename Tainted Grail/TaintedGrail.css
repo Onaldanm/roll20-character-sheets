@@ -1761,7 +1761,7 @@ span.health-agony {
 
 .equipments-section {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     gap: 5px;
 }
 
@@ -1775,6 +1775,10 @@ span.health-agony {
 .equipment-row .equip-name {
     font-size: 14px;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
 }
 
 .spells-table-section {
