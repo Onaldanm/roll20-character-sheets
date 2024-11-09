@@ -44,6 +44,11 @@
         </div>
     </div>
     <div class="header__boxes stats__row">
+        <div class="change-sheet">
+            <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
+            <button class="change-sheet-button" type="action" data-tabs="ascension" name="act_switch_sheet"> Ascension et Disgrace</button>
+            <button class="change-sheet-button" type="action" data-tabs="character" name="act_switch_sheet"> Retour à la feuille de personnage</button>
+        </div>
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
                 <div class="way-title">
@@ -122,11 +127,6 @@
                     <div class="square"></div>
                 </div>
             </div>
-        </div>
-        <div class="change-sheet">
-            <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character" />
-            <button class="change-sheet-button" type="action" data-tabs="ascension" name="act_switch_sheet"> Ascension et Disgrace</button>
-            <button class="change-sheet-button" type="action" data-tabs="character" name="act_switch_sheet"> Retour à la feuille de personnage</button>
         </div>
     </div>
 </div>
@@ -1292,57 +1292,129 @@
                     </div>
                 </div>
             </div>
+            <div class="adv-free-note">
+                <div class="character-text-box">
+                    <span class="character-text-box-title" data-i18n="free_notes"></span>
+                    <div class="character-text-box-content">
+                        <textarea name="attr_free_notes"></textarea>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="ascension-section">
-            <div class="high-title high-title-long">
+            <div class="high-title high-title-ascension">
+                <a class="skill-button-popup" href="#popup_ascension"><div class="skill-button-settings"></div></a>
                 <span class="title" data-i18n="ascension_disgrace"></span>
                 <div class="hp-info-box">
-                    <div class="health-bar-simple">
+                    <div class="health-bar-simple ascension-bar">
                         <span data-i18n="ascension_points"></span>
                         <input type="text" name="attr_ascension_points" value="0">
+                        <a class="skill-button-popup" href="#popup_metamorph"><div class="skill-button-settings popup-borderless"></div></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ascension-section">
-            <div class="high-title high-title-long">
-                <span class="title" data-i18n="quest"></span>
+        <div class="ascension-section-content">
+            <div class="quest-section">
+                <input type="hidden" class="quest-visibility" name="attr_quest_toggle" value="hidden" />
+                <div class="quest-full-text">
+                    <div class="parch">
+                        <div class="title"><span name="attr_quest_text"></span></div>
+                        <span name="attr_quest_intro_text"></span> <b><span data-i18n="quest-indic"></span></b>
+                        <span name="attr_act1_text"></span> <b><span data-i18n="quest-act1-indic"></span></b>
+                        <span name="attr_act2_text"></span> <b><span data-i18n="quest-act2-indic"></span></b>
+                        <span name="attr_act3_text"></span> <b><span data-i18n="quest-act3-indic"></span></b>
+                    </div>
+                    <div class="quest-tuto">
+                        <span  data-i18n="quest-tuto"></span>
+                    </div>
+                </div>
             </div>
-            <div class="quests">
-                <div class="act-box act-1">
-                    <span class="act-title" data-i18n="act1"></span>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act1-step1"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act1-step2"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act1-step3"></textarea>
-                    </div>
+            <input type="hidden" class="metamorphincarnation" name="attr_metamorphincarnation_toggle" value="ascension" />
+            <div class="ascension-metamorph">
+                <input type="hidden" name="attr_ascension_points" class="input-range"></input>
+                <div class="vertical-container">
+                    <div class="ascension-step separator"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step separator"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step separator"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step"></div>
+                    <div class="ascension-step separator"></div>
                 </div>
-                <div class="act-box act-2">
-                    <span class="act-title" data-i18n="act2"></span>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act2-step1"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act2-step2"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act2-step3"></textarea>
-                    </div>
-                </div>
-                <div class="act-box act-3">
-                    <span class="act-title" data-i18n="act3"></span>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act3-step1"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act3-step2"></textarea>
-                    </div>
-                    <div class="act-step">
-                        <span>Step: </span><textarea name="attr_act3-step3"></textarea>
+            </div>
+            <input type="hidden" class="metamorphincarnation" name="attr_metamorphincarnation_toggle" value="ascension" />
+            <div class="metamorph-section">
+                <div class="metamorph-full-text">
+                    <input type="hidden" class="metamorphincarnation-steps" name="attr_metamorphincarnation_steps" value="1" />
+                    <div class="ascension-step-container">
+                        <div class="ascension-step-section">
+                            <div class="metamorphincarnation-box">
+                                <span class="ascension-step-title ascension-step1">PRÉMICES</span>
+                                <span class="ascension-step-title disgrace-step1">CHUTE</span>
+                                <b><span name="attr_metamorph_premice_title"></span></b> <span name="attr_metamorph_premice_text"></span>
+                            </div>
+                        </div>
+                        <div class="ascension-step-section">
+                            <div class="metamorphincarnation-box">
+                                <span class="ascension-step-title ascension-step2">ÉVEIL</span>
+                                <span class="ascension-step-title disgrace-step2">DÉCHÉANCE</span>
+                                <b><span name="attr_metamorph_eveil_title"></span></b> <span name="attr_metamorph_eveil_text"></span>
+                            </div>
+                        </div>
+                        <div class="ascension-step-section">
+                                <div class="metamorphincarnation-box">
+                                <span class="ascension-step-title ascension-step2">EMBRASEMENT</span>
+                                <span class="ascension-step-title disgrace-step2">INFAMIE</span>
+                                <b><span name="attr_metamorph_embrase_title"></span></b> <span name="attr_metamorph_embrase_text"></span>
+                            </div>
+                        </div>
+                        <div class="ascension-step-section">
+                                <div class="metamorphincarnation-box">
+                                <span class="ascension-step-title ascension-step3">ASCENSION</span>
+                                <span class="ascension-step-title disgrace-step3">DISGRÂCE</span>
+                                <b><span name="attr_metamorph_ascension_title"></span></b> <span name="attr_metamorph_ascension_text"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1351,6 +1423,92 @@
 </div>
 <div class="footer">
     <span data-i18n="author"></span>
+</div>
+<div id="popup_ascension" class="overlay">
+    <div class="popup">
+        <h2 data-i18n="ascension_disgrace"></h2>
+        <a class="close" href="#">×</a>
+        <div class="content">
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="quest"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <input type="text" name="attr_quest_text" class="input-full"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="quest-intro"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea name="attr_quest_intro_text" class="act-area-small"></textarea>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="act-title" data-i18n="act1"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea name="attr_act1_text" class="act-area"></textarea>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="act-title" data-i18n="act2"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea name="attr_act2_text" class="act-area"></textarea>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="act-title" data-i18n="act3"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea name="attr_act3_text" class="act-area"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup_metamorph" class="overlay">
+    <div class="popup">
+        <h2 data-i18n="ascension_metamorph"></h2>
+        <a class="close" href="#">×</a>
+        <div class="content">
+            <div class="box-content">
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="metamorph_premice"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <input type="text" name="attr_metamorph_premice_title" class="input-full"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea type="text" name="attr_metamorph_premice_text" class="act-area"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="title" data-i18n="metamorph_eveil"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <input type="text" name="attr_metamorph_eveil_title" class="input-full"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea type="text" name="attr_metamorph_eveil_text" class="act-area"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="act-title" data-i18n="metamorph_embrase"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <input type="text" name="attr_metamorph_embrase_title" class="input-full"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea type="text" name="attr_metamorph_embrase_text" class="act-area"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <span class="act-title" data-i18n="metamorph_ascension"></span>
+                </div>
+                <div class="sheet-tg-row">
+                    <input type="text" name="attr_metamorph_ascension_title" class="input-full"></input>
+                </div>
+                <div class="sheet-tg-row">
+                    <textarea type="text" name="attr_metamorph_ascension_text" class="act-area"></input>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="popup_settings" class="overlay">
     <div class="popup">
@@ -2606,6 +2764,40 @@ function getSectionIDsAsync(sectionName){
         on(`clicked:${button}`, function() {
             setAttrs({
                 sheetTab: button
+            });
+        });
+    });
+    on(`sheet:opened change:quest_text`, async function() {
+        getAttrs(['quest_text'], (v) => {
+            let quest_text = v.quest_text;
+            hiddenStatus = "visible";
+            if (quest_text === null || quest_text === undefined || quest_text.trim() === '') {
+                hiddenStatus = "hidden";
+            }
+            setAttrs({
+                quest_toggle: hiddenStatus
+            });
+        });
+    });
+
+    on(`sheet:opened change:ascension_points`, async function() {
+        getAttrs(['ascension_points'], (v) => {
+            let points = v.ascension_points;
+            hiddenStatus = points >= 0 ? "ascension" : "disgrace";
+            points = Math.abs(points);
+            steps = 0;
+            if (points >= 45) {
+                steps = 4;
+            } else if (points >= 30) {
+                steps = 3;
+            } else if (points >= 15) {
+                steps = 2;
+            } else if (points >= 1) {
+                steps = 1;
+            }
+            setAttrs({
+                metamorphincarnation_toggle: hiddenStatus,
+                metamorphincarnation_steps: steps
             });
         });
     });

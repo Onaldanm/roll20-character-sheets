@@ -940,7 +940,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 }
 
 .popup {
-    margin: 70px auto;
+    margin: 40px auto;
     padding: 10px;
     border-style: double;
     border-color: #594875;
@@ -949,6 +949,8 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
     background-color: #f5f5f5;
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     background-size: 80px 80px;
+    max-height: 590px;
+    overflow: auto;
 }
 
 .popup h2 {
@@ -1990,4 +1992,267 @@ span.health-agony {
 
 .stats__row .headeritem__item {
     width: 100px;
+}
+
+.quest-title {
+    grid-template-columns: 150px auto;
+    padding-right: 15px;
+}
+
+.high-title-ascension {
+    grid-template-columns: 30px auto 250px;
+    padding-right: 15px;
+}
+
+.input-full {
+    width: 100%;
+}
+
+textarea.act-area  {
+    height: 100px;
+}
+
+textarea.act-area-small {
+    height: 50px;
+}
+
+.ascension-section-content {
+    display: grid;
+    grid-template-columns: 400px 50px auto;
+}
+
+.metamorph-section .title,
+.quest-section .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8a3226;
+    padding-bottom: 15px;
+}
+
+.metamorph-full-text {
+    border: 1px solid #594875;
+    padding: 10px;
+}
+
+.ascension-step-section {
+    padding-bottom: 8px;
+}
+.quest-full-text {
+    background-color: #f3e8dd;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #4b2a1a;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ascension-bar {
+    padding: 2px 5px;
+    display: grid;
+    grid-template-columns: auto 5rem 2.5rem;
+    align-items: center;
+    align-content: center;
+    overflow: clip;
+}
+
+.ascension-step-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.metamorphincarnation[value="disgrace"]+.ascension-metamorph .vertical-container {
+    flex-direction: column;
+}
+.metamorphincarnation[value="disgrace"]+.metamorph-section .metamorph-full-text .ascension-step-container {
+    flex-direction: column;
+}
+.metamorphincarnation[value="disgrace"]+.metamorph-section .metamorph-full-text .ascension-step-container .ascension-step-section:nth-child(4) {
+    min-height: 10px;
+}
+.metamorphincarnation[value="ascension"]+.metamorph-section .metamorph-full-text .ascension-step-container .ascension-step-section:nth-child(1) {
+    min-height: 10px;
+}
+
+.metamorphincarnation[value="disgrace"]+.metamorph-section .disgrace-step1,
+.metamorphincarnation[value="ascension"]+.metamorph-section .ascension-step1,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .disgrace-step2,
+.metamorphincarnation[value="ascension"]+.metamorph-section .ascension-step2,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .disgrace-step3,
+.metamorphincarnation[value="ascension"]+.metamorph-section .ascension-step3,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .disgrace-step4,
+.metamorphincarnation[value="ascension"]+.metamorph-section .ascension-step4 {
+    visibility: visible;
+    display: block;
+}
+
+.metamorphincarnation[value="ascension"]+.metamorph-section .disgrace-step1,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .ascension-step1,
+.metamorphincarnation[value="ascension"]+.metamorph-section .disgrace-step2,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .ascension-step2,
+.metamorphincarnation[value="ascension"]+.metamorph-section .disgrace-step3,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .ascension-step3,
+.metamorphincarnation[value="ascension"]+.metamorph-section .disgrace-step4,
+.metamorphincarnation[value="disgrace"]+.metamorph-section .ascension-step4 {
+    visibility: hidden;
+    display: none;
+}
+
+.metamorphincarnation-steps[value="1"]+.ascension-step-container .ascension-step-section:nth-child(-n+1),
+.metamorphincarnation-steps[value="2"]+.ascension-step-container .ascension-step-section:nth-child(-n+2),
+.metamorphincarnation-steps[value="3"]+.ascension-step-container .ascension-step-section:nth-child(-n+3),
+.metamorphincarnation-steps[value="4"]+.ascension-step-container .ascension-step-section:nth-child(-n+4) {
+    filter: none;
+}
+
+.quest-visibility[value="hidden"]+.quest-full-text .parch,
+.quest-visibility[value="visible"]+.quest-full-text .quest-tuto {
+    display: none;
+    visibility: hidden;
+}
+
+.quest-visibility[value="visible"]+.quest-full-text .parch,
+.quest-visibility[value="hidden"]+.quest-full-text .quest-tuto {
+    display: block;
+    visibility: visible;
+}
+
+.ascension-metamorph .vertical-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: #f5f3f1;
+    width: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ascension-step-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.ascension-step-container .ascension-step-section {
+    min-height: 140px;
+    max-height: 140px;
+    filter: blur(2px);
+}
+
+.ascension-metamorph .ascension-step {
+    width: 5px;
+    height: 5px;
+    margin: 1px 0;
+    border: 1px solid #4b2a1a;
+    border-radius: 50%;
+}
+
+.ascension-metamorph .separator {
+    width: 30px;
+    height: 10px;
+    margin: 5px 0;
+    background-color: #b5b5b5;
+    border-radius: 10px;
+}
+
+.ascension-metamorph .input-range[value="1"]+.vertical-container .ascension-step:nth-child(-n+2),
+.ascension-metamorph .input-range[value="2"]+.vertical-container .ascension-step:nth-child(-n+3),
+.ascension-metamorph .input-range[value="3"]+.vertical-container .ascension-step:nth-child(-n+4),
+.ascension-metamorph .input-range[value="4"]+.vertical-container .ascension-step:nth-child(-n+5),
+.ascension-metamorph .input-range[value="5"]+.vertical-container .ascension-step:nth-child(-n+6),
+.ascension-metamorph .input-range[value="6"]+.vertical-container .ascension-step:nth-child(-n+7),
+.ascension-metamorph .input-range[value="7"]+.vertical-container .ascension-step:nth-child(-n+8),
+.ascension-metamorph .input-range[value="8"]+.vertical-container .ascension-step:nth-child(-n+9),
+.ascension-metamorph .input-range[value="9"]+.vertical-container .ascension-step:nth-child(-n+10),
+.ascension-metamorph .input-range[value="10"]+.vertical-container .ascension-step:nth-child(-n+11),
+.ascension-metamorph .input-range[value="11"]+.vertical-container .ascension-step:nth-child(-n+12),
+.ascension-metamorph .input-range[value="12"]+.vertical-container .ascension-step:nth-child(-n+13),
+.ascension-metamorph .input-range[value="13"]+.vertical-container .ascension-step:nth-child(-n+14),
+.ascension-metamorph .input-range[value="14"]+.vertical-container .ascension-step:nth-child(-n+15),
+.ascension-metamorph .input-range[value="15"]+.vertical-container .ascension-step:nth-child(-n+16),
+.ascension-metamorph .input-range[value="16"]+.vertical-container .ascension-step:nth-child(-n+17),
+.ascension-metamorph .input-range[value="17"]+.vertical-container .ascension-step:nth-child(-n+18),
+.ascension-metamorph .input-range[value="18"]+.vertical-container .ascension-step:nth-child(-n+19),
+.ascension-metamorph .input-range[value="19"]+.vertical-container .ascension-step:nth-child(-n+20),
+.ascension-metamorph .input-range[value="20"]+.vertical-container .ascension-step:nth-child(-n+21),
+.ascension-metamorph .input-range[value="21"]+.vertical-container .ascension-step:nth-child(-n+22),
+.ascension-metamorph .input-range[value="22"]+.vertical-container .ascension-step:nth-child(-n+23),
+.ascension-metamorph .input-range[value="23"]+.vertical-container .ascension-step:nth-child(-n+24),
+.ascension-metamorph .input-range[value="24"]+.vertical-container .ascension-step:nth-child(-n+25),
+.ascension-metamorph .input-range[value="25"]+.vertical-container .ascension-step:nth-child(-n+26),
+.ascension-metamorph .input-range[value="26"]+.vertical-container .ascension-step:nth-child(-n+27),
+.ascension-metamorph .input-range[value="27"]+.vertical-container .ascension-step:nth-child(-n+28),
+.ascension-metamorph .input-range[value="28"]+.vertical-container .ascension-step:nth-child(-n+29),
+.ascension-metamorph .input-range[value="29"]+.vertical-container .ascension-step:nth-child(-n+30),
+.ascension-metamorph .input-range[value="30"]+.vertical-container .ascension-step:nth-child(-n+31),
+.ascension-metamorph .input-range[value="31"]+.vertical-container .ascension-step:nth-child(-n+32),
+.ascension-metamorph .input-range[value="32"]+.vertical-container .ascension-step:nth-child(-n+33),
+.ascension-metamorph .input-range[value="33"]+.vertical-container .ascension-step:nth-child(-n+34),
+.ascension-metamorph .input-range[value="34"]+.vertical-container .ascension-step:nth-child(-n+35),
+.ascension-metamorph .input-range[value="35"]+.vertical-container .ascension-step:nth-child(-n+36),
+.ascension-metamorph .input-range[value="36"]+.vertical-container .ascension-step:nth-child(-n+37),
+.ascension-metamorph .input-range[value="37"]+.vertical-container .ascension-step:nth-child(-n+38),
+.ascension-metamorph .input-range[value="38"]+.vertical-container .ascension-step:nth-child(-n+39),
+.ascension-metamorph .input-range[value="39"]+.vertical-container .ascension-step:nth-child(-n+40),
+.ascension-metamorph .input-range[value="40"]+.vertical-container .ascension-step:nth-child(-n+41),
+.ascension-metamorph .input-range[value="41"]+.vertical-container .ascension-step:nth-child(-n+42),
+.ascension-metamorph .input-range[value="42"]+.vertical-container .ascension-step:nth-child(-n+43),
+.ascension-metamorph .input-range[value="43"]+.vertical-container .ascension-step:nth-child(-n+44),
+.ascension-metamorph .input-range[value="44"]+.vertical-container .ascension-step:nth-child(-n+45),
+.ascension-metamorph .input-range[value="45"]+.vertical-container .ascension-step:nth-child(-n+46) {
+    background-color: #cce7f0;
+}
+
+.ascension-metamorph .input-range[value="-1"]+.vertical-container .ascension-step:nth-child(-n+2),
+.ascension-metamorph .input-range[value="-2"]+.vertical-container .ascension-step:nth-child(-n+3),
+.ascension-metamorph .input-range[value="-3"]+.vertical-container .ascension-step:nth-child(-n+4),
+.ascension-metamorph .input-range[value="-4"]+.vertical-container .ascension-step:nth-child(-n+5),
+.ascension-metamorph .input-range[value="-5"]+.vertical-container .ascension-step:nth-child(-n+6),
+.ascension-metamorph .input-range[value="-6"]+.vertical-container .ascension-step:nth-child(-n+7),
+.ascension-metamorph .input-range[value="-7"]+.vertical-container .ascension-step:nth-child(-n+8),
+.ascension-metamorph .input-range[value="-8"]+.vertical-container .ascension-step:nth-child(-n+9),
+.ascension-metamorph .input-range[value="-9"]+.vertical-container .ascension-step:nth-child(-n+10),
+.ascension-metamorph .input-range[value="-10"]+.vertical-container .ascension-step:nth-child(-n+11),
+.ascension-metamorph .input-range[value="-11"]+.vertical-container .ascension-step:nth-child(-n+12),
+.ascension-metamorph .input-range[value="-12"]+.vertical-container .ascension-step:nth-child(-n+13),
+.ascension-metamorph .input-range[value="-13"]+.vertical-container .ascension-step:nth-child(-n+14),
+.ascension-metamorph .input-range[value="-14"]+.vertical-container .ascension-step:nth-child(-n+15),
+.ascension-metamorph .input-range[value="-15"]+.vertical-container .ascension-step:nth-child(-n+16),
+.ascension-metamorph .input-range[value="-16"]+.vertical-container .ascension-step:nth-child(-n+17),
+.ascension-metamorph .input-range[value="-17"]+.vertical-container .ascension-step:nth-child(-n+18),
+.ascension-metamorph .input-range[value="-18"]+.vertical-container .ascension-step:nth-child(-n+19),
+.ascension-metamorph .input-range[value="-19"]+.vertical-container .ascension-step:nth-child(-n+20),
+.ascension-metamorph .input-range[value="-20"]+.vertical-container .ascension-step:nth-child(-n+21),
+.ascension-metamorph .input-range[value="-21"]+.vertical-container .ascension-step:nth-child(-n+22),
+.ascension-metamorph .input-range[value="-22"]+.vertical-container .ascension-step:nth-child(-n+23),
+.ascension-metamorph .input-range[value="-23"]+.vertical-container .ascension-step:nth-child(-n+24),
+.ascension-metamorph .input-range[value="-24"]+.vertical-container .ascension-step:nth-child(-n+25),
+.ascension-metamorph .input-range[value="-25"]+.vertical-container .ascension-step:nth-child(-n+26),
+.ascension-metamorph .input-range[value="-26"]+.vertical-container .ascension-step:nth-child(-n+27),
+.ascension-metamorph .input-range[value="-27"]+.vertical-container .ascension-step:nth-child(-n+28),
+.ascension-metamorph .input-range[value="-28"]+.vertical-container .ascension-step:nth-child(-n+29),
+.ascension-metamorph .input-range[value="-29"]+.vertical-container .ascension-step:nth-child(-n+30),
+.ascension-metamorph .input-range[value="-30"]+.vertical-container .ascension-step:nth-child(-n+31),
+.ascension-metamorph .input-range[value="-31"]+.vertical-container .ascension-step:nth-child(-n+32),
+.ascension-metamorph .input-range[value="-32"]+.vertical-container .ascension-step:nth-child(-n+33),
+.ascension-metamorph .input-range[value="-33"]+.vertical-container .ascension-step:nth-child(-n+34),
+.ascension-metamorph .input-range[value="-34"]+.vertical-container .ascension-step:nth-child(-n+35),
+.ascension-metamorph .input-range[value="-35"]+.vertical-container .ascension-step:nth-child(-n+36),
+.ascension-metamorph .input-range[value="-36"]+.vertical-container .ascension-step:nth-child(-n+37),
+.ascension-metamorph .input-range[value="-37"]+.vertical-container .ascension-step:nth-child(-n+38),
+.ascension-metamorph .input-range[value="-38"]+.vertical-container .ascension-step:nth-child(-n+39),
+.ascension-metamorph .input-range[value="-39"]+.vertical-container .ascension-step:nth-child(-n+40),
+.ascension-metamorph .input-range[value="-40"]+.vertical-container .ascension-step:nth-child(-n+41),
+.ascension-metamorph .input-range[value="-41"]+.vertical-container .ascension-step:nth-child(-n+42),
+.ascension-metamorph .input-range[value="-42"]+.vertical-container .ascension-step:nth-child(-n+43),
+.ascension-metamorph .input-range[value="-43"]+.vertical-container .ascension-step:nth-child(-n+44),
+.ascension-metamorph .input-range[value="-44"]+.vertical-container .ascension-step:nth-child(-n+45),
+.ascension-metamorph .input-range[value="-45"]+.vertical-container .ascension-step:nth-child(-n+46) {
+    background-color: #cc4d4d;
+}
+
+.popup-borderless {
+    border: none;
+    text-decoration: none;
 }
