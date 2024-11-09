@@ -226,5 +226,8 @@
   "metamorph_ascension": "Ascension / Disgrâce",
   "quest-intro": "Introduction de la quête",
   "free_notes": "Autre Notes",
-  "quest-tuto": "Vous n'avez pas encore défini votre Arc Narratif. Cliquez sur les paramètres de Ascension et Digrâce pour renseigner votre Arc Narratif, votre quête et les étapes de celle-ci."
+  "quest-tuto": "Vous n'avez pas encore défini votre Arc Narratif. Cliquez sur les paramètres de Ascension et Digrâce pour renseigner votre Arc Narratif, votre quête et les étapes de celle-ci.",
+  "ascension_points_desc_pa": "<b>PA</b>: Points d'Ascension",
+  "ascension_points_desc_pd": "<b>PD</b>: Points de Disgrâce",
+  "ascension_points_desc_consigne": "<b>Consigne</b>: Saisir un chiffre positif pour l'Ascension et un chiffre négatif pour la Disgrâce."
 }

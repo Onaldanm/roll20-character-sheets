@@ -2256,3 +2256,13 @@ textarea.act-area-small {
     border: none;
     text-decoration: none;
 }
+
+.ascension-bar .sheet-tooltip span {
+    width: 150px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.popup textarea {
+    background-color: white;
+}
