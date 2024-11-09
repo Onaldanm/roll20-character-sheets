@@ -1038,7 +1038,7 @@ body.sheet-darkmode .charsheet .tabstoggle[value="journal"]~.tabs .tab-journal {
 
 .health-header-bar {
     display: grid;
-    grid-template-columns: 120px 210px auto;
+    grid-template-columns: 120px 0 210px auto;
     align-items: start;
     gap: 10px;
 }
@@ -2266,8 +2266,26 @@ textarea.act-area-small {
 .popup textarea {
     background-color: white;
 }
+.character-npc-toggle[value="0"]+.middle .npc-notes,
+.character-npc-toggle[value="0"]+.middle .npc_skills {
+    display: none;
+    visibility: hidden;
+}
 
+.character-npc-toggle[value="false"]+.middle .domain_skills,
+.character-npc-toggle[value="false"]+.header .header__pj,
+.character-npc-toggle[value="false"]+.middle .attack-type-select-box,
 .character-npc-toggle[value="false"]+.header .header__boxes.stats__row {
     display: none;
     visibility: hidden;
+}
+
+.npc-notes textarea {
+    width: 93%;
+    min-height: 340px;
+}
+
+select option.restricted {
+    font-style: italic;
+    color: #ccc;
 }
