@@ -1185,10 +1185,10 @@
                                     <span class="specialized__value" name="attr_spell_mana_cost"></span>
                                     <div class="specialized__label">PM</div>
                                 </div>
-                                <input name="attr_spell_name" type="hidden"></input>
-                                <input name="attr_spell_form" type="hidden"></input>
-                                <input name="attr_spell_invocation" type="hidden"></input>
-                                <input name="attr_spell_mana_cost" type="hidden"></input>
+                                <input name="attr_spell_name"></input>
+                                <input name="attr_spell_form"></input>
+                                <input name="attr_spell_invocation"></input>
+                                <input name="attr_spell_mana_cost"></input>
                                 <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
                                     value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_form=^{@{spell_form}}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[1d10cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
                             </div>
@@ -1588,14 +1588,16 @@
                     </div>
                     <fieldset class="repeating_Spells">
                         <select class="spell_form" name="attr_spell_form">
+                            <option value="spell_form_none" data-i18n="spell_form_none" disabled></option>
                             <option value="spell_form_low_magic" data-i18n="spell_form_low_magic"></option>
                             <option value="spell_form_druid" data-i18n="spell_form_druid"></option>
                             <option value="spell_form_wyrd" data-i18n="spell_form_wyrd"></option>
                             <option value="spell_form_sorcerer" data-i18n="spell_form_sorcerer"></option>
                         </select>
                         <input class="spell_name" name="attr_spell_name" type="text"></input>
-                        <input type="number" name="attr_spell_mana_cost" value="1" min="1">
+                        <input type="number" name="attr_spell_mana_cost" min="1">
                         <select class="spell_invoc" name="attr_spell_invocation">
+                            <option value="spell_invocation_none" data-i18n="spell_invocation_none" disabled></option>
                             <option value="spell_invocation_instant" data-i18n="spell_invocation_instant"></option>
                             <option value="spell_invocation_canalisation"
                                 data-i18n="spell_invocation_canalisation"></option>
