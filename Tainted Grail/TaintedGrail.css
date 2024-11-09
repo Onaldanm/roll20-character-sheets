@@ -1950,3 +1950,44 @@ span.health-agony {
 .health-mode[value="simple"]~.empty-box {
     display: block;
 }
+
+.way-title {
+    display: grid;
+    grid-template-columns: auto 30px;
+}
+
+.charsheet button[type=roll].way-button-roll {
+    border: 0;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.charsheet button[type=roll].way-button-roll {
+    border: 1px solid #594875;
+    background-color: #11262E;
+    color: white;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 25px;
+}
+
+.charsheet button[type=roll].way-button-roll:hover {
+    color: #FFF7E6;
+    border: 1px solid #FFF7E6;
+}
+
+.charsheet button[type=roll].way-button-roll::before {
+    font-family: 'dicefontd10' !important;
+    content: 'k';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-2px);
+}
+
+.stats__row .headeritem__item {
+    width: 100px;
+}

@@ -46,7 +46,11 @@
     <div class="header__boxes stats__row">
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="way_combativeness_short" class="headeritem__label"></span>
+                <div class="way-title">
+                    <span data-i18n="way_combativeness_short" class="headeritem__label"></span>
+                    <button type="roll" class="way-button-roll" name="act_roll_skill"
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{way_combativeness_short}}} {{roll=[[@{skilldice}+@{combativeness}[@{combativeness_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </div>
                 <input type="hidden" name="attr_combativeness" class="input-range"></input>
                 <div class="grid-container square-combativeness">
                     <div class="square"></div>
@@ -57,7 +61,11 @@
                 </div>
             </div>
             <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="way_awareness_short" class="headeritem__label"></span>
+                <div class="way-title">
+                    <span data-i18n="way_awareness_short" class="headeritem__label"></span>
+                    <button type="roll" class="way-button-roll" name="act_roll_skill"
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{way_awareness_short}}} {{roll=[[@{skilldice}+@{awareness}[@{awareness_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </div>
                 <input type="hidden" name="attr_awareness" class="input-range"></input>
                 <div class="grid-container square-awareness">
                     <div class="square"></div>
@@ -68,7 +76,11 @@
                 </div>
             </div>
             <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="way_creativity_short" class="headeritem__label"></span>
+                <div class="way-title">
+                    <span data-i18n="way_creativity_short" class="headeritem__label"></span>
+                    <button type="roll" class="way-button-roll" name="act_roll_skill"
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{way_creativity_short}}} {{roll=[[@{skilldice}+@{creativity}[@{creativity_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </div>
                 <input type="hidden" name="attr_creativity" class="input-range"></input>
                 <div class="grid-container square-creativity">
                     <div class="square"></div>
@@ -81,7 +93,11 @@
         </div>
         <div class="header__row">
             <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="way_conviction_short" class="headeritem__label"></span>
+                <div class="way-title">
+                    <span data-i18n="way_conviction_short" class="headeritem__label"></span>
+                    <button type="roll" class="way-button-roll" name="act_roll_skill"
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{way_conviction_short}}} {{roll=[[@{skilldice}+@{conviction}[@{conviction_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </div>
                 <input type="hidden" name="attr_conviction" class="input-range"></input>
                 <div class="grid-container square-conviction">
                     <div class="square"></div>
@@ -92,7 +108,11 @@
                 </div>
             </div>
             <div data-test="bio-field" class="headeritem__item">
-                <span data-i18n="way_reason_short" class="headeritem__label"></span>
+                <div class="way-title">
+                    <span data-i18n="way_reason_short" class="headeritem__label"></span>
+                    <button type="roll" class="way-button-roll" name="act_roll_skill"
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}}  {{title=^{way_reason_short}}} {{roll=[[@{skilldice}+@{reason}[@{reason_text}]+@{health_mod}[@{health_mod_text}]]]}} {{confirm=[[1d10[@{critfail_confirm_text}]]]}}"></button>
+                </div>
                 <input type="hidden" name="attr_reason" class="input-range"></input>
                 <div class="grid-container square-reason">
                     <div class="square"></div>
@@ -2616,6 +2636,10 @@ function getSectionIDsAsync(sectionName){
             "ask_whisper_roll": getTranslationByKey("ask_whisper_roll"),
             "mental_resist_text": getTranslationByKey("mental_resist"),
             "combativeness_text": getTranslationByKey("way_combativeness_short"),
+            "awareness_text": getTranslationByKey("way_awareness_short"),
+            "conviction_text": getTranslationByKey("way_conviction_short"),
+            "creativity_text": getTranslationByKey("way_creativity_short"),
+            "reason_text": getTranslationByKey("way_reason_short"),
             "balanceWyrdText": getTranslationByKey("balance_wyrd_text")
         });
     });
