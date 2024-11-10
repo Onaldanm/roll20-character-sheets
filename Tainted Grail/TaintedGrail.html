@@ -3346,7 +3346,7 @@ function getSectionIDsAsync(sectionName){
             "deroutes_visible": deroutes_visible
         });
     });
-    on("change:character_npc", async function() {
+    on("sheet:opened change:character_npc", async function() {
         v = await getAttrsAsync(["character_npc"]);
         var npc = v.character_npc == "false" ? 1 : 0;
         console.log(v.character_npc);
@@ -3376,7 +3376,6 @@ function getSectionIDsAsync(sectionName){
     });
 
     on("sheet:opened change:health_simple", async function() {
-        console.log("ici");
         v = await getAttrsAsync(["health_simple"]);
         var checked = v.health_simple == "on" ? 1 : 0;
         let health_settings_mode = "classic";

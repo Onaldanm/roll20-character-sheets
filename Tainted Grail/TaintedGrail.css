@@ -1966,8 +1966,8 @@ span.health-agony {
 
 .charsheet button[type=roll].way-button-roll {
     border: 1px solid #594875;
-    background-color: #11262E;
-    color: white;
+    background-color: #fff;
+    color: #11262E;
     width: 20px;
     height: 20px;
     padding: 0px;
@@ -1975,7 +1975,7 @@ span.health-agony {
 }
 
 .charsheet button[type=roll].way-button-roll:hover {
-    color: #FFF7E6;
+    color: #594875;
     border: 1px solid #FFF7E6;
 }
 
@@ -2264,6 +2264,8 @@ textarea.act-area-small {
 .popup textarea {
     background-color: white;
 }
+.character-npc-toggle[value="hidden"]+.middle .npc-notes,
+.character-npc-toggle[value="hidden"]+.middle .npc_skills,
 .character-npc-toggle[value="0"]+.middle .npc-notes,
 .character-npc-toggle[value="0"]+.middle .npc_skills {
     display: none;
