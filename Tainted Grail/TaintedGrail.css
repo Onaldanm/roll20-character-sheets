@@ -2291,3 +2291,11 @@ select option.restricted {
     font-style: italic;
     color: #ccc;
 }
+
+.others-equipments-section {
+    grid-column: span 2;
+}
+
+.others-equipments-section .high-title {
+    grid-template-columns: auto;
+}
