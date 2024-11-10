@@ -2301,3 +2301,17 @@ select option.restricted {
 .others-equipments-section .high-title {
     grid-template-columns: auto;
 }
+
+body.sheet-darkmode .quest-full-text {
+    background-color: #03131A;
+    color: #FEE2BB;
+}
+
+body.sheet-darkmode .vertical-container {
+    background-color: #03131A;
+    border: 1px solid #594875;
+}
+
+body.sheet-darkmode .ascension-metamorph .ascension-step {
+    border: 1px solid #594875;
+}
