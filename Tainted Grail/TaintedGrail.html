@@ -1357,6 +1357,10 @@
                                     <span class="specialized__value" name="attr_spell_mana_cost"></span>
                                     <div class="specialized__label">PM</div>
                                 </div>
+                                <input name="attr_spell_name" hidden></input>
+                                <input name="attr_spell_form" hidden></input>
+                                <input name="attr_spell_invocation" hidden></input>
+                                <input name="attr_spell_mana_cost" hidden></input>
                                 <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
                                     value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_form=^{@{spell_form}}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[1d10cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
                             </div>
