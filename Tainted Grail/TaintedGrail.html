@@ -1862,8 +1862,9 @@
                 <span class="domain-label" data-i18n="attack"></span>
                 <div class="combat_attrs">
                     <span>Base</span><input type="number" name="attr_attack_npc_base"></input>
-                    <span>Total</span><input type="number" name="attr_attack_base"
-                        value="@{attack_npc_base}" disabled="true"></input>
+                    <span>Mod.</span><input type="number" name="attr_attack_npc_modifier" value="0"></input>
+                    <span>Total</span><input type="number" name="attr_attack_npc_total"
+                        value="@{attack_npc_base}+@{attack_npc_modifier}" disabled="true"></input>
                 </div>
             </div>
         </div>
@@ -3299,8 +3300,10 @@ function getSectionIDsAsync(sectionName){
         });
     };
 
-    on("sheet:opened change:repeating_CloseCombatDisc remove:repeating_CloseCombatDisc change:repeating_MonstersDisc remove:repeating_MonstersDisc change:repeating_ShootingDisc remove:repeating_ShootingDisc change:repeating_MountedCombatDisc remove:repeating_MountedCombatDisc change:skill_close_combat_bonus change:skill_close_combat_malus change:skill_close_combat change:skill_mounted_combat change:skill_monsters change:skill_shooting", async function() {
-        await populateSelectionFunct();
+    on("sheet:opened change:character_npc change:attack_npc_total change:repeating_CloseCombatDisc remove:repeating_CloseCombatDisc change:repeating_MonstersDisc remove:repeating_MonstersDisc change:repeating_ShootingDisc remove:repeating_ShootingDisc change:repeating_MountedCombatDisc remove:repeating_MountedCombatDisc change:skill_close_combat_bonus change:skill_close_combat_malus change:skill_close_combat change:skill_mounted_combat change:skill_monsters change:skill_shooting", async function() {
+        v = await getAttrsAsync(["character_npc"]);
+        var npc = v.character_npc == "false" ? 1 : 0;
+        await populateSelectionFunct(npc);
     });
 
     const addBaseOptionsToAttackMode = async (options, base, way) => {
@@ -3333,16 +3336,24 @@ function getSectionIDsAsync(sectionName){
             options.push({ label: label, value: value });
         });
     };
-    const populateSelectionFunct = async () => {
+    const populateSelectionFunct = async (npc) => {
         let options = [];
-        await addBaseOptionsToAttackMode(options, "close_combat", "combativeness");
-        await addDiscOptionsToAttackMode(options, "CloseCombatDisc", "close_combat", "combativeness");
-        await addBaseOptionsToAttackMode(options, "monsters", "awareness");
-        await addDiscOptionsToAttackMode(options, "MonstersDisc", "monsters", "awareness");
-        await addBaseOptionsToAttackMode(options, "shooting", "combativeness");
-        await addDiscOptionsToAttackMode(options, "ShootingDisc", "shooting", "combativeness");
-        await addBaseOptionsToAttackMode(options, "mounted_combat", "combativeness");
-        await addDiscOptionsToAttackMode(options, "MountedCombatDisc", "mounted_combat", "combativeness");
+        if (!npc) {
+            await addBaseOptionsToAttackMode(options, "close_combat", "combativeness");
+            await addDiscOptionsToAttackMode(options, "CloseCombatDisc", "close_combat", "combativeness");
+            await addBaseOptionsToAttackMode(options, "monsters", "awareness");
+            await addDiscOptionsToAttackMode(options, "MonstersDisc", "monsters", "awareness");
+            await addBaseOptionsToAttackMode(options, "shooting", "combativeness");
+            await addDiscOptionsToAttackMode(options, "ShootingDisc", "shooting", "combativeness");
+            await addBaseOptionsToAttackMode(options, "mounted_combat", "combativeness");
+            await addDiscOptionsToAttackMode(options, "MountedCombatDisc", "mounted_combat", "combativeness");
+        } else {
+            options.push({ label: "Basic", value: v.attack_npc_total });
+            v = await getAttrsAsync(["attack_npc_total"]);
+            await setAttrsAsync({
+                "attack_base": v.attack_npc_total
+            });
+        }
         populateAttackModeList(options)
       };
 
