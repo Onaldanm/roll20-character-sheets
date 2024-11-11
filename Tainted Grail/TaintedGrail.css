@@ -2264,6 +2264,11 @@ textarea.act-area-small {
 .popup textarea {
     background-color: white;
 }
+
+.npc-attack {
+    display: none;
+    visibility: hidden;
+}
 .character-npc-toggle[value="hidden"]+.middle .npc-notes,
 .character-npc-toggle[value="hidden"]+.middle .npc_skills,
 .character-npc-toggle[value="0"]+.middle .npc-notes,
@@ -2274,6 +2279,11 @@ textarea.act-area-small {
 
 .character-npc-toggle[value="false"]+.middle .hp-survie {
     visibility: hidden;
+}
+
+.character-npc-toggle[value="false"]+.npc-attack {
+    visibility: visible;
+    display: flex;
 }
 
 .character-npc-toggle[value="false"]+.middle .domain_skills,
