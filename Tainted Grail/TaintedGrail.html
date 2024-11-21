@@ -1246,7 +1246,7 @@
                             <div class="health-bar-simple">
                                 <span data-i18n="defense"></span>
                                 <input type="number" readonly name="attr_defense_offensive"
-                                value="@{defense_total}-@{potential}[@{potential_text}]" disabled="true">
+                                value="@{defense_total}-(@{potential}[@{potential_text}])" disabled="true">
                             </div>
                         </div>
                         <div class="hp-info-box">
@@ -1262,7 +1262,7 @@
                             <div class="health-bar-simple">
                                 <span data-i18n="attack"></span>
                                 <input type="number" readonly name="attr_attack_defensive"
-                                value="@{attack_total}-@{potential}[@{potential_text}]" disabled="true">
+                                value="@{attack_total}-(@{potential}[@{potential_text}])" disabled="true">
                             </div>
                         </div>
                         <div class="hp-info-box">
@@ -3224,14 +3224,12 @@ function getSectionIDsAsync(sectionName){
         // Retrieve Attitude Mode
         getAttrs(['attitude_mode'], (v) => {
             const attitude = v.attitude_mode;
-            console.log(attitude)
             getAttrs([`attack_${attitude}`,`defense_${attitude}`,`speed_${attitude}`,`parademod_${attitude}`], (a) => {
                 const output = {};
                 output.attack_mod = a[`attack_${attitude}`];
                 output.defense_mod = a[`defense_${attitude}`];
                 output.speed_mod = a[`speed_${attitude}`];
                 output.parade_mod = a[`parademod_${attitude}`];
-                console.log(output)
                 setAttrs(output, {silent: true});
             });
         });
@@ -3377,7 +3375,6 @@ function getSectionIDsAsync(sectionName){
     on("sheet:opened change:character_npc", async function() {
         v = await getAttrsAsync(["character_npc"]);
         var npc = v.character_npc == "false" ? 1 : 0;
-        console.log(v.character_npc);
         if (npc) {
             await setAttrsAsync({
                 "combativeness": 0,
