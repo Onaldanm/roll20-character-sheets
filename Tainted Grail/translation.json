@@ -233,5 +233,8 @@
   "ascension_points_desc_consigne": "<b>Consigne</b>: Saisir un chiffre positif pour l'Ascension et un chiffre négatif pour la Disgrâce.",
   "npc": "Personnage non-joueurs / Monstres",
   "npc_notes": "Notes diverses",
-  "other-equipment": "Autres équipements"
+  "other-equipment": "Autres équipements",
+  "ask_sorcerer": "Leg de Merlin ? 2d10",
+  "ask_sorcerer_no": "Non",
+  "ask_sorcerer_yes": "Oui (+1 PM)"
 }

@@ -1362,7 +1362,7 @@
                                 <input name="attr_spell_invocation" hidden></input>
                                 <input name="attr_spell_mana_cost" hidden></input>
                                 <button type="roll" class="skill-button-roll btn ui-draggable" name="act_roll_skill"
-                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=@{spell_mana_cost}}} {{spell_form=^{@{spell_form}}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[1d10cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[1d10cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
+                                    value="@{whispertype} &{template:d10roll} {{character=@{character_name}}} {{spell_mana_cost=[[@{spell_mana_cost}]]}} {{spell_form=^{@{spell_form}}}} {{spell_invocation=^{@{spell_invocation}}}} {{title=@{spell_name}}} {{wyrdMagic=[[@{wyrdMagic}]]}} {{roll=[[@{spelldice}cs>@{spellcrit}+@{skill_magic_way_mod}+@{disc_magic_base}+@{health_mod}[@{health_mod_text}]+@{skill_magic_bonus}[@{skill_bonus_text}]+@{skill_magic_malus}[@{skill_malus_text}]]]}} {{confirm=[[@{spelldice}cs>@{spellcrit}[@{critfail_confirm_text}]]]}}"></button>
                             </div>
                         </fieldset>
                     </div>
@@ -3252,13 +3252,21 @@ function getSectionIDsAsync(sectionName){
         v = await getAttrsAsync(["disc_magic_name"]);
         form = v.disc_magic_name;
         text = getTranslationByKey(`spell_form_${form}`);
+        sorcer_yes_text = getTranslationByKey(`ask_sorcerer_yes`);
+        sorcer_no_text = getTranslationByKey(`ask_sorcerer_no`);
+        sorcer_ask_text = getTranslationByKey(`ask_sorcerer`);
         let spellcrit = 10;
         let wyrdMagic = "1d0";
+        let spelldice = "1d10";
         if (form == "low_magic") spellcrit = 8;
         if (form == "wyrd") wyrdMagic = "1d10[@{balanceWyrdText}]";
+        if (form == "sorcerer") {
+            spelldice = `?{${sorcer_ask_text}|${sorcer_no_text},1|${sorcer_yes_text},2}d10k1`;
+        }
         await setAttrsAsync({
             "disc_magic_name_text": text,
             "spellcrit": spellcrit,
+            "spelldice": spelldice,
             "wyrdMagic": wyrdMagic
         });
     });
