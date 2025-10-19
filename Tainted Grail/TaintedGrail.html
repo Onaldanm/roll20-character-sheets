@@ -3278,7 +3278,7 @@ function getSectionIDsAsync(sectionName){
     });
 
     on('clicked:roll_attack', (info) => {
-        startRoll("&{template:attack} {{name=@{character_name}}} {{attitude=^{attitude_@{attitude_mode}}}}{{target=@{target|character_name}}} {{attack=[[1d10+@{attack_mod}+@{health_mod}[@{health_mod_text}]]]}} {{damage=[[@{dmg}]]}} {{confirm=[[1d10]]}}  {{defense=[[@{target|defense_mod}]]}} {{protection=[[@{target|protection}]]}}", (results) => {
+        startRoll("@{whispertype} &{template:attack} {{name=@{character_name}}} {{attitude=^{attitude_@{attitude_mode}}}}{{target=@{target|character_name}}} {{attack=[[1d10+@{attack_mod}+@{health_mod}[@{health_mod_text}]]]}} {{damage=[[@{dmg}]]}} {{confirm=[[1d10]]}}  {{defense=[[@{target|defense_mod}]]}} {{protection=[[@{target|protection}]]}}", (results) => {
             const attack_roll = results.results.attack.result
             const target_defense = results.results.defense.result
             const target_protection = results.results.protection.result
