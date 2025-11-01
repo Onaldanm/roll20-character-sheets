@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "jsdom": "^27.0.1",
+    "nodemon": "^3.1.10",
+    "pug": "^3.0.3",
+    "sass-embedded": "^1.93.2"
+  },
+  "scripts": {
+    "dev": "nodemon --watch . --ext js,pug,scss --exec \"node ./render.js\""
+  }
+}

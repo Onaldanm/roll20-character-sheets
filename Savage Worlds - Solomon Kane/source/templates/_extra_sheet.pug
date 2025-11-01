@@ -40,27 +40,25 @@ include _buttons.pug
 
   .sheet-container
     -
-      var skills = [['Academics', 'Sma'], ['Athletics', 'Agi'], ['Battle', 'Sma'],
-                    ['Boating', 'Agi'], ['Driving', 'Agi'], ['Common Knowledge', 'Sma'],
-                    ['Electronics', 'Sma'], ['Faith', 'Spi'], ['Fighting', 'Agi'],
-                    ['Focus', 'Spi'], ['Gambling', 'Sma'], ['Hacking', 'Sma'],
-                    ['Healing', 'Sma'], ['Intimidation', 'Spi'], ['Language', 'Sma'],
-                    ['MAGIC', 'Sma'], ['Notice', 'Sma'], ['Occult', 'Sma'],
-                    ['Performance', 'Spi'], ['Persuasion', 'Spi'], ['Piloting', 'Agi'],
-                    ['Psionics', 'Sma'], ['Repair', 'Sma'], ['Research', 'Sma'],
-                    ['Riding', 'Agi'], ['Science', 'Sma'], ['Shooting', 'Agi'],
-                    ['Spellcasting', 'Sma'], ['Stealth', 'Agi'], ['Survival', 'Sma'],
-                    ['Taunt', 'Sma'], ['Thievery', 'Agi'], ['Weird Science', 'Sma'],
+      var skills = [['Alchimie', 'Int'], ['Athletisme', 'Agi', 'Athlétisme'], ['Combat', 'Agi'],
+                    ['Culture Generale', 'Int', 'Culture Générale'], ['Discretion', 'Agi', 'Discrétion'], 
+                    ['Education', 'Int', 'Éducation'],
+                    ['Equitation', 'Agi'], ['Foi', 'Ame'], ['Intimidation', 'Ame'],
+                    ['Jeu', 'Int'], ['Magie', 'Int'], ['Navigation', 'Agi'],
+                    ['Occultisme', 'Int'], ['Perception', 'Int'], ['Performance', 'Ame'],
+                    ['Persuasion', 'Ame'], ['Provocation', 'Int'], ['Reparation', 'Int', 'Réparation'],
+                    ['Sciences', 'Int'], ['Soins', 'Int'], ['Strategie', 'Int', 'Stratégie'],
+                    ['Subterfuge', 'Agi'], ['Survie', 'Int'], ['Tir', 'Agi'],
                     ['Custom Skill 1', 'Custom'], ['Custom Skill 2', 'Custom'],
                     ['Custom Skill 3', 'Custom'], ['Custom Skill 4', 'Custom'],
                     ['Custom Skill 5', 'Custom'], ['Custom Skill 6', 'Custom'],
                     ['Unskilled', 'Custom']]
 
-    -  var defaultSkills = ['athletics', 'common-knowledge', 'notice', 'persuasion', 'stealth']
+    -  var defaultSkills = ['athletisme', 'culture-generale', 'discretion', 'perception', 'persuasion']
 
     each skill in skills
       - var trait = skill[0].toLowerCase().replace('.', '').replace(/ /g, '_')
-      - var skill_name = skill[0] == 'Common Knowledge' ? 'Common Knowl.' : skill[0]
+      - var skill_name = skill[0] == 'Culture Generale' ? 'Culture G.' : skill[0]
 
       label.sheet-extra-skills__toggle-label
         input(type='checkbox',
