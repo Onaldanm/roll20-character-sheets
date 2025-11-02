@@ -30,18 +30,20 @@
       height: 16px;
 
       &--name {
-        width: 136px;
+        width: 186px;
       }
-
+      &--origin {
+        width: 85px;
+      }
       &--size,
       &--exp,
       &--level,
       &--age,
       &--bennies {
-        width: 40px;
+        width: 60px;
 
         + .sheet-label {
-          max-width: 40px;
+          max-width: 60px;
         }
       }
 
@@ -50,7 +52,6 @@
       &--eyes,
       &--hair,
       &--rank,
-      &--origin,
       &--gender,
       &--bits {
         width: 64px;

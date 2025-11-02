@@ -1217,18 +1217,21 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   height: 16px;
 }
 .sheet-meta .sheet-meta-field input.sheet-meta-field__input--name {
-  width: 136px;
+  width: 186px;
+}
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--origin {
+  width: 85px;
 }
 .sheet-meta .sheet-meta-field input.sheet-meta-field__input--size, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--exp, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--level, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--age, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bennies {
-  width: 40px;
+  width: 60px;
 }
 .sheet-meta .sheet-meta-field input.sheet-meta-field__input--size + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--exp + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--level + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--age + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bennies + .sheet-label {
-  max-width: 40px;
+  max-width: 60px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--origin, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
   width: 64px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--origin + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
   max-width: 64px;
 }
 
@@ -4013,19 +4016,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       </div>
                       <div class="sheet-meta-field">
                         <input class="sheet-meta-field__input sheet-meta-field__input--rank" type="text" name="attr_rank" placeholder=" " spellcheck="false">
-                        <div class="sheet-label"><span name="attr_rename_label_rank" data-i18n="rank">Rank</span></div>
-                      </div>
-                      <div class="sheet-meta-field">
-                        <input class="sheet-meta-field__input sheet-meta-field__input--size" type="text" name="attr_size" placeholder=" " spellcheck="false">
-                        <div class="sheet-label"><span name="attr_rename_label_size" data-i18n="size">Size</span></div>
-                      </div>
-                      <div class="sheet-meta-field">
-                        <input class="sheet-meta-field__input sheet-meta-field__input--level" type="text" name="attr_level" placeholder=" " spellcheck="false">
-                        <div class="sheet-label"><span name="attr_rename_label_level" data-i18n="level">Level</span></div>
-                      </div>
-                      <div class="sheet-meta-field">
-                        <input class="sheet-meta-field__input sheet-meta-field__input--exp" type="text" name="attr_exp" placeholder=" " spellcheck="false">
-                        <div class="sheet-label"><span name="attr_rename_label_exp" data-i18n="exp">EXP</span></div>
+                        <div class="sheet-label"><span name="attr_rename_label_rank" data-i18n="rank">Origin</span></div>
                       </div>
                       <div class="sheet-meta-field">
                         <input class="sheet-meta-field__input sheet-meta-field__input--bennies" type="text" name="attr_bennies" placeholder=" " spellcheck="false">
@@ -4056,10 +4047,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       <div class="sheet-meta-field">
                         <input class="sheet-meta-field__input sheet-meta-field__input--weight" type="text" name="attr_weight" placeholder=" " spellcheck="false">
                         <div class="sheet-label"><span name="attr_rename_label_weight" data-i18n="weight">Weight</span></div>
-                      </div>
-                      <div class="sheet-meta-field">
-                        <input class="sheet-meta-field__input sheet-meta-field__input--bits" type="text" name="attr_bits" placeholder=" " spellcheck="false">
-                        <div class="sheet-label"><span name="attr_rename_label_bits" data-i18n="bits">#Bits</span></div>
                       </div>
                 </div>
               </div>
