@@ -1,9 +1,9 @@
-mixin attribute(name, short)
+mixin attribute(name, short, displayName)
   - var trait = name.toLowerCase()
 
   .sheet-attribute(class=`sheet-attribute--${trait}`)
 
-    input(type='hidden', name=`attr_rename_${trait}`, value=name)
+    input(type='hidden', name=`attr_rename_${trait}`, value=displayName)
     input(type='hidden', name=`attr_${trait}_roll`, value='1d4')
     input(type='hidden', name=`attr_${trait}_wd_roll`, value='1d6')
     input(type='hidden', name=`attr_${trait}_extra_wd_roll`, value='-10000')
