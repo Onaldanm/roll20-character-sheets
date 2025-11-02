@@ -40,9 +40,9 @@ input.sheet-toggle--pp {
     }
   }
 
-    .sheet-color-cycle__radio {
-    top: 25px;
-    left: 450px;
+  .sheet-color-cycle__radio {
+    top: 43px;
+    left: 161px;
     align-items: center;
     padding: 0;
     height: 14px;
@@ -64,20 +64,45 @@ input.sheet-toggle--pp {
 
     &--alchemy:checked::after {
       content: 'A';
-      background-color: $c-green;
+      background-color: $c-background-dark;
       color: $c-white;
+    }
+    &--alchemy:checked ~ .sheet-arcane-toggle--alchemy {
+      display: block;
     }
 
     &--magie:checked::after {
       content: 'M';
-      background-color: $c-blue;
+      background-color: $c-background-dark;
       color: $c-white;
+    }
+    &--magie:checked ~ .sheet-arcane-toggle--magie {
+      display: block;
     }
 
     &--foi:checked::after {
       content: 'F';
-      background-color: $c-red;
+      background-color: $c-background-dark;
       color: $c-white;
     }
+    &--foi:checked ~ .sheet-arcane-toggle--foi {
+      display: block;
+    }
+  }
+
+  .sheet-arcane-toggle {
+    background-color: #fff;
+    color: $c-text-light;
+    line-height: 14px;
+    border: 1px solid #898989;
+    border-width: 1px;
+    border-radius: 0 2px 2px 0;
+    padding: 0 4px;
+    margin-left: 13px;
+    margin-top: -3px;
+    display: none;
+    height: 14px;
+    width: 45px;
+    text-align: center;
   }
 }

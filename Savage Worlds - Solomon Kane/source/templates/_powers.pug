@@ -243,6 +243,10 @@ input(type='checkbox',
                   value=rank,
                   class='sheet-color-cycle__radio sheet-color-cycle__radio--' + rank,
                   checked= rank == 'alchemy')
+            
+            each rank in ranks
+              span.sheet-arcane-toggle(data-i18n=`${rank}`,
+                  class='sheet-arcane-toggle--' + rank) Arcanes
 
         input(type='checkbox',
               name='attr_power_note_box_toggle',

@@ -2881,8 +2881,8 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
   display: none;
 }
 .sheet-powers .sheet-color-cycle__radio {
-  top: 25px;
-  left: 450px;
+  top: 43px;
+  left: 161px;
   align-items: center;
   padding: 0;
   height: 14px;
@@ -2906,15 +2906,39 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
   background-color: #5cb85c;
   color: #fff;
 }
+.sheet-powers .sheet-color-cycle__radio--alchemy:checked ~ .sheet-arcane-toggle--alchemy {
+  display: block;
+}
 .sheet-powers .sheet-color-cycle__radio--magie:checked::after {
   content: "M";
   background-color: #0275d8;
   color: #fff;
 }
+.sheet-powers .sheet-color-cycle__radio--magie:checked ~ .sheet-arcane-toggle--magie {
+  display: block;
+}
 .sheet-powers .sheet-color-cycle__radio--foi:checked::after {
   content: "F";
   background-color: #d9534f;
   color: #fff;
+}
+.sheet-powers .sheet-color-cycle__radio--foi:checked ~ .sheet-arcane-toggle--foi {
+  display: block;
+}
+.sheet-powers .sheet-arcane-toggle {
+  background-color: #fff;
+  color: #606060;
+  line-height: 14px;
+  border: 1px solid #898989;
+  border-width: 1px;
+  border-radius: 0 2px 2px 0;
+  padding: 0 4px;
+  margin-left: 13px;
+  margin-top: -3px;
+  display: none;
+  height: 14px;
+  width: 45px;
+  text-align: center;
 }
 
 .sheet-vehicles__size, .sheet-vehicles__handling, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
@@ -7120,7 +7144,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                           </label>
                           <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
                           <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
-                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi">
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
                         </div>
                       </div>
                       <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
@@ -9278,7 +9302,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       </label>
                       <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
                       <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
-                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi">
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
                     </div>
                   </div>
                   <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
