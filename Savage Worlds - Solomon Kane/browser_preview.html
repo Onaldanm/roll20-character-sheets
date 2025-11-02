@@ -1228,10 +1228,10 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-meta .sheet-meta-field input.sheet-meta-field__input--size + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--exp + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--level + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--age + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bennies + .sheet-label {
   max-width: 60px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--tokens, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
   width: 64px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--tokens + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
   max-width: 64px;
 }
 
@@ -2114,11 +2114,36 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-health .sheet-header__title {
   margin-top: 8px;
 }
-.sheet-health:hover .sheet-health__icons * {
+.sheet-health:hover .sheet-health__icons *:not(.sheet-tooltip) {
   opacity: 1;
 }
 .sheet-health__icons {
   display: flex;
+}
+.sheet-health__icons .sheet-tooltip--top {
+  top: -6px;
+  transform: translate(-50%, -100%);
+}
+.sheet-health__icons .sheet-tooltip--top--fire {
+  left: 76px;
+}
+.sheet-health__icons .sheet-tooltip--top--malade {
+  left: 108px;
+}
+.sheet-health__icons .sheet-tooltip--top--hemorragie {
+  left: 140px;
+}
+.sheet-health__icons .sheet-tooltip--top--cancel {
+  left: 172px;
+}
+.sheet-health__icons .sheet-tooltip--top--distrait {
+  left: 277px;
+}
+.sheet-health__icons .sheet-tooltip--top--vulnerable {
+  left: 309px;
+}
+.sheet-health__icons .sheet-tooltip--top--stun {
+  left: 341px;
 }
 .sheet-health__icons .sheet-icon {
   color: #b0b0b0;
@@ -2139,6 +2164,36 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-health__icons .sheet-icon:not(:last-child) {
   margin-right: 8px;
 }
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top {
+  top: -6px;
+  transform: translate(-50%, -100%);
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--fire {
+  left: 76px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--malade {
+  left: 108px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--hemorragie {
+  left: 140px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--cancel {
+  left: 172px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--distrait {
+  left: 277px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--vulnerable {
+  left: 309px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--stun {
+  left: 341px;
+}
 .sheet-health__icons .sheet-icon::after {
   display: flex;
   align-items: center;
@@ -2152,33 +2207,34 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   width: 20px;
 }
 .sheet-health__icons .sheet-icon--shield::after {
-  content: "b";
+  content: "Y";
 }
 .sheet-health__icons .sheet-icon--bug::after {
-  content: "i";
+  content: "e";
 }
 .sheet-health__icons .sheet-icon--fire::after {
   content: "r";
   font-family: "Pictos Custom";
 }
 .sheet-health__icons .sheet-icon--hit::after {
-  content: "t";
-  font-family: "Pictos Custom";
+  content: "L";
 }
-.sheet-health__icons .sheet-icon--lightning::after {
-  content: "e";
+.sheet-health__icons .sheet-icon--herromagie::after {
+  content: "k";
 }
 .sheet-health__icons .sheet-icon--cancel::after {
   content: "d";
 }
 .sheet-health__icons .sheet-icon--rad::after {
-  content: "l";
+  content: "E";
 }
 .sheet-health__icons .sheet-icon--tools::after {
-  content: "x";
+  content: "e";
+  font-family: "Pictos Custom";
 }
 .sheet-health__icons .sheet-icon--ecg::after {
-  content: "Y";
+  content: "t";
+  font-family: "Pictos Custom";
 }
 .sheet-health__track {
   position: relative;
@@ -4019,6 +4075,10 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <div class="sheet-label"><span name="attr_rename_label_rank" data-i18n="rank">Origin</span></div>
                       </div>
                       <div class="sheet-meta-field">
+                        <input class="sheet-meta-field__input sheet-meta-field__input--tokens" type="text" name="attr_tokens" placeholder=" " spellcheck="false">
+                        <div class="sheet-label"><span name="attr_rename_label_tokens" data-i18n="tokens">Jetons</span></div>
+                      </div>
+                      <div class="sheet-meta-field">
                         <input class="sheet-meta-field__input sheet-meta-field__input--bennies" type="text" name="attr_bennies" placeholder=" " spellcheck="false">
                         <div class="sheet-label"><span name="attr_rename_label_bennies" data-i18n="bennies">Bennies</span></div>
                       </div>
@@ -4427,9 +4487,13 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       <input class="sheet-icon sheet-icon--shield" type="checkbox" name="attr_health_icon_shield">
                       <input class="sheet-icon sheet-icon--bug" type="checkbox" name="attr_health_icon_bug">
                       <input class="sheet-icon sheet-icon--fire" type="checkbox" name="attr_health_icon_fire">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--fire"><span name="attr_rename_state_fire" data-i18n="etat-fire"></span></div>
                       <input class="sheet-icon sheet-icon--hit" type="checkbox" name="attr_health_icon_hit">
-                      <input class="sheet-icon sheet-icon--lightning" type="checkbox" name="attr_health_icon_lightning">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--malade"><span name="attr_rename_state_malade" data-i18n="etat-malade"></span></div>
+                      <input class="sheet-icon sheet-icon--herromagie" type="checkbox" name="attr_health_icon_herromagie">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--hemorragie"><span name="attr_rename_state_hemorragie" data-i18n="etat-hemorragie"></span></div>
                       <input class="sheet-icon sheet-icon--cancel" type="checkbox" name="attr_health_icon_cancel">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--cancel"><span name="attr_rename_state_cancel" data-i18n="etat-cancel"></span></div>
                     </div>
                     <div class="sheet-health__track">
                       <input class="sheet-radio-track-toggle sheet-radio-track-toggle--6" type="checkbox" name="attr_wound_toggle_6" checked>
@@ -4447,21 +4511,14 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     </div>
                     <div class="sheet-header__title" data-i18n="wounds">Wounds</div>
                   </div>
-                  <div class="sheet-health__center">
-                        <div class="sheet-hexfield sheet-stay-on-input sheet-hexfield--wound-mitigation">
-                          <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_wound_mitigation" placeholder="0" value="" spellcheck="false">
-                          <div class="sheet-hexfield__label sheet-hexfield__label--left"><span data-i18n="wound-mitigation">Wound Mitigation</span></div>
-                        </div>
-                        <div class="sheet-hexfield sheet-stay-on-input sheet-hexfield--rads">
-                          <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_rads" placeholder="0" value="" spellcheck="false">
-                          <div class="sheet-hexfield__label sheet-hexfield__label--right"><span data-i18n="rads">Rads</span></div>
-                        </div>
-                  </div>
                   <div class="sheet-health__fatigue">
                     <div class="sheet-health__icons">
                       <input class="sheet-icon sheet-icon--rad" type="checkbox" name="attr_health_icon_rad">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--distrait"><span name="attr_rename_state_distrait" data-i18n="etat-distrait"></span></div>
                       <input class="sheet-icon sheet-icon--tools" type="checkbox" name="attr_health_icon_tools">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--vulnerable"><span name="attr_rename_state_vulnerable" data-i18n="etat-vulnerable"></span></div>
                       <input class="sheet-icon sheet-icon--ecg" type="checkbox" name="attr_health_icon_ecg">
+                      <div class="sheet-tooltip sheet-tooltip--top sheet-tooltip--top--stun"><span name="attr_rename_state_stun" data-i18n="etat-stun"></span></div>
                     </div>
                     <div class="sheet-health__track">
                       <input class="sheet-radio-track-toggle sheet-radio-track-toggle--3" type="checkbox" name="attr_fatigue_toggle_3" checked>
@@ -4476,7 +4533,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                 </div>
                 <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_power_block" checked>
                 <div class="sheet-power">
-                  <input class="sheet-hex sheet-hex--64 sheet-hexfield__input" type="text" name="attr_power" placeholder="0"><span class="sheet-header__title" name="attr_rename_block_power" data-i18n="power-energy">Power</span>
+                  <input class="sheet-hex sheet-hex--64 sheet-hexfield__input" type="text" name="attr_power" placeholder="0"><span class="sheet-header__title" name="attr_rename_block_power" data-i18n="power-energy">Pouv.</span>
                       <div class="sheet-hexfield sheet-hide-until-needed sheet-hexfield--power-consumed">
                         <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_power_consumed" placeholder="0" value="" spellcheck="false">
                         <div class="sheet-hexfield__label sheet-hexfield__label--left"><span data-i18n="power-consumed">Consumed</span></div>
@@ -6910,7 +6967,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_powerarmors_block">
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-power-energy-label">Power/Energy/Mana</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_power" placeholder="Power" data-i18n-placeholder="power" value="Power" spellcheck="false">
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_power" placeholder="Power" data-i18n-placeholder="power" value="Pouv." spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_power_block" checked>
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-powers-spells-label">Powers/Spells</span>
@@ -8414,6 +8471,10 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                 <div class="sheet-meta-field">
                   <input class="sheet-meta-field__input sheet-meta-field__input--rank" type="text" name="attr_rank" placeholder=" " spellcheck="false">
                   <div class="sheet-label"><span name="attr_rename_label_rank" data-i18n="rank">Rang</span></div>
+                </div>
+                <div class="sheet-meta-field">
+                  <input class="sheet-meta-field__input sheet-meta-field__input--tokens" type="text" name="attr_tokens" placeholder=" " spellcheck="false">
+                  <div class="sheet-label"><span name="attr_rename_label_tokens" data-i18n="tokens">Jetons</span></div>
                 </div>
                 <div class="sheet-meta-field">
                   <input class="sheet-meta-field__input sheet-meta-field__input--bennies" type="text" name="attr_bennies" placeholder=" " spellcheck="false">

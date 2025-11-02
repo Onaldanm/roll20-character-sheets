@@ -19,18 +19,26 @@
       input(type='checkbox',
             name='attr_health_icon_fire',
             class='sheet-icon sheet-icon--fire')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--fire
+        span(name=`attr_rename_state_fire`, data-i18n=`etat-fire`)
 
       input(type='checkbox',
             name='attr_health_icon_hit',
             class='sheet-icon sheet-icon--hit')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--malade
+        span(name=`attr_rename_state_malade`, data-i18n=`etat-malade`)
 
       input(type='checkbox',
-            name='attr_health_icon_lightning',
-            class='sheet-icon sheet-icon--lightning')
+            name='attr_health_icon_herromagie',
+            class='sheet-icon sheet-icon--herromagie')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--hemorragie
+        span(name=`attr_rename_state_hemorragie`, data-i18n=`etat-hemorragie`)
 
       input(type='checkbox',
             name='attr_health_icon_cancel',
             class='sheet-icon sheet-icon--cancel')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--cancel
+        span(name=`attr_rename_state_cancel`, data-i18n=`etat-cancel`)
 
     .sheet-health__track
       - for (var i = 6; i > 0; --i) {
@@ -55,23 +63,25 @@
 
     .sheet-header__title(data-i18n='wounds') Wounds
 
-  .sheet-health__center
-    +hexfield('wound_mitigation', 'Wound Mitigation', 'left', '0', '', 'sheet-stay-on-input')
-    +hexfield('rads', 'Rads', 'right', '0', '', 'sheet-stay-on-input')
-
   .sheet-health__fatigue
     .sheet-health__icons
       input(type='checkbox',
             name='attr_health_icon_rad',
             class='sheet-icon sheet-icon--rad')
-
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--distrait
+        span(name=`attr_rename_state_distrait`, data-i18n=`etat-distrait`)
+      
       input(type='checkbox',
             name='attr_health_icon_tools',
             class='sheet-icon sheet-icon--tools')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--vulnerable
+        span(name=`attr_rename_state_vulnerable`, data-i18n=`etat-vulnerable`)
 
       input(type='checkbox',
             name='attr_health_icon_ecg',
             class='sheet-icon sheet-icon--ecg')
+      .sheet-tooltip.sheet-tooltip--top.sheet-tooltip--top--stun
+        span(name=`attr_rename_state_stun`, data-i18n=`etat-stun`)
 
     .sheet-health__track
       - for (var i = 3; i > 0; --i) {

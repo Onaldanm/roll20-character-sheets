@@ -353,7 +353,7 @@
   "extra-wounds": "WDS",
   "eyes": "Yeux",
   "faith": "Foi",
-  "fatigue": "Épuisement",
+  "fatigue": "Fatigue",
   "feature-name-new": "Nouveau",
   "flight": "Vol",
   "focus": "Focus",
@@ -664,5 +664,13 @@
   "hsize": "Taille",
   "pace-mod": "Mod.",
   "parry-mod": "Mod.",
-  "toughness-mod": "Mod."
+  "toughness-mod": "Mod.",
+  "tokens": "Jetons",
+  "etat-fire": "En feu",
+  "etat-malade": "Malade",
+  "etat-hemorragie": "Hémorragie",
+  "etat-cancel": "Secoué",
+  "etat-distrait": "Distrait",
+  "etat-vulnerable": "Vulnerable",
+  "etat-stun": "Sonné"
 }

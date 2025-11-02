@@ -15,13 +15,41 @@ $box-margin: 8px;
   }
 
   &:hover {
-    .sheet-health__icons * {
+    .sheet-health__icons *:not(.sheet-tooltip) {
       opacity: 1;
     }
   }
 
   &__icons {
     display: flex;
+
+          
+    .sheet-tooltip--top {
+        top: -6px;
+        transform: translate(-50%, -100%);
+
+        &--fire {
+          left: 76px;
+        }
+        &--malade {
+          left: 108px;
+        }
+        &--hemorragie {
+          left: 140px;
+        }
+        &--cancel {
+          left: 172px;
+        }
+        &--distrait {
+          left: 277px;
+        }
+        &--vulnerable {
+          left: 309px;
+        }
+        &--stun {
+          left: 341px;
+        }
+    }
 
     .sheet-icon {
       color: $c-text-lightest;
@@ -44,6 +72,39 @@ $box-margin: 8px;
       &:not(:last-child) {
         margin-right: 8px;
       }
+      
+      &:hover + .sheet-tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      &:hover + .sheet-tooltip--top {
+          top: -6px;
+          transform: translate(-50%, -100%);
+
+          &--fire {
+          left: 76px;
+          }
+          &--malade {
+            left: 108px;
+          }
+          &--hemorragie {
+            left: 140px;
+          }
+          &--cancel {
+            left: 172px;
+          }
+          &--distrait {
+            left: 277px;
+          }
+          &--vulnerable {
+            left: 309px;
+          }
+          &--stun {
+            left: 341px;
+          }
+      }
 
       &::after {
         display: flex;
@@ -59,11 +120,11 @@ $box-margin: 8px;
       }
 
       &--shield::after {
-        content: 'b';
+        content: 'Y';
       }
 
       &--bug::after {
-        content: 'i';
+        content: 'e';
       }
 
       &--fire::after {
@@ -72,12 +133,11 @@ $box-margin: 8px;
       }
 
       &--hit::after {
-        content: 't';
-        font-family: 'Pictos Custom';
+        content: 'L';
       }
 
-      &--lightning::after {
-        content: 'e';
+      &--herromagie::after {
+        content: 'k';
       }
 
       &--cancel::after {
@@ -85,15 +145,17 @@ $box-margin: 8px;
       }
 
       &--rad::after {
-        content: 'l';
+        content: 'E';
       }
 
       &--tools::after {
-        content: 'x';
+        content: 'e';
+        font-family: 'Pictos Custom';
       }
 
       &--ecg::after {
-        content: 'Y';
+        content: 't';
+        font-family: 'Pictos Custom';
       }
     }
   }

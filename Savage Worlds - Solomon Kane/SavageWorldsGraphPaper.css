@@ -1224,10 +1224,10 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-meta .sheet-meta-field input.sheet-meta-field__input--size + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--exp + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--level + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--age + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bennies + .sheet-label {
   max-width: 60px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--tokens, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits {
   width: 64px;
 }
-.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
+.sheet-meta .sheet-meta-field input.sheet-meta-field__input--height + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--weight + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--eyes + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--hair + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--rank + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--tokens + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--gender + .sheet-label, .sheet-meta .sheet-meta-field input.sheet-meta-field__input--bits + .sheet-label {
   max-width: 64px;
 }
 
@@ -2110,11 +2110,36 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-health .sheet-header__title {
   margin-top: 8px;
 }
-.sheet-health:hover .sheet-health__icons * {
+.sheet-health:hover .sheet-health__icons *:not(.sheet-tooltip) {
   opacity: 1;
 }
 .sheet-health__icons {
   display: flex;
+}
+.sheet-health__icons .sheet-tooltip--top {
+  top: -6px;
+  transform: translate(-50%, -100%);
+}
+.sheet-health__icons .sheet-tooltip--top--fire {
+  left: 76px;
+}
+.sheet-health__icons .sheet-tooltip--top--malade {
+  left: 108px;
+}
+.sheet-health__icons .sheet-tooltip--top--hemorragie {
+  left: 140px;
+}
+.sheet-health__icons .sheet-tooltip--top--cancel {
+  left: 172px;
+}
+.sheet-health__icons .sheet-tooltip--top--distrait {
+  left: 277px;
+}
+.sheet-health__icons .sheet-tooltip--top--vulnerable {
+  left: 309px;
+}
+.sheet-health__icons .sheet-tooltip--top--stun {
+  left: 341px;
 }
 .sheet-health__icons .sheet-icon {
   color: #b0b0b0;
@@ -2135,6 +2160,36 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 .sheet-health__icons .sheet-icon:not(:last-child) {
   margin-right: 8px;
 }
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top {
+  top: -6px;
+  transform: translate(-50%, -100%);
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--fire {
+  left: 76px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--malade {
+  left: 108px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--hemorragie {
+  left: 140px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--cancel {
+  left: 172px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--distrait {
+  left: 277px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--vulnerable {
+  left: 309px;
+}
+.sheet-health__icons .sheet-icon:hover + .sheet-tooltip--top--stun {
+  left: 341px;
+}
 .sheet-health__icons .sheet-icon::after {
   display: flex;
   align-items: center;
@@ -2148,33 +2203,34 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   width: 20px;
 }
 .sheet-health__icons .sheet-icon--shield::after {
-  content: "b";
+  content: "Y";
 }
 .sheet-health__icons .sheet-icon--bug::after {
-  content: "i";
+  content: "e";
 }
 .sheet-health__icons .sheet-icon--fire::after {
   content: "r";
   font-family: "Pictos Custom";
 }
 .sheet-health__icons .sheet-icon--hit::after {
-  content: "t";
-  font-family: "Pictos Custom";
+  content: "L";
 }
-.sheet-health__icons .sheet-icon--lightning::after {
-  content: "e";
+.sheet-health__icons .sheet-icon--herromagie::after {
+  content: "k";
 }
 .sheet-health__icons .sheet-icon--cancel::after {
   content: "d";
 }
 .sheet-health__icons .sheet-icon--rad::after {
-  content: "l";
+  content: "E";
 }
 .sheet-health__icons .sheet-icon--tools::after {
-  content: "x";
+  content: "e";
+  font-family: "Pictos Custom";
 }
 .sheet-health__icons .sheet-icon--ecg::after {
-  content: "Y";
+  content: "t";
+  font-family: "Pictos Custom";
 }
 .sheet-health__track {
   position: relative;
