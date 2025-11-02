@@ -771,10 +771,10 @@ input[type=checkbox].sheet-checkbox:checked::before {
 .sheet-color-cycle__radio:checked + input {
   z-index: 3;
 }
-.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice {
+.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy {
   z-index: 2;
 }
-.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked {
+.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked {
   background-color: transparent;
   border-color: transparent;
 }
@@ -2879,6 +2879,42 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
 }
 .sheet-powers input.sheet-toggle:not(:checked) ~ .sheet-powers__trapping {
   display: none;
+}
+.sheet-powers .sheet-color-cycle__radio {
+  top: 25px;
+  left: 450px;
+  align-items: center;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  opacity: 1;
+  transform: none;
+}
+.sheet-powers .sheet-color-cycle__radio::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px 0 0 2px;
+}
+.sheet-powers .sheet-color-cycle__radio--alchemy:checked::after {
+  content: "A";
+  background-color: #5cb85c;
+  color: #fff;
+}
+.sheet-powers .sheet-color-cycle__radio--magie:checked::after {
+  content: "M";
+  background-color: #0275d8;
+  color: #fff;
+}
+.sheet-powers .sheet-color-cycle__radio--foi:checked::after {
+  content: "F";
+  background-color: #d9534f;
+  color: #fff;
 }
 
 .sheet-vehicles__size, .sheet-vehicles__handling, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
@@ -6430,10 +6466,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                   </label>
                 </div>
                 <div class="sheet-settings__page sheet-settings__page--blocks">
-                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-abilities-label">Abilities</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_abilities" placeholder="Abilities" data-i18n-placeholder="abilities" value="Abilities" spellcheck="false">
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_abilities_block">
-                  </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-allies-label">Allies</span>
                     <input class="sheet-align-left" type="text" name="attr_rename_block_allies" placeholder="Allies" data-i18n-placeholder="allies" value="Allies" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_allies_block">
@@ -6689,17 +6721,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
           </div>
           <div class="sheet-section sheet-section--footer">
             <div class="sheet-left">
-              <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_abilities_block">
-              <div class="sheet-block sheet-abilities">
-                <div class="sheet-header"><span class="sheet-header__title sheet-apparel__name" name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span></div>
-                <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_abilities_visibility_toggle" checked>
-                <fieldset class="repeating_abilities">
-                  <div class="sheet-repitem sheet-repitem--full-field"><span name="attr_ability">[Ability] Description</span>
-                    <textarea name="attr_ability" placeholder="Ability: Description" data-i18n-placeholder="ability-placeholder" spellcheck="false"></textarea>
-                  </div>
-                </fieldset>
-                <div class="sheet-footer"></div>
-              </div>
               <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_weapons_block" checked>
               <div class="sheet-block sheet-weapons">
                 <div class="sheet-header"><span class="sheet-header__title sheet-weapons__name" name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>
@@ -7097,6 +7118,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                             <input type="hidden" name="attr_explode_damage" value="!">
                             <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                           </label>
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi">
                         </div>
                       </div>
                       <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
@@ -8896,17 +8920,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
             </fieldset>
             <div class="sheet-footer"></div>
           </div>
-          <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_abilities_block">
-          <div class="sheet-block sheet-abilities">
-            <div class="sheet-header"><span class="sheet-header__title sheet-apparel__name" name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span></div>
-            <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_abilities_visibility_toggle" checked>
-            <fieldset class="repeating_abilities">
-              <div class="sheet-repitem sheet-repitem--full-field"><span name="attr_ability">[Ability] Description</span>
-                <textarea name="attr_ability" placeholder="Ability: Description" data-i18n-placeholder="ability-placeholder" spellcheck="false"></textarea>
-              </div>
-            </fieldset>
-            <div class="sheet-footer"></div>
-          </div>
           <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_weapons_block" checked>
           <div class="sheet-block sheet-weapons">
             <div class="sheet-header"><span class="sheet-header__title sheet-weapons__name" name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>
@@ -9263,6 +9276,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <input type="hidden" name="attr_explode_damage" value="!">
                         <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                       </label>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi">
                     </div>
                   </div>
                   <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
@@ -10037,9 +10053,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
             </label>
             <label class="sheet-extra-settings__item">
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_features_block" checked><span data-i18n="edges-and-hindrances">Edges & Hindrances</span>
-            </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_abilities_block"><span name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span>
             </label>
             <label class="sheet-extra-settings__item">
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_weapons_block" checked><span name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>

@@ -695,6 +695,18 @@ on(listItems.map(s => `change:repeating_${s}s:${s}_damage`).join(' '), (e) => {
   setAttrs({ [`${e.sourceAttribute}_roll`]: code }, { silent: true });
 });
 
+on(listItems.map(s => `change:repeating_${s}s:arcane_spell`).join(' '), (e) => {
+  setAttrs({
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_wd')}`]: `@{${e.newValue}_wd}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_mod')}`]: `@{${e.newValue}_mod}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_untrained_mod')}`]: `@{${e.newValue}_untrained_mod}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_roll')}`]: `@{${e.newValue}_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_extra_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_code')}`]: `@{${e.newValue}_code}`
+  }, { silent: true });
+});
+
 on(listItems.map(s => `change:repeating_${s}s:skill_name`).join(' '), (e) => {
   let array = skills.map((s) => { return `rename_${s}` }), // All rename_<skill> attributes
       id = e.sourceAttribute.replace('skill_name', '');
@@ -3215,10 +3227,6 @@ on('change:toggle_halve_untrained', (e) => {
               </label>
             </div>
             <div class="sheet-settings__page sheet-settings__page--blocks">
-              <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-abilities-label">Abilities</span>
-                <input class="sheet-align-left" type="text" name="attr_rename_block_abilities" placeholder="Abilities" data-i18n-placeholder="abilities" value="Abilities" spellcheck="false"/>
-                <input class="sheet-checkbox" type="checkbox" name="attr_toggle_abilities_block"/>
-              </label>
               <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-allies-label">Allies</span>
                 <input class="sheet-align-left" type="text" name="attr_rename_block_allies" placeholder="Allies" data-i18n-placeholder="allies" value="Allies" spellcheck="false"/>
                 <input class="sheet-checkbox" type="checkbox" name="attr_toggle_allies_block"/>
@@ -3474,17 +3482,6 @@ on('change:toggle_halve_untrained', (e) => {
       </div>
       <div class="sheet-section sheet-section--footer">
         <div class="sheet-left">
-          <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_abilities_block"/>
-          <div class="sheet-block sheet-abilities">
-            <div class="sheet-header"><span class="sheet-header__title sheet-apparel__name" name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span></div>
-            <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_abilities_visibility_toggle" checked="checked"/>
-            <fieldset class="repeating_abilities">
-              <div class="sheet-repitem sheet-repitem--full-field"><span name="attr_ability">[Ability] Description</span>
-                <textarea name="attr_ability" placeholder="Ability: Description" data-i18n-placeholder="ability-placeholder" spellcheck="false"></textarea>
-              </div>
-            </fieldset>
-            <div class="sheet-footer"></div>
-          </div>
           <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_weapons_block" checked="checked"/>
           <div class="sheet-block sheet-weapons">
             <div class="sheet-header"><span class="sheet-header__title sheet-weapons__name" name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>
@@ -3882,6 +3879,9 @@ on('change:toggle_halve_untrained', (e) => {
                         <input type="hidden" name="attr_explode_damage" value="!"/>
                         <input type="checkbox" name="attr_explode_damage_toggle" checked="checked"/><span data-i18n="ace-damage">Ace Damage</span>
                       </label>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked="checked"/>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie"/>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"/>
                     </div>
                   </div>
                   <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle"/>
@@ -5681,17 +5681,6 @@ on('change:toggle_halve_untrained', (e) => {
         </fieldset>
         <div class="sheet-footer"></div>
       </div>
-      <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_abilities_block"/>
-      <div class="sheet-block sheet-abilities">
-        <div class="sheet-header"><span class="sheet-header__title sheet-apparel__name" name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span></div>
-        <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_abilities_visibility_toggle" checked="checked"/>
-        <fieldset class="repeating_abilities">
-          <div class="sheet-repitem sheet-repitem--full-field"><span name="attr_ability">[Ability] Description</span>
-            <textarea name="attr_ability" placeholder="Ability: Description" data-i18n-placeholder="ability-placeholder" spellcheck="false"></textarea>
-          </div>
-        </fieldset>
-        <div class="sheet-footer"></div>
-      </div>
       <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_weapons_block" checked="checked"/>
       <div class="sheet-block sheet-weapons">
         <div class="sheet-header"><span class="sheet-header__title sheet-weapons__name" name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>
@@ -6048,6 +6037,9 @@ on('change:toggle_halve_untrained', (e) => {
                     <input type="hidden" name="attr_explode_damage" value="!"/>
                     <input type="checkbox" name="attr_explode_damage_toggle" checked="checked"/><span data-i18n="ace-damage">Ace Damage</span>
                   </label>
+                  <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked="checked"/>
+                  <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie"/>
+                  <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"/>
                 </div>
               </div>
               <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle"/>
@@ -6822,9 +6814,6 @@ on('change:toggle_halve_untrained', (e) => {
         </label>
         <label class="sheet-extra-settings__item">
           <input class="sheet-hidden" type="checkbox" name="attr_toggle_features_block" checked="checked"/><span data-i18n="edges-and-hindrances">Edges & Hindrances</span>
-        </label>
-        <label class="sheet-extra-settings__item">
-          <input class="sheet-hidden" type="checkbox" name="attr_toggle_abilities_block"/><span name="attr_rename_block_abilities" data-i18n="abilities">Abilities</span>
         </label>
         <label class="sheet-extra-settings__item">
           <input class="sheet-hidden" type="checkbox" name="attr_toggle_weapons_block" checked="checked"/><span name="attr_rename_block_weapons" data-i18n="weapons">Weapons</span>

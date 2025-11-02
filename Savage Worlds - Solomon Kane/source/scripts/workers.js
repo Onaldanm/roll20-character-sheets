@@ -694,6 +694,18 @@ on(listItems.map(s => `change:repeating_${s}s:${s}_damage`).join(' '), (e) => {
   setAttrs({ [`${e.sourceAttribute}_roll`]: code }, { silent: true });
 });
 
+on(listItems.map(s => `change:repeating_${s}s:arcane_spell`).join(' '), (e) => {
+  setAttrs({
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_wd')}`]: `@{${e.newValue}_wd}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_mod')}`]: `@{${e.newValue}_mod}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_untrained_mod')}`]: `@{${e.newValue}_untrained_mod}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_roll')}`]: `@{${e.newValue}_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_extra_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_code')}`]: `@{${e.newValue}_code}`
+  }, { silent: true });
+});
+
 on(listItems.map(s => `change:repeating_${s}s:skill_name`).join(' '), (e) => {
   let array = skills.map((s) => { return `rename_${s}` }), // All rename_<skill> attributes
       id = e.sourceAttribute.replace('skill_name', '');

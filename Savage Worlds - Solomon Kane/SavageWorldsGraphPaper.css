@@ -767,10 +767,10 @@ input[type=checkbox].sheet-checkbox:checked::before {
 .sheet-color-cycle__radio:checked + input {
   z-index: 3;
 }
-.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice {
+.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy {
   z-index: 2;
 }
-.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked {
+.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked {
   background-color: transparent;
   border-color: transparent;
 }
@@ -2875,6 +2875,42 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
 }
 .sheet-powers input.sheet-toggle:not(:checked) ~ .sheet-powers__trapping {
   display: none;
+}
+.sheet-powers .sheet-color-cycle__radio {
+  top: 25px;
+  left: 450px;
+  align-items: center;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  opacity: 1;
+  transform: none;
+}
+.sheet-powers .sheet-color-cycle__radio::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px 0 0 2px;
+}
+.sheet-powers .sheet-color-cycle__radio--alchemy:checked::after {
+  content: "A";
+  background-color: #5cb85c;
+  color: #fff;
+}
+.sheet-powers .sheet-color-cycle__radio--magie:checked::after {
+  content: "M";
+  background-color: #0275d8;
+  color: #fff;
+}
+.sheet-powers .sheet-color-cycle__radio--foi:checked::after {
+  content: "F";
+  background-color: #d9534f;
+  color: #fff;
 }
 
 .sheet-vehicles__size, .sheet-vehicles__handling, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {

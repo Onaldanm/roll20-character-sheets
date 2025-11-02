@@ -23,7 +23,8 @@
     }
 
     &--none,
-    &--novice {
+    &--novice,
+    &--alchemy {
       z-index: 2;
 
       &:checked {

@@ -39,4 +39,45 @@ input.sheet-toggle--pp {
       display: none;
     }
   }
+
+    .sheet-color-cycle__radio {
+    top: 25px;
+    left: 450px;
+    align-items: center;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+    opacity: 1;
+    transform: none;
+
+    &::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $fs-s;
+      font-weight: 700;
+      line-height: 1;
+      height: 100%;
+      width: 100%;
+      border-radius: 2px 0 0 2px;
+    }
+
+    &--alchemy:checked::after {
+      content: 'A';
+      background-color: $c-green;
+      color: $c-white;
+    }
+
+    &--magie:checked::after {
+      content: 'M';
+      background-color: $c-blue;
+      color: $c-white;
+    }
+
+    &--foi:checked::after {
+      content: 'F';
+      background-color: $c-red;
+      color: $c-white;
+    }
+  }
 }
