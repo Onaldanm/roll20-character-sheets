@@ -1071,34 +1071,34 @@ on('change:toggle_halve_untrained', (e) => {
                   <div class="sheet-hexfield__label sheet-hexfield__label--left"><span data-i18n="run">Run</span></div>
                 </div>
                 <input type="hidden" name="attr_run_roll" value="d6"/>
+                <div class="sheet-hexfield sheet-hide-until-needed sheet-stay-on-input sheet-hexfield--pace-mod">
+                  <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_pace-mod" placeholder="0" value="" spellcheck="false"/>
+                  <div class="sheet-hexfield__label sheet-hexfield__label--right"><span data-i18n="pace-mod">Mod</span></div>
+                </div>
+                <input type="hidden" name="attr_pace_mod" value="0"/>
                 <div class="sheet-hexfield__label sheet-hexfield__label--bottom"><span data-i18n="pace">Pace</span></div>
               </div>
               <div class="sheet-hexfield  sheet-hexfield--parry">
                 <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_parry" placeholder="2" value="" spellcheck="false"/>
+                <div class="sheet-hexfield sheet-hide-until-needed sheet-stay-on-input sheet-hexfield--parry-mod">
+                  <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_parry-mod" placeholder="0" value="" spellcheck="false"/>
+                  <div class="sheet-hexfield__label sheet-hexfield__label--right"><span data-i18n="parry-mod">Mod</span></div>
+                </div>
+                <input type="hidden" name="attr_parry_mod" value="0"/>
                 <div class="sheet-hexfield__label sheet-hexfield__label--bottom"><span data-i18n="parry">Parry</span></div>
               </div>
               <div class="sheet-hexfield  sheet-hexfield--toughness">
                 <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_toughness" placeholder="4" value="" spellcheck="false"/>
+                <div class="sheet-hexfield sheet-hide-until-needed sheet-stay-on-input sheet-hexfield--toughness-mod">
+                  <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_toughness-mod" placeholder="0" value="" spellcheck="false"/>
+                  <div class="sheet-hexfield__label sheet-hexfield__label--right"><span data-i18n="toughness-mod">Mod</span></div>
+                </div>
+                <input type="hidden" name="attr_toughness_mod" value="0"/>
                 <div class="sheet-hexfield__label sheet-hexfield__label--bottom"><span data-i18n="toughness">Tough.</span></div>
               </div>
-              <div class="sheet-hexfield  sheet-hexfield--soak">
-                <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_soak" placeholder="d4" value="d4" spellcheck="false"/>
-                <div class="sheet-hexfield sheet-hide-until-needed sheet-stay-on-input sheet-hexfield--soak-mod">
-                  <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_soak_mod" placeholder="0" value="" spellcheck="false"/>
-                  <div class="sheet-hexfield__label sheet-hexfield__label--up  sheet-exception"><span data-i18n="soak-mod">Bonus</span></div>
-                </div>
-                <div class="sheet-hexfield sheet-hide-until-needed sheet-hexfield--soak-wd">
-                  <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_soak_wd" placeholder="d6" value="" spellcheck="false"/>
-                  <div class="sheet-hexfield__label sheet-hexfield__label--right"><span data-i18n="soak-wd">WD</span></div>
-                </div>
-                <input type="hidden" name="attr_soak_roll" value="1d4"/>
-                <input type="hidden" name="attr_soak_wd_roll" value="1d6"/>
-                <input type="hidden" name="attr_soak_extra_wd_roll" value="-10000"/>
-                <input type="hidden" name="attr_soak_code" value="d4"/>
-                <input type="hidden" name="attr_soak_global_wd_roll" value="{{global_wd=@{query_global_wd}}} {{global_wdroll=[[ @{query_global_wd}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}"/>
-                <input type="hidden" name="attr_soak_global_bonus_wd_roll" value="{{bonus_wd=@{query_global_bonus_wd}}} {{bonus_wdroll=[[ @{query_global_bonus_wd}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}"/>
-                <input type="hidden" name="attr_soak_roll_body" value="@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{query_global_rof} ]]}} {{header=@{name} ^{rolls} ^{soak}}} {{trait=^{soak}}} {{traitdie=@{soak_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{traitroll1=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll2=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll3=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll4=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll5=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll6=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll7=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll8=[[ @{soak_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{soak_global_wd_roll} @{soak_global_bonus_wd_roll}"/>
-                <button class="sheet-hexfield__label sheet-hexfield__label--bottom" type="roll" name="roll_soak" value="@{soak_roll_body} {{wd=@{soak_wd}}} {{wdroll=[[ @{soak_wd_roll}!cs2 + (@{soak_mod}+0)[Flat] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{reroll=[r](~soak)}}"><span data-i18n="soak">Soak</span></button>
+              <div class="sheet-hexfield  sheet-hexfield--hsize">
+                <input class="sheet-hex sheet-hex--36 sheet-hexfield__input" type="text" name="attr_hsize" placeholder="0" value="" spellcheck="false"/>
+                <div class="sheet-hexfield__label sheet-hexfield__label--bottom"><span data-i18n="hsize">Taille</span></div>
               </div>
             </div>
             <div class="sheet-armor">

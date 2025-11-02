@@ -1488,8 +1488,20 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   margin-right: 24px;
 }
 .sheet-secondary .sheet-hexfield--run {
-  top: -65px;
+  top: -64px;
   left: -16px;
+}
+.sheet-secondary .sheet-hexfield--pace-mod {
+  top: -100px;
+  left: 16px;
+}
+.sheet-secondary .sheet-hexfield--parry-mod {
+  top: -64px;
+  left: 16px;
+}
+.sheet-secondary .sheet-hexfield--toughness-mod {
+  top: -64px;
+  left: 16px;
 }
 .sheet-secondary .sheet-hexfield--flight {
   top: -64px;

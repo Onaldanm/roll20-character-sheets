@@ -8,8 +8,23 @@
 
   .sheet-hexfield {
     &--run {
-      top: -65px;
+      top: -64px;
       left: -16px;
+    }
+
+    &--pace-mod {
+      top: -100px;
+      left: 16px;
+    }
+
+    &--parry-mod {
+      top: -64px;
+      left: 16px;
+    }
+
+    &--toughness-mod {
+      top: -64px;
+      left: 16px;
     }
 
     &--flight {

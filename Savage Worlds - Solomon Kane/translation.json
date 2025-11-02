@@ -63,7 +63,7 @@
   "armor-arms": "Bras",
   "armor-head": "Tête",
   "armor-legs": "Jambes",
-  "armor-notes-u": "REMARQUES",
+  "armor-notes-u": "NOTES",
   "armor-torso": "Torse",
   "attributes": "Attributs",
   "augmentations": "Modifications corporelles",
@@ -605,7 +605,7 @@
   "target-number": "Seuil de Réussite (SR)",
   "taunt": "Sarcasme",
   "toggle-damage-rolls-title": "Toggle Damage Rolls",
-  "toughness": "Robuste.",
+  "toughness": "Resist.",
   "trapping": "Transformation",
   "unskilled": "Non-entraîné",
   "vehicles": "Vehicules",
@@ -660,5 +660,9 @@
   "wound-mitigation": "Wound Mitigation",
   "wounds": "Blessures",
   "{": "{",
-  "}": "}"
+  "}": "}",
+  "hsize": "Taille",
+  "pace-mod": "Mod.",
+  "parry-mod": "Mod.",
+  "toughness-mod": "Mod."
 }
