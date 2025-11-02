@@ -1,8 +1,7 @@
 .sheet-meta.sheet-extra-meta
   +meta_field('name', 'Name')
-  +meta_field('size', 'Size')
-  +meta_field('height', 'Height')
-  +meta_field('weight', 'Weight')
+  +meta_field('origin', 'Origin')
+  +meta_field('rank', 'Rang')
   +meta_field('bennies', 'Bennies')
 
 include _buttons.pug
@@ -183,8 +182,6 @@ include _buttons.pug
             class='sheet-extra-secondary__input')
       .sheet-label
         span(data-i18n='extra-fatigue') FTG
-
-    +simple_trait('soak', 'Soak', 'd4', 'sheet-simple-trait--attribute')
 
 input(type='checkbox',
       name='attr_toggle_quick_notes_block',
