@@ -6,6 +6,6 @@
     "sass-embedded": "^1.93.2"
   },
   "scripts": {
-    "dev": "nodemon --watch . --ext js,pug,scss --exec \"node ./render.js\""
+    "dev": "nodemon --watch . --ext js,pug,scss,json --exec \"node ./render.js\""
   }
 }

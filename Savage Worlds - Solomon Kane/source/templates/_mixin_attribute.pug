@@ -30,8 +30,6 @@ mixin attribute(name, short)
           spellcheck='false',
           class='sheet-hex sheet-hex--48 sheet-hexfield__input')
 
-    +hexfield(`${trait}_natural`, 'Natural', 'left', 'd4', '', 'sheet-hide-until-needed sheet-hexfield-gray sheet-hexfield--nat')
-
     +hexfield(`${trait}_mod`, 'Bonus', 'right sheet-exception', '0', '', 'sheet-hide-until-needed sheet-stay-on-input sheet-hexfield--mod')
 
-    +hexfield(`${trait}_wd`, 'WD', 'right', 'd6', '', 'sheet-hide-until-needed sheet-hexfield-gray sheet-hexfield--wd')
+    +hexfield(`${trait}_wd`, 'WD', 'left', 'd6', '', 'sheet-hide-until-needed sheet-hexfield-gray sheet-hexfield--wd')

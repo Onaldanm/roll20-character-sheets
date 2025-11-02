@@ -384,14 +384,16 @@
 
   .sheet-settings__page.sheet-settings__page--skills
     -
-      var skills = ['Alchimie', 'Combat', 'Education', 'Equitation', 'Foi', 'Intimidation',
-                    'Jeu', 'Magie', 'Navigation', 'Occultisme', 'Performance', 'Provocation', 'Reparation',
-                    'Sciences', 'Soins', 'Strategie', 'Subterfuge', 'Survie', 'Tir', 
-                    'Custom Skill 1', 'Custom Skill 2',
+      var skills = ['Battle', 'Boating', 'Driving', 'Electronics', 'Faith', 'Focus',
+                    'Gambling', 'Hacking', 'Healing', 'Language', 'MAGIC', 'Occult',
+                    'Performance', 'Piloting', 'Psionics', 'Repair', 'Research',
+                    'Riding', 'Science', 'Spellcasting', 'Survival', 'Taunt',
+                    'Weird Science', 'Custom Skill 1', 'Custom Skill 2',
                     'Custom Skill 3', 'Custom Skill 4', 'Custom Skill 5',
                     'Custom Skill 6']
 
-      var disabledSkills = ['Custom Skill 1',
+      var disabledSkills = ['Faith', 'Focus', 'Occult', 'Psionics', 'Language',
+                            'Spellcasting', 'Weird Science', 'Custom Skill 1',
                             'Custom Skill 2', 'Custom Skill 3', 'Custom Skill 4',
                             'Custom Skill 5', 'Custom Skill 6']
 
@@ -438,7 +440,7 @@
       .sheet-bottom(data-i18n='settings-help-weapon-damage-rolls-description') You can enable damage rolls for list items by clicking the damage label. This will disable editing. Note that the dice codes must be valid, but you can use "Str" or "Agi" (etc.) as shorthands to reference attributes. The parser is not smart, however, so please also refer to the Roll20 Dice Reference.
 
     .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-edges-and-hindrances') Atouts & Handicaps
+      span(data-i18n='settings-help-edges-and-hindrances') Edges & Hindrances
       input(type='checkbox',
             class='sheet-toggle sheet-toggle--spoiler')
       .sheet-bottom(data-i18n='settings-help-edges-and-hindrances-description') Manage your Edges and Hindrances here. They follow a horizontal masonry layout to save space and remain visible for convenience. The width is automatically adjusted once you press enter and you can cycle through colored labels to indicate Rank, type, and more. Sorting is wonky though.
