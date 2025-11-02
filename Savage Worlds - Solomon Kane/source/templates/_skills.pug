@@ -1,22 +1,22 @@
 -
   // Pour override la nom en français, ajouter un 3ème élément au tableau
-  var skills = [['Academics', 'Sma'], ['Athletics', 'Agi'], ['Battle', 'Sma'],
-                ['Boating', 'Agi'], ['Common Knowledge', 'Sma'], ['Driving', 'Agi'],
-                ['Electronics', 'Sma'], ['Faith', 'Spi'], ['Fighting', 'Agi'],
-                ['Focus', 'Spi'], ['Gambling', 'Sma'], ['Hacking', 'Sma'],
-                ['Healing', 'Sma'], ['Intimidation', 'Spi'], ['Language', 'Sma'],
-                ['MAGIC', 'Sma'], ['Notice', 'Sma'], ['Occult', 'Sma'],
-                ['Performance', 'Spi'], ['Persuasion', 'Spi'], ['Piloting', 'Agi'],
-                ['Psionics', 'Sma'], ['Repair', 'Sma'], ['Research', 'Sma'],
-                ['Riding', 'Agi'], ['Science', 'Sma'], ['Shooting', 'Agi'],
-                ['Spellcasting', 'Sma'], ['Stealth', 'Agi'], ['Survival', 'Sma'],
-                ['Taunt', 'Sma'], ['Thievery', 'Agi'], ['Weird Science', 'Sma'],
+  var skills = [['Alchemy', 'Sma', 'Alchimie'], ['Athletics', 'Agi', 'Athlétisme'],
+                ['Fighting', 'Agi', 'Combat'], ['Common Knowledge', 'Sma', 'Culture G.'],
+                ['Stealth', 'Agi', 'Discretion'], ['Education', 'Sma', 'Éducation'],
+                ['Equitation', 'Agi', 'Equitation'], ['Foi', 'Spi', 'Foi'], 
+                ['Intimidation', 'Spi'],  ['Jeu', 'Sma', 'Jeu'],
+                ['Magie', 'Sma', 'Magie'], ['Navigation', 'Agi'], ['Occultisme', 'Sma', 'Occultisme'],
+                ['Perception', 'Sma'],
+                ['Performance', 'Spi'], ['Persuasion', 'Spi'], ['Provocation', 'Sma', 'Provocation'],
+                ['Réparation', 'Sma', 'Réparation'], ['Science', 'Sma', 'Sciences'],
+                ['Soins', 'Sma', 'Soins'], ['Strategy', 'Sma', 'Stratégie'],
+                ['Subterfuge', 'Agi'], ['Survie', 'Sma', 'Survie'],
+                ['Shooting', 'Agi', 'Tir'],
                 ['Custom Skill 1', 'Custom'], ['Custom Skill 2', 'Custom'],
                 ['Custom Skill 3', 'Custom'], ['Custom Skill 4', 'Custom'],
                 ['Custom Skill 5', 'Custom'], ['Custom Skill 6', 'Custom']]
 
-  var disabledSkills = ['faith', 'focus', 'language', 'occult', 'psionics',
-                        'spellcasting', 'weird_science', 'custom_skill_1',
+  var disabledSkills = ['alchemy', 'foi', 'magie', 'custom_skill_1',
                         'custom_skill_2', 'custom_skill_3', 'custom_skill_4',
                         'custom_skill_5', 'custom_skill_6']
 
@@ -53,7 +53,7 @@ input(type='checkbox',
           span(data-i18n='skill-track-wd-u') WD
 
     each skill in skills
-      - var trait = skill[0].toLowerCase().replace(/\./g, '').replace(/ /g, '_')
+      - var trait = skill[0].toLowerCase().replace(/\./g, '').replace(/ /g, '_').replace(/é/g, 'e')
 
       input(type='checkbox',
             name=`attr_toggle_skill_${trait}`,
@@ -105,7 +105,7 @@ input(type='checkbox',
 
           input(type='hidden',
                 name=`attr_rename_${trait}`,
-                value= skill[0] == 'Common Knowledge' ? 'Common Knowl.' : (skill[2] ? skill[2] : skill[0]))
+                value= skill[2] ? skill[2] : skill[0])
 
           input(type='hidden', name=`attr_${trait}_untrained_mod`, value='-2@{adjust_untrained}')
           input(type='hidden', name=`attr_${trait}_roll`, value='d4')
@@ -130,4 +130,4 @@ input(type='checkbox',
               span(name=`attr_rename_${skill[1].toLowerCase()}`,
                    data-i18n=`${skill[1].toLowerCase()}-u`)= skill[1]
             span(name=`attr_rename_${trait}`)
-              = skill[0] == 'Common Knowledge' ? 'Common Knowl.' : (skill[2] ? skill[2] : skill[0])
+              =skill[2] ? skill[2] : skill[0]

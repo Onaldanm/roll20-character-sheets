@@ -384,34 +384,41 @@
 
   .sheet-settings__page.sheet-settings__page--skills
     -
-      var skills = ['Battle', 'Boating', 'Driving', 'Electronics', 'Faith', 'Focus',
-                    'Gambling', 'Hacking', 'Healing', 'Language', 'MAGIC', 'Occult',
-                    'Performance', 'Piloting', 'Psionics', 'Repair', 'Research',
-                    'Riding', 'Science', 'Spellcasting', 'Survival', 'Taunt',
-                    'Weird Science', 'Custom Skill 1', 'Custom Skill 2',
-                    'Custom Skill 3', 'Custom Skill 4', 'Custom Skill 5',
-                    'Custom Skill 6']
+      var skills = [['Alchemy', 'Sma', 'Alchimie'], ['Athletics', 'Agi', 'Athlétisme'],
+                ['Fighting', 'Agi', 'Combat'], ['Common Knowledge', 'Sma', 'Culture G.'],
+                ['Stealth', 'Agi', 'Discretion'], ['Education', 'Sma', 'Éducation'],
+                ['Equitation', 'Agi', 'Equitation'], ['Foi', 'Spi', 'Foi'], 
+                ['Intimidation', 'Spi'],  ['Jeu', 'Sma', 'Jeu'],
+                ['Magie', 'Sma', 'Magie'], ['Navigation', 'Agi'], ['Occultisme', 'Sma', 'Occultisme'],
+                ['Perception', 'Sma'],
+                ['Performance', 'Spi'], ['Persuasion', 'Spi'], ['Provocation', 'Sma', 'Provocation'],
+                ['Réparation', 'Sma', 'Réparation'], ['Science', 'Sma', 'Sciences'],
+                ['Soins', 'Sma', 'Soins'], ['Strategy', 'Sma', 'Stratégie'],
+                ['Subterfuge', 'Agi'], ['Survie', 'Sma', 'Survie'],
+                ['Shooting', 'Agi', 'Tir'],
+                ['Custom Skill 1', 'Custom'], ['Custom Skill 2', 'Custom'],
+                ['Custom Skill 3', 'Custom'], ['Custom Skill 4', 'Custom'],
+                ['Custom Skill 5', 'Custom'], ['Custom Skill 6', 'Custom']]
 
-      var disabledSkills = ['Faith', 'Focus', 'Occult', 'Psionics', 'Language',
-                            'Spellcasting', 'Weird Science', 'Custom Skill 1',
+      var disabledSkills = ['Alchemy', 'Foi', 'Magie', 'Custom Skill 1',
                             'Custom Skill 2', 'Custom Skill 3', 'Custom Skill 4',
                             'Custom Skill 5', 'Custom Skill 6']
 
     each skill in skills
-      - var substring = skill.toLowerCase().replace(/ /g, '_').replace(/#/g, '')
+      - var substring = skill[0].toLowerCase().replace(/ /g, '_').replace(/#/g, '')
 
       label.sheet-settings__item.sheet-settings__item--text-input
-        span(data-i18n=`${substring.replace(/_/g, '-')}`)= skill
+        span(data-i18n=`${substring.replace(/_/g, '-')}`)= skill[0]
         input(type='text',
               name=`attr_rename_${substring}`,
-              placeholder=skill,
+              placeholder=skill[2] || skill[0],
               data-i18n-placeholder=`${substring.replace(/_/g, '-')}`,
-              value=skill,
+              value=skill[2] || skill[0],
               spellcheck='false',
               class='sheet-align-left')
         input(type='checkbox',
               name=`attr_toggle_skill_${substring}`,
-              checked= !disabledSkills.includes(skill),
+              checked= !disabledSkills.includes(skill[0]),
               class='sheet-checkbox')
 
   .sheet-settings__page.sheet-settings__page--help

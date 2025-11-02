@@ -238,13 +238,12 @@ on('change:soak change:' + traitAttributes.join(' change:'), (e) => {
 SKILL DICE
 ############################################################################# */
 
-const skills = ['academics', 'athletics', 'battle', 'boating', 'common_knowledge',
-                'driving', 'electronics', 'fighting', 'healing', 'intimidation',
-                'magic', 'notice', 'performance', 'persuasion', 'piloting',
-                'repair', 'research', 'riding', 'science', 'shooting', 'stealth',
-                'survival', 'taunt', 'thievery', 'gambling', 'hacking', 'faith',
-                'focus', 'language', 'occult', 'psionics', 'spellcasting',
-                'weird_science', 'custom_skill_1', 'custom_skill_2', 'custom_skill_3',
+const skills = ['alchemy', 'athletics', 'fighting', 'common_knowledge',
+                'stealth', 'education', 'equitation', 'foi', 'intimidation',
+                'jeu', 'magie', 'navigation', 'occultisme', 'perception',
+                'performance', 'persuasion', 'provocation', 'reparation', 'shooting', 'science',
+                'soins', 'strategy', 'subterfuge', 'survie',
+                'custom_skill_1', 'custom_skill_2', 'custom_skill_3',
                 'custom_skill_4', 'custom_skill_5', 'custom_skill_6', 'unskilled'];
 
 const skillDice = ['d4-2', 'd4', 'd6', 'd8', 'd10', 'd12'];
