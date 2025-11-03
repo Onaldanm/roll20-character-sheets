@@ -18,7 +18,6 @@ input(type='checkbox',
           span.sheet-icon ;
           span(data-i18n='powers-damage') Damage
       .sheet-powers__range(data-i18n='powers-range') Range
-      .sheet-powers__ap(data-i18n='powers-ap') AP
       .sheet-powers__pp.sheet-a(data-i18n='powers-pp') PP
       .sheet-powers__penalty.sheet-b(data-i18n='powers-penalty') Penalty
       .sheet-powers__duration(data-i18n='powers-duration') Duration
@@ -75,7 +74,7 @@ input(type='checkbox',
 
           button(type='roll',
                  name='roll_power_damage',
-                 value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{power_damage}}} {{source_label=^{source}}} {{source=@{power_name}}} {{rof=[[ 0 + @{rof_override} ]]}} {{modifier=?{@{query_damage_modifier}}}} {{range=@{power_range}}} {{ap=@{power_ap}}} {{trapping=@{power_trapping}}} ${maxRof.map(n => `{{roll${n}=[[ @{power_damage_roll} + (?{@{query_damage_modifier}}+0) ]]}}`).join(' ')} {{reroll=[r](~repeating_powers_power_damage)}}`)
+                 value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{power_damage}}} {{source_label=^{source}}} {{source=@{power_name}}} {{rof=[[ 0 + @{rof_override} ]]}} {{modifier=?{@{query_damage_modifier}}}} {{ap=@{power_ap}}} {{trapping=@{power_trapping}}} ${maxRof.map(n => `{{roll${n}=[[ @{power_damage_roll} + (?{@{query_damage_modifier}}+0) ]]}}`).join(' ')} {{reroll=[r](~repeating_powers_power_damage)}}`)
 
           input(type='text',
                 name='attr_power_damage',
@@ -90,12 +89,6 @@ input(type='checkbox',
               data-i18n-placeholder='powers-range-placeholder',
               spellcheck='false',
               class='sheet-powers__range')
-
-        input(type='text',
-              name='attr_power_ap',
-              placeholder='0',
-              spellcheck='false',
-              class='sheet-powers__ap')
 
         input(type='text',
               name='attr_power_pp',
@@ -184,29 +177,30 @@ input(type='checkbox',
               span(data-i18n='trapping') Trapping
 
             label.sheet-label-toggle
-              input(type='hidden', name='attr_skill_wd', value='@{spellcasting_wd}')
-              input(type='hidden', name='attr_skill_mod', value='@{spellcasting_mod}')
-              input(type='hidden', name='attr_skill_untrained_mod', value='@{spellcasting_untrained_mod}')
-              input(type='hidden', name='attr_skill_roll', value='@{spellcasting_roll}')
-              input(type='hidden', name='attr_skill_wd_roll', value='@{spellcasting_wd_roll}')
-              input(type='hidden', name='attr_skill_extra_wd_roll', value='@{spellcasting_wd_roll}')
-              input(type='hidden', name='attr_skill_code', value='@{spellcasting_code}')
-
+              input(type='hidden', name='attr_skill_wd', value='@{magie_wd}')
+              input(type='hidden', name='attr_skill_mod', value='@{magie_mod}')
+              input(type='hidden', name='attr_skill_untrained_mod', value='@{magie_untrained_mod}')
+              input(type='hidden', name='attr_skill_roll', value='@{magie_roll}')
+              input(type='hidden', name='attr_skill_wd_roll', value='@{magie_wd_roll}')
+              input(type='hidden', name='attr_skill_extra_wd_roll', value='@{magie_wd_roll}')
+              input(type='hidden', name='attr_skill_code', value='@{magie_code}')
+              input(type='hidden', name='attr_power_ap', value='')
+              
               input(type='hidden', name=`attr_skill_global_wd_roll`, value=`{{global_wd=@{query_global_wd}}} {{global_wdroll=[[ @{query_global_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}`)
 
               input(type='hidden', name=`attr_skill_global_bonus_wd_roll`, value=`{{bonus_wd=@{query_global_bonus_wd}}} {{bonus_wdroll=[[ @{query_global_bonus_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}`)
 
               input(type='hidden',
                     name=`attr_skill_roll_body`,
-                    value!=`@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{rof_override} ]]}} {{header=@{name} ^{rolls} @{skill_name}}} {{trait=@{skill_name}}} {{source_label=^{power}}} {{source=@{power_name}}} {{traitdie=@{skill_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{bonus=@{skill_bonus}}} ${maxRof.map(n => `{{traitroll${n}=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}`).join(' ')} @{skill_global_wd_roll} @{skill_global_bonus_wd_roll}`)
+                    value!=`@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{rof_override} ]]}} {{header=@{name} ^{rolls} @{skill_name}}} {{range=@{power_range}}} {{powerpoints=@{power_pp}}} {{trait=@{skill_name}}} {{source_label=^{power}}} {{source=@{power_name}}} {{traitdie=@{skill_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{bonus=@{skill_bonus}}} ${maxRof.map(n => `{{traitroll${n}=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}`).join(' ')} @{skill_global_wd_roll} @{skill_global_bonus_wd_roll}`)
 
               input(type='checkbox', name='attr_roll_button_toggle')
               span(data-i18n='roll-button') Roll Button
               input(type='text',
                     name='attr_skill_name',
-                    placeholder='Spellcasting',
+                    placeholder='Magie',
                     data-i18n-placeholder='powers-skill-placeholder',
-                    value='Spellcasting',
+                    value='Magie',
                     spellcheck='false',
                     class='sheet-label-toggle__input')
               input(type='text',

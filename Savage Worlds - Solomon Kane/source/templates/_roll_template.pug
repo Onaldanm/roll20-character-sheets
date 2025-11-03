@@ -51,6 +51,16 @@ rolltemplate.sheet-rolltemplate-TraitRoll
         .sheet-left(data-i18n='rolltemplate-commander') Commander
         .sheet-right {{commander}}
       = '{{/commander}}'
+      = '{{#range}}'
+      .sheet-rolltemplate__content-row
+        .sheet-left(data-i18n='rolltemplate-range') Range
+        .sheet-right {{range}}
+      = '{{/range}}'
+      = '{{#powerpoints}}'
+      .sheet-rolltemplate__content-row
+        .sheet-left(data-i18n='rolltemplate-powerpoints') PP
+        .sheet-right {{powerpoints}}
+      = '{{/powerpoints}}'
       .sheet-rolltemplate__content-row
         .sheet-left(data-i18n='rolltemplate-modifier') Modifier
         .sheet-right {{modifier}}{{#bonus}} ({{bonus}}){{/bonus}}

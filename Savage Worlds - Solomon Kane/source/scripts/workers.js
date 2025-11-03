@@ -60,7 +60,7 @@ on("sheet:opened", (e) => {
     'query_target_number': getTranslationByKey('target-number'),
     'query_damage_modifier': getTranslationByKey('damage-modifier'),
     'query_bonus_wild_die': getTranslationByKey('bonus-wild-die'),
-    'none': getTranslationByKey('none')
+    'none': getTranslationByKey('none'),
   });
 
   // Include renamed Trait abbreviations
@@ -702,7 +702,8 @@ on(listItems.map(s => `change:repeating_${s}s:arcane_spell`).join(' '), (e) => {
     [`${e.sourceAttribute.replace('arcane_spell', 'skill_roll')}`]: `@{${e.newValue}_roll}`,
     [`${e.sourceAttribute.replace('arcane_spell', 'skill_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
     [`${e.sourceAttribute.replace('arcane_spell', 'skill_extra_wd_roll')}`]: `@{${e.newValue}_wd_roll}`,
-    [`${e.sourceAttribute.replace('arcane_spell', 'skill_code')}`]: `@{${e.newValue}_code}`
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_code')}`]: `@{${e.newValue}_code}`,
+    [`${e.sourceAttribute.replace('arcane_spell', 'skill_name')}`]: getTranslationByKey(e.newValue)
   }, { silent: true });
 });
 
