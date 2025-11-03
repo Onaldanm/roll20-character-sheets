@@ -2941,8 +2941,11 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
   text-align: center;
 }
 
-.sheet-vehicles__size, .sheet-vehicles__handling, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
-  width: 45px;
+.sheet-vehicles__handling {
+  width: 80px;
+}
+.sheet-vehicles__size, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
+  width: 55px;
 }
 .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="0"] ~ .sheet-repitem__frame-silhouette {
   background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_01.png");
@@ -6532,11 +6535,11 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_power_block" checked>
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-powers-spells-label">Powers/Spells</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_powers" placeholder="Powers" data-i18n-placeholder="powers" value="Powers" spellcheck="false">
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_powers" placeholder="Pouvoirs" data-i18n-placeholder="powers" value="Pouvoirs" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_powers_block">
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-quick-notes-label">Quick Notes</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_quick_notes" placeholder="Quick Notes" data-i18n-placeholder="quick-notes" value="Quick Notes" spellcheck="false">
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_quick_notes" placeholder="Notes rapides" data-i18n-placeholder="quick-notes" value="Notes rapides" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_quick_notes_block" checked>
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-vehicles-label">Vehicles</span>
@@ -7051,7 +7054,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
               <input class="sheet-hidden sheet-toggle--pp" type="checkbox" name="attr_toggle_pp">
               <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_powers_block">
               <div class="sheet-block sheet-powers">
-                <div class="sheet-header"><span class="sheet-header__title sheet-powers__name" name="attr_rename_block_powers" data-i18n="powers">Powers</span>
+                <div class="sheet-header"><span class="sheet-header__title sheet-powers__name" name="attr_rename_block_powers" data-i18n="powers">Pouvoirs</span>
                   <div class="sheet-header__labels">
                     <div class="sheet-powers__damage">
                       <label class="sheet-damage-roll-toggle-label" title="Toggle Damage Rolls" data-i18n-title="toggle-damage-rolls-title">
@@ -7164,7 +7167,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <div class="sheet-vehicles__speed" data-i18n="vehicles-speed">Speed</div>
                     <div class="sheet-vehicles__toughness" data-i18n="vehicles-toughness">Tough.</div>
                     <div class="sheet-vehicles__crew" data-i18n="vehicles-crew">Crew</div>
-                    <div class="sheet-vehicles__weapons" data-i18n="vehicles-weapons">Weap.</div>
                   </div>
                 </div>
                 <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_vehicles_visibility_toggle" checked>
@@ -7177,14 +7179,10 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       <input class="sheet-vehicles__speed" type="text" name="attr_vehicle_speed" placeholder="80" spellcheck="false">
                       <input class="sheet-vehicles__toughness" type="text" name="attr_vehicle_toughness" placeholder="4 (0)" data-i18n-placeholder="vehicles-toughness-placeholder" spellcheck="false">
                       <input class="sheet-vehicles__crew" type="text" name="attr_vehicle_crew" placeholder="1+3" data-i18n-placeholder="vehicles-crew-placeholder" spellcheck="false">
-                      <input class="sheet-vehicles__weapons" type="text" name="attr_vehicle_weapons_count" placeholder="0" spellcheck="false">
+                      <input class="sheet-vehicles__weapons" type="hidden" name="attr_vehicle_weapons_count" placeholder="0" spellcheck="false">
                     </div>
                     <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_vehicle_notes_toggle">
                     <div class="sheet-repitem__frame">
-                      <input class="sheet-hidden sheet-repitem__frame-silhouette-control" type="hidden" name="attr_vehicle_silhouette" value="0">
-                      <div class="sheet-repitem__frame-silhouette">
-                        <input class="sheet-repitem__frame-silhouette-button" type="checkbox" name="attr_vehicle_silhouette_cycle">
-                      </div>
                       <div class="sheet-repitem__frame-build">
                         <textarea name="attr_vehicle_build" placeholder="Chassis | Modifications, Notes, etc." data-i18n-placeholder="vehicles-build-placeholder" spellcheck="false"></textarea>
                       </div>
@@ -7850,7 +7848,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <div class="sheet-allies__toughness" data-i18n="toughness">Tough.</div>
                     <div class="sheet-allies__size" data-i18n="size">Size</div>
                     <div class="sheet-allies__exp" data-i18n="exp">EXP</div>
-                    <div class="sheet-allies__level" data-i18n="level">Level</div>
                   </div>
                 </div>
                 <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_allies_visibility_toggle" checked>
@@ -7863,7 +7860,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                       <input class="sheet-allies__toughness" type="text" name="attr_ally_toughness" placeholder="4" spellcheck="false">
                       <input class="sheet-allies__size" type="text" name="attr_ally_size" placeholder="0" spellcheck="false">
                       <input class="sheet-allies__exp" type="text" name="attr_ally_exp" placeholder="0" spellcheck="false">
-                      <input class="sheet-allies__level" type="text" name="attr_ally_level" placeholder="1" spellcheck="false">
+                      <input class="sheet-allies__level" type="hidden" name="attr_ally_level" placeholder="1" spellcheck="false">
                       <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_ally_note_box_toggle">
                       <div class="sheet-repitem__note-box">
                         <textarea name="attr_ally_note_box" placeholder="Notes" data-i18n-placeholder="allies-note-box-placeholder" spellcheck="false"></textarea>
@@ -9208,7 +9205,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
           <input class="sheet-hidden sheet-toggle--pp" type="checkbox" name="attr_toggle_pp">
           <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_powers_block">
           <div class="sheet-block sheet-powers">
-            <div class="sheet-header"><span class="sheet-header__title sheet-powers__name" name="attr_rename_block_powers" data-i18n="powers">Powers</span>
+            <div class="sheet-header"><span class="sheet-header__title sheet-powers__name" name="attr_rename_block_powers" data-i18n="powers">Pouvoirs</span>
               <div class="sheet-header__labels">
                 <div class="sheet-powers__damage">
                   <label class="sheet-damage-roll-toggle-label" title="Toggle Damage Rolls" data-i18n-title="toggle-damage-rolls-title">
@@ -9321,7 +9318,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                 <div class="sheet-vehicles__speed" data-i18n="vehicles-speed">Speed</div>
                 <div class="sheet-vehicles__toughness" data-i18n="vehicles-toughness">Tough.</div>
                 <div class="sheet-vehicles__crew" data-i18n="vehicles-crew">Crew</div>
-                <div class="sheet-vehicles__weapons" data-i18n="vehicles-weapons">Weap.</div>
               </div>
             </div>
             <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_vehicles_visibility_toggle" checked>
@@ -9334,14 +9330,10 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                   <input class="sheet-vehicles__speed" type="text" name="attr_vehicle_speed" placeholder="80" spellcheck="false">
                   <input class="sheet-vehicles__toughness" type="text" name="attr_vehicle_toughness" placeholder="4 (0)" data-i18n-placeholder="vehicles-toughness-placeholder" spellcheck="false">
                   <input class="sheet-vehicles__crew" type="text" name="attr_vehicle_crew" placeholder="1+3" data-i18n-placeholder="vehicles-crew-placeholder" spellcheck="false">
-                  <input class="sheet-vehicles__weapons" type="text" name="attr_vehicle_weapons_count" placeholder="0" spellcheck="false">
+                  <input class="sheet-vehicles__weapons" type="hidden" name="attr_vehicle_weapons_count" placeholder="0" spellcheck="false">
                 </div>
                 <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_vehicle_notes_toggle">
                 <div class="sheet-repitem__frame">
-                  <input class="sheet-hidden sheet-repitem__frame-silhouette-control" type="hidden" name="attr_vehicle_silhouette" value="0">
-                  <div class="sheet-repitem__frame-silhouette">
-                    <input class="sheet-repitem__frame-silhouette-button" type="checkbox" name="attr_vehicle_silhouette_cycle">
-                  </div>
                   <div class="sheet-repitem__frame-build">
                     <textarea name="attr_vehicle_build" placeholder="Chassis | Modifications, Notes, etc." data-i18n-placeholder="vehicles-build-placeholder" spellcheck="false"></textarea>
                   </div>
@@ -10007,7 +9999,6 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                 <div class="sheet-allies__toughness" data-i18n="toughness">Tough.</div>
                 <div class="sheet-allies__size" data-i18n="size">Size</div>
                 <div class="sheet-allies__exp" data-i18n="exp">EXP</div>
-                <div class="sheet-allies__level" data-i18n="level">Level</div>
               </div>
             </div>
             <input class="sheet-toggle sheet-toggle--visibility" type="checkbox" name="attr_allies_visibility_toggle" checked>
@@ -10020,7 +10011,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                   <input class="sheet-allies__toughness" type="text" name="attr_ally_toughness" placeholder="4" spellcheck="false">
                   <input class="sheet-allies__size" type="text" name="attr_ally_size" placeholder="0" spellcheck="false">
                   <input class="sheet-allies__exp" type="text" name="attr_ally_exp" placeholder="0" spellcheck="false">
-                  <input class="sheet-allies__level" type="text" name="attr_ally_level" placeholder="1" spellcheck="false">
+                  <input class="sheet-allies__level" type="hidden" name="attr_ally_level" placeholder="1" spellcheck="false">
                   <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_ally_note_box_toggle">
                   <div class="sheet-repitem__note-box">
                     <textarea name="attr_ally_note_box" placeholder="Notes" data-i18n-placeholder="allies-note-box-placeholder" spellcheck="false"></textarea>

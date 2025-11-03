@@ -11,7 +11,6 @@ input(type='checkbox',
       .sheet-allies__toughness(data-i18n='toughness') Tough.
       .sheet-allies__size(data-i18n='size') Size
       .sheet-allies__exp(data-i18n='exp') EXP
-      .sheet-allies__level(data-i18n='level') Level
 
   input(type='checkbox',
         name='attr_allies_visibility_toggle',
@@ -58,7 +57,7 @@ input(type='checkbox',
               spellcheck='false',
               class='sheet-allies__exp')
 
-        input(type='text',
+        input(type='hidden',
               name='attr_ally_level',
               placeholder='1',
               spellcheck='false',

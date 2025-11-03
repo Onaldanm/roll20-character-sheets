@@ -12,7 +12,6 @@ input(type='checkbox',
       .sheet-vehicles__speed(data-i18n='vehicles-speed') Speed
       .sheet-vehicles__toughness(data-i18n='vehicles-toughness') Tough.
       .sheet-vehicles__crew(data-i18n='vehicles-crew') Crew
-      .sheet-vehicles__weapons(data-i18n='vehicles-weapons') Weap.
 
   input(type='checkbox',
         name='attr_vehicles_visibility_toggle',
@@ -61,7 +60,7 @@ input(type='checkbox',
               spellcheck='false',
               class='sheet-vehicles__crew')
 
-        input(type='text',
+        input(type='hidden',
               name='attr_vehicle_weapons_count',
               placeholder='0',
               spellcheck='false',
@@ -72,16 +71,6 @@ input(type='checkbox',
             class='sheet-toggle sheet-toggle--arrow')
 
       .sheet-repitem__frame
-        input(type='hidden',
-              name='attr_vehicle_silhouette',
-              value='0',
-              class='sheet-hidden sheet-repitem__frame-silhouette-control')
-
-        .sheet-repitem__frame-silhouette
-          input(type='checkbox',
-                name='attr_vehicle_silhouette_cycle',
-                class='sheet-repitem__frame-silhouette-button')
-
         .sheet-repitem__frame-build
           textarea(name='attr_vehicle_build',
                    placeholder='Chassis | Modifications, Notes, etc.',

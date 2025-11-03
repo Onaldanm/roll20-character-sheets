@@ -2937,8 +2937,11 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
   text-align: center;
 }
 
-.sheet-vehicles__size, .sheet-vehicles__handling, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
-  width: 45px;
+.sheet-vehicles__handling {
+  width: 80px;
+}
+.sheet-vehicles__size, .sheet-vehicles__speed, .sheet-vehicles__toughness, .sheet-vehicles__crew, .sheet-vehicles__weapons {
+  width: 55px;
 }
 .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="0"] ~ .sheet-repitem__frame-silhouette {
   background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_01.png");

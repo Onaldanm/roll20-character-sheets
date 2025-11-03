@@ -1,11 +1,13 @@
 .sheet-vehicles {
+  &__handling {
+    width: 80px;
+  }
   &__size,
-  &__handling,
   &__speed,
   &__toughness,
   &__crew,
   &__weapons {
-    width: 45px;
+    width: 55px;
   }
 
   .sheet-repitem__frame-silhouette-control {
