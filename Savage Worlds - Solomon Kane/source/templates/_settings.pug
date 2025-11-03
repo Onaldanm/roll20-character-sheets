@@ -63,9 +63,7 @@
             checked=true,
             class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-style-skill-die-numbers') Skill Die Numbers
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_skill_die_numbers',
             checked=true,
             class='sheet-checkbox')
@@ -177,12 +175,12 @@
 
   .sheet-settings__page.sheet-settings__page--blocks
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-allies-label') Allies
+      span(data-i18n='settings-allies-label') Alliés
       input(type='text',
             name='attr_rename_block_allies',
-            placeholder='Allies',
+            placeholder='Alliés',
             data-i18n-placeholder='allies',
-            value='Allies',
+            value='Alliés',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
@@ -190,17 +188,17 @@
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-ammunition-label') Ammunition
+      span(data-i18n='settings-ammunition-label') Munitions
       input(type='text',
             name='attr_rename_block_ammunition',
-            placeholder='Ammunition',
+            placeholder='Munitions',
             data-i18n-placeholder='ammunition',
-            value='Ammunition',
+            value='Munitions',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
             name='attr_toggle_ammunition_block',
-            checked=true,
+            checked=false,
             class='sheet-checkbox')
 
     - var i = 0
@@ -212,20 +210,20 @@
         span(data-i18n=`settings-ammunition-container-${i}`)= `Ammo #${i}`
         input(type='text',
               name=`attr_rename_ammunition_container_${i}`,
-              placeholder=`Ammo #${i}`,
+              placeholder=`Munition #${i}`,
               data-i18n-placeholder=`settings-ammunition-container-${i}`,
-              value=`Ammo #${i}`,
+              value=`Munition #${i}`,
               spellcheck='false',
               class='sheet-align-left')
         span p
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-apparel-label') Apparel
+      span(data-i18n='settings-apparel-label') Vétements
       input(type='text',
             name='attr_rename_block_apparel',
-            placeholder='Apparel',
+            placeholder='Vétements',
             data-i18n-placeholder='apparel',
-            value='Apparel',
+            value='Vétements',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
@@ -233,77 +231,42 @@
             checked=true,
             class='sheet-checkbox')
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-augmentations-label') Augmentations
-      input(type='text',
-            name='attr_rename_block_augmentations',
-            placeholder='Augmentations',
-            data-i18n-placeholder='augmentations',
-            value='Augmentations',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_augmentations_block',
-            checked=true,
+            checked=false,
             class='sheet-checkbox')
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-engrams-label') Engrams
-      input(type='text',
-            name='attr_rename_block_engrams',
-            placeholder='Engrams',
-            data-i18n-placeholder='engrams',
-            value='Engrams',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_engrams_block',
-            checked=true,
+            checked=false,
             class='sheet-checkbox')
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-integrity-label') Integrity
-      input(type='text',
-            name='attr_rename_block_integrity',
-            placeholder='Integrity',
-            data-i18n-placeholder='integrity',
-            value='Integrity',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_integrity_block',
-            checked=true,
+            checked=false,
             class='sheet-checkbox')
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-powerarmors-label') Power Armors
-      input(type='text',
-            name='attr_rename_block_powerarmors',
-            placeholder='Power Armors',
-            data-i18n-placeholder='powerarmors',
-            value='Power Armors',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_powerarmors_block',
+            checked=false,
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-power-energy-label') Power/Energy/Mana
+      span(data-i18n='settings-power-energy-label') Points de pouvoir
       input(type='text',
             name='attr_rename_block_power',
-            placeholder='Power',
+            placeholder='Pouvoirs',
             data-i18n-placeholder='power',
             value='Pouv.',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
             name='attr_toggle_power_block',
-            checked=true,
+            checked=false,
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-powers-spells-label') Powers/Spells
+      span(data-i18n='settings-powers-spells-label') Pouvoirs
       input(type='text',
             name='attr_rename_block_powers',
             placeholder='Pouvoirs',
@@ -342,26 +305,17 @@
             name='attr_toggle_vehicles_block',
             class='sheet-checkbox')
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-walkers-label') Walkers
-      input(type='text',
-            name='attr_rename_block_walkers',
-            placeholder='Walkers',
-            data-i18n-placeholder='walkers',
-            value='Walkers',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_walkers_block',
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-weapons-label') Weapons
+      span(data-i18n='settings-weapons-label') Armes
       input(type='text',
             name='attr_rename_block_weapons',
-            placeholder='Weapons',
+            placeholder='Armes',
             data-i18n-placeholder='weapons',
-            value='Weapons',
+            value='Armes',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
