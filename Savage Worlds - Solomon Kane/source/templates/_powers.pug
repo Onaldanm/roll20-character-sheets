@@ -233,10 +233,10 @@ input(type='checkbox',
 
             each rank in ranks
               input(type='radio',
-                  name='attr_arcane_spell',
+                  name='attr_skill_to_use',
                   value=rank,
                   class='sheet-color-cycle__radio sheet-color-cycle__radio--' + rank,
-                  checked= rank == 'alchemy')
+                  checked= rank == 'magie')
             
             each rank in ranks
               span.sheet-arcane-toggle(data-i18n=`${rank}`,

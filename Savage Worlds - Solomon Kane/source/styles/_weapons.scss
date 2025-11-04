@@ -34,4 +34,70 @@
       display: none;
     }
   }
+
+  .sheet-color-cycle__radio {
+    top: 43px;
+    left: 85px;
+    align-items: center;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+    opacity: 1;
+    transform: none;
+
+    &::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $fs-s;
+      font-weight: 700;
+      line-height: 1;
+      height: 100%;
+      width: 100%;
+      border-radius: 2px 0 0 2px;
+    }
+
+    &--fighting:checked::after {
+      content: 'C';
+      background-color: $c-background-dark;
+      color: $c-white;
+    }
+    &--fighting:checked ~ .sheet-attack-skill--fighting {
+      display: block;
+    }
+
+    &--shooting:checked::after {
+      content: 'T';
+      background-color: $c-background-dark;
+      color: $c-white;
+    }
+    &--shooting:checked ~ .sheet-attack-skill--shooting {
+      display: block;
+    }
+
+    &--athletics:checked::after {
+      content: 'A';
+      background-color: $c-background-dark;
+      color: $c-white;
+    }
+    &--athletics:checked ~ .sheet-attack-skill--athletics {
+      display: block;
+    }
+  }
+
+  .sheet-attack-skill-toggle {
+    background-color: #fff;
+    color: $c-text-light;
+    line-height: 14px;
+    border: 1px solid #898989;
+    border-width: 1px;
+    border-radius: 0 2px 2px 0;
+    padding: 0 4px;
+    margin-left: 13px;
+    margin-top: -3px;
+    display: none;
+    height: 14px;
+    width: 65px;
+    text-align: center;
+  }
 }

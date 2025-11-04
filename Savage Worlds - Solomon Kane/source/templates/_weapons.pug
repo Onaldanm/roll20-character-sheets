@@ -43,6 +43,7 @@ input(type='checkbox',
       .sheet-repitem__primary
         input(type='checkbox',
               name='attr_roll_button_toggle',
+              checked=true,
               class='sheet-hidden sheet-toggle sheet-toggle--list-roll')
 
         button(type='roll',
@@ -167,7 +168,7 @@ input(type='checkbox',
                     class='sheet-label-toggle__input')
 
             label.sheet-label-toggle
-              input(type='checkbox', name='attr_trapping_toggle', checked=true)
+              input(type='checkbox', name='attr_trapping_toggle', checked=false)
               span(data-i18n='trapping') Trapping
 
             label.sheet-label-toggle
@@ -187,13 +188,13 @@ input(type='checkbox',
                     name=`attr_skill_roll_body`,
                     value!=`@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{rof_override} ]]}} {{header=@{name} ^{rolls} @{skill_name}}} {{trait=@{skill_name}}} {{source_label=^{weapon}}} {{source=@{weapon_name}}} {{traitdie=@{skill_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{bonus=@{skill_bonus}}} ${maxRof.map(n => `{{traitroll${n}=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}`).join(' ')} @{skill_global_wd_roll} @{skill_global_bonus_wd_roll}`)
               
-              input(type='checkbox', name='attr_roll_button_toggle')
+              input(type='checkbox', name='attr_roll_button_toggle', checked=true)
               span(data-i18n='roll-button') Roll Button
               input(type='text',
                     name='attr_skill_name',
-                    placeholder='Shooting',
+                    placeholder='Tir',
                     data-i18n-placeholder='weapons-skill-placeholder',
-                    value='Shooting',
+                    value='Tir',
                     spellcheck='false',
                     class='sheet-label-toggle__input')
               input(type='text',
@@ -203,7 +204,7 @@ input(type='checkbox',
 
             label.sheet-label-toggle
               input(type="hidden", name='attr_rof_override', value='?{@{query_rate_of_fire}|@{weapon_rof}}')
-              input(type='checkbox', name='attr_rof_override_toggle', checked=true)
+              input(type='checkbox', name='attr_rof_override_toggle', checked=false)
               span(data-i18n='query-rof') Query RoF
 
             label.sheet-label-toggle
@@ -220,6 +221,20 @@ input(type='checkbox',
               input(type="hidden", name='attr_explode_damage', value='!')
               input(type='checkbox', name='attr_explode_damage_toggle', checked=true)
               span(data-i18n='ace-damage') Ace Damage
+
+            -
+               var attacks = ['athletics', 'fighting', 'shooting']
+
+            each attack in attacks
+              input(type='radio',
+                  name='attr_skill_to_use',
+                  value=attack,
+                  class='sheet-color-cycle__radio sheet-color-cycle__radio--' + attack,
+                  checked=attack == 'shooting')
+            
+            each attack in attacks
+              span.sheet-attack-skill-toggle(data-i18n=`${attack}`,
+                  class='sheet-attack-skill--' + attack) Attaque
 
         input(type='checkbox',
               name='attr_weapon_weight_toggle',

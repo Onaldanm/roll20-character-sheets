@@ -24,7 +24,8 @@
 
     &--none,
     &--novice,
-    &--alchemy {
+    &--alchemy,
+    &--athletics {
       z-index: 2;
 
       &:checked {

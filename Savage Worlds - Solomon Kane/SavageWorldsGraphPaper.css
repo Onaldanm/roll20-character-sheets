@@ -767,10 +767,10 @@ input[type=checkbox].sheet-checkbox:checked::before {
 .sheet-color-cycle__radio:checked + input {
   z-index: 3;
 }
-.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy {
+.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy, .sheet-color-cycle__radio--athletics {
   z-index: 2;
 }
-.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked {
+.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked, .sheet-color-cycle__radio--athletics:checked {
   background-color: transparent;
   border-color: transparent;
 }
@@ -2432,6 +2432,66 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 }
 .sheet-weapons input.sheet-toggle:not(:checked) ~ .sheet-weapons__trapping {
   display: none;
+}
+.sheet-weapons .sheet-color-cycle__radio {
+  top: 43px;
+  left: 85px;
+  align-items: center;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  opacity: 1;
+  transform: none;
+}
+.sheet-weapons .sheet-color-cycle__radio::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px 0 0 2px;
+}
+.sheet-weapons .sheet-color-cycle__radio--fighting:checked::after {
+  content: "C";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--fighting:checked ~ .sheet-attack-skill--fighting {
+  display: block;
+}
+.sheet-weapons .sheet-color-cycle__radio--shooting:checked::after {
+  content: "T";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--shooting:checked ~ .sheet-attack-skill--shooting {
+  display: block;
+}
+.sheet-weapons .sheet-color-cycle__radio--athletics:checked::after {
+  content: "A";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--athletics:checked ~ .sheet-attack-skill--athletics {
+  display: block;
+}
+.sheet-weapons .sheet-attack-skill-toggle {
+  background-color: #fff;
+  color: #606060;
+  line-height: 14px;
+  border: 1px solid #898989;
+  border-width: 1px;
+  border-radius: 0 2px 2px 0;
+  padding: 0 4px;
+  margin-left: 13px;
+  margin-top: -3px;
+  display: none;
+  height: 14px;
+  width: 65px;
+  text-align: center;
 }
 
 .sheet-apparel__armor {

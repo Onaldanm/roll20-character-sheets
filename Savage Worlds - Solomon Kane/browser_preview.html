@@ -771,10 +771,10 @@ input[type=checkbox].sheet-checkbox:checked::before {
 .sheet-color-cycle__radio:checked + input {
   z-index: 3;
 }
-.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy {
+.sheet-color-cycle__radio--none, .sheet-color-cycle__radio--novice, .sheet-color-cycle__radio--alchemy, .sheet-color-cycle__radio--athletics {
   z-index: 2;
 }
-.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked {
+.sheet-color-cycle__radio--none:checked, .sheet-color-cycle__radio--novice:checked, .sheet-color-cycle__radio--alchemy:checked, .sheet-color-cycle__radio--athletics:checked {
   background-color: transparent;
   border-color: transparent;
 }
@@ -1398,7 +1398,7 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   left: 99px;
 }
 .sheet-silhouette__torso-entrejambe {
-  top: 140px;
+  top: 135px;
   left: 99px;
 }
 .sheet-silhouette__left-arm-upper {
@@ -2436,6 +2436,66 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 }
 .sheet-weapons input.sheet-toggle:not(:checked) ~ .sheet-weapons__trapping {
   display: none;
+}
+.sheet-weapons .sheet-color-cycle__radio {
+  top: 43px;
+  left: 85px;
+  align-items: center;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  opacity: 1;
+  transform: none;
+}
+.sheet-weapons .sheet-color-cycle__radio::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px 0 0 2px;
+}
+.sheet-weapons .sheet-color-cycle__radio--fighting:checked::after {
+  content: "C";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--fighting:checked ~ .sheet-attack-skill--fighting {
+  display: block;
+}
+.sheet-weapons .sheet-color-cycle__radio--shooting:checked::after {
+  content: "T";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--shooting:checked ~ .sheet-attack-skill--shooting {
+  display: block;
+}
+.sheet-weapons .sheet-color-cycle__radio--athletics:checked::after {
+  content: "A";
+  background-color: #898989;
+  color: #fff;
+}
+.sheet-weapons .sheet-color-cycle__radio--athletics:checked ~ .sheet-attack-skill--athletics {
+  display: block;
+}
+.sheet-weapons .sheet-attack-skill-toggle {
+  background-color: #fff;
+  color: #606060;
+  line-height: 14px;
+  border: 1px solid #898989;
+  border-width: 1px;
+  border-radius: 0 2px 2px 0;
+  padding: 0 4px;
+  margin-left: 13px;
+  margin-top: -3px;
+  display: none;
+  height: 14px;
+  width: 65px;
+  text-align: center;
 }
 
 .sheet-apparel__armor {
@@ -6755,7 +6815,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                 <fieldset class="repeating_weapons">
                   <div class="sheet-repitem">
                     <div class="sheet-repitem__primary">
-                      <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle">
+                      <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked>
                       <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_weapons_skill)}} {{damageroll=[t](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                       <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_weapons_skill)}} {{damageroll=[t](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                       <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false">
@@ -6791,7 +6851,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                             <input class="sheet-label-toggle__input" type="text" name="attr_roll_injection_input" placeholder="{{source_label=}} {{source=}} {{custom3_label=}} {{custom3=}} {{rof=[[ 1 ]]}} {{traitroll8=}}" data-i18n-placeholder="roll-injection-placeholder" value="" spellcheck="false">
                           </label>
                           <label class="sheet-label-toggle">
-                            <input type="checkbox" name="attr_trapping_toggle" checked><span data-i18n="trapping">Trapping</span>
+                            <input type="checkbox" name="attr_trapping_toggle"><span data-i18n="trapping">Trapping</span>
                           </label>
                           <label class="sheet-label-toggle">
                             <input type="hidden" name="attr_skill_wd" value="@{shooting_wd}">
@@ -6804,13 +6864,13 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                             <input type="hidden" name="attr_skill_global_wd_roll" value="{{global_wd=@{query_global_wd}}} {{global_wdroll=[[ @{query_global_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}">
                             <input type="hidden" name="attr_skill_global_bonus_wd_roll" value="{{bonus_wd=@{query_global_bonus_wd}}} {{bonus_wdroll=[[ @{query_global_bonus_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}">
                             <input type="hidden" name="attr_skill_roll_body" value="@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{rof_override} ]]}} {{header=@{name} ^{rolls} @{skill_name}}} {{trait=@{skill_name}}} {{source_label=^{weapon}}} {{source=@{weapon_name}}} {{traitdie=@{skill_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{bonus=@{skill_bonus}}} {{traitroll1=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll2=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll3=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll4=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll5=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll6=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll7=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll8=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{skill_global_wd_roll} @{skill_global_bonus_wd_roll}">
-                            <input type="checkbox" name="attr_roll_button_toggle"><span data-i18n="roll-button">Roll Button</span>
-                            <input class="sheet-label-toggle__input" type="text" name="attr_skill_name" placeholder="Shooting" data-i18n-placeholder="weapons-skill-placeholder" value="Shooting" spellcheck="false">
+                            <input type="checkbox" name="attr_roll_button_toggle" checked><span data-i18n="roll-button">Roll Button</span>
+                            <input class="sheet-label-toggle__input" type="text" name="attr_skill_name" placeholder="Tir" data-i18n-placeholder="weapons-skill-placeholder" value="Tir" spellcheck="false">
                             <input class="sheet-label-toggle__input sheet-label-toggle__input--tiny" type="text" name="attr_skill_bonus" placeholder="+0">
                           </label>
                           <label class="sheet-label-toggle">
                             <input type="hidden" name="attr_rof_override" value="?{@{query_rate_of_fire}|@{weapon_rof}}">
-                            <input type="checkbox" name="attr_rof_override_toggle" checked><span data-i18n="query-rof">Query RoF</span>
+                            <input type="checkbox" name="attr_rof_override_toggle"><span data-i18n="query-rof">Query RoF</span>
                           </label>
                           <label class="sheet-label-toggle">
                             <input type="hidden" name="attr_wd_override" value="">
@@ -6821,6 +6881,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                             <input type="hidden" name="attr_explode_damage" value="!">
                             <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                           </label>
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--athletics" type="radio" name="attr_skill_to_use" value="athletics">
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--fighting" type="radio" name="attr_skill_to_use" value="fighting">
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--shooting" type="radio" name="attr_skill_to_use" value="shooting" checked><span class="sheet-attack-skill-toggle sheet-attack-skill--athletics" data-i18n="athletics">Attaque</span><span class="sheet-attack-skill-toggle sheet-attack-skill--fighting" data-i18n="fighting">Attaque</span><span class="sheet-attack-skill-toggle sheet-attack-skill--shooting" data-i18n="shooting">Attaque</span>
                         </div>
                       </div>
                       <input class="sheet-toggle sheet-toggle--special sheet-toggle--weight" type="checkbox" name="attr_weapon_weight_toggle" checked title="Weight On/Off" data-i18n-title="weapons-weight-toggle-title">
@@ -7128,9 +7191,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                             <input type="hidden" name="attr_explode_damage" value="!">
                             <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                           </label>
-                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
-                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
-                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_skill_to_use" value="alchemy">
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_skill_to_use" value="magie" checked>
+                          <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_skill_to_use" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
                         </div>
                       </div>
                       <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
@@ -8947,7 +9010,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
             <fieldset class="repeating_weapons">
               <div class="sheet-repitem">
                 <div class="sheet-repitem__primary">
-                  <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle">
+                  <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_weapons_skill)}} {{damageroll=[t](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_weapons_skill)}} {{damageroll=[t](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                   <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false">
@@ -8983,7 +9046,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <input class="sheet-label-toggle__input" type="text" name="attr_roll_injection_input" placeholder="{{source_label=}} {{source=}} {{custom3_label=}} {{custom3=}} {{rof=[[ 1 ]]}} {{traitroll8=}}" data-i18n-placeholder="roll-injection-placeholder" value="" spellcheck="false">
                       </label>
                       <label class="sheet-label-toggle">
-                        <input type="checkbox" name="attr_trapping_toggle" checked><span data-i18n="trapping">Trapping</span>
+                        <input type="checkbox" name="attr_trapping_toggle"><span data-i18n="trapping">Trapping</span>
                       </label>
                       <label class="sheet-label-toggle">
                         <input type="hidden" name="attr_skill_wd" value="@{shooting_wd}">
@@ -8996,13 +9059,13 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <input type="hidden" name="attr_skill_global_wd_roll" value="{{global_wd=@{query_global_wd}}} {{global_wdroll=[[ @{query_global_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}">
                         <input type="hidden" name="attr_skill_global_bonus_wd_roll" value="{{bonus_wd=@{query_global_bonus_wd}}} {{bonus_wdroll=[[ @{query_global_bonus_wd}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}}">
                         <input type="hidden" name="attr_skill_roll_body" value="@{gm_roll} &{template:TraitRoll} {{rof=[[ 0 + @{rof_override} ]]}} {{header=@{name} ^{rolls} @{skill_name}}} {{trait=@{skill_name}}} {{source_label=^{weapon}}} {{source=@{weapon_name}}} {{traitdie=@{skill_code}}} {{wounds=[[ @{wound_mod} ]]}} {{fatigue=[[ @{fatigue_mod} ]]}} {{modifier=?{@{query_modifier}|0}}} {{bonus=@{skill_bonus}}} {{traitroll1=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll2=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll3=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll4=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll5=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll6=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll7=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} {{traitroll8=[[ @{skill_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{skill_global_wd_roll} @{skill_global_bonus_wd_roll}">
-                        <input type="checkbox" name="attr_roll_button_toggle"><span data-i18n="roll-button">Roll Button</span>
-                        <input class="sheet-label-toggle__input" type="text" name="attr_skill_name" placeholder="Shooting" data-i18n-placeholder="weapons-skill-placeholder" value="Shooting" spellcheck="false">
+                        <input type="checkbox" name="attr_roll_button_toggle" checked><span data-i18n="roll-button">Roll Button</span>
+                        <input class="sheet-label-toggle__input" type="text" name="attr_skill_name" placeholder="Tir" data-i18n-placeholder="weapons-skill-placeholder" value="Tir" spellcheck="false">
                         <input class="sheet-label-toggle__input sheet-label-toggle__input--tiny" type="text" name="attr_skill_bonus" placeholder="+0">
                       </label>
                       <label class="sheet-label-toggle">
                         <input type="hidden" name="attr_rof_override" value="?{@{query_rate_of_fire}|@{weapon_rof}}">
-                        <input type="checkbox" name="attr_rof_override_toggle" checked><span data-i18n="query-rof">Query RoF</span>
+                        <input type="checkbox" name="attr_rof_override_toggle"><span data-i18n="query-rof">Query RoF</span>
                       </label>
                       <label class="sheet-label-toggle">
                         <input type="hidden" name="attr_wd_override" value="">
@@ -9013,6 +9076,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <input type="hidden" name="attr_explode_damage" value="!">
                         <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                       </label>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--athletics" type="radio" name="attr_skill_to_use" value="athletics">
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--fighting" type="radio" name="attr_skill_to_use" value="fighting">
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--shooting" type="radio" name="attr_skill_to_use" value="shooting" checked><span class="sheet-attack-skill-toggle sheet-attack-skill--athletics" data-i18n="athletics">Attaque</span><span class="sheet-attack-skill-toggle sheet-attack-skill--fighting" data-i18n="fighting">Attaque</span><span class="sheet-attack-skill-toggle sheet-attack-skill--shooting" data-i18n="shooting">Attaque</span>
                     </div>
                   </div>
                   <input class="sheet-toggle sheet-toggle--special sheet-toggle--weight" type="checkbox" name="attr_weapon_weight_toggle" checked title="Weight On/Off" data-i18n-title="weapons-weight-toggle-title">
@@ -9279,9 +9345,9 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                         <input type="hidden" name="attr_explode_damage" value="!">
                         <input type="checkbox" name="attr_explode_damage_toggle" checked><span data-i18n="ace-damage">Ace Damage</span>
                       </label>
-                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_arcane_spell" value="alchemy" checked>
-                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_arcane_spell" value="magie">
-                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_arcane_spell" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--alchemy" type="radio" name="attr_skill_to_use" value="alchemy">
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--magie" type="radio" name="attr_skill_to_use" value="magie" checked>
+                      <input class="sheet-color-cycle__radio sheet-color-cycle__radio--foi" type="radio" name="attr_skill_to_use" value="foi"><span class="sheet-arcane-toggle sheet-arcane-toggle--alchemy" data-i18n="alchemy">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--magie" data-i18n="magie">Arcanes</span><span class="sheet-arcane-toggle sheet-arcane-toggle--foi" data-i18n="foi">Arcanes</span>
                     </div>
                   </div>
                   <input class="sheet-toggle sheet-toggle--note-box" type="checkbox" name="attr_power_note_box_toggle">
