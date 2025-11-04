@@ -216,12 +216,12 @@ include _powerarmor.pug
 include _allies.pug
 
 .sheet-block.sheet-extra-settings
+
   label.sheet-extra-settings__item
     input(type='checkbox',
-          name='attr_toggle_quick_notes_block',
-          checked=true,
+          name='attr_toggle_allies_block',
           class='sheet-hidden')
-    span(name='attr_rename_block_quick_notes', data-i18n='quick-notes') Quick Notes
+    span(name='attr_rename_block_allies', data-i18n='allies') Allies
 
   label.sheet-extra-settings__item
     input(type='checkbox',
@@ -239,36 +239,36 @@ include _allies.pug
 
   label.sheet-extra-settings__item
     input(type='checkbox',
-          name='attr_toggle_apparel_block',
+          name='attr_toggle_quick_notes_block',
           checked=true,
           class='sheet-hidden')
-    span(name='attr_rename_block_apparel', data-i18n='apparel') Apparel
-
-  label.sheet-extra-settings__item
-    input(type='checkbox',
-          name='attr_toggle_augmentations_block',
-          checked=true,
-          class='sheet-hidden')
-    span(name='attr_rename_block_augmentations', data-i18n='augmentations') Augmentations
-
-  label.sheet-extra-settings__item
-    input(type='checkbox',
-          name='attr_toggle_engrams_block',
-          checked=true,
-          class='sheet-hidden')
-    span(name='attr_rename_block_engrams', data-i18n='engrams') Engrams
-
-  label.sheet-extra-settings__item
-    input(type='checkbox',
-          name='attr_toggle_powerarmors_block',
-          class='sheet-hidden')
-    span(name='attr_rename_block_powerarmor', data-i18n='powerarmors') Power Armors
+    span(name='attr_rename_block_quick_notes', data-i18n='quick-notes') Quick Notes
 
   label.sheet-extra-settings__item
     input(type='checkbox',
           name='attr_toggle_powers_block',
           class='sheet-hidden')
     span(name='attr_rename_block_powers', data-i18n='powers') Powers
+    
+  label.sheet-extra-settings__item
+    input(type='checkbox',
+          name='attr_toggle_apparel_block',
+          checked=true,
+          class='sheet-hidden')
+    span(name='attr_rename_block_apparel', data-i18n='apparel') Apparel
+
+  input(type='hidden',
+          name='attr_toggle_augmentations_block',
+          checked= false,
+          class='sheet-hidden')
+  input(type='hidden',
+          name='attr_toggle_engrams_block',
+          checked=false,
+          class='sheet-hidden')
+  input(type='hidden',
+          name='attr_toggle_powerarmors_block',
+          class='sheet-hidden')
+
 
   label.sheet-extra-settings__item
     input(type='checkbox',
@@ -276,14 +276,6 @@ include _allies.pug
           class='sheet-hidden')
     span(name='attr_rename_block_vehicles', data-i18n='vehicles') Vehicles
 
-  label.sheet-extra-settings__item
-    input(type='checkbox',
+  input(type='hidden',
           name='attr_toggle_walkers_block',
           class='sheet-hidden')
-    span(name='attr_rename_block_walkers', data-i18n='walkers') Walkers
-
-  label.sheet-extra-settings__item
-    input(type='checkbox',
-          name='attr_toggle_allies_block',
-          class='sheet-hidden')
-    span(name='attr_rename_block_allies', data-i18n='allies') Allies

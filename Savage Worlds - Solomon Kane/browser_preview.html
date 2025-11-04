@@ -1563,7 +1563,7 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
 }
 .sheet-armor > .sheet-hexfield textarea::placeholder {
   color: #f0f0f0;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 0.6;
 }
@@ -10033,7 +10033,7 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
           </div>
           <div class="sheet-block sheet-extra-settings">
             <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_quick_notes_block" checked><span name="attr_rename_block_quick_notes" data-i18n="quick-notes">Quick Notes</span>
+              <input class="sheet-hidden" type="checkbox" name="attr_toggle_allies_block"><span name="attr_rename_block_allies" data-i18n="allies">Allies</span>
             </label>
             <label class="sheet-extra-settings__item">
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_features_block" checked><span data-i18n="edges-and-hindrances">Edges & Hindrances</span>
@@ -10042,29 +10042,21 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_weapons_block" checked><span name="attr_rename_block_weapons" data-i18n="weapons">Armes</span>
             </label>
             <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_apparel_block" checked><span name="attr_rename_block_apparel" data-i18n="apparel">Apparel</span>
-            </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_augmentations_block" checked><span name="attr_rename_block_augmentations" data-i18n="augmentations">Augmentations</span>
-            </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_engrams_block" checked><span name="attr_rename_block_engrams" data-i18n="engrams">Engrams</span>
-            </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_powerarmors_block"><span name="attr_rename_block_powerarmor" data-i18n="powerarmors">Power Armors</span>
+              <input class="sheet-hidden" type="checkbox" name="attr_toggle_quick_notes_block" checked><span name="attr_rename_block_quick_notes" data-i18n="quick-notes">Quick Notes</span>
             </label>
             <label class="sheet-extra-settings__item">
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_powers_block"><span name="attr_rename_block_powers" data-i18n="powers">Powers</span>
             </label>
             <label class="sheet-extra-settings__item">
+              <input class="sheet-hidden" type="checkbox" name="attr_toggle_apparel_block" checked><span name="attr_rename_block_apparel" data-i18n="apparel">Apparel</span>
+            </label>
+            <input class="sheet-hidden" type="hidden" name="attr_toggle_augmentations_block">
+            <input class="sheet-hidden" type="hidden" name="attr_toggle_engrams_block">
+            <input class="sheet-hidden" type="hidden" name="attr_toggle_powerarmors_block">
+            <label class="sheet-extra-settings__item">
               <input class="sheet-hidden" type="checkbox" name="attr_toggle_vehicles_block"><span name="attr_rename_block_vehicles" data-i18n="vehicles">Vehicles</span>
             </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_walkers_block"><span name="attr_rename_block_walkers" data-i18n="walkers">Walkers</span>
-            </label>
-            <label class="sheet-extra-settings__item">
-              <input class="sheet-hidden" type="checkbox" name="attr_toggle_allies_block"><span name="attr_rename_block_allies" data-i18n="allies">Allies</span>
-            </label>
+            <input class="sheet-hidden" type="hidden" name="attr_toggle_walkers_block">
           </div>
         </div>
       </div>
