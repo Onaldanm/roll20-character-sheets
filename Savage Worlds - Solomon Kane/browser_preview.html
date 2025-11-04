@@ -6441,27 +6441,15 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                   </label>
                 </div>
                 <div class="sheet-settings__page sheet-settings__page--setup">
-                  <label class="sheet-settings__item"><span data-i18n="settings-function-augmentation-markers">Augmentation Markers</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_augmentation_markers" checked>
-                  </label>
-                  <label class="sheet-settings__item"><span data-i18n="settings-rule-augmentation-strain">Augmentation Strain (SciFi Companion)</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_strain">
-                  </label>
-                  <label class="sheet-settings__item"><span data-i18n="settings-function-explode-run-die">Explode Run Die</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_run_explode">
-                  </label>
-                  <label class="sheet-settings__item"><span data-i18n="settings-function-halve-untrained-penalty">Halve Untrained Penalty (-1)</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_halve_untrained">
-                  </label>
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_augmentation_markers">
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_strain">
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_run_explode">
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_halve_untrained">
                   <label class="sheet-settings__item"><span data-i18n="settings-function-roll-description-inputs">List Roll Description Inputs</span>
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_description_input_visibility" checked>
                   </label>
-                  <label class="sheet-settings__item"><span data-i18n="settings-function-roll-injection-inputs">List Roll Injection Inputs</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_injection_input_visibility">
-                  </label>
-                  <label class="sheet-settings__item"><span data-i18n="settings-rule-no-power-points">No Power Points (SWADE 140)</span>
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_pp">
-                  </label>
+                  <input class="sheet-checkbox" type="checkbox" name="attr_toggle_injection_input_visibility">
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_pp">
                   <label class="sheet-settings__item"><span data-i18n="settings-function-running-ignores-wounds">Running Ignores Wounds</span>
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_run_wounds">
                   </label>
@@ -6495,6 +6483,10 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <input class="sheet-align-left" type="text" name="attr_rename_block_allies" placeholder="Alliés" data-i18n-placeholder="allies" value="Alliés" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_allies_block">
                   </label>
+                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-weapons-label">Armes</span>
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_weapons" placeholder="Armes" data-i18n-placeholder="weapons" value="Armes" spellcheck="false">
+                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_weapons_block" checked>
+                  </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-ammunition-label">Munitions</span>
                     <input class="sheet-align-left" type="text" name="attr_rename_block_ammunition" placeholder="Munitions" data-i18n-placeholder="ammunition" value="Munitions" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_ammunition_block">
@@ -6508,14 +6500,14 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-ammunition-container-3">Ammo #3</span>
                     <input class="sheet-align-left" type="text" name="attr_rename_ammunition_container_3" placeholder="Munition #3" data-i18n-placeholder="settings-ammunition-container-3" value="Munition #3" spellcheck="false"><span>p</span>
                   </label>
-                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-apparel-label">Vétements</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_apparel" placeholder="Vétements" data-i18n-placeholder="apparel" value="Vétements" spellcheck="false">
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_apparel_block" checked>
-                  </label>
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_augmentations_block">
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_engrams_block">
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_integrity_block">
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_powerarmors_block">
+                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-quick-notes-label">Quick Notes</span>
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_quick_notes" placeholder="Notes rapides" data-i18n-placeholder="quick-notes" value="Notes rapides" spellcheck="false">
+                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_quick_notes_block" checked>
+                  </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-power-energy-label">Points de pouvoir</span>
                     <input class="sheet-align-left" type="text" name="attr_rename_block_power" placeholder="Pouvoirs" data-i18n-placeholder="power" value="Pouv." spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_power_block">
@@ -6524,19 +6516,15 @@ input.sheet-toggle--pp:checked ~ .sheet-powers .sheet-b {
                     <input class="sheet-align-left" type="text" name="attr_rename_block_powers" placeholder="Pouvoirs" data-i18n-placeholder="powers" value="Pouvoirs" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_powers_block">
                   </label>
-                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-quick-notes-label">Quick Notes</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_quick_notes" placeholder="Notes rapides" data-i18n-placeholder="quick-notes" value="Notes rapides" spellcheck="false">
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_quick_notes_block" checked>
+                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-apparel-label">Vétements</span>
+                    <input class="sheet-align-left" type="text" name="attr_rename_block_apparel" placeholder="Vétements" data-i18n-placeholder="apparel" value="Vétements" spellcheck="false">
+                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_apparel_block" checked>
                   </label>
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-vehicles-label">Vehicles</span>
                     <input class="sheet-align-left" type="text" name="attr_rename_block_vehicles" placeholder="Vehicles" data-i18n-placeholder="vehicles" value="Vehicles" spellcheck="false">
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_vehicles_block">
                   </label>
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_walkers_block">
-                  <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="settings-weapons-label">Armes</span>
-                    <input class="sheet-align-left" type="text" name="attr_rename_block_weapons" placeholder="Armes" data-i18n-placeholder="weapons" value="Armes" spellcheck="false">
-                    <input class="sheet-checkbox" type="checkbox" name="attr_toggle_weapons_block" checked>
-                  </label>
                 </div>
                 <div class="sheet-settings__page sheet-settings__page--skills">
                   <label class="sheet-settings__item sheet-settings__item--text-input"><span data-i18n="alchemy">Alchemy</span>

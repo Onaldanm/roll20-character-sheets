@@ -83,28 +83,20 @@
             class='sheet-checkbox')
 
   .sheet-settings__page.sheet-settings__page--setup
-    label.sheet-settings__item
-      span(data-i18n='settings-function-augmentation-markers') Augmentation Markers
-      input(type='checkbox',
+    input(type='hidden',
         name='attr_toggle_augmentation_markers',
-        checked=true,
+        checked=false,
         class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-rule-augmentation-strain') Augmentation Strain (SciFi Companion)
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_strain',
             class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-function-explode-run-die') Explode Run Die
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_run_explode',
             class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-function-halve-untrained-penalty') Halve Untrained Penalty (-1)
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_halve_untrained',
             class='sheet-checkbox')
 
@@ -115,15 +107,11 @@
             checked=true,
             class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-function-roll-injection-inputs') List Roll Injection Inputs
-      input(type='checkbox',
+    input(type='checkbox',
             name='attr_toggle_injection_input_visibility',
             class='sheet-checkbox')
 
-    label.sheet-settings__item
-      span(data-i18n='settings-rule-no-power-points') No Power Points (SWADE 140)
-      input(type='checkbox',
+    input(type='hidden',
             name='attr_toggle_pp',
             class='sheet-checkbox')
 
@@ -188,6 +176,20 @@
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
+      span(data-i18n='settings-weapons-label') Armes
+      input(type='text',
+            name='attr_rename_block_weapons',
+            placeholder='Armes',
+            data-i18n-placeholder='weapons',
+            value='Armes',
+            spellcheck='false',
+            class='sheet-align-left')
+      input(type='checkbox',
+            name='attr_toggle_weapons_block',
+            checked=true,
+            class='sheet-checkbox')
+
+    label.sheet-settings__item.sheet-settings__item--text-input
       span(data-i18n='settings-ammunition-label') Munitions
       input(type='text',
             name='attr_rename_block_ammunition',
@@ -217,20 +219,6 @@
               class='sheet-align-left')
         span p
 
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-apparel-label') Vétements
-      input(type='text',
-            name='attr_rename_block_apparel',
-            placeholder='Vétements',
-            data-i18n-placeholder='apparel',
-            value='Vétements',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
-            name='attr_toggle_apparel_block',
-            checked=true,
-            class='sheet-checkbox')
-
     input(type='hidden',
             name='attr_toggle_augmentations_block',
             checked=false,
@@ -249,6 +237,20 @@
     input(type='hidden',
             name='attr_toggle_powerarmors_block',
             checked=false,
+            class='sheet-checkbox')
+
+    label.sheet-settings__item.sheet-settings__item--text-input
+      span(data-i18n='settings-quick-notes-label') Quick Notes
+      input(type='text',
+            name='attr_rename_block_quick_notes',
+            placeholder='Notes rapides',
+            data-i18n-placeholder='quick-notes',
+            value='Notes rapides',
+            spellcheck='false',
+            class='sheet-align-left')
+      input(type='checkbox',
+            name='attr_toggle_quick_notes_block',
+            checked=true,
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
@@ -279,16 +281,16 @@
             class='sheet-checkbox')
 
     label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-quick-notes-label') Quick Notes
+      span(data-i18n='settings-apparel-label') Vétements
       input(type='text',
-            name='attr_rename_block_quick_notes',
-            placeholder='Notes rapides',
-            data-i18n-placeholder='quick-notes',
-            value='Notes rapides',
+            name='attr_rename_block_apparel',
+            placeholder='Vétements',
+            data-i18n-placeholder='apparel',
+            value='Vétements',
             spellcheck='false',
             class='sheet-align-left')
       input(type='checkbox',
-            name='attr_toggle_quick_notes_block',
+            name='attr_toggle_apparel_block',
             checked=true,
             class='sheet-checkbox')
 
@@ -307,20 +309,6 @@
 
     input(type='hidden',
             name='attr_toggle_walkers_block',
-            class='sheet-checkbox')
-
-    label.sheet-settings__item.sheet-settings__item--text-input
-      span(data-i18n='settings-weapons-label') Armes
-      input(type='text',
-            name='attr_rename_block_weapons',
-            placeholder='Armes',
-            data-i18n-placeholder='weapons',
-            value='Armes',
-            spellcheck='false',
-            class='sheet-align-left')
-      input(type='checkbox',
-            name='attr_toggle_weapons_block',
-            checked=true,
             class='sheet-checkbox')
 
   .sheet-settings__page.sheet-settings__page--skills
