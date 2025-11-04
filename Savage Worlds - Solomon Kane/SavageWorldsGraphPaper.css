@@ -1393,6 +1393,10 @@ div.sheet-health:not(:hover) .sheet-health__center .sheet-hexfield input:focus ~
   top: 100px;
   left: 99px;
 }
+.sheet-silhouette__torso-entrejambe {
+  top: 135px;
+  left: 99px;
+}
 .sheet-silhouette__left-arm-upper {
   top: 70px;
   left: 128px;
