@@ -7,8 +7,8 @@ const dice = ['', 'd4', 'd6', 'd8', 'd10', 'd12'];
 
 const renamedAbbr = ['rename_agi', 'rename_sma', 'rename_spi', 'rename_str', 'rename_vig'];
 
-var parseCodes = { agi: '@{agility}!', sma: '@{smarts}!', spi: '@{spirit}!',
-                   str: '@{strength}!', vig: '@{vigor}!' };
+var parseCodes = { agi: '@{agility}!', int: '@{smarts}!', ame: '@{spirit}!',
+                   for: '@{strength}!', vig: '@{vigor}!' };
 
 const parseDieCodes = { d4: 'd4!', d6: 'd6!', d8: 'd8!', d10: 'd10!', d12: 'd12!' };
 
@@ -65,8 +65,8 @@ on("sheet:opened", (e) => {
 
   // Include renamed Trait abbreviations
   getAttrs(renamedAbbr, (values) => {
-    parseCodes = { agi: '@{agility}!', sma: '@{smarts}!', spi: '@{spirit}!',
-                   str: '@{strength}!', vig: '@{vigor}!' };
+    parseCodes = { agi: '@{agility}!', int: '@{smarts}!', ame: '@{spirit}!',
+                   for: '@{strength}!', vig: '@{vigor}!' };
 
     _.each(renamedAbbr, (a) => {
       // Skip if not defined
