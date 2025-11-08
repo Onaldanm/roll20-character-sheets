@@ -3,30 +3,68 @@
   <head>
     <meta charset="utf-8">
     <style>@import url("https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
-.ui-dialog .tab-content .charsheet .charsheet {
+* {
+  --c-text: #404040;
+  --c-text-light: #606060;
+  --c-text-lighter: #808080;
+  --c-text-lightest: #b0b0b0;
+  --c-text-gray: #d6d6d6;
+  --c-text-hover: #303030;
+  --c-outline: #e0e0e0;
+  --c-item: #fdfdfd;
+  --c-background-die: #fafafa;
+  --c-background-dark: #898989;
+  --c-background-hover: #f2f2f2;
+  --c-background-tooltip: #606060;
+  --c-background: #ffffff;
+  --c-background-grid: #fbfbfb;
+}
+
+.sheet-darkmode *,
+.sheet-rolltemplate-darkmode {
+  --c-text: #e6e6e6;
+  --c-text-light: #d0d0d0;
+  --c-text-lighter: #b8b8b8;
+  --c-text-lightest: #a0a0a0;
+  --c-text-gray: #808080;
+  --c-text-hover: #ffffff;
+  --c-outline: #404040;
+  --c-item: #202020;
+  --c-background-die: #303030;
+  --c-background-dark: #151515;
+  --c-background-hover: #2a2a2a;
+  --c-background-tooltip: #404040;
+  --c-background: #1F1F1F;
+  --c-background-grid: #151515;
+}
+
+.charsheet {
   padding: 0 !important;
 }
-.ui-dialog .tab-content .charsheet .charsheet button[type=roll] {
+
+.charsheet button[type=roll] {
   text-shadow: none;
   font-size: inherit !important;
   padding: 0 !important;
   margin: 0 !important;
 }
-.ui-dialog .tab-content .charsheet .charsheet button[type=roll]::before {
+.charsheet button[type=roll]::before {
   display: none;
 }
-.ui-dialog .tab-content .charsheet .charsheet button[type=roll]:hover, .ui-dialog .tab-content .charsheet .charsheet button[type=roll]:focus, .ui-dialog .tab-content .charsheet .charsheet button[type=roll]:active {
+.charsheet button[type=roll]:hover, .charsheet button[type=roll]:focus, .charsheet button[type=roll]:active {
   background-color: transparent;
   box-shadow: none;
 }
-.ui-dialog .tab-content .charsheet .repcontrol {
+
+.repcontrol {
   position: absolute;
   bottom: -1px;
   right: 0;
   z-index: 2;
   display: flex;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn {
+
+.repcontrol button.btn {
   position: relative;
   color: transparent;
   font-size: 0;
@@ -34,14 +72,14 @@
   width: 16px;
   transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn::after, .ui-dialog .tab-content .charsheet .repcontrol button.btn::before {
+.repcontrol button.btn::after, .repcontrol button.btn::before {
   transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn:hover, .ui-dialog .tab-content .charsheet .repcontrol button.btn:focus, .ui-dialog .tab-content .charsheet .repcontrol button.btn:active {
+.repcontrol button.btn:hover, .repcontrol button.btn:focus, .repcontrol button.btn:active {
   background-color: transparent;
   box-shadow: none;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn::after {
+.repcontrol button.btn::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -49,40 +87,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-family: Pictos;
   font-size: 12px;
   line-height: 1;
   height: 100%;
   width: 100%;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn:hover::after {
-  color: #606060;
+.repcontrol button.btn:hover::after {
+  color: var(--c-text-light);
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn:active::after {
+.repcontrol button.btn:active::after {
   color: black;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn.repcontrol_add {
+.repcontrol button.btn.repcontrol_add {
   order: 1;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn.repcontrol_add::after {
+.repcontrol button.btn.repcontrol_add::after {
   content: "&";
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn.repcontrol_edit {
+.repcontrol button.btn.repcontrol_edit {
   order: 2;
   float: none;
 }
-.ui-dialog .tab-content .charsheet .repcontrol button.btn.repcontrol_edit::after {
+.repcontrol button.btn.repcontrol_edit::after {
   content: "_";
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode + .repcontrol button.repcontrol_edit::after {
+
+.repcontainer.editmode + .repcontrol button.repcontrol_edit::after {
   content: "3";
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .sheet-repitem__note-box,
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .sheet-repitem__settings {
+.repcontainer.editmode .sheet-repitem__note-box,
+.repcontainer.editmode .sheet-repitem__settings {
   display: none;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol {
+.repcontainer.editmode .itemcontrol {
   z-index: 10;
   display: flex !important;
   justify-content: space-between;
@@ -91,13 +130,13 @@
   margin: 0 2px;
   width: calc(100% - 4px) !important;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol a.repcontrol_move {
+.repcontainer.editmode .itemcontrol a.repcontrol_move {
   order: 1;
   font-size: 18px;
   border-radius: 2px 0 0 2px;
   padding: 0 2px 0 0;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol button.repcontrol_del {
+.repcontainer.editmode .itemcontrol button.repcontrol_del {
   order: 2;
   float: none !important;
   font-family: Pictos;
@@ -105,33 +144,34 @@
   border-radius: 0 2px 2px 0;
   padding: 0 0 0 4px;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol a.repcontrol_move,
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol button.repcontrol_del {
+.repcontainer.editmode .itemcontrol a.repcontrol_move,
+.repcontainer.editmode .itemcontrol button.repcontrol_del {
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
   text-shadow: none;
-  color: #404040;
+  color: var(--c-text);
   line-height: 1;
   border: 0;
   height: 100%;
   width: 20px;
   box-shadow: none;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol a.repcontrol_move:hover,
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol button.repcontrol_del:hover {
+.repcontainer.editmode .itemcontrol a.repcontrol_move:hover,
+.repcontainer.editmode .itemcontrol button.repcontrol_del:hover {
   color: black !important;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol a.repcontrol_move:active,
-.ui-dialog .tab-content .charsheet .repcontainer.editmode .itemcontrol button.repcontrol_del:active {
+.repcontainer.editmode .itemcontrol a.repcontrol_move:active,
+.repcontainer.editmode .itemcontrol button.repcontrol_del:active {
   color: black !important;
   box-shadow: none;
   background: #fff;
 }
-.ui-dialog .tab-content .charsheet .repcontainer.editmode div.repitem:hover .itemcontrol {
+.repcontainer.editmode div.repitem:hover .itemcontrol {
   background-color: rgba(255, 255, 255, 0.7) !important;
 }
+
 .ui-dialog .tab-content .charsheet *,
 .ui-dialog .tab-content .charsheet ::before,
 .ui-dialog .tab-content .charsheet ::after {
@@ -184,7 +224,7 @@
 .ui-dialog .tab-content .charsheet input::placeholder,
 .ui-dialog .tab-content .charsheet option::placeholder,
 .ui-dialog .tab-content .charsheet label::placeholder {
-  color: #d6d6d6;
+  color: var(--c-text-gray);
 }
 .ui-dialog .tab-content .charsheet button,
 .ui-dialog .tab-content .charsheet label,
@@ -195,17 +235,17 @@
 .ui-dialog .tab-content .charsheet button:hover, .ui-dialog .tab-content .charsheet button:hover > span,
 .ui-dialog .tab-content .charsheet button > span:hover,
 .ui-dialog .tab-content .charsheet button > span:hover > span {
-  color: #303030 !important;
+  color: var(--c-text-hover) !important;
 }
 .ui-dialog .tab-content .charsheet button[type=action] {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
 }
 .ui-dialog .tab-content .charsheet input[type=text]:not(.sheet-hex) {
   background-color: transparent;
-  color: #404040;
+  color: var(--c-text);
   font-size: 11px;
   line-height: 20px;
   text-overflow: ellipsis;
@@ -221,7 +261,7 @@
   display: none;
 }
 .ui-dialog .tab-content .charsheet textarea {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 9px;
   line-height: 1.6;
   width: 100%;
@@ -229,7 +269,7 @@
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox {
   background-color: #fff;
-  border: 1px solid #808080;
+  border: 1px solid var(--c-text-lighter);
   border-radius: 2px;
   height: 10px;
   width: 10px;
@@ -243,18 +283,19 @@
   width: 6px;
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox:checked::before {
-  background-color: #808080;
+  background-color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-wrapper {
   text-align: center;
+  background-color: var(--c-background);
 }
 .ui-dialog .tab-content .charsheet .sheet-body {
-  color: #404040;
+  color: var(--c-text);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   line-height: 1;
   text-align: left;
-  background-image: linear-gradient(to right, #fbfbfb 1px, transparent 1px), linear-gradient(to bottom, #fbfbfb 1px, transparent 1px);
+  background-image: linear-gradient(to right, red 1px, transparent 1px), linear-gradient(to bottom, red 1px, transparent 1px);
   background-size: 8px 8px;
   background-position: -1px -1px;
   padding-top: 8px;
@@ -275,11 +316,11 @@
   content: "";
   display: inline-block;
   padding: 3px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--c-outline);
   border-radius: 50%;
 }
 .ui-dialog .tab-content .charsheet .sheet-variant-radio:checked::after {
-  background-color: #e0e0e0;
+  background-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-variant-radio--wildcard:checked ~ .sheet-body {
   width: 800px;
@@ -317,13 +358,13 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 4px;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   height: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-header__title {
   display: block;
   flex-grow: 1;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -342,14 +383,14 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-label,
 .ui-dialog .tab-content .charsheet .sheet-header__labels * {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-size: 9px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .ui-dialog .tab-content .charsheet .sheet-large-label {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -358,7 +399,7 @@
   text-overflow: ellipsis;
 }
 .ui-dialog .tab-content .charsheet .sheet-footer {
-  color: #606060;
+  color: var(--c-text-light);
   line-height: 16px;
   height: 16px;
 }
@@ -369,12 +410,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #808080;
+  color: var(--c-text-lighter);
   line-height: 1;
   width: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle:checked::after {
-  color: #606060;
+  color: var(--c-text-light);
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--block {
   display: none;
@@ -386,13 +427,13 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--visibility::after {
   content: "`";
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-size: 11px;
   font-family: Pictos;
   height: 10px;
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--visibility:checked::after {
-  color: #d6d6d6;
+  color: var(--c-text-gray);
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--visibility:checked::after {
   content: "J";
@@ -415,7 +456,7 @@
   transform: rotate(90deg);
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--settings::after, .ui-dialog .tab-content .charsheet .sheet-toggle--note-box::after, .ui-dialog .tab-content .charsheet .sheet-toggle--loss::after {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-family: Pictos;
   font-size: 11px;
   padding-top: 1px;
@@ -432,7 +473,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--weight::after {
   content: "V";
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-family: Pictos;
   font-size: 14px;
   padding-top: 1px;
@@ -441,7 +482,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--spoiler::after {
   content: "&";
-  color: #606060;
+  color: var(--c-text-light);
   font-family: Pictos;
   font-size: 10px;
   height: 100%;
@@ -481,13 +522,13 @@
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out, background-color 0.1s ease-in-out;
 }
 .ui-dialog .tab-content .charsheet .sheet-radio-track:hover::after, .ui-dialog .tab-content .charsheet .sheet-radio-track:hover ~ .sheet-radio-track:not(:checked)::after {
-  background-color: #f2f2f2;
+  background-color: var(--c-background-hover);
   height: 60%;
   width: 60%;
 }
 .ui-dialog .tab-content .charsheet .sheet-radio-track:checked::after,
 .ui-dialog .tab-content .charsheet .sheet-radio-track:checked ~ .sheet-radio-track:not(:checked)::after {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   height: 100%;
   width: 100%;
   transition-duration: 0.1s;
@@ -497,7 +538,7 @@
   position: absolute;
   display: flex;
   align-items: center;
-  background-color: #606060;
+  background-color: var(--c-background-tooltip);
   color: #fff;
   font-size: 11px;
   line-height: 1;
@@ -524,7 +565,7 @@
   top: 50%;
   right: -8px;
   border: 5px solid transparent;
-  border-left-color: #606060;
+  border-left-color: var(--c-background-tooltip);
   transform: translateY(-50%);
 }
 .ui-dialog .tab-content .charsheet .sheet-tooltip--top {
@@ -536,7 +577,7 @@
   bottom: -8px;
   left: 50%;
   border: 5px solid transparent;
-  border-top-color: #606060;
+  border-top-color: var(--c-background-tooltip);
   transform: translateX(-50%);
 }
 .ui-dialog .tab-content .charsheet .sheet-damage-roll-toggle-label {
@@ -546,7 +587,7 @@
   padding-right: 10px;
 }
 .ui-dialog .tab-content .charsheet .sheet-damage-roll-toggle-label input[type=checkbox]:checked ~ span {
-  color: #606060;
+  color: var(--c-text-light);
   font-weight: 500;
 }
 .ui-dialog .tab-content .charsheet .sheet-damage-roll-toggle-label .sheet-icon {
@@ -586,9 +627,9 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-label-toggle input[type=text].sheet-label-toggle__input {
   background-color: #fff;
-  color: #606060;
+  color: var(--c-text-light);
   line-height: 14px;
-  border: 1px solid #898989;
+  border: 1px solid var(--c-background-dark);
   border-width: 1px;
   border-radius: 0 2px 2px 0;
   padding: 0 4px;
@@ -608,7 +649,7 @@
 .ui-dialog .tab-content .charsheet .sheet-label-toggle span {
   display: block;
   flex-shrink: 0;
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
   font-size: 9px;
   font-weight: 500;
@@ -628,11 +669,11 @@
   display: none;
 }
 .ui-dialog .tab-content .charsheet .sheet-label-toggle input[type=checkbox]:not(:checked) + span {
-  background-color: #d6d6d6;
+  background-color: var(--c-text-gray);
 }
 .ui-dialog .tab-content .charsheet .sheet-label-toggle input[type=checkbox]:not(:checked) ~ input[type=text].sheet-label-toggle__input {
-  color: #b0b0b0;
-  border-color: #d6d6d6;
+  color: var(--c-text-lightest);
+  border-color: var(--c-text-gray);
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle-roboto:checked ~ .sheet-body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -640,7 +681,7 @@
 .ui-dialog .tab-content .charsheet .sheet-toggle-dark-labels:checked ~ .sheet-body .sheet-header__labels *,
 .ui-dialog .tab-content .charsheet .sheet-toggle-dark-labels:checked ~ .sheet-body .sheet-label,
 .ui-dialog .tab-content .charsheet .sheet-toggle-dark-labels:checked ~ .sheet-body .sheet-hexfield__label {
-  color: #606060 !important;
+  color: var(--c-text-light) !important;
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle-skill-die-numbers:not(:checked) ~ .sheet-body .sheet-radio-track::before {
   display: none;
@@ -675,14 +716,14 @@
   display: block;
   background-repeat: no-repeat;
   background-position: center;
-  color: #606060;
+  color: var(--c-text-light);
   font-weight: 700;
   text-align: center;
   padding: 0 6px;
   filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 0px 0.7px);
 }
 .ui-dialog .tab-content .charsheet .sheet-hex::placeholder {
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
@@ -780,8 +821,8 @@
   position: absolute;
   top: -27px;
   right: -16px;
-  background-color: #f2f2f2;
-  color: #808080;
+  background-color: var(--c-background-hover);
+  color: var(--c-text-lighter);
   font-size: 11px;
   line-height: 21px;
   border-radius: 2px;
@@ -796,7 +837,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem {
   position: relative;
-  background-color: #fdfdfd;
+  background-color: var(--c-item);
   border-radius: 2px;
   width: 100%;
   box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
@@ -806,7 +847,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem button.sheet-repitem__skill-roll {
   font-family: Pictos;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   height: 16px;
   line-height: 15px;
@@ -848,13 +889,13 @@
   line-height: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__secondary, .ui-dialog .tab-content .charsheet .sheet-repitem__frame {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 9px;
   margin: 0 6px;
-  border-top: 1px dotted #e0e0e0;
+  border-top: 1px dotted var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__secondary input[type=text], .ui-dialog .tab-content .charsheet .sheet-repitem__frame input[type=text] {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 9px;
   line-height: 16px;
 }
@@ -891,7 +932,7 @@
   bottom: 2px;
   right: -1px;
   z-index: 3;
-  background-color: #fdfdfd;
+  background-color: var(--c-item);
   padding: 4px 6px 0;
   border: 1px solid #dbdbdb;
   border-radius: 0 0 2px 2px;
@@ -903,7 +944,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-top: 1px dotted #e0e0e0;
+  border-top: 1px dotted var(--c-outline);
   padding-top: 4px;
   margin-top: -2px;
 }
@@ -926,7 +967,7 @@
   top: 4px;
   right: -1px;
   z-index: 3;
-  background-color: #fdfdfd;
+  background-color: var(--c-item);
   padding: 4px 6px;
   border: 1px solid #dbdbdb;
   border-radius: 2px 2px 0 0;
@@ -935,7 +976,7 @@
   transform: translateY(-100%);
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__note-box textarea {
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   height: 60px;
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem .sheet-toggle--arrow:not(:checked) ~ .sheet-repitem__weapons {
@@ -975,7 +1016,7 @@
   display: block;
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__weapons .sheet-header {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__weapons .sheet-header__labels {
   padding-right: 30px;
@@ -985,7 +1026,7 @@
   display: none;
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__weapons .sheet-repitem__subitem:not(.sheet-repitem__subitem--1) .sheet-repitem__primary {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-repitem__weapons .sheet-repitem__primary {
   margin-right: 6px;
@@ -1030,7 +1071,7 @@
 .ui-dialog .tab-content .charsheet .sheet-hexfield {
   position: relative;
   white-space: nowrap;
-  color: #606060;
+  color: var(--c-text-light);
   height: 36px;
   width: 36px;
   transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -1041,16 +1082,16 @@
   transition-delay: 0.4s;
 }
 .ui-dialog .tab-content .charsheet .sheet-hexfield-gray, .ui-dialog .tab-content .charsheet .sheet-hexfield-gray input {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
 }
 .ui-dialog .tab-content .charsheet .sheet-hexfield .sheet-hexfield .sheet-hexfield__label {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
 }
 .ui-dialog .tab-content .charsheet .sheet-hexfield.sheet-stay-on-input input:not(:placeholder-shown) {
   opacity: 1 !important;
 }
 .ui-dialog .tab-content .charsheet .sheet-hexfield.sheet-stay-on-input input:not(:placeholder-shown) ~ :not(.sheet-exception) {
-  color: #606060;
+  color: var(--c-text-light);
   opacity: 1 !important;
 }
 .ui-dialog .tab-content .charsheet .sheet-hexfield__label {
@@ -1094,7 +1135,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   height: 16px;
   width: 266px;
 }
@@ -1111,7 +1152,7 @@
   display: inline-block;
   align-items: center;
   justify-content: center;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
@@ -1122,12 +1163,12 @@
   height: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-sans input[name=attr_sans_tabs]:hover::after {
-  color: #808080;
+  color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-sans input[name=attr_sans_tabs]:checked::after {
   background-color: #fff;
-  color: #606060;
-  border-color: #e0e0e0;
+  color: var(--c-text-light);
+  border-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-sans input[name=attr_sans_tabs][value=skills] {
   margin-left: 72px;
@@ -1156,11 +1197,11 @@
   margin-right: 8px;
 }
 .ui-dialog .tab-content .charsheet .sheet-meta .sheet-meta-field input.sheet-meta-field__input {
-  color: #808080;
+  color: var(--c-text-lighter);
   font-weight: 500;
   line-height: 15px;
   text-align: left;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   padding: 0 2px;
   height: 16px;
 }
@@ -1215,8 +1256,8 @@
   left: 0;
   z-index: -1;
   display: block;
-  background-color: #fdfdfd;
-  border: 1px dotted #e0e0e0;
+  background-color: var(--c-item);
+  border: 1px dotted var(--c-outline);
   border-radius: 2px;
   width: 100%;
   height: 100%;
@@ -1225,7 +1266,7 @@
   flex-shrink: 0;
   flex-grow: 1;
   justify-content: center;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-size: 11px;
   font-weight: 500;
   line-height: 16px;
@@ -1233,7 +1274,7 @@
   height: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-buttons button:hover {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-buttons button:hover > span {
   color: #fff !important;
@@ -1263,7 +1304,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 14px;
   font-weight: 700;
   transform: translate(-100%, -50%);
@@ -1283,10 +1324,10 @@
   left: 43px;
 }
 .ui-dialog .tab-content .charsheet .sheet-attribute .sheet-hexfield--mod .sheet-hexfield__label {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
 }
 .ui-dialog .tab-content .charsheet .sheet-attribute .sheet-hexfield--mod .sheet-hexfield__input:not(:placeholder-shown) ~ .sheet-hexfield__label {
-  color: #606060;
+  color: var(--c-text-light);
 }
 .ui-dialog .tab-content .charsheet .sheet-attribute .sheet-hexfield--wd {
   left: 59px;
@@ -1394,7 +1435,7 @@
 .ui-dialog .tab-content .charsheet .sheet-silhouette__switch::after {
   content: "[ ]";
   display: block;
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-family: Pictos;
   font-size: 8px;
   transform: translateX(-50%);
@@ -1473,7 +1514,7 @@
   font-size: 9px;
 }
 .ui-dialog .tab-content .charsheet .sheet-secondary .sheet-hexfield--soak > button[type=roll] {
-  color: #606060;
+  color: var(--c-text-light);
   font-weight: 700;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor {
@@ -1500,7 +1541,7 @@
   position: absolute;
   top: 8px;
   left: 36px;
-  color: #808080;
+  color: var(--c-text-lighter);
   font-size: 9px !important;
   line-height: 1.6;
   padding-top: 4px;
@@ -1572,7 +1613,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-family: Pictos;
   font-size: 8px;
   height: 16px;
@@ -1608,7 +1649,7 @@
   margin-right: 3px;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__plus {
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-size: 14px;
   line-height: 1;
   text-align: center;
@@ -1622,7 +1663,7 @@
   border: 1px solid transparent;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__color-marker .sheet-color-cycle__radio--none {
-  border-color: #e0e0e0;
+  border-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__skill {
   display: flex;
@@ -1647,7 +1688,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__skill input[type=text].sheet-skills__mod:not(:placeholder-shown),
 .ui-dialog .tab-content .charsheet .sheet-skills__skill input[type=text].sheet-skills__wd:not(:placeholder-shown) {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__skill .sheet-skills__mod {
@@ -1683,7 +1724,7 @@
   background-color: transparent;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills input[type=radio].sheet-radio-track.sheet-d4-2:checked ~ button > span {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
 }
 .ui-dialog .tab-content .charsheet .sheet-skills button[type=roll] .sheet-tooltip {
   z-index: 10;
@@ -1705,7 +1746,7 @@
 .ui-dialog .tab-content .charsheet .sheet-skills__button {
   position: relative;
   align-items: center;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
@@ -1718,7 +1759,7 @@
   text-overflow: ellipsis;
 }
 .ui-dialog .tab-content .charsheet .sheet-advancements {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
   padding-left: 64px;
@@ -1726,7 +1767,7 @@
 .ui-dialog .tab-content .charsheet .sheet-advancements__item {
   display: flex;
   background-color: #fff;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   height: 16px;
   width: 100%;
 }
@@ -1741,7 +1782,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-advancements input[type=text] {
   flex-grow: 1;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
 }
@@ -1756,7 +1797,7 @@
   background-size: 16px 16px;
   background-position: 4px -1px;
   background-color: #fff;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
   padding: 0 8px;
@@ -1776,7 +1817,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__page-tab {
   display: inline-block;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   margin-bottom: 7px;
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__page-tab::before, .ui-dialog .tab-content .charsheet .sheet-settings__page-tab::after {
@@ -1794,7 +1835,7 @@
   margin: 0 2px 0 4px;
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__page-tab:checked::before {
-  color: #808080;
+  color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-settings .sheet-settings__page-tab--styles:not(:checked) ~ .sheet-settings__page--styles, .ui-dialog .tab-content .charsheet .sheet-settings .sheet-settings__page-tab--setup:not(:checked) ~ .sheet-settings__page--setup, .ui-dialog .tab-content .charsheet .sheet-settings .sheet-settings__page-tab--blocks:not(:checked) ~ .sheet-settings__page--blocks, .ui-dialog .tab-content .charsheet .sheet-settings .sheet-settings__page-tab--skills:not(:checked) ~ .sheet-settings__page--skills, .ui-dialog .tab-content .charsheet .sheet-settings .sheet-settings__page-tab--help:not(:checked) ~ .sheet-settings__page--help {
   display: none;
@@ -1815,11 +1856,11 @@
 .ui-dialog .tab-content .charsheet .sheet-settings__item > span:first-of-type {
   display: block;
   flex-grow: 1;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   font-weight: 500;
   line-height: 15px;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   margin-right: 12px;
   height: 100%;
 }
@@ -1842,9 +1883,9 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--text-input input[type=text] {
   flex-grow: 1;
-  color: #606060;
+  color: var(--c-text-light);
   line-height: 15px;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   margin-right: 12px;
   height: 16px;
   width: auto;
@@ -1858,7 +1899,7 @@
 .ui-dialog .tab-content .charsheet .sheet-settings__item--text-input input[type=text] + span:last-of-type {
   display: block;
   flex-shrink: 0;
-  color: #808080;
+  color: var(--c-text-lighter);
   font-family: Pictos;
   font-size: 11px;
   margin: 0 4px 0 1px;
@@ -1874,17 +1915,17 @@
   font-size: 11px;
   line-height: 16px;
   padding: 4px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--c-outline);
   border-radius: 2px;
   height: 64px;
   margin: 8px 4px 0 0;
   transition: border-color 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--textarea textarea:hover {
-  border-color: #898989;
+  border-color: var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--textarea textarea:focus {
-  border-color: #898989;
+  border-color: var(--c-background-dark);
   height: 192px;
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--help {
@@ -1963,7 +2004,7 @@
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--novice:checked::after {
   content: "N";
   background-color: rgba(0, 0, 0, 0.05);
-  color: #606060;
+  color: var(--c-text-light);
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--seasoned:checked::after {
   content: "A";
@@ -1987,13 +2028,13 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--augmentation:checked::after {
   content: "A";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--dot:checked::after {
   content: "";
-  background-color: #606060;
-  border: 4px solid #fdfdfd;
+  background-color: var(--c-text-light);
+  border: 4px solid var(--c-item);
   border-radius: 50%;
   height: 14px;
   width: 14px;
@@ -2010,7 +2051,7 @@
   font-family: Pictos;
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ *, .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked::after {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ .sheet-features__inner-background {
@@ -2085,7 +2126,7 @@
   left: 341px;
 }
 .ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-icon {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-size: 11px;
   line-height: 1;
   opacity: 0;
@@ -2097,8 +2138,8 @@
   opacity: 1;
 }
 .ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-icon:checked::after {
-  background-color: #898989;
-  border: 1px solid #898989;
+  background-color: var(--c-background-dark);
+  border: 1px solid var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-icon:not(:last-child) {
   margin-right: 8px;
@@ -2139,7 +2180,7 @@
   justify-content: center;
   background-color: #fff;
   font-family: Pictos;
-  border: 1px dotted #e0e0e0;
+  border: 1px dotted var(--c-outline);
   border-radius: 50%;
   margin: 2px 2px 6px;
   height: 20px;
@@ -2201,7 +2242,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
   font-family: Pictos;
   line-height: 1;
@@ -2393,7 +2434,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--fighting:checked::after {
   content: "C";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--fighting:checked ~ .sheet-attack-skill--fighting {
@@ -2401,7 +2442,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--shooting:checked::after {
   content: "T";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--shooting:checked ~ .sheet-attack-skill--shooting {
@@ -2409,7 +2450,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--athletics:checked::after {
   content: "A";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-color-cycle__radio--athletics:checked ~ .sheet-attack-skill--athletics {
@@ -2417,7 +2458,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-attack-skill-toggle {
   background-color: #fff;
-  color: #606060;
+  color: var(--c-text-light);
   line-height: 14px;
   border: 1px solid #898989;
   border-width: 1px;
@@ -2453,14 +2494,14 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  background-color: #e0e0e0;
+  background-color: var(--c-outline);
   border-radius: 2px;
   height: 8px;
   width: 100%;
   overflow: hidden;
 }
 .ui-dialog .tab-content .charsheet .sheet-integrity__progress-fill {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   height: 100%;
   width: 100%;
   transition: width 0.3s ease-in-out;
@@ -2748,13 +2789,13 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-integrity__loss-effects > span {
   display: block;
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-weight: 500;
   white-space: nowrap;
   transition: color 0.3s ease-in-out;
 }
 .ui-dialog .tab-content .charsheet .sheet-integrity__loss-effects input[type=checkbox]:checked + span {
-  color: #606060;
+  color: var(--c-text-light);
 }
 .ui-dialog .tab-content .charsheet .sheet-integrity__hexfields {
   display: flex;
@@ -2826,7 +2867,7 @@
   border: 1px solid transparent;
 }
 .ui-dialog .tab-content .charsheet .sheet-augmentations .sheet-color-cycle__radio--none {
-  border-color: #e0e0e0;
+  border-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-augmentations__multiplier {
   text-align: left;
@@ -2891,7 +2932,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--alchemy:checked::after {
   content: "A";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--alchemy:checked ~ .sheet-arcane-toggle--alchemy {
@@ -2899,7 +2940,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--magie:checked::after {
   content: "M";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--magie:checked ~ .sheet-arcane-toggle--magie {
@@ -2907,7 +2948,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--foi:checked::after {
   content: "F";
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff;
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-color-cycle__radio--foi:checked ~ .sheet-arcane-toggle--foi {
@@ -2915,7 +2956,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-arcane-toggle {
   background-color: #fff;
-  color: #606060;
+  color: var(--c-text-light);
   line-height: 14px;
   border: 1px solid #898989;
   border-width: 1px;
@@ -3040,14 +3081,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   line-height: 1;
-  border: 1px dotted #e0e0e0;
+  border: 1px dotted var(--c-outline);
   margin-bottom: 4px !important;
 }
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left button[type=roll]:hover {
-  background-color: #898989;
-  border-color: #898989;
+  background-color: var(--c-background-dark);
+  border-color: var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left button[type=roll]:hover span {
   color: #fff !important;
@@ -3060,7 +3101,7 @@
   top: 0;
   left: 0;
   display: block;
-  background-color: #f2f2f2;
+  background-color: var(--c-background-hover);
   color: #fff;
   font-family: Pictos;
   font-size: 14px;
@@ -3080,7 +3121,7 @@
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__health-field input[type=text] {
   position: relative;
   z-index: 1;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 14px;
   line-height: 20px;
   text-align: center;
@@ -3096,7 +3137,7 @@
   text-align: left;
   padding: 0 2px;
   margin-bottom: 4px;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   height: 20px;
   width: 76px !important;
 }
@@ -3128,7 +3169,7 @@
   background-size: 16px 16px;
   background-position: 4px -1px;
   background-color: #fff;
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
   padding: 0 8px;
@@ -3174,10 +3215,10 @@
   border-radius: 2px;
 }
 .ui-dialog .tab-content .charsheet .sheet-encumbrance__content input[type=text]:hover {
-  background-color: #f2f2f2;
+  background-color: var(--c-background-hover);
 }
 .ui-dialog .tab-content .charsheet .sheet-encumbrance__content input[type=text]:focus {
-  background-color: #fdfdfd;
+  background-color: var(--c-item);
   font-size: 16px !important;
   font-weight: 700;
   height: 100%;
@@ -3205,7 +3246,7 @@
   width: 30px;
 }
 .ui-dialog .tab-content .charsheet .sheet-inventory__multi {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   line-height: 11px;
   text-align: center;
   width: 8px;
@@ -3230,7 +3271,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fdfdfd;
+  background-color: var(--c-item);
   border-radius: 2px;
   height: 34px;
   width: 40px;
@@ -3243,7 +3284,7 @@
   left: 0;
   z-index: 0;
   display: block;
-  background-color: #d6d6d6;
+  background-color: var(--c-text-gray);
   color: #fff;
   font-size: 9px;
   font-weight: 500;
@@ -3284,26 +3325,26 @@
   width: 100%;
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__container input[type=radio]:checked ~ span {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__container input[type=radio]::before {
   content: "";
-  border: 2px solid #d6d6d6;
+  border: 2px solid var(--c-text-gray);
   border-width: 2px 2px 0;
   border-radius: 2px;
   height: 100%;
   width: 100%;
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__container input[type=radio]:checked::before {
-  border-color: #898989;
+  border-color: var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__container input[type=radio]:checked ~ input[type=text] {
-  color: #808080;
+  color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__container input[type=text] {
   position: relative;
   z-index: 2;
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -3325,17 +3366,17 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  background-color: #fdfdfd;
-  color: #b0b0b0;
-  border: 1px dotted #e0e0e0;
+  background-color: var(--c-item);
+  color: var(--c-text-lightest);
+  border: 1px dotted var(--c-outline);
   border-radius: 2px;
   padding: 0 4px;
   height: 20px;
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__buttons button[type=action]:hover {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff !important;
-  border: 1px solid #898989;
+  border: 1px solid var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-ammunition__buttons button[type=action]:not(:last-child) {
   margin-right: 4px;
@@ -3358,7 +3399,7 @@
   min-width: 66px;
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait span {
-  color: #404040;
+  color: var(--c-text);
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait .sheet-background {
   position: absolute;
@@ -3379,7 +3420,7 @@
   transition: border 0.3s ease-in-out;
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait__expand:hover, .ui-dialog .tab-content .charsheet .sheet-simple-trait__expand:checked {
-  border-color: #e0e0e0;
+  border-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait__expand:checked ~ .sheet-simple-trait__inputs {
   display: flex;
@@ -3404,7 +3445,7 @@
   transition-delay: 0.7s;
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait__custom-roll {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 10px;
   font-weight: 500;
   line-height: 16px;
@@ -3446,7 +3487,7 @@
   z-index: 4;
   display: none;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--c-outline);
   border-width: 0 1px 1px 1px;
   border-radius: 0 0 2px 2px;
   padding: 0 6px;
@@ -3455,7 +3496,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-simple-trait__inputs > input[type=text] {
   text-align: center;
-  border-top: 1px dotted #e0e0e0;
+  border-top: 1px dotted var(--c-outline);
   width: 33.3%;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra {
@@ -3533,7 +3574,7 @@
   line-height: 14px;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__selection-toggle:hover::after {
-  color: #606060 !important;
+  color: var(--c-text-light) !important;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__selection-toggle:checked ~ .sheet-container .sheet-simple-trait {
   display: none;
@@ -3543,14 +3584,14 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__selection-toggle:checked::after {
   content: "3";
-  color: #606060;
+  color: var(--c-text-light);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__selection-toggle:not(:checked) ~ .sheet-container .sheet-extra-skills__toggle-label {
   display: none;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__selection-toggle:not(:checked)::after {
   content: "W";
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__toggle-label {
   flex-shrink: 0;
@@ -3562,7 +3603,7 @@
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__toggle + span {
   user-select: none;
   display: block;
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-size: 11px;
   font-weight: 500;
   line-height: 24px;
@@ -3571,10 +3612,10 @@
   padding: 0 4px;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__toggle:hover + span {
-  color: #808080;
+  color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-skills__toggle:checked + span {
-  color: #404040;
+  color: var(--c-text);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-secondary .sheet-container {
   display: flex;
@@ -3590,7 +3631,7 @@
   margin-right: 8px;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-secondary__field .sheet-label {
-  color: #b0b0b0;
+  color: var(--c-text-lightest);
   font-weight: 500;
   line-height: 16px;
   text-align: center;
@@ -3610,16 +3651,16 @@
   background-color: #fff;
   font-weight: 500;
   text-align: center;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--c-outline);
   border-radius: 2px;
   height: 24px;
   width: 100%;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-secondary .sheet-simple-trait__expand {
-  border-color: #e0e0e0;
+  border-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-secondary .sheet-divider {
-  border-right: 1px dotted #e0e0e0;
+  border-right: 1px dotted var(--c-outline);
   margin: 0 10px 0 2px;
   height: 24px;
 }
@@ -3628,7 +3669,7 @@
   flex-wrap: wrap;
   padding: 8px 0;
   margin-top: 15px !important;
-  border-top: 1px dotted #e0e0e0;
+  border-top: 1px dotted var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-settings__item {
   user-select: none;
@@ -3640,13 +3681,13 @@
   margin-right: 8px;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-settings__item span {
-  color: #d6d6d6;
+  color: var(--c-text-gray);
   font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
 }
 .ui-dialog .tab-content .charsheet .sheet-extra-settings input[type=checkbox]:checked ~ span {
-  color: #808080;
+  color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .inlinerollresult.showtip::before,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .inlinerollresult.showtip::before {
@@ -3656,7 +3697,7 @@
   left: 0;
   z-index: -1;
   display: block;
-  background-color: #fafafa;
+  background-color: var(--c-background-die);
   height: 100%;
   width: 100%;
 }
@@ -3665,7 +3706,7 @@
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox {
-  color: #404040;
+  color: var(--c-text);
   padding-top: 8px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -3710,7 +3751,7 @@
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__header:not(:last-child),
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__header:not(:last-child),
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__header:not(:last-child) {
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   padding-bottom: 7px;
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content,
@@ -3734,7 +3775,7 @@
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content:not(:last-child),
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content:not(:last-child),
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content:not(:last-child) {
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
   padding-bottom: 7px;
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content span,
@@ -3859,7 +3900,7 @@
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before {
-  background-color: #e0e0e0;
+  background-color: var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
@@ -3935,12 +3976,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fdfdfd;
-  color: #b0b0b0;
+  background-color: var(--c-item);
+  color: var(--c-text-lightest);
   font-size: 11px;
   font-weight: 500;
   line-height: 9px;
-  border: 1px dotted #e0e0e0;
+  border: 1px dotted var(--c-outline);
   border-radius: 2px;
   padding: 0 4px;
   height: 20px;
@@ -3951,26 +3992,26 @@
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__button a:hover,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__button a:hover,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__button a:hover {
-  background-color: #898989;
+  background-color: var(--c-background-dark);
   color: #fff !important;
-  border: 1px solid #898989;
+  border: 1px solid var(--c-background-dark);
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__description,
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__description {
-  color: #606060;
+  color: var(--c-text-light);
   font-size: 9px;
   font-style: italic;
   line-height: 16px;
   text-align: center;
   padding: 8px 0 7px;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll {
   padding-right: 8px;
   margin: 8px 0 0 8px;
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll:not(:last-child) {
-  border-right: 1px dotted #e0e0e0;
+  border-right: 1px dotted var(--c-outline);
 }
 .ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll span {
   font-size: 16px;

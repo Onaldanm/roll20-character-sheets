@@ -7,19 +7,22 @@ $fs-s: 11px;
 $fs-xs: 9px;
 
 // COLORS
-$c-text: #404040;
-$c-text-light: #606060;
-$c-text-lighter: #808080;
-$c-text-lightest: #b0b0b0;
-$c-text-gray: #d6d6d6;
-$c-text-hover: #303030;
+$c-text: var(--c-text);
+$c-text-light: var(--c-text-light);
+$c-text-lighter: var(--c-text-lighter);
+$c-text-lightest: var(--c-text-lightest);
+$c-text-gray: var(--c-text-gray);
+$c-text-hover: var(--c-text-hover);
 
-$c-outline: #e0e0e0;
-$c-item: #fdfdfd;
-$c-background-die: #fafafa;
-$c-background-dark: #898989;
-$c-background-hover: #f2f2f2;
-$c-background-tooltip: #606060;
+$c-outline: var(--c-outline);
+$c-item: var(--c-item);
+$c-background-die: var(--c-background-die);
+$c-background-dark: var(--c-background-dark);
+$c-background-hover: var(--c-background-hover);
+$c-background-tooltip: var(--c-background-tooltip);
+
+$c-background: var(--c-background);
+$c-background-grid: var(--c-background-grid);
 
 $c-white: #fff;
 $c-red: #d9534f;

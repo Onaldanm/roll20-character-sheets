@@ -129,6 +129,7 @@ input[type=checkbox].sheet-checkbox {
 
 .sheet-wrapper {
   text-align: center;
+  background-color: $c-background;
 }
 
 .sheet-body {
@@ -138,8 +139,8 @@ input[type=checkbox].sheet-checkbox {
   line-height: 1;
   text-align: left;
   background: {
-    image: linear-gradient(to right, #fbfbfb 1px, transparent 1px),
-           linear-gradient(to bottom, #fbfbfb 1px, transparent 1px);
+    image: linear-gradient(to right, $c-background-grid 1px, transparent 1px),
+         linear-gradient(to bottom, $c-background-grid 1px, transparent 1px);
     size: 8px 8px;
     position: -1px -1px;
   }
