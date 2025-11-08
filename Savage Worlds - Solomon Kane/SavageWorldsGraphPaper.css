@@ -30,7 +30,7 @@
   --c-text-gray: #808080;
   --c-text-hover: #ffffff;
   --c-outline: #404040;
-  --c-item: #202020;
+  --c-item: #404040;
   --c-background-die: #303030;
   --c-background-dark: #702c91;
   --c-background-hover: #2a2a2a;
@@ -2061,7 +2061,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ *, .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked::after {
   color: var(--c-text-lightest);
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  text-shadow: 0 0 3px var(--c-background), 0 0 3px var(--c-background), 0 0 3px var(--c-background), 0 0 3px var(--c-background);
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ .sheet-features__inner-background {
   position: absolute;

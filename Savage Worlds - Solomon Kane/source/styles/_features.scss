@@ -123,7 +123,7 @@
       ~ *,
       &::after {
         color: $c-text-lightest;
-        text-shadow: 0 0 3px $c-white, 0 0 3px $c-white, 0 0 3px $c-white, 0 0 3px $c-white;
+        text-shadow: 0 0 3px $c-background, 0 0 3px $c-background, 0 0 3px $c-background, 0 0 3px $c-background;
       }
 
       ~ .sheet-features__inner-background {
