@@ -205,7 +205,7 @@ fieldset,
     z-index: 3;
     background-color: $c-item;
     padding: 4px 6px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid $c-border-primary;
     border-radius: 2px 2px 0 0;
     border-width: 1px 1px 0 1px;
     width: calc(100% + 2px);

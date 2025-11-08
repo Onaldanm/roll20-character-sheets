@@ -103,7 +103,7 @@
 
     input[type=text].sheet-skills__mod,
     input[type=text].sheet-skills__wd {
-      background-color: $c-white;
+      background-color: $c-background-track;
       font-size: 9px !important;
       height: 14px;
       box-shadow: $shadow;
@@ -152,7 +152,7 @@
       border-radius: 2px 0 0 2px;
 
       &:checked {
-        background: url('https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png') repeat;
+        background: $c-background-primary url('https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png') repeat;
 
         &::after {
           background-color: transparent;

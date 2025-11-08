@@ -14,6 +14,9 @@
   --c-background-tooltip: #606060;
   --c-background: #ffffff;
   --c-background-grid: #fbfbfb;
+  --c-background-track: #ffffff;
+  --c-background-primary: #ffffff;
+  --c-border-primary: #dbdbdb;
 }
 
 .sheet-darkmode *,
@@ -27,11 +30,14 @@
   --c-outline: #404040;
   --c-item: #202020;
   --c-background-die: #303030;
-  --c-background-dark: #151515;
+  --c-background-dark: #702c91;
   --c-background-hover: #2a2a2a;
   --c-background-tooltip: #404040;
   --c-background: #1F1F1F;
   --c-background-grid: #151515;
+  --c-background-track: #404040;
+  --c-background-primary: #404040;
+  --c-border-primary: #404040;
 }
 
 .charsheet {
@@ -492,7 +498,7 @@
 .ui-dialog .tab-content .charsheet .sheet-radio-track {
   position: relative;
   flex-shrink: 0;
-  background-color: #fff;
+  background-color: var(--c-background-track);
   box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
 }
 .ui-dialog .tab-content .charsheet .sheet-radio-track::before {
@@ -965,7 +971,7 @@
   z-index: 3;
   background-color: var(--c-item);
   padding: 4px 6px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--c-border-primary);
   border-radius: 2px 2px 0 0;
   border-width: 1px 1px 0 1px;
   width: calc(100% + 2px);
@@ -1673,7 +1679,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-skills__skill input[type=text].sheet-skills__mod,
 .ui-dialog .tab-content .charsheet .sheet-skills__skill input[type=text].sheet-skills__wd {
-  background-color: #fff;
+  background-color: var(--c-background-track);
   font-size: 9px !important;
   height: 14px;
   box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
@@ -1714,7 +1720,7 @@
   border-radius: 2px 0 0 2px;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills input[type=radio].sheet-radio-track.sheet-d4-2:checked {
-  background: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png") repeat;
+  background: var(--c-background-primary) url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png") repeat;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills input[type=radio].sheet-radio-track.sheet-d4-2:checked::after {
   background-color: transparent;
@@ -1789,10 +1795,10 @@
   padding-left: 64px;
 }
 .ui-dialog .tab-content .charsheet .sheet-notebook textarea {
-  background-image: linear-gradient(to right, #f6f6f6 1px, transparent 1px), linear-gradient(to bottom, #f6f6f6 1px, transparent 1px);
+  background-image: linear-gradient(to right, var(--c-background-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--c-background-grid) 1px, transparent 1px);
   background-size: 16px 16px;
   background-position: 4px -1px;
-  background-color: #fff;
+  background-color: var(--c-background);
   color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
@@ -3161,10 +3167,10 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right, #f6f6f6 1px, transparent 1px), linear-gradient(to bottom, #f6f6f6 1px, transparent 1px);
+  background-image: linear-gradient(to right, var(--c-background-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--c-background-grid) 1px, transparent 1px);
   background-size: 16px 16px;
   background-position: 4px -1px;
-  background-color: #fff;
+  background-color: var(--c-background);
   color: var(--c-text-light);
   font-size: 11px;
   line-height: 16px;
@@ -3197,7 +3203,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   font-size: 14px;
   border-radius: 2px;
   height: 32px;

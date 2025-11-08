@@ -23,6 +23,9 @@ $c-background-tooltip: var(--c-background-tooltip);
 
 $c-background: var(--c-background);
 $c-background-grid: var(--c-background-grid);
+$c-background-track: var(--c-background-track);
+$c-background-primary: var(--c-background-primary);
+$c-border-primary: var(--c-border-primary);
 
 $c-white: #fff;
 $c-red: #d9534f;
@@ -38,11 +41,11 @@ $shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
 
 @mixin note-grid {
   background: {
-    image: linear-gradient(to right, #f6f6f6 1px, transparent 1px),
-           linear-gradient(to bottom, #f6f6f6 1px, transparent 1px);
+    image: linear-gradient(to right, $c-background-grid 1px, transparent 1px),
+           linear-gradient(to bottom, $c-background-grid 1px, transparent 1px);
     size: 16px 16px;
     position: 4px -1px;
-    color: $c-white;
+    color: $c-background;
   }
   color: $c-text-light;
   font-size: $fs-s;
