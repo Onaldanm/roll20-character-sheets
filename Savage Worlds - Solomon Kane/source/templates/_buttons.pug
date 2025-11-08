@@ -13,17 +13,17 @@
 
     button(type='roll',
            name='roll_dice_roller_damage',
-           value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{dice_roller_input}}} @{dice_roller_template} {{reroll=[r](~dice_roller_damage)}}`)
+           value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{dice_roller_input}}} @{dice_roller_template} {{reroll=[replay](~dice_roller_damage)}}`)
       span(data-i18n='dice-roller-damage') Damage
 
     button(type='roll',
            name='roll_dice_roller_hidden',
-           value!=`/w gm &{template:DiceRoller} {{header=@{name} ^{rolls} @{dice_roller_input}}} @{dice_roller_template} {{reroll=[r](~dice_roller_hidden)}}`)
+           value!=`/w gm &{template:DiceRoller} {{header=@{name} ^{rolls} @{dice_roller_input}}} @{dice_roller_template} {{reroll=[replay](~dice_roller_hidden)}}`)
       span(data-i18n='dice-roller-hidden') Hidden
 
     button(type='roll',
            name='roll_dice_roller_open',
-           value!=`&{template:DiceRoller} {{header=@{name} ^{rolls} @{dice_roller_input}}} @{dice_roller_template} {{reroll=[r](~dice_roller_open)}}`)
+           value!=`&{template:DiceRoller} {{header=@{name} ^{rolls} @{dice_roller_input}}} @{dice_roller_template} {{reroll=[replay](~dice_roller_open)}}`)
       span(data-i18n='dice-roller-roll') Roll
 
   .sheet-run-roller

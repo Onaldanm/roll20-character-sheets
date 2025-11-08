@@ -128,34 +128,38 @@ $box-margin: 8px;
       }
 
       &--fire::after {
-        content: 'r';
-        font-family: 'Pictos Custom';
+        content: 'local_fire_department';
+        font-family: 'Material Icons';
       }
 
       &--hit::after {
-        content: 'L';
+        content: 'coronavirus';
+        font-family: 'Material Icons';
       }
 
       &--herromagie::after {
-        content: 'k';
+        content: 'invert_colors';
+        font-family: 'Material Icons';
       }
 
       &--cancel::after {
-        content: 'd';
+        content: 'cyclone';
+        font-family: 'Material Icons';
       }
 
       &--rad::after {
-        content: 'E';
+        content: 'visibility_off';
+        font-family: 'Material Icons';
       }
 
       &--tools::after {
-        content: 'e';
-        font-family: 'Pictos Custom';
+        content: 'safety_check';
+        font-family: 'Material Icons';
       }
 
       &--ecg::after {
-        content: 't';
-        font-family: 'Pictos Custom';
+        content: 'flash_on';
+        font-family: 'Material Icons';
       }
     }
   }

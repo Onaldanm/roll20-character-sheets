@@ -49,12 +49,12 @@ input(type='checkbox',
 
         button(type='roll',
                name='roll_skill',
-               value!=`@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_powers_skill)}} {{damageroll=[t](~repeating_powers_power_damage)}} {{description=@{roll_description}}} @{roll_injection}`,
+               value!=`@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_powers_skill)}} {{damageroll=[crisis_alert](~repeating_powers_power_damage)}} {{description=@{roll_description}}} @{roll_injection}`,
                class='sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard') 9
 
         button(type='roll',
                name='roll_extra_skill',
-               value!=`@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[r](~repeating_powers_skill)}} {{damageroll=[t](~repeating_powers_power_damage)}} {{description=@{roll_description}}} @{roll_injection}`,
+               value!=`@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_powers_skill)}} {{damageroll=[crisis_alert](~repeating_powers_power_damage)}} {{description=@{roll_description}}} @{roll_injection}`,
                class='sheet-repitem__skill-roll sheet-repitem__skill-roll--extra') 9
 
         input(type='text',
@@ -74,7 +74,7 @@ input(type='checkbox',
 
           button(type='roll',
                  name='roll_power_damage',
-                 value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{power_damage}}} {{source_label=^{source}}} {{source=@{power_name}}} {{rof=[[ 0 + @{rof_override} ]]}} {{modifier=?{@{query_damage_modifier}}}} {{ap=@{power_ap}}} {{trapping=@{power_trapping}}} ${maxRof.map(n => `{{roll${n}=[[ @{power_damage_roll} + (?{@{query_damage_modifier}}+0) ]]}}`).join(' ')} {{reroll=[r](~repeating_powers_power_damage)}}`)
+                 value!=`@{gm_roll} &{template:DamageRoll} {{header=@{name} ^{rolls} ^{damage}}} {{code=@{power_damage}}} {{source_label=^{source}}} {{source=@{power_name}}} {{rof=[[ 0 + @{rof_override} ]]}} {{modifier=?{@{query_damage_modifier}}}} {{ap=@{power_ap}}} {{trapping=@{power_trapping}}} ${maxRof.map(n => `{{roll${n}=[[ @{power_damage_roll} + (?{@{query_damage_modifier}}+0) ]]}}`).join(' ')} {{reroll=[replay](~repeating_powers_power_damage)}}`)
 
           input(type='text',
                 name='attr_power_damage',
