@@ -29,7 +29,7 @@
     }
 
     &__radio {
-      border: 2px solid $c-white;
+      border: 2px solid $c-background-track;
       opacity: 0;
       transition: opacity .3s ease-in-out;
 
@@ -57,8 +57,9 @@
     top: 100px;
     left: 99px;
   }
+
   &__torso-entrejambe {
-    top: 135px;
+    top: 130px;
     left: 99px;
   }
 
@@ -73,8 +74,8 @@
   }
 
   &__left-hand {
-    top: 134px;
-    left: 142px;
+    top: 147px;
+    left: 146px;
   }
 
   &__right-arm-upper {
@@ -88,27 +89,27 @@
   }
 
   &__right-hand {
-    top: 134px;
-    left: 55px;
+    top: 147px;
+    left: 51px;
   }
 
   &__left-leg-upper {
-    top: 160px;
-    left: 125px;
+    top: 180px;
+    left: 115px;
   }
 
   &__left-leg-lower {
-    top: 230px;
+    top: 237px;
     left: 129px;
   }
 
   &__right-leg-upper {
-    top: 160px;
-    left: 72px;
+    top: 180px;
+    left: 80px;
   }
 
   &__right-leg-lower {
-    top: 230px;
+    top: 237px;
     left: 68px;
   }
 
@@ -129,6 +130,16 @@
 
     // Marker position overwrites
     &:checked ~ .sheet-silhouette {
+      &__torso-lower {
+        top: 110px;
+        left: 99px;
+      }
+
+      &__torso-entrejambe {
+        top: 150px;
+        left: 99px;
+      }
+
       &__left-arm-upper {
         top: 70px;
         left: 141px;
@@ -139,11 +150,6 @@
         left: 150px;
       }
 
-      &__left-hand {
-        top: 143px;
-        left: 147px;
-      }
-
       &__right-arm-upper {
         top: 70px;
         left: 56px;
@@ -152,21 +158,6 @@
       &__right-arm-lower {
         top: 105px;
         left: 47px;
-      }
-
-      &__right-hand {
-        top: 143px;
-        left: 50px;
-      }
-
-      &__left-leg-upper {
-        top: 172px;
-        left: 126px;
-      }
-
-      &__right-leg-upper {
-        top: 172px;
-        left: 71px;
       }
     }
   }
