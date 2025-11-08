@@ -3720,334 +3720,6 @@
 .ui-dialog .tab-content .charsheet .sheet-extra-settings input[type=checkbox]:checked ~ span {
   color: var(--c-text-lighter);
 }
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .inlinerollresult.showtip::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .inlinerollresult.showtip::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  background-color: var(--c-background-die);
-  height: 100%;
-  width: 100%;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox {
-  color: var(--c-text);
-  padding-top: 8px;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .inlinerollresult.showtip,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .inlinerollresult.showtip,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .inlinerollresult.showtip,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .inlinerollresult.showtip,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .inlinerollresult.showtip {
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate {
-  position: relative;
-  background-color: #fff;
-  background-image: linear-gradient(to right, #fbfbfb 1px, transparent 1px), linear-gradient(to bottom, #fbfbfb 1px, transparent 1px);
-  background-size: 8px 8px;
-  background-position: -1px -1px;
-  padding: 8px;
-  border-radius: 2px;
-  box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__header,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__header,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__header,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__header,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__header {
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 16px;
-  text-align: center;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__header:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__header:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__header:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__header:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__header:not(:last-child) {
-  border-bottom: 1px dotted var(--c-outline);
-  padding-bottom: 7px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content {
-  position: relative;
-  font-size: 11px;
-  text-align: center;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content:not(:first-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content:not(:first-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content:not(:first-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content:not(:first-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content:not(:first-child) {
-  padding-top: 8px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content:not(:last-child) {
-  border-bottom: 1px dotted var(--c-outline);
-  padding-bottom: 7px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content span {
-  font-size: 11px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content span.inlinerollresult,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content span.inlinerollresult,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content span.inlinerollresult,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content span.inlinerollresult,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content span.inlinerollresult {
-  font-weight: 400;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row {
-  display: flex;
-  align-items: center;
-  line-height: 16px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > div,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > div,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > div,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > div,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > div {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > .sheet-left {
-  font-weight: 500;
-  text-align: right;
-  padding-right: 8px;
-  width: 96px;
-  min-width: 96px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > .sheet-right {
-  text-align: left;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 0 24px 0 8px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice span {
-  display: block;
-  font-size: 11px;
-  line-height: 20px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice .sheet-left,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice .sheet-left {
-  display: flex;
-  flex-wrap: wrap;
-  padding-right: 8px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice .sheet-right,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice .sheet-right {
-  display: flex;
-  flex-shrink: 0;
-  padding: 0 4px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice--damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice--damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice--damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice--damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice--damage {
-  flex-wrap: wrap;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll {
-  flex-shrink: 0;
-  text-align: center;
-  border-radius: 2px;
-  min-width: 20px;
-  margin-top: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll:not(:last-child) {
-  margin-right: 8px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before {
-  background-color: var(--c-outline);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail {
-  color: #fff;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before {
-  background-color: #d9534f;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd {
-  height: 20px;
-  transform: rotateZ(45deg);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd:not(:last-child),
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd:not(:last-child) {
-  margin-right: 16px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd span,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd span {
-  transform: rotateZ(-45deg);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd span::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd span::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd span::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd span::before,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd span::before {
-  transform: rotateZ(45deg);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__reroll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__reroll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__reroll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__reroll,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__reroll {
-  position: absolute;
-  top: 2px;
-  right: -4px;
-  font-family: Pictos;
-  border: 4px solid #fff;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll-damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll-damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll-damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll-damage,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll-damage {
-  position: absolute;
-  top: 26px;
-  right: -4px;
-  font-family: "Pictos Custom";
-  border: 4px solid #fff;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__button a,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__button a,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__button a,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__button a,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__button a {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--c-item);
-  color: var(--c-text-lightest);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 9px;
-  border: 1px dotted var(--c-outline);
-  border-radius: 2px;
-  padding: 0 4px;
-  height: 20px;
-  min-width: 20px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__button a:hover,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DiceRoller .sheet-rolltemplate__button a:hover,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-RunRoll .sheet-rolltemplate__button a:hover,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__button a:hover,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-InfoBox .sheet-rolltemplate__button a:hover {
-  background-color: var(--c-background-dark);
-  color: #fff !important;
-  border: 1px solid var(--c-background-dark);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-TraitRoll .sheet-rolltemplate__description,
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__description {
-  color: var(--c-text-light);
-  font-size: 9px;
-  font-style: italic;
-  line-height: 16px;
-  text-align: center;
-  padding: 8px 0 7px;
-  border-bottom: 1px dotted var(--c-outline);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll {
-  padding-right: 8px;
-  margin: 8px 0 0 8px;
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll:not(:last-child) {
-  border-right: 1px dotted var(--c-outline);
-}
-.ui-dialog .tab-content .charsheet .sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll span {
-  font-size: 16px;
-  line-height: 24px;
-}
 .ui-dialog .tab-content .charsheet .sheet-sans {
   position: relative;
 }
@@ -4127,4 +3799,336 @@
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 32px;
+}
+
+.sheet-rolltemplate-TraitRoll .inlinerollresult.showtip::before,
+.sheet-rolltemplate-DiceRoller .inlinerollresult.showtip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  background-color: var(--c-background-die);
+  height: 100%;
+  width: 100%;
+}
+
+.sheet-rolltemplate-TraitRoll,
+.sheet-rolltemplate-DiceRoller,
+.sheet-rolltemplate-RunRoll,
+.sheet-rolltemplate-DamageRoll,
+.sheet-rolltemplate-InfoBox {
+  color: var(--c-text);
+  padding-top: 8px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.sheet-rolltemplate-TraitRoll .inlinerollresult.showtip,
+.sheet-rolltemplate-DiceRoller .inlinerollresult.showtip,
+.sheet-rolltemplate-RunRoll .inlinerollresult.showtip,
+.sheet-rolltemplate-DamageRoll .inlinerollresult.showtip,
+.sheet-rolltemplate-InfoBox .inlinerollresult.showtip {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate {
+  position: relative;
+  background-color: var(--c-background);
+  background-image: linear-gradient(to right, var(--c-background-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--c-background-grid) 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-position: -1px -1px;
+  padding: 8px;
+  border-radius: 2px;
+  box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__header,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__header,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__header,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__header,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__header {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__header:not(:last-child),
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__header:not(:last-child),
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__header:not(:last-child),
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__header:not(:last-child),
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__header:not(:last-child) {
+  border-bottom: 1px dotted var(--c-outline);
+  padding-bottom: 7px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content {
+  position: relative;
+  font-size: 11px;
+  text-align: center;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content:not(:first-child),
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content:not(:first-child),
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content:not(:first-child),
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content:not(:first-child),
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content:not(:first-child) {
+  padding-top: 8px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content:not(:last-child),
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content:not(:last-child),
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content:not(:last-child),
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content:not(:last-child),
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content:not(:last-child) {
+  border-bottom: 1px dotted var(--c-outline);
+  padding-bottom: 7px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content span,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content span,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content span,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content span,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content span {
+  font-size: 11px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content span.inlinerollresult,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content span.inlinerollresult,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content span.inlinerollresult,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content span.inlinerollresult,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content span.inlinerollresult {
+  font-weight: 400;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row {
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > div,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > div,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > div,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > div,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > div {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > .sheet-left,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > .sheet-left,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > .sheet-left,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > .sheet-left,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > .sheet-left {
+  font-weight: 500;
+  text-align: right;
+  padding-right: 8px;
+  width: 96px;
+  min-width: 96px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__content-row > .sheet-right,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__content-row > .sheet-right,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__content-row > .sheet-right,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__content-row > .sheet-right,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__content-row > .sheet-right {
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 24px 0 8px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice span,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice span,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice span,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice span,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice span {
+  display: block;
+  font-size: 11px;
+  line-height: 20px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice .sheet-left,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice .sheet-left,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice .sheet-left,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice .sheet-left,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice .sheet-left {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 8px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice .sheet-right,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice .sheet-right,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice .sheet-right,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice .sheet-right,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice .sheet-right {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__dice--damage,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__dice--damage,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__dice--damage,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__dice--damage,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__dice--damage {
+  flex-wrap: wrap;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll {
+  flex-shrink: 0;
+  text-align: center;
+  border-radius: 2px;
+  min-width: 20px;
+  margin-top: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.5);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll:not(:last-child),
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll:not(:last-child),
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll:not(:last-child),
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll:not(:last-child),
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll:not(:last-child) {
+  margin-right: 8px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullcrit::before {
+  background-color: var(--c-outline);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail {
+  color: #fff;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll span:not([original-title*='"basicdiceroll"']).fullfail::before {
+  background-color: #d9534f;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd {
+  height: 20px;
+  transform: rotateZ(45deg);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd:not(:last-child),
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd:not(:last-child),
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd:not(:last-child),
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd:not(:last-child),
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd:not(:last-child) {
+  margin-right: 16px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd span,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd span,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd span,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd span,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd span {
+  transform: rotateZ(-45deg);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll--wd span::before,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll--wd span::before,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll--wd span::before,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll--wd span::before,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll--wd span::before {
+  transform: rotateZ(45deg);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__reroll,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__reroll,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__reroll,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__reroll,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__reroll {
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  font-family: Pictos;
+  border: 4px solid var(--c-background-primary);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__roll-damage,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__roll-damage,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__roll-damage,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__roll-damage,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__roll-damage {
+  position: absolute;
+  top: 26px;
+  right: -4px;
+  font-family: "Pictos Custom";
+  border: 4px solid var(--c-background-primary);
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__button a,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__button a,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__button a,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__button a,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__button a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-item);
+  color: var(--c-text-lightest);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 9px;
+  border: 1px dotted var(--c-outline);
+  border-radius: 2px;
+  padding: 0 4px;
+  height: 20px;
+  min-width: 20px;
+}
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__button a:hover,
+.sheet-rolltemplate-DiceRoller .sheet-rolltemplate__button a:hover,
+.sheet-rolltemplate-RunRoll .sheet-rolltemplate__button a:hover,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__button a:hover,
+.sheet-rolltemplate-InfoBox .sheet-rolltemplate__button a:hover {
+  background-color: var(--c-background-dark);
+  color: #fff !important;
+  border: 1px solid var(--c-background-dark);
+}
+
+.sheet-rolltemplate-TraitRoll .sheet-rolltemplate__description,
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__description {
+  color: var(--c-text-light);
+  font-size: 9px;
+  font-style: italic;
+  line-height: 16px;
+  text-align: center;
+  padding: 8px 0 7px;
+  border-bottom: 1px dotted var(--c-outline);
+}
+
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll {
+  padding-right: 8px;
+  margin: 8px 0 0 8px;
+}
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll:not(:last-child) {
+  border-right: 1px dotted var(--c-outline);
+}
+.sheet-rolltemplate-DamageRoll .sheet-rolltemplate__damage-roll span {
+  font-size: 16px;
+  line-height: 24px;
 }

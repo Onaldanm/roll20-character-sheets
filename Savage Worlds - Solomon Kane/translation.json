@@ -447,7 +447,7 @@
   "roll-description-placeholder": "Description narrative qui apparaitra dans votre lancer. Laisser vide pour désactiver.",
   "roll-injection": "Roll Injection",
   "roll-injection-placeholder": "{{source_label=}} {{source=}} {{custom3_label=}} {{custom3=}} {{rof=[[ 1 ]]}} {{traitroll8=}}",
-  "table-sequels": "subit une séquelles...",
+  "table-sequels": "subit une séquelle...",
   "sequels": "Séquelles",
   "roll-of": "Jet de",
   "roll-result": "Résultat du Jet",

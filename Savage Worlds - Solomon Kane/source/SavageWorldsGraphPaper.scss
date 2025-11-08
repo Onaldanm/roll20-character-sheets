@@ -45,7 +45,6 @@
 @import 'styles/ammunition';
 @import 'styles/simple_trait';
 @import 'styles/extra_sheet';
-@import 'styles/rolltemplates';
 
 // Arrangements
 @import 'styles/sections';
@@ -53,3 +52,5 @@
 // Overrides
 @import 'styles/translation_overrides';
 }
+
+@import 'styles/rolltemplates';
