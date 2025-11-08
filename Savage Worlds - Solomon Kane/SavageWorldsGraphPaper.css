@@ -20,6 +20,9 @@
   --c-text-checked: var(--c-text-lighter);
   --c-text-background: #ffffff;
 }
+* .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_solomon_silouette.png) !important;
+}
 
 .sheet-darkmode *,
 .sheet-rolltemplate-darkmode {
@@ -42,6 +45,10 @@
   --c-border-primary: #404040;
   --c-text-checked: #702c91;
   --c-text-background: #404040;
+}
+.sheet-darkmode * .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-darkmode .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_solomon_silouette_dark2.png) !important;
 }
 
 .charsheet {
@@ -1448,9 +1455,6 @@
   font-family: Pictos;
   font-size: 8px;
   transform: translateX(-50%);
-}
-.ui-dialog .tab-content .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
-  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_solomon_silouette_dark.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-silhouette__switch:checked ~ .sheet-silhouette__left-arm-upper {
   top: 70px;
