@@ -28,8 +28,14 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-* .ui-dialog .tab-content .charsheet .sheet-hex--36 {
-  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png);
+* .charsheet .sheet-hex--36 {
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36.svg) !important;
+}
+* .charsheet .sheet-hex--48 {
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_48.svg) !important;
+}
+* .charsheet .sheet-hex--64 {
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64.svg) !important;
 }
 
 .sheet-darkmode *,
@@ -66,15 +72,15 @@
 }
 .sheet-darkmode * .charsheet .sheet-hex--36,
 .sheet-rolltemplate-darkmode .charsheet .sheet-hex--36 {
-  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png);
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png) !important;
 }
 .sheet-darkmode * .charsheet .sheet-hex--48,
 .sheet-rolltemplate-darkmode .charsheet .sheet-hex--48 {
-  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_48_dark.png);
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_48_dark.png) !important;
 }
 .sheet-darkmode * .charsheet .sheet-hex--64,
 .sheet-rolltemplate-darkmode .charsheet .sheet-hex--64 {
-  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64_dark.png);
+  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64_dark.png) !important;
 }
 
 .charsheet {
@@ -771,21 +777,18 @@
   line-height: inherit;
 }
 .ui-dialog .tab-content .charsheet .sheet-hex--36 {
-  background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png);
   font-size: 14px;
   line-height: 36px;
   height: 36px !important;
   width: 36px;
 }
 .ui-dialog .tab-content .charsheet .sheet-hex--48 {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/hexagon_48.svg");
   font-size: 16px !important;
   line-height: 48px;
   height: 48px !important;
   width: 48px;
 }
 .ui-dialog .tab-content .charsheet .sheet-hex--64 {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/hexagon_64.svg");
   font-size: 18px !important;
   line-height: 64px;
   height: 64px !important;

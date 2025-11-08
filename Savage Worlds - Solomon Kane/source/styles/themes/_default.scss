@@ -31,7 +31,13 @@
         background-size: contain;
     }
 
-    .ui-dialog .tab-content .charsheet .sheet-hex--36 {
-        background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png);
+    .charsheet .sheet-hex--36 {
+        background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36.svg) !important;
+    }
+    .charsheet .sheet-hex--48 {
+        background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_48.svg)  !important;
+    }
+    .charsheet .sheet-hex--64 {
+        background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64.svg)  !important;
     }
 }

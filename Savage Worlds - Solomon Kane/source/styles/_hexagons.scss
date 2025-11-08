@@ -19,9 +19,6 @@
   }
 
   &--36 {
-    background: {
-      image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36_dark.png);
-    }
     font-size: $fs-l;
     line-height: 36px;
     height: 36px !important; // Overwrite Roll20!
@@ -29,9 +26,6 @@
   }
 
   &--48 {
-    background: {
-      image: url('https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/hexagon_48.svg');
-    }
     font-size: 16px !important;
     line-height: 48px;
     height: 48px !important; // Overwrite Roll20!
@@ -39,9 +33,6 @@
   }
 
   &--64 {
-    background: {
-      image: url('https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/hexagon_64.svg');
-    }
     font-size: 18px !important; // Overwrite Roll20!
     line-height: 64px;
     height: 64px !important; // Overwrite Roll20!
