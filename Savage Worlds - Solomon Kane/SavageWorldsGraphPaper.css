@@ -1450,7 +1450,7 @@
   transform: translateX(-50%);
 }
 .ui-dialog .tab-content .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
-  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_silhouette_dark.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_solomon_silouette.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-silhouette__switch:checked ~ .sheet-silhouette__left-arm-upper {
   top: 70px;
