@@ -1547,7 +1547,7 @@
   margin-right: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield .sheet-hexfield__label--left {
-  background-color: #fff;
+  background-color: var(--c-background);
   padding-left: 4px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield textarea {
@@ -1555,14 +1555,14 @@
   top: 8px;
   left: 36px;
   color: var(--c-text-lighter);
-  font-size: 9px !important;
+  font-size: 10px !important;
   line-height: 1.6;
   padding-top: 4px;
   height: 60px;
   width: 80px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield textarea::placeholder {
-  color: #f0f0f0;
+  color: var(--c-border-primary);
   font-size: 16px;
   font-weight: 700;
   line-height: 0.6;
@@ -2065,7 +2065,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ *, .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked::after {
   color: var(--c-text-lightest);
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  text-shadow: 0 0 3px var(--c-background), 0 0 3px var(--c-background), 0 0 3px var(--c-background), 0 0 3px var(--c-background);
 }
 .ui-dialog .tab-content .charsheet .sheet-features .sheet-color-cycle__radio--disabled:checked ~ .sheet-features__inner-background {
   position: absolute;

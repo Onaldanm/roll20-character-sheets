@@ -20,7 +20,7 @@
      }
 
      .sheet-hexfield__label--left {
-       background-color: $c-white;
+       background-color: $c-background;
        padding-left: 4px;
      }
 
@@ -29,14 +29,14 @@
        top: 8px;
        left: 36px;
        color: $c-text-lighter;
-       font-size: 9px !important;
+       font-size: 10px !important;
        line-height: 1.6;
-       padding-top: 4px;
        height: 60px;
        width: 80px;
 
        &::placeholder {
-         color: #f0f0f0;
+        padding-top: 4px;
+         color: $c-border-primary;
          font-size: 16px;
          font-weight: 700;
          line-height: 0.6;

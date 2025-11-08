@@ -1543,7 +1543,7 @@
   margin-right: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield .sheet-hexfield__label--left {
-  background-color: #fff;
+  background-color: var(--c-background);
   padding-left: 4px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield textarea {
@@ -1551,14 +1551,14 @@
   top: 8px;
   left: 36px;
   color: var(--c-text-lighter);
-  font-size: 9px !important;
+  font-size: 10px !important;
   line-height: 1.6;
-  padding-top: 4px;
   height: 60px;
   width: 80px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor > .sheet-hexfield textarea::placeholder {
-  color: #f0f0f0;
+  padding-top: 4px;
+  color: var(--c-border-primary);
   font-size: 16px;
   font-weight: 700;
   line-height: 0.6;
