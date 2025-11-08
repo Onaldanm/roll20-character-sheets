@@ -43,11 +43,11 @@ $container-height: 24px;
 
     &:checked ~ .sheet-simple-trait__inputs {
       display: flex;
-      background-color: $c-white;
+      background-color: $c-background-primary;
     }
 
     &:checked ~ .sheet-background {
-      background-color: $c-white;
+      background-color: $c-background-primary;
     }
   }
 
