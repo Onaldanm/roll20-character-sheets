@@ -70,6 +70,7 @@ const renderSASS = async ({source,destination,options={}}) => {
   const dirname = path.dirname(process.argv[1]);
   const compileOptions = {
     charset:false,
+    silenceDeprecations: ['import'],
     importers: [
       {
         findFileUrl(url) {
