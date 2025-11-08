@@ -86,10 +86,10 @@
   }
 
   .sheet-attack-skill-toggle {
-    background-color: #fff;
+    background-color: $c-background;
     color: $c-text-light;
     line-height: 14px;
-    border: 1px solid #898989;
+    border: 1px solid $c-background-dark;
     border-width: 1px;
     border-radius: 0 2px 2px 0;
     padding: 0 4px;

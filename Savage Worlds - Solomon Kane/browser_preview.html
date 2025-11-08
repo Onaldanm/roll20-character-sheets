@@ -21,6 +21,8 @@
   --c-background-track: #ffffff;
   --c-background-primary: #ffffff;
   --c-border-primary: #dbdbdb;
+  --c-text-checked: var(--c-text-lighter);
+  --c-text-background: #ffffff;
 }
 
 .sheet-darkmode *,
@@ -42,6 +44,8 @@
   --c-background-track: #404040;
   --c-background-primary: #404040;
   --c-border-primary: #404040;
+  --c-text-checked: #702c91;
+  --c-text-background: #404040;
 }
 
 .charsheet {
@@ -421,7 +425,7 @@
   width: 16px;
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle:checked::after {
-  color: var(--c-text-light);
+  color: var(--c-text-checked);
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--block {
   display: none;
@@ -476,6 +480,9 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--loss::after {
   content: "Q";
+}
+.ui-dialog .tab-content .charsheet .sheet-toggle--weight {
+  margin-top: 1px;
 }
 .ui-dialog .tab-content .charsheet .sheet-toggle--weight::after {
   content: "V";
@@ -632,7 +639,7 @@
   width: auto;
 }
 .ui-dialog .tab-content .charsheet .sheet-label-toggle input[type=text].sheet-label-toggle__input {
-  background-color: #fff;
+  background-color: var(--c-background);
   color: var(--c-text-light);
   line-height: 14px;
   border: 1px solid var(--c-background-dark);
@@ -940,7 +947,7 @@
   z-index: 3;
   background-color: var(--c-item);
   padding: 4px 6px 0;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--c-border-primary);
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px;
   width: calc(100% + 2px);
@@ -975,7 +982,7 @@
   z-index: 3;
   background-color: var(--c-item);
   padding: 4px 6px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--c-border-primary);
   border-radius: 2px 2px 0 0;
   border-width: 1px 1px 0 1px;
   width: calc(100% + 2px);
@@ -2463,10 +2470,10 @@
   display: block;
 }
 .ui-dialog .tab-content .charsheet .sheet-weapons .sheet-attack-skill-toggle {
-  background-color: #fff;
+  background-color: var(--c-background);
   color: var(--c-text-light);
   line-height: 14px;
-  border: 1px solid #898989;
+  border: 1px solid var(--c-background-dark);
   border-width: 1px;
   border-radius: 0 2px 2px 0;
   padding: 0 4px;
@@ -2961,10 +2968,10 @@
   display: block;
 }
 .ui-dialog .tab-content .charsheet .sheet-powers .sheet-arcane-toggle {
-  background-color: #fff;
+  background-color: var(--c-background);
   color: var(--c-text-light);
   line-height: 14px;
-  border: 1px solid #898989;
+  border: 1px solid var(--c-background-dark);
   border-width: 1px;
   border-radius: 0 2px 2px 0;
   padding: 0 4px;
@@ -2972,7 +2979,7 @@
   margin-top: -3px;
   display: none;
   height: 14px;
-  width: 45px;
+  width: 65px;
   text-align: center;
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles__handling {
@@ -3108,7 +3115,7 @@
   left: 0;
   display: block;
   background-color: var(--c-background-hover);
-  color: #fff;
+  color: var(--c-text-background);
   font-family: Pictos;
   font-size: 14px;
   font-weight: 900;

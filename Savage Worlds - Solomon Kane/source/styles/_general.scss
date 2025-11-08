@@ -294,7 +294,7 @@ input[type=checkbox].sheet-checkbox {
   }
 
   &:checked::after {
-    color: $c-text-light;
+    color: $c-text-checked;
   }
 
   &--block {
@@ -374,6 +374,7 @@ input[type=checkbox].sheet-checkbox {
   }
 
   &--weight {
+    margin-top: 1px;
     &::after {
       content: 'V';
       color: $c-text-lightest;
@@ -569,7 +570,7 @@ input[type=checkbox].sheet-checkbox {
   width: auto;
 
   input[type=text].sheet-label-toggle__input {
-    background-color: $c-white;
+    background-color: $c-background;
     color: $c-text-light;
     line-height: 14px;
     border: 1px solid $c-background-dark;

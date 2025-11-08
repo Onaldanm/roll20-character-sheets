@@ -91,10 +91,10 @@ input.sheet-toggle--pp {
   }
 
   .sheet-arcane-toggle {
-    background-color: #fff;
+    background-color: $c-background;
     color: $c-text-light;
     line-height: 14px;
-    border: 1px solid #898989;
+    border: 1px solid $c-background-dark;
     border-width: 1px;
     border-radius: 0 2px 2px 0;
     padding: 0 4px;
@@ -102,7 +102,7 @@ input.sheet-toggle--pp {
     margin-top: -3px;
     display: none;
     height: 14px;
-    width: 45px;
+    width: 65px;
     text-align: center;
   }
 }
