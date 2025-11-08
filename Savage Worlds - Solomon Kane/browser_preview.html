@@ -278,7 +278,7 @@
   resize: none;
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox {
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   border: 1px solid var(--c-text-lighter);
   border-radius: 2px;
   height: 10px;
@@ -293,7 +293,7 @@
   width: 6px;
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox:checked::before {
-  background-color: var(--c-text-lighter);
+  background-color: var(--c-text-checked);
 }
 .ui-dialog .tab-content .charsheet .sheet-wrapper {
   text-align: center;
@@ -1179,7 +1179,7 @@
   color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-sans input[name=attr_sans_tabs]:checked::after {
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   color: var(--c-text-light);
   border-color: var(--c-outline);
 }
@@ -1779,7 +1779,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-advancements__item {
   display: flex;
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   border-bottom: 1px dotted var(--c-outline);
   height: 16px;
   width: 100%;
@@ -1924,7 +1924,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--textarea textarea {
   flex-basis: 100%;
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   font-size: 11px;
   line-height: 16px;
   padding: 4px;
@@ -2191,7 +2191,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   font-family: Pictos;
   border: 1px dotted var(--c-outline);
   border-radius: 50%;
@@ -6471,7 +6471,7 @@
                   <label class="sheet-settings__item"><span data-i18n="settings-function-roll-description-inputs">List Roll Description Inputs</span>
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_description_input_visibility" checked>
                   </label>
-                  <input class="sheet-checkbox" type="checkbox" name="attr_toggle_injection_input_visibility">
+                  <input class="sheet-checkbox" type="hidden" name="attr_toggle_injection_input_visibility">
                   <input class="sheet-checkbox" type="hidden" name="attr_toggle_pp">
                   <label class="sheet-settings__item"><span data-i18n="settings-function-running-ignores-wounds">Running Ignores Wounds</span>
                     <input class="sheet-checkbox" type="checkbox" name="attr_toggle_run_wounds">

@@ -274,7 +274,7 @@
   resize: none;
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox {
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   border: 1px solid var(--c-text-lighter);
   border-radius: 2px;
   height: 10px;
@@ -289,7 +289,7 @@
   width: 6px;
 }
 .ui-dialog .tab-content .charsheet input[type=checkbox].sheet-checkbox:checked::before {
-  background-color: var(--c-text-lighter);
+  background-color: var(--c-text-checked);
 }
 .ui-dialog .tab-content .charsheet .sheet-wrapper {
   text-align: center;
@@ -1175,7 +1175,7 @@
   color: var(--c-text-lighter);
 }
 .ui-dialog .tab-content .charsheet .sheet-sans input[name=attr_sans_tabs]:checked::after {
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   color: var(--c-text-light);
   border-color: var(--c-outline);
 }
@@ -1775,7 +1775,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-advancements__item {
   display: flex;
-  background-color: #fff;
+  background-color: var(--c-background);
   border-bottom: 1px dotted var(--c-outline);
   height: 16px;
   width: 100%;
@@ -1920,7 +1920,7 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-settings__item--textarea textarea {
   flex-basis: 100%;
-  background-color: #fff;
+  background-color: var(--c-background-primary);
   font-size: 11px;
   line-height: 16px;
   padding: 4px;
