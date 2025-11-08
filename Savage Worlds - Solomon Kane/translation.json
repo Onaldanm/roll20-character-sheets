@@ -96,6 +96,7 @@
   "custom-u": "CUSTOM",
   "damage": "Dégâts",
   "damage-modifier": "Modification aux Dégâts",
+  "damage-prouesse-modifier": "Prouesse sur jet d'attaque",
   "defaults-block-show-abilities": "[Block] Show Abilities",
   "defaults-block-show-abilities-description": "List special abilities or monstrous powers.",
   "defaults-block-show-allies": "[Block] Show Allies",
@@ -459,6 +460,7 @@
   "rolltemplate-commander": "Stratège",
   "rolltemplate-damage": "Dégâts",
   "rolltemplate-damage-modifier": "Modification aux Dégâts",
+  "rolltemplate-damage-prouesse-modifier": "Bonus aux Dégâts",
   "rolltemplate-damage-title": "Jet de Dégâts",
   "rolltemplate-dice-rof": "Dé/CdT",
   "rolltemplate-fatigue": "Fatigue",
@@ -697,5 +699,7 @@
   "strategy": "Stratégie",
   "subterfuge": "Subterfuge",
   "survie": "Survie",
-  "shooting": "Tir"
+  "shooting": "Tir",
+  "yes": "Oui",
+  "no": "Non"
 }

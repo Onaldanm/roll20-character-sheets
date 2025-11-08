@@ -59,6 +59,7 @@ on("sheet:opened", (e) => {
     'query_roll_result': getTranslationByKey('roll-result'),
     'query_target_number': getTranslationByKey('target-number'),
     'query_damage_modifier': getTranslationByKey('damage-modifier'),
+    'query_prouesse': getTranslationByKey('damage-prouesse-modifier'),
     'query_bonus_wild_die': getTranslationByKey('bonus-wild-die'),
     'none': getTranslationByKey('none'),
   });

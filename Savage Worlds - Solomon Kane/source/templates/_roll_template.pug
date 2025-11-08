@@ -170,6 +170,11 @@ rolltemplate.sheet-rolltemplate-DamageRoll
         .sheet-left(data-i18n='rolltemplate-damage-modifier') Damage Modifier
         .sheet-right {{modifier}}
       = '{{/modifier}}'
+      = '{{#prouesse}}'
+      .sheet-rolltemplate__content-row
+        .sheet-left(data-i18n='rolltemplate-damage-prouesse-modifier') Damage Prouesse Modifier
+        .sheet-right {{prouesse}}
+      = '{{/prouesse}}'
       = '{{#ap}}'
       .sheet-rolltemplate__content-row
         .sheet-left(data-i18n='rolltemplate-armor-piercing') Armor Piercing
