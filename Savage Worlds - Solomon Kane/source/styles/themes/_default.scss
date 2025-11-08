@@ -1,4 +1,9 @@
-* {
+*,
+.sheet-rolltemplate-TraitRoll,
+.sheet-rolltemplate-DiceRoller,
+.sheet-rolltemplate-RunRoll,
+.sheet-rolltemplate-InfoBox,
+.sheet-rolltemplate-DamageRoll {
     --c-text: #404040;
     --c-text-light: #606060;
     --c-text-lighter: #808080;

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
-* {
+*,
+.sheet-rolltemplate-TraitRoll,
+.sheet-rolltemplate-DiceRoller,
+.sheet-rolltemplate-RunRoll,
+.sheet-rolltemplate-InfoBox,
+.sheet-rolltemplate-DamageRoll {
   --c-text: #404040;
   --c-text-light: #606060;
   --c-text-lighter: #808080;
@@ -20,21 +25,46 @@
   --c-text-checked: var(--c-text-lighter);
   --c-text-background: #ffffff;
 }
-* .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
+* .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-TraitRoll .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-DiceRoller .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-RunRoll .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-InfoBox .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image,
+.sheet-rolltemplate-DamageRoll .charsheet .sheet-silhouette__switch:checked + .sheet-silhouette__image {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/male_solomon_silouette.png) !important;
 }
-* .charsheet .sheet-silhouette__image {
+* .charsheet .sheet-silhouette__image,
+.sheet-rolltemplate-TraitRoll .charsheet .sheet-silhouette__image,
+.sheet-rolltemplate-DiceRoller .charsheet .sheet-silhouette__image,
+.sheet-rolltemplate-RunRoll .charsheet .sheet-silhouette__image,
+.sheet-rolltemplate-InfoBox .charsheet .sheet-silhouette__image,
+.sheet-rolltemplate-DamageRoll .charsheet .sheet-silhouette__image {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/female_solomon_silhouette.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
-* .charsheet .sheet-hex--36 {
+* .charsheet .sheet-hex--36,
+.sheet-rolltemplate-TraitRoll .charsheet .sheet-hex--36,
+.sheet-rolltemplate-DiceRoller .charsheet .sheet-hex--36,
+.sheet-rolltemplate-RunRoll .charsheet .sheet-hex--36,
+.sheet-rolltemplate-InfoBox .charsheet .sheet-hex--36,
+.sheet-rolltemplate-DamageRoll .charsheet .sheet-hex--36 {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_36.svg) !important;
 }
-* .charsheet .sheet-hex--48 {
+* .charsheet .sheet-hex--48,
+.sheet-rolltemplate-TraitRoll .charsheet .sheet-hex--48,
+.sheet-rolltemplate-DiceRoller .charsheet .sheet-hex--48,
+.sheet-rolltemplate-RunRoll .charsheet .sheet-hex--48,
+.sheet-rolltemplate-InfoBox .charsheet .sheet-hex--48,
+.sheet-rolltemplate-DamageRoll .charsheet .sheet-hex--48 {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_48.svg) !important;
 }
-* .charsheet .sheet-hex--64 {
+* .charsheet .sheet-hex--64,
+.sheet-rolltemplate-TraitRoll .charsheet .sheet-hex--64,
+.sheet-rolltemplate-DiceRoller .charsheet .sheet-hex--64,
+.sheet-rolltemplate-RunRoll .charsheet .sheet-hex--64,
+.sheet-rolltemplate-InfoBox .charsheet .sheet-hex--64,
+.sheet-rolltemplate-DamageRoll .charsheet .sheet-hex--64 {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64.svg) !important;
 }
 
