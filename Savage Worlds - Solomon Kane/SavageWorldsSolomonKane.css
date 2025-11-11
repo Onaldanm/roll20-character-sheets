@@ -1626,7 +1626,7 @@
   opacity: 0.12;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor__decoration {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/decoration_line.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/decoration_line.png");
   top: 15px;
   left: -60px;
   height: 322px;
@@ -1638,28 +1638,28 @@
 .ui-dialog .tab-content .charsheet .sheet-armor__pointer--head {
   top: 17px;
   left: -28px;
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/head_line.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/head_line.png");
   height: 2px;
   width: 122px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor__pointer--torso {
   top: -11px;
   left: -33px;
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/torso_line.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/torso_line.png");
   height: 30px;
   width: 131px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor__pointer--arms {
   top: -44px;
   left: -30px;
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/arms_line.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/arms_line.png");
   height: 63px;
   width: 97px;
 }
 .ui-dialog .tab-content .charsheet .sheet-armor__pointer--legs {
   top: -23px;
   left: -27px;
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/legs_line.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/legs_line.png");
   height: 42px;
   width: 98px;
 }
@@ -1783,7 +1783,7 @@
   border-radius: 2px 0 0 2px;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills input[type=radio].sheet-radio-track.sheet-d4-2:checked {
-  background: var(--c-background-primary) url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png") repeat;
+  background: var(--c-background-primary) url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
 }
 .ui-dialog .tab-content .charsheet .sheet-skills input[type=radio].sheet-radio-track.sheet-d4-2:checked::after {
   background-color: transparent;
@@ -2126,7 +2126,7 @@
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png") repeat;
+  background: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
 }
 .ui-dialog .tab-content .charsheet .sheet-features span {
   display: block;
@@ -2344,7 +2344,7 @@
   flex-direction: row-reverse;
 }
 .ui-dialog .tab-content .charsheet .sheet-health__track .sheet-radio-track-toggle:checked + input {
-  background: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/unskilled_bg.png") repeat;
+  background: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
 }
 .ui-dialog .tab-content .charsheet .sheet-health__track .sheet-radio-track-toggle:checked + input::before, .ui-dialog .tab-content .charsheet .sheet-health__track .sheet-radio-track-toggle:checked + input::after {
   display: none;
@@ -2401,7 +2401,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/skull.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/skull.png");
   background-repeat: no-repeat;
   background-size: 32px;
   background-position: center;
@@ -3045,61 +3045,61 @@
   width: 55px;
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="0"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_01.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/car_01.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="1"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_02.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/car_02.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="2"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_03.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/car_03.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="3"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/car_04.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/car_04.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="4"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/sports-bike.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/sports-bike.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="5"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/quad-bike.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/quad-bike.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="6"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/tank.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/tank.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="7"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/aircraft_01.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/aircraft_01.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="8"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/aircraft_02.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/aircraft_02.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="9"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/aircraft_03.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/aircraft_03.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="10"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/watercraft_01.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/watercraft_01.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="11"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/watercraft_02.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/watercraft_02.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="12"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/watercraft_03.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/watercraft_03.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="13"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/spacecraft_01.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/spacecraft_01.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="14"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/spacecraft_02.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/spacecraft_02.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="15"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/spacecraft_03.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/spacecraft_03.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-vehicles .sheet-repitem__frame-silhouette-control[value="16"] ~ .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/spacecraft_04.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/spacecraft_04.png");
 }
 .ui-dialog .tab-content .charsheet .sheet-powerarmors__size, .ui-dialog .tab-content .charsheet .sheet-powerarmors__armor, .ui-dialog .tab-content .charsheet .sheet-powerarmors__pace, .ui-dialog .tab-content .charsheet .sheet-powerarmors__mods, .ui-dialog .tab-content .charsheet .sheet-powerarmors__weight, .ui-dialog .tab-content .charsheet .sheet-powerarmors__weapons {
   width: 45px;
 }
 .ui-dialog .tab-content .charsheet .sheet-powerarmors .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/powerarmor_01.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/powerarmor_01.png");
   background-size: contain;
   margin-top: 4px;
   height: 56px;
@@ -3114,7 +3114,7 @@
   width: 45px;
 }
 .ui-dialog .tab-content .charsheet .sheet-walkers .sheet-repitem__frame-silhouette {
-  background-image: url("https://raw.githubusercontent.com/Tetrakern/roll20-character-sheets/master/Savage%20Worlds%20-%20Graph%20Paper/img/walker.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/walker.png");
   background-size: contain;
   margin-top: 4px;
   height: 56px;
