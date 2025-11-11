@@ -185,6 +185,8 @@ include _buttons.pug
       .sheet-label
         span(data-i18n='extra-fatigue') FTG
 
+    +simple_trait('soak', 'Soak', 'd4', 'sheet-simple-trait--attribute')
+
 input(type='checkbox',
       name='attr_toggle_quick_notes_block',
       checked=true,
