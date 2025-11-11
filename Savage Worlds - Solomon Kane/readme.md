@@ -1,6 +1,6 @@
 # The Savage World of Solomon Kane 2025
 
-Cette feuille de jeu de rôle à pour base la fantastique feuill de **Tetrakern** pour **[Savage Worlds - Graph Paper](https://github.com/Roll20/roll20-character-sheets/tree/master/Savage%20Worlds%20-%20Graph%20Paper)** de 2020. Elle a été ajusté pour le jeu de role **[The Savage World of Solomon Kane](https://monolithedition.com/produit/the-savage-world-of-solomon-kane-jeu-de-role-livre-de-base-fr/?utm_source=roll20)** paru en 2025.
+Cette feuille de jeu de rôle à pour base la fantastique feuille de **Tetrakern** pour **[Savage Worlds - Graph Paper](https://github.com/Roll20/roll20-character-sheets/tree/master/Savage%20Worlds%20-%20Graph%20Paper)** de 2020. Elle a été ajusté pour le jeu de role **[The Savage World of Solomon Kane](https://monolithedition.com/produit/the-savage-world-of-solomon-kane-jeu-de-role-livre-de-base-fr/?utm_source=roll20)** paru en 2025.
 
 ## Changements
 
