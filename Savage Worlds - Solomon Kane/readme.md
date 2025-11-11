@@ -21,7 +21,10 @@ Cette feuille de jeu de rôle à pour base la fantastique feuille de **Tetrakern
 
 ### Prévisualisation
 
-![Feuille](./img/FeuilleSolomonKane.jpg)
+| | |
+|---:|:---|
+| [![Feuille claire](./img/FeuilleSolomonKane.jpg)](./img/FeuilleSolomonKane.jpg) | [![Feuille sombre](./img/FeuilleSolomonKaneDark.jpg)](./img/FeuilleSolomonKaneDark.jpg) |
+| *Feuille claire (gauche)* | *Feuille thème sombre (droite)* |
 
 ## Fonctionnalités
 * **Blocs** : Alliés, Pouvoirs, Véhicules, etc.
