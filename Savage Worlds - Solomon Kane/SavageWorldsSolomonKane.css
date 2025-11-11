@@ -3229,9 +3229,6 @@
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track:not(:first-of-type) {
   margin-right: 4px !important;
 }
-.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty {
-  border-radius: 2px 0 0 2px;
-}
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked {
   background: var(--c-background-primary) url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
 }
