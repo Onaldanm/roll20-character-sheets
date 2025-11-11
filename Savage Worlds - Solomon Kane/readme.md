@@ -11,6 +11,7 @@ Cette feuille de jeu de rôle à pour base la fantastique feuille de **Tetrakern
 * **Ajustement des compétences** : Ensemble des compétences dédiées à Solomon Kane.
 * **Choix des compétences pour les armes et pouvoirs** : Les armes n'utilisent pas systématiquement la compétence *Tir*. Un nouveau bouton permet de choisir entre *Tir*, *Combat* et *Athlétisme*. Mêmes options pour les pouvoirs : *Magie*, *Foi* et *Alchimie*.
 * **Statuts et états** : Ajout d'infobulles et utilisation des [icônes Material](https://fonts.google.com/icons). Suivi simplifié des états *Vulnérable*, *Distrait*, etc.
+* **Munitions alliés**: Gestion simple du niveau de munitions des alliés.
 * **Mode développeur**: Ajout des fichiers pour construire automatiquement la feuille à partir des fichiers .pug et .scss.
 
 ### Ajustements mineurs

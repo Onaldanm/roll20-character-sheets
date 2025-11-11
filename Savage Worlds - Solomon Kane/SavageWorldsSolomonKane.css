@@ -3215,6 +3215,32 @@
   line-height: 20px;
   text-align: center;
 }
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 6px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track {
+  font-weight: 700;
+  border-radius: 2px;
+  height: 20px;
+  width: 8px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track:not(:first-of-type) {
+  margin-right: 4px !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty {
+  border-radius: 2px 0 0 2px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked {
+  background: var(--c-background-primary) url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked::after {
+  background-color: transparent;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked ~ button > span {
+  color: var(--c-text-lightest);
+}
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-right {
   display: flex;
   justify-content: space-between;
@@ -3229,6 +3255,15 @@
   border-bottom: 1px dotted var(--c-outline);
   height: 20px;
   width: 76px !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-right2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  font-size: 11px;
+  padding: 5px 0 6px 10px;
 }
 .ui-dialog .tab-content .charsheet .sheet-quick-notes {
   position: relative;

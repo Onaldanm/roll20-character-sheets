@@ -3219,6 +3219,32 @@
   line-height: 20px;
   text-align: center;
 }
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 6px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track {
+  font-weight: 700;
+  border-radius: 2px;
+  height: 20px;
+  width: 8px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track:not(:first-of-type) {
+  margin-right: 4px !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty {
+  border-radius: 2px 0 0 2px;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked {
+  background: var(--c-background-primary) url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png") repeat;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked::after {
+  background-color: transparent;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty:checked ~ button > span {
+  color: var(--c-text-lightest);
+}
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-right {
   display: flex;
   justify-content: space-between;
@@ -3233,6 +3259,15 @@
   border-bottom: 1px dotted var(--c-outline);
   height: 20px;
   width: 76px !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-right2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  font-size: 11px;
+  padding: 5px 0 6px 10px;
 }
 .ui-dialog .tab-content .charsheet .sheet-quick-notes {
   position: relative;
@@ -7969,6 +8004,12 @@
                         <div class="sheet-allies__health-field sheet-allies__health-field--fatigue">
                           <input type="text" name="attr_ally_note_fatigue" spellcheck="false">
                         </div>
+                        <div class="sheet-allies__ammunitions">
+                          <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-full" type="radio" name="attr_roll_ammunition" value="full">
+                          <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-high" type="radio" name="attr_roll_ammunition" value="high">
+                          <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-low" type="radio" name="attr_roll_ammunition" value="low">
+                          <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-empty" type="radio" name="attr_roll_ammunition" value="empty" checked>
+                        </div>
                       </div>
                       <div class="sheet-right">
                         <input class="sheet-allies__note-field sheet-allies__note-field--1" type="text" name="attr_ally_note_field_1" placeholder="Note #1" data-i18n-placeholder="allies-note-field-1-placeholder" spellcheck="false">
@@ -7991,6 +8032,11 @@
                         <input class="sheet-allies__note-field sheet-allies__note-field--18" type="text" name="attr_ally_note_field_18" placeholder="Note #18" data-i18n-placeholder="allies-note-field-18-placeholder" spellcheck="false">
                         <input class="sheet-allies__note-field sheet-allies__note-field--19" type="text" name="attr_ally_note_field_19" placeholder="Note #19" data-i18n-placeholder="allies-note-field-19-placeholder" spellcheck="false">
                         <input class="sheet-allies__note-field sheet-allies__note-field--20" type="text" name="attr_ally_note_field_20" placeholder="Note #20" data-i18n-placeholder="allies-note-field-20-placeholder" spellcheck="false">
+                        <input class="sheet-allies__note-field sheet-allies__note-field--21" type="text" name="attr_ally_note_field_21" placeholder="Note #21" data-i18n-placeholder="allies-note-field-21-placeholder" spellcheck="false">
+                        <input class="sheet-allies__note-field sheet-allies__note-field--22" type="text" name="attr_ally_note_field_22" placeholder="Note #22" data-i18n-placeholder="allies-note-field-22-placeholder" spellcheck="false">
+                        <input class="sheet-allies__note-field sheet-allies__note-field--23" type="text" name="attr_ally_note_field_23" placeholder="Note #23" data-i18n-placeholder="allies-note-field-23-placeholder" spellcheck="false">
+                        <input class="sheet-allies__note-field sheet-allies__note-field--24" type="text" name="attr_ally_note_field_24" placeholder="Note #24" data-i18n-placeholder="allies-note-field-24-placeholder" spellcheck="false">
+                        <input class="sheet-allies__note-field sheet-allies__note-field--25" type="text" name="attr_ally_note_field_25" placeholder="Note #25" data-i18n-placeholder="allies-note-field-25-placeholder" spellcheck="false">
                       </div>
                     </div>
                   </div>
@@ -10141,6 +10187,12 @@
                     <div class="sheet-allies__health-field sheet-allies__health-field--fatigue">
                       <input type="text" name="attr_ally_note_fatigue" spellcheck="false">
                     </div>
+                    <div class="sheet-allies__ammunitions">
+                      <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-full" type="radio" name="attr_roll_ammunition" value="full">
+                      <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-high" type="radio" name="attr_roll_ammunition" value="high">
+                      <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-low" type="radio" name="attr_roll_ammunition" value="low">
+                      <input class="sheet-radio-track sheet-allies__ammo-field ammo-allies-empty" type="radio" name="attr_roll_ammunition" value="empty" checked>
+                    </div>
                   </div>
                   <div class="sheet-right">
                     <input class="sheet-allies__note-field sheet-allies__note-field--1" type="text" name="attr_ally_note_field_1" placeholder="Note #1" data-i18n-placeholder="allies-note-field-1-placeholder" spellcheck="false">
@@ -10163,6 +10215,11 @@
                     <input class="sheet-allies__note-field sheet-allies__note-field--18" type="text" name="attr_ally_note_field_18" placeholder="Note #18" data-i18n-placeholder="allies-note-field-18-placeholder" spellcheck="false">
                     <input class="sheet-allies__note-field sheet-allies__note-field--19" type="text" name="attr_ally_note_field_19" placeholder="Note #19" data-i18n-placeholder="allies-note-field-19-placeholder" spellcheck="false">
                     <input class="sheet-allies__note-field sheet-allies__note-field--20" type="text" name="attr_ally_note_field_20" placeholder="Note #20" data-i18n-placeholder="allies-note-field-20-placeholder" spellcheck="false">
+                    <input class="sheet-allies__note-field sheet-allies__note-field--21" type="text" name="attr_ally_note_field_21" placeholder="Note #21" data-i18n-placeholder="allies-note-field-21-placeholder" spellcheck="false">
+                    <input class="sheet-allies__note-field sheet-allies__note-field--22" type="text" name="attr_ally_note_field_22" placeholder="Note #22" data-i18n-placeholder="allies-note-field-22-placeholder" spellcheck="false">
+                    <input class="sheet-allies__note-field sheet-allies__note-field--23" type="text" name="attr_ally_note_field_23" placeholder="Note #23" data-i18n-placeholder="allies-note-field-23-placeholder" spellcheck="false">
+                    <input class="sheet-allies__note-field sheet-allies__note-field--24" type="text" name="attr_ally_note_field_24" placeholder="Note #24" data-i18n-placeholder="allies-note-field-24-placeholder" spellcheck="false">
+                    <input class="sheet-allies__note-field sheet-allies__note-field--25" type="text" name="attr_ally_note_field_25" placeholder="Note #25" data-i18n-placeholder="allies-note-field-25-placeholder" spellcheck="false">
                   </div>
                 </div>
               </div>

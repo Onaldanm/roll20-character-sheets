@@ -90,6 +90,39 @@
           text-align: center;
         }
       }
+
+      .sheet-allies__ammunitions {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 6px;
+
+        input[type=radio].sheet-radio-track {
+          font-weight: 700;
+          border-radius: 2px;
+          height: 20px;
+          width: 8px;
+
+          &:not(:first-of-type) {
+            margin-right: 4px !important;
+          }
+
+          &.ammo-allies-empty {
+            border-radius: 2px 0 0 2px;
+
+            &:checked {
+              background: $c-background-primary url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png') repeat;
+
+              &::after {
+                background-color: transparent;
+              }
+
+              ~ button > span {
+                color: $c-text-lightest; // Untrained skill
+              }
+            }
+          }
+        }
+      }
     }
 
     .sheet-right {
@@ -107,6 +140,18 @@
         height: 20px;
         width: 76px !important;
       }
+    }
+
+    .sheet-right2 {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      font-size: $fs-s;
+      padding: 5px 0 6px 10px;
+
+      
     }
   }
 }

@@ -103,10 +103,21 @@ input(type='checkbox',
                   name='attr_ally_note_fatigue',
                   spellcheck='false')
 
+          .sheet-allies__ammunitions
+            - var ammunition_stock = [ 'full', 'high', 'low', 'empty']
+            - var a = 0
+            while a < 4
+              input(type='radio',
+                  name=`attr_roll_ammunition`,
+                  value=ammunition_stock[a],
+                  class=`sheet-radio-track sheet-allies__ammo-field ammo-allies-${ammunition_stock[a]}`,
+                  checked= ammunition_stock[a] == 'empty')
+              - ++a
+
         .sheet-right
           - var i = 0
 
-          while i < 20
+          while i < 25
             - ++i
             input(type='text',
                   name=`attr_ally_note_field_${i}`,
