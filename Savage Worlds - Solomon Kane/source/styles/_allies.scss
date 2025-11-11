@@ -98,15 +98,23 @@
 
         input[type=radio].sheet-radio-track {
           font-weight: 700;
-          border-radius: 2px;
+          border-radius: 0;
           height: 20px;
-          width: 8px;
+          width: 10.6px;
 
-          &:not(:first-of-type) {
-            margin-right: 4px !important;
+          &:last-of-type {
+            margin-left: 1px !important;
           }
 
+          &.ammo-allies-full {
+            border-radius: 0 2px 2px 0;
+
+            &:checked::after {
+              border-left: none;
+            }
+          }
           &.ammo-allies-empty {
+            border-radius: 2px 0 0 2px;
 
             &:checked {
               background: $c-background-primary url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/unskilled_bg.png') repeat;

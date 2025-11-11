@@ -3226,12 +3226,15 @@
 }
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track {
   font-weight: 700;
-  border-radius: 2px;
+  border-radius: 0;
   height: 20px;
-  width: 8px;
+  width: 10.6px;
 }
-.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track:not(:first-of-type) {
-  margin-right: 4px !important;
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track:last-of-type {
+  margin-left: 1px !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-full {
+  border-radius: 0 2px 2px 0;
 }
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty {
   border-radius: 2px 0 0 2px;
