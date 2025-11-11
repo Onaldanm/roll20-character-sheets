@@ -352,58 +352,16 @@
 
   .sheet-settings__page.sheet-settings__page--help
     .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-ammunition') Ammunition
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-ammunition-description') You can keep track of up to three named "magazines" in the Ammunition block. The buttons allow you to quickly add to or subtract from the values. You can save a value with [S] and restore it with [R].
-
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-armor-and-notes') Armor & Notes
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-armor-and-notes-description') Enter your Armor ratings for the corresponding limbs. They are not self-calculating since there are too many factors; this is more convenient. You can add notes for Resistances, circumstance modifiers, or relevant augmentations such as subdermal armor to keep things in one place.
-
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-attribute-reference') Attribute Reference
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-attribute-reference-description') The attributes of this sheet follow a simple naming pattern and can be easily derived from their labels. Just remove any dots or special characters, expand abbreviations, convert to lowercase, and replace whitespaces with underscores (_). Adjacent attributes are appended with hyphens as well. So "Agility" becomes @{agility}, @{agility_mod}, @{agility_wd}, @{agility_extra_wd} (for extras only), and @{agility_natural}. "Tough." becomes @{toughness} and Armor is referenced with @{armor_head|_torso|_arms|_legs}. English only!
-
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-weapon-damage-rolls') Damage Rolls
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-weapon-damage-rolls-description') You can enable damage rolls for list items by clicking the damage label. This will disable editing. Note that the dice codes must be valid, but you can use "Str" or "Agi" (etc.) as shorthands to reference attributes. The parser is not smart, however, so please also refer to the Roll20 Dice Reference.
-
-    .sheet-settings__item.sheet-settings__item--help
       span(data-i18n='settings-help-edges-and-hindrances') Edges & Hindrances
       input(type='checkbox',
             class='sheet-toggle sheet-toggle--spoiler')
       .sheet-bottom(data-i18n='settings-help-edges-and-hindrances-description') Manage your Edges and Hindrances here. They follow a horizontal masonry layout to save space and remain visible for convenience. The width is automatically adjusted once you press enter and you can cycle through colored labels to indicate Rank, type, and more. Sorting is wonky though.
       
     .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-extra-sheet') Extra Sheet
+      span(data-i18n='settings-help-armor-and-notes') Armor & Notes
       input(type='checkbox',
             class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-extra-sheet-description') For non-player characters, you can change the layout to a more compact alternative with the switch right above the sheet. This version lacks many features but is primed for Extras without Wild Die. Of course, you can add Wild Dice if needed. Edit Traits by clicking on their die, opening a small menu, and roll with the label. Hovering reveals buttons for direct die rolls. Add skills by clicking the framed pencil icon in the header. Lists work as usual.
-
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-helper-buttons') Helper Buttons
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-helper-buttons-description') The buttons above the skill section provide selected actions and convenience functions. The dice roller input is parsed, so you can write codes like "Sma+2d6". You may also use references such as @{athletics} or macros, but beware that the parser is not smart. Hidden rolls are sent only to the GM. The toggles can enable/disable additional roll queries for the whole sheet.
-
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-hexagon-fields') Hexagon Fields
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-hexagon-fields-description') Your attributes and secondary statistics. They either accept dice codes (d4 to d12) or integers. Positive modifiers are automatically prefixed. Hovering reveals additional fields that are otherwise invisible until relevant. You can leave them empty to use defaults, such as a d6 as Wild Die. The Wild Die can be disabled with "n/a". The labels act as roll buttons.
-      
-    .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-list-item-options') List Item Options
-      input(type='checkbox',
-            class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-list-item-options-description')!= 'Interactive list items, such as weapons and powers, come with options. When the item is folded out, you can access them via the gear icon. Typical options include toggles for buttons and fields, but some also allow to override the Wild Die and more. Mind that the inputs are <i>not</i> validated; do not enter nonsense!'
+      .sheet-bottom(data-i18n='settings-help-armor-and-notes-description') Enter your Armor ratings for the corresponding limbs. They are not self-calculating since there are too many factors; this is more convenient. You can add notes for Resistances, circumstance modifiers, or relevant augmentations such as subdermal armor to keep things in one place.
 
     .sheet-settings__item.sheet-settings__item--help
       span(data-i18n='settings-help-raise-damage') Raise Damage
@@ -412,16 +370,46 @@
       .sheet-bottom(data-i18n='settings-help-raise-damage-description') There is no general function or field to apply raise damage since this modifier is too flexible. But nothing can stop you from entering "d6!" when prompted for a damage modifier. You could also add "2d4!+2" or whatever may apply in your case. Do not forget to add the exclamation mark after the die or the roll will not explode.
 
     .sheet-settings__item.sheet-settings__item--help
+      span(data-i18n='settings-help-helper-buttons') Helper Buttons
+      input(type='checkbox',
+            class='sheet-toggle sheet-toggle--spoiler')
+      .sheet-bottom(data-i18n='settings-help-helper-buttons-description') The buttons above the skill section provide selected actions and convenience functions. The dice roller input is parsed, so you can write codes like "Sma+2d6". You may also use references such as @{athletics} or macros, but beware that the parser is not smart. Hidden rolls are sent only to the GM. The toggles can enable/disable additional roll queries for the whole sheet.
+
+    .sheet-settings__item.sheet-settings__item--help
       span(data-i18n='settings-help-rate-of-fire') Rate of Fire (Multiple Dice)
       input(type='checkbox',
             class='sheet-toggle sheet-toggle--spoiler')
       .sheet-bottom(data-i18n='settings-help-rate-of-fire-description') To roll multiple skill dice, you have two options. If you lock the skills, you can click directly on the desired die bubble, always prompting you to enter the Rate of Fire. Alternatively, you can toggle the [Query RoF] helper button, enabling the feature for the whole sheet.
 
     .sheet-settings__item.sheet-settings__item--help
-      span(data-i18n='settings-help-roll-injections') Roll Injections
+      span(data-i18n='settings-help-extra-sheet') Extra Sheet
       input(type='checkbox',
             class='sheet-toggle sheet-toggle--spoiler')
-      .sheet-bottom(data-i18n='settings-help-roll-injections-description')!= '<div><p>When you enable the option under Setup, you can append and toggle custom code to list item rolls. Mind that the inputs are <i>not</i> validated; do not enter nonsense! Following is a collection of useful template hooks.</p><ul><li><b>{{header}}</b>Header content like \"X rolls Y\"</li><li><b>{{description}}</b>Italic text shown below the header</li><li><b>{{reroll}}</b>Link of the reroll button</li><li><b>{{damageroll}}</b>Link of the damage button</li><li><b>{{source_label}}</b>Label for the source, e.g. \"Weapon\"</li><li><b>{{source}}</b>Content of the source, e.g. \"Pistol\"</li><li><b>{{trait}}</b>Name of the Trait rolled</li><li><b>{{traitdie}}</b>Die of the Trait rolled</li><li><b>{{flat}}</b>Modifier of the Trait rolled</li><li><b>{{wd}}</b>Wild Die of the Trait rolled</li><li><b>{{commander}}</b>Commander of an ally</li><li><b>{{modifier}}</b>Queried modifier for the roll</li><li><b>{{rof}}</b>Rate of Fire as inline roll, e.g. [[ 1 ]]</li><li><b>{{wounds}}</b>Wound penalty applied to the roll</li><li><b>{{fatigue}}</b>Fatigue penalty applied to the roll</li><li><b>{{custom#_label}}</b>[1-3] Label for freeform content</li><li><b>{{custom#}}</b>[1-3] Freeform content</li><li><b>{{wdroll}}</b>Inline roll of the Wild Die (> -1001)</li><li><b>{{traitroll#}}</b>[1-8] Inline roll(s) of the Trait(s)</li></ul></div>'
+      .sheet-bottom(data-i18n='settings-help-extra-sheet-description') For non-player characters, you can change the layout to a more compact alternative with the switch right above the sheet. This version lacks many features but is primed for Extras without Wild Die. Of course, you can add Wild Dice if needed. Edit Traits by clicking on their die, opening a small menu, and roll with the label. Hovering reveals buttons for direct die rolls. Add skills by clicking the framed pencil icon in the header. Lists work as usual.
+
+    .sheet-settings__item.sheet-settings__item--help
+      span(data-i18n='settings-help-hexagon-fields') Hexagon Fields
+      input(type='checkbox',
+            class='sheet-toggle sheet-toggle--spoiler')
+      .sheet-bottom(data-i18n='settings-help-hexagon-fields-description') Your attributes and secondary statistics. They either accept dice codes (d4 to d12) or integers. Positive modifiers are automatically prefixed. Hovering reveals additional fields that are otherwise invisible until relevant. You can leave them empty to use defaults, such as a d6 as Wild Die. The Wild Die can be disabled with "n/a". The labels act as roll buttons.
+      
+    .sheet-settings__item.sheet-settings__item--help
+      span(data-i18n='settings-help-weapon-damage-rolls') Damage Rolls
+      input(type='checkbox',
+            class='sheet-toggle sheet-toggle--spoiler')
+      .sheet-bottom(data-i18n='settings-help-weapon-damage-rolls-description') You can enable damage rolls for list items by clicking the damage label. This will disable editing. Note that the dice codes must be valid, but you can use "Str" or "Agi" (etc.) as shorthands to reference attributes. The parser is not smart, however, so please also refer to the Roll20 Dice Reference.
+
+    .sheet-settings__item.sheet-settings__item--help
+      span(data-i18n='settings-help-ammunition') Ammunition
+      input(type='checkbox',
+            class='sheet-toggle sheet-toggle--spoiler')
+      .sheet-bottom(data-i18n='settings-help-ammunition-description') You can keep track of up to three named "magazines" in the Ammunition block. The buttons allow you to quickly add to or subtract from the values. You can save a value with [S] and restore it with [R].
+
+    .sheet-settings__item.sheet-settings__item--help
+      span(data-i18n='settings-help-list-item-options') List Item Options
+      input(type='checkbox',
+            class='sheet-toggle sheet-toggle--spoiler')
+      .sheet-bottom(data-i18n='settings-help-list-item-options-description')!= 'Interactive list items, such as weapons and powers, come with options. When the item is folded out, you can access them via the gear icon. Typical options include toggles for buttons and fields, but some also allow to override the Wild Die and more. Mind that the inputs are <i>not</i> validated; do not enter nonsense!'
 
     .sheet-settings__item.sheet-settings__item--help
       span(data-i18n='settings-help-silhouette') Silhouette
