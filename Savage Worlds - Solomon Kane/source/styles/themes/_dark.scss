@@ -42,4 +42,22 @@
     .charsheet .sheet-hex--64 {
         background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64_dark.png) !important;
     }
+
+    .charsheet .sheet-armor__pointer {
+        &--head {
+            background-image: url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/head_line_dark.png') !important;
+        }
+        &--torso {
+            background-image: url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/torso_line_dark.png') !important;
+        }
+        &--arms {
+            background-image: url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/arms_line_dark.png') !important;
+        }
+        &--legs {
+            background-image: url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/legs_line_dark.png') !important;
+        }
+    }
+    .charsheet .sheet-armor__decoration {
+        background-image: url('https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/decoration_line_dark.png') !important;
+    }
 }

@@ -115,6 +115,26 @@
 .sheet-rolltemplate-darkmode .charsheet .sheet-hex--64 {
   background-image: url(https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/hexagon_64_dark.png) !important;
 }
+.sheet-darkmode * .charsheet .sheet-armor__pointer--head,
+.sheet-rolltemplate-darkmode .charsheet .sheet-armor__pointer--head {
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/head_line_dark.png") !important;
+}
+.sheet-darkmode * .charsheet .sheet-armor__pointer--torso,
+.sheet-rolltemplate-darkmode .charsheet .sheet-armor__pointer--torso {
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/torso_line_dark.png") !important;
+}
+.sheet-darkmode * .charsheet .sheet-armor__pointer--arms,
+.sheet-rolltemplate-darkmode .charsheet .sheet-armor__pointer--arms {
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/arms_line_dark.png") !important;
+}
+.sheet-darkmode * .charsheet .sheet-armor__pointer--legs,
+.sheet-rolltemplate-darkmode .charsheet .sheet-armor__pointer--legs {
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/legs_line_dark.png") !important;
+}
+.sheet-darkmode * .charsheet .sheet-armor__decoration,
+.sheet-rolltemplate-darkmode .charsheet .sheet-armor__decoration {
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/decoration_line_dark.png") !important;
+}
 
 .charsheet {
   padding: 0 !important;
@@ -1638,7 +1658,7 @@
 .ui-dialog .tab-content .charsheet .sheet-armor__pointer--head {
   top: 17px;
   left: -28px;
-  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/head_line_dark.png");
+  background-image: url("https://raw.githubusercontent.com/Onaldanm/roll20-character-sheets/solomon-kane-jdr/Savage%20Worlds%20-%20Solomon%20Kane/img/head_line.png");
   height: 2px;
   width: 122px;
 }
