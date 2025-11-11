@@ -621,12 +621,13 @@ input[type=checkbox].sheet-checkbox {
 
     &:not(:checked) {
       + span {
-        background-color: $c-text-gray;
+        background-color: $c-border-primary;
+        color: $c-text-disable;
       }
 
       ~ input[type=text].sheet-label-toggle__input {
         color: $c-text-lightest;
-        border-color: $c-text-gray;
+        border-color: $c-border-primary;
       }
     }
   }
