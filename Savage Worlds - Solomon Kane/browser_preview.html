@@ -2564,6 +2564,26 @@
   width: 65px;
   text-align: center;
 }
+.ui-dialog .tab-content .charsheet .sheet-weapons .sheet-weapons__type::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Material Icons";
+  margin-left: -7px;
+  height: 20px;
+  font-size: 12px;
+  width: 20px;
+}
+.ui-dialog .tab-content .charsheet .sheet-weapons .sheet-weapons__type--fighting::after {
+  content: "colorize";
+}
+.ui-dialog .tab-content .charsheet .sheet-weapons .sheet-weapons__type--shooting::after {
+  content: "adjust";
+}
+.ui-dialog .tab-content .charsheet .sheet-weapons .sheet-weapons__type--athletics::after {
+  content: "pan_tool";
+  font-size: 10px;
+}
 .ui-dialog .tab-content .charsheet .sheet-apparel__armor {
   width: 40px;
   margin-right: 8px;
@@ -6880,6 +6900,12 @@
                       <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked>
                       <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                       <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
+                      <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_fighting_toggle">
+                      <div class="sheet-weapons__type sheet-weapons__type--fighting" name="attr_weapons_type"></div>
+                      <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_shooting_toggle" checked>
+                      <div class="sheet-weapons__type sheet-weapons__type--shooting" name="attr_weapons_type"></div>
+                      <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_athletics_toggle">
+                      <div class="sheet-weapons__type sheet-weapons__type--athletics" name="attr_weapons_type"></div>
                       <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false">
                       <div class="sheet-damage-button-overlay">
                         <input type="hidden" name="attr_weapon_damage_roll" value="0">
@@ -9117,6 +9143,12 @@
                   <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_fighting_toggle">
+                  <div class="sheet-weapons__type sheet-weapons__type--fighting" name="attr_weapons_type"></div>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_shooting_toggle" checked>
+                  <div class="sheet-weapons__type sheet-weapons__type--shooting" name="attr_weapons_type"></div>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_athletics_toggle">
+                  <div class="sheet-weapons__type sheet-weapons__type--athletics" name="attr_weapons_type"></div>
                   <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false">
                   <div class="sheet-damage-button-overlay">
                     <input type="hidden" name="attr_weapon_damage_roll" value="0">

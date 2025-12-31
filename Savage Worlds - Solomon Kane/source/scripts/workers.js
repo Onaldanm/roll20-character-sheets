@@ -695,6 +695,7 @@ on(listItems.map(s => `change:repeating_${s}s:${s}_damage`).join(' '), (e) => {
   setAttrs({ [`${e.sourceAttribute}_roll`]: code }, { silent: true });
 });
 
+
 on(listItems.map(s => `change:repeating_${s}s:skill_to_use`).join(' '), (e) => {
   setAttrs({
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_wd')}`]: `@{${e.newValue}_wd}`,
@@ -706,6 +707,17 @@ on(listItems.map(s => `change:repeating_${s}s:skill_to_use`).join(' '), (e) => {
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_code')}`]: `@{${e.newValue}_code}`,
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_name')}`]: getTranslationByKey(e.newValue)
   }, { silent: true });
+
+  // Manage attack type toggles
+  const attacks = ['athletics', 'fighting', 'shooting'];
+  if (attacks.includes(e.newValue)) {
+    let setters = {};
+    attacks.forEach(a => {
+      let target = e.sourceAttribute.replace('skill_to_use', `type_${a}_toggle`);
+      setters[target] = e.newValue === a ? 'on' : 0;
+    });
+    setAttrs(setters, { silent: true });
+  }
 });
 
 on(listItems.map(s => `change:repeating_${s}s:skill_name`).join(' '), (e) => {

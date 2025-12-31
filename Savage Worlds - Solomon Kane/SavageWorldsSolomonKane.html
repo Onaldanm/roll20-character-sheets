@@ -696,6 +696,7 @@ on(listItems.map(s => `change:repeating_${s}s:${s}_damage`).join(' '), (e) => {
   setAttrs({ [`${e.sourceAttribute}_roll`]: code }, { silent: true });
 });
 
+
 on(listItems.map(s => `change:repeating_${s}s:skill_to_use`).join(' '), (e) => {
   setAttrs({
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_wd')}`]: `@{${e.newValue}_wd}`,
@@ -707,6 +708,17 @@ on(listItems.map(s => `change:repeating_${s}s:skill_to_use`).join(' '), (e) => {
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_code')}`]: `@{${e.newValue}_code}`,
     [`${e.sourceAttribute.replace('skill_to_use', 'skill_name')}`]: getTranslationByKey(e.newValue)
   }, { silent: true });
+
+  // Manage attack type toggles
+  const attacks = ['athletics', 'fighting', 'shooting'];
+  if (attacks.includes(e.newValue)) {
+    let setters = {};
+    attacks.forEach(a => {
+      let target = e.sourceAttribute.replace('skill_to_use', `type_${a}_toggle`);
+      setters[target] = e.newValue === a ? 'on' : 0;
+    });
+    setAttrs(setters, { silent: true });
+  }
 });
 
 on(listItems.map(s => `change:repeating_${s}s:skill_name`).join(' '), (e) => {
@@ -3477,6 +3489,12 @@ on('change:toggle_halve_untrained', (e) => {
                   <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked="checked"/>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
                   <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_fighting_toggle"/>
+                  <div class="sheet-weapons__type sheet-weapons__type--fighting" name="attr_weapons_type"></div>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_shooting_toggle" checked="checked"/>
+                  <div class="sheet-weapons__type sheet-weapons__type--shooting" name="attr_weapons_type"></div>
+                  <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_athletics_toggle"/>
+                  <div class="sheet-weapons__type sheet-weapons__type--athletics" name="attr_weapons_type"></div>
                   <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false"/>
                   <div class="sheet-damage-button-overlay">
                     <input type="hidden" name="attr_weapon_damage_roll" value="0"/>
@@ -5714,6 +5732,12 @@ on('change:toggle_halve_untrained', (e) => {
               <input class="sheet-hidden sheet-toggle sheet-toggle--list-roll" type="checkbox" name="attr_roll_button_toggle" checked="checked"/>
               <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--wildcard" type="roll" name="roll_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
               <button class="sheet-repitem__skill-roll sheet-repitem__skill-roll--extra" type="roll" name="roll_extra_skill" value="@{skill_roll_body} {{wd=@{skill_wd}}} {{wdroll=[[ @{skill_extra_wd_roll}!cs2 + (@{skill_untrained_mod})[Untrained] + (@{skill_mod}+0)[Flat] + (@{skill_bonus}+0)[Bonus] - (@{fatigue_mod})[Fatigue] - (@{wound_mod})[Wounds] + (?{@{query_modifier}|0})[Modifier] ]]}} @{wd_override} {{reroll=[replay](~repeating_weapons_skill)}} {{damageroll=[crisis_alert](~repeating_weapons_weapon_damage)}} {{description=@{roll_description}}} @{roll_injection}">9</button>
+              <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_fighting_toggle"/>
+              <div class="sheet-weapons__type sheet-weapons__type--fighting" name="attr_weapons_type"></div>
+              <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_shooting_toggle" checked="checked"/>
+              <div class="sheet-weapons__type sheet-weapons__type--shooting" name="attr_weapons_type"></div>
+              <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_type_athletics_toggle"/>
+              <div class="sheet-weapons__type sheet-weapons__type--athletics" name="attr_weapons_type"></div>
               <input class="sheet-align-left sheet-weapons__name sheet-stretch" type="text" name="attr_weapon_name" placeholder="Weapon (Ammo)" data-i18n-placeholder="weapons-name-placeholder" spellcheck="false"/>
               <div class="sheet-damage-button-overlay">
                 <input type="hidden" name="attr_weapon_damage_roll" value="0"/>
