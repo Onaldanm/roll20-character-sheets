@@ -203,8 +203,8 @@ input(type='checkbox',
                     class='sheet-label-toggle__input sheet-label-toggle__input--tiny')
 
             label.sheet-label-toggle
-              input(type="hidden", name='attr_rof_override', value='?{@{query_rate_of_fire}|@{weapon_rof}}')
-              input(type='checkbox', name='attr_rof_override_toggle', checked=true)
+              input(type="hidden", name='attr_rof_override', value='1')
+              input(type='checkbox', name='attr_rof_override_toggle', checked=false)
               span(data-i18n='query-rof') Query RoF
 
             label.sheet-label-toggle
