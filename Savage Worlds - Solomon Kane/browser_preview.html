@@ -3236,6 +3236,9 @@
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-full {
   border-radius: 0 2px 2px 0;
 }
+.ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-full:checked::after {
+  border-left: none;
+}
 .ui-dialog .tab-content .charsheet .sheet-allies .sheet-repitem__secondary .sheet-left .sheet-allies__ammunitions input[type=radio].sheet-radio-track.ammo-allies-empty {
   border-radius: 2px 0 0 2px;
 }
@@ -7195,13 +7198,23 @@
                       <input class="sheet-b sheet-powers__penalty" type="text" name="attr_power_penalty" placeholder="-1" spellcheck="false">
                       <input class="sheet-powers__duration" type="text" name="attr_power_duration" placeholder="Duration" data-i18n-placeholder="powers-duration-placeholder" spellcheck="false">
                     </div>
+                    <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_power_resist_toggle">
+                    <div class="sheet-repitem__secondary">
+                      <div class="sheet-repitem__label" data-i18n="resist">Resist.</div>
+                      <input class="sheet-align-left sheet-powers__resist sheet-stretch" type="text" name="attr_power_resist" placeholder="Description du jet de résistance" data-i18n-placeholder="powers-resist-placeholder" spellcheck="false">
+                    </div>
+                    <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_power_notes_toggle">
+                    <div class="sheet-repitem__secondary">
+                      <div class="sheet-repitem__label" data-i18n="modifiers">Modificateurs</div>
+                      <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_modifiers" placeholder="Modificateurs/Effets" data-i18n-placeholder="powers-modifiers-placeholder" spellcheck="false">
+                    </div>
                     <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_power_notes_toggle">
                     <div class="sheet-repitem__secondary">
                       <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_trapping_toggle" checked>
                       <div class="sheet-repitem__label" data-i18n="trapping">Trapping</div>
                       <input class="sheet-align-left sheet-powers__trapping" type="text" name="attr_power_trapping" placeholder="Fire, Light, etc." data-i18n-placeholder="powers-trapping-placeholder" spellcheck="false">
                       <div class="sheet-repitem__label" data-i18n="notes">Notes</div>
-                      <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_notes" placeholder="Effect/Description" data-i18n-placeholder="powers-notes-placeholder" spellcheck="false">
+                      <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_notes" placeholder="Effet/Description" data-i18n-placeholder="powers-notes-placeholder" spellcheck="false">
                       <input class="sheet-toggle sheet-toggle--settings" type="checkbox" name="attr_power_settings_toggle">
                       <div class="sheet-repitem__settings">
                         <div class="sheet-repitem__settings-content">
@@ -7216,10 +7229,13 @@
                             <input class="sheet-label-toggle__input" type="text" name="attr_roll_injection_input" placeholder="{{source_label=}} {{source=}} {{custom3_label=}} {{custom3=}} {{rof=[[ 1 ]]}} {{traitroll8=}}" data-i18n-placeholder="roll-injection-placeholder" value="" spellcheck="false">
                           </label>
                           <label class="sheet-label-toggle">
-                            <input type="checkbox" name="attr_damage_input_toggle" checked><span data-i18n="damage">Damage</span>
+                            <input type="checkbox" name="attr_damage_input_toggle"><span data-i18n="damage">Damage</span>
                           </label>
                           <label class="sheet-label-toggle">
-                            <input type="checkbox" name="attr_trapping_toggle" checked><span data-i18n="trapping">Trapping</span>
+                            <input type="checkbox" name="attr_trapping_toggle"><span data-i18n="trapping">Trapping</span>
+                          </label>
+                          <label class="sheet-label-toggle">
+                            <input type="checkbox" name="attr_power_resist_toggle"><span data-i18n="resist">Resist.</span>
                           </label>
                           <label class="sheet-label-toggle">
                             <input type="hidden" name="attr_skill_wd" value="@{magie_wd}">
@@ -9378,13 +9394,23 @@
                   <input class="sheet-b sheet-powers__penalty" type="text" name="attr_power_penalty" placeholder="-1" spellcheck="false">
                   <input class="sheet-powers__duration" type="text" name="attr_power_duration" placeholder="Duration" data-i18n-placeholder="powers-duration-placeholder" spellcheck="false">
                 </div>
+                <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_power_resist_toggle">
+                <div class="sheet-repitem__secondary">
+                  <div class="sheet-repitem__label" data-i18n="resist">Resist.</div>
+                  <input class="sheet-align-left sheet-powers__resist sheet-stretch" type="text" name="attr_power_resist" placeholder="Description du jet de résistance" data-i18n-placeholder="powers-resist-placeholder" spellcheck="false">
+                </div>
+                <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_power_notes_toggle">
+                <div class="sheet-repitem__secondary">
+                  <div class="sheet-repitem__label" data-i18n="modifiers">Modificateurs</div>
+                  <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_modifiers" placeholder="Modificateurs/Effets" data-i18n-placeholder="powers-modifiers-placeholder" spellcheck="false">
+                </div>
                 <input class="sheet-toggle sheet-toggle--arrow" type="checkbox" name="attr_power_notes_toggle">
                 <div class="sheet-repitem__secondary">
                   <input class="sheet-hidden sheet-toggle" type="checkbox" name="attr_trapping_toggle" checked>
                   <div class="sheet-repitem__label" data-i18n="trapping">Trapping</div>
                   <input class="sheet-align-left sheet-powers__trapping" type="text" name="attr_power_trapping" placeholder="Fire, Light, etc." data-i18n-placeholder="powers-trapping-placeholder" spellcheck="false">
                   <div class="sheet-repitem__label" data-i18n="notes">Notes</div>
-                  <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_notes" placeholder="Effect/Description" data-i18n-placeholder="powers-notes-placeholder" spellcheck="false">
+                  <input class="sheet-align-left sheet-repitem__note sheet-stretch" type="text" name="attr_power_notes" placeholder="Effet/Description" data-i18n-placeholder="powers-notes-placeholder" spellcheck="false">
                   <input class="sheet-toggle sheet-toggle--settings" type="checkbox" name="attr_power_settings_toggle">
                   <div class="sheet-repitem__settings">
                     <div class="sheet-repitem__settings-content">
@@ -9399,10 +9425,13 @@
                         <input class="sheet-label-toggle__input" type="text" name="attr_roll_injection_input" placeholder="{{source_label=}} {{source=}} {{custom3_label=}} {{custom3=}} {{rof=[[ 1 ]]}} {{traitroll8=}}" data-i18n-placeholder="roll-injection-placeholder" value="" spellcheck="false">
                       </label>
                       <label class="sheet-label-toggle">
-                        <input type="checkbox" name="attr_damage_input_toggle" checked><span data-i18n="damage">Damage</span>
+                        <input type="checkbox" name="attr_damage_input_toggle"><span data-i18n="damage">Damage</span>
                       </label>
                       <label class="sheet-label-toggle">
-                        <input type="checkbox" name="attr_trapping_toggle" checked><span data-i18n="trapping">Trapping</span>
+                        <input type="checkbox" name="attr_trapping_toggle"><span data-i18n="trapping">Trapping</span>
+                      </label>
+                      <label class="sheet-label-toggle">
+                        <input type="checkbox" name="attr_power_resist_toggle"><span data-i18n="resist">Resist.</span>
                       </label>
                       <label class="sheet-label-toggle">
                         <input type="hidden" name="attr_skill_wd" value="@{magie_wd}">

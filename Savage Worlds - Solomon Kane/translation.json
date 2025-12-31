@@ -349,7 +349,7 @@
   "engrams-description-placeholder": "e.g. entangle (SWADE 161) power but resisted by Smarts",
   "engrams-name-placeholder": "Engram",
   "engrams-note-box-placeholder": "Notes ",
-  "engrams-notes-placeholder": "Effect/Description",
+  "engrams-notes-placeholder": "Modificateurs/Effets",
   "engrams-penalty": "Malus",
   "engrams-skill-placeholder": "Piratage informatique",
   "exclamation-mark": "!",
@@ -406,7 +406,7 @@
   "performance": "Représentation",
   "piloting": "Pilotage",
   "power": "Pouvoir",
-  "power-consumed": "Consumé",
+  "power-consumed": "Regen",
   "power-energy": "Pouvoir",
   "power-maximum": "Max.",
   "powerarmor": "Power Armor",
@@ -429,7 +429,7 @@
   "powers-duration-placeholder": "Durée",
   "powers-name-placeholder": "Pouvoir",
   "powers-note-box-placeholder": "Remarques",
-  "powers-notes-placeholder": "Effect/Description",
+  "powers-notes-placeholder": "Effets/Description",
   "powers-penalty": "Malus",
   "powers-pp": "PP",
   "powers-pp-placeholder": "2",
@@ -708,5 +708,9 @@
   "survie": "Survie",
   "shooting": "Tir",
   "yes": "Oui",
-  "no": "Non"
+  "no": "Non",
+  "modifiers": "Modificateurs",
+  "powers-modifiers-placeholder": "Cibles supplémentaires, altérations du sorts, etc...",
+  "resist": "Jet de résistance",
+  "powers-resist-placeholder": "Jet d'âme à la fin du tour, etc..."
 }
