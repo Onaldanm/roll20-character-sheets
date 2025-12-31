@@ -406,7 +406,7 @@
   "performance": "Représentation",
   "piloting": "Pilotage",
   "power": "Pouvoir",
-  "power-consumed": "Regen",
+  "power-consumed": "Nb Pv.",
   "power-energy": "Pouvoir",
   "power-maximum": "Max.",
   "powerarmor": "Power Armor",
@@ -655,14 +655,14 @@
   "weapons-damage-placeholder": "FOR+d6",
   "weapons-name-placeholder": "Nom de l'arme",
   "weapons-note-box-placeholder": "Remarques",
-  "weapons-notes-placeholder": "Infos, détails, allonge, conditions, etc.",
+  "weapons-notes-placeholder": "Infos, Parade, rechargement, conditions, etc...",
   "weapons-range": "Portée",
   "weapons-range-placeholder": "Portée/Allonge",
   "weapons-rof": "CdT",
   "weapons-shots": "Coups",
   "weapons-skill-placeholder": "Tir",
   "weapons-total-weight": "Poids Total:&nbsp;",
-  "weapons-trapping-placeholder": "Piercing/etc.",
+  "weapons-trapping-placeholder": "Echant/etc.",
   "weapons-weight": "PDS",
   "weapons-weight-toggle-title": "Poids On/Off",
   "weight": "Poids",
@@ -712,5 +712,6 @@
   "modifiers": "Modificateurs",
   "powers-modifiers-placeholder": "Cibles supplémentaires, altérations du sorts, etc...",
   "resist": "Jet de résistance",
-  "powers-resist-placeholder": "Jet d'âme à la fin du tour, etc..."
+  "powers-resist-placeholder": "Jet d'âme à la fin du tour, etc...",
+  "power-trapping": "Aspects"
 }
