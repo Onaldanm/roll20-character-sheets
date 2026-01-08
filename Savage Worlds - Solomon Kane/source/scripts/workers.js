@@ -820,7 +820,7 @@ on('change:toggle_global_rof', (e) => {
 });
 
 on('change:toggle_global_wd', (e) => {
-  let update = e.newValue == 'on' ? '?{@{query_wild_die}|d8|d4|d6|d10|d12|@{none},-10000-d20}' : '-10000-d20';
+  let update = e.newValue == 'on' ? '?{@{query_wild_die}|d6|d4|d8|d10|d12|@{none},-10000-d20}' : '-10000-d20';
 
   setAttrs({ ['query_global_wd']: update }, { silent: true });
 });

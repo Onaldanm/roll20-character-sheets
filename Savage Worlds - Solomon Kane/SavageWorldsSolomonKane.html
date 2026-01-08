@@ -821,7 +821,7 @@ on('change:toggle_global_rof', (e) => {
 });
 
 on('change:toggle_global_wd', (e) => {
-  let update = e.newValue == 'on' ? '?{@{query_wild_die}|d8|d4|d6|d10|d12|@{none},-10000-d20}' : '-10000-d20';
+  let update = e.newValue == 'on' ? '?{@{query_wild_die}|d6|d4|d8|d10|d12|@{none},-10000-d20}' : '-10000-d20';
 
   setAttrs({ ['query_global_wd']: update }, { silent: true });
 });
@@ -3947,7 +3947,7 @@ on('change:incap', (e) => {
           </div>
           <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_vehicles_block"/>
           <div class="sheet-block sheet-vehicles">
-            <div class="sheet-header"><span class="sheet-header__title sheet-vehicles__name" name="attr_rename_block_vehicles" data-i18n="vehicles">Vehicles</span>
+            <div class="sheet-header"><span class="sheet-header__title sheet-vehicles__name" name="attr_rename_block_vehicles" data-i18n="vehicles">Véhicules</span>
               <div class="sheet-header__labels">
                 <div class="sheet-vehicles__size" data-i18n="vehicles-size">Size</div>
                 <div class="sheet-vehicles__handling" data-i18n="vehicles-handling">Handling</div>
@@ -5702,11 +5702,11 @@ on('change:incap', (e) => {
           </div>
           <div class="sheet-divider"></div>
           <div class="sheet-extra-secondary__field">
-            <input class="sheet-extra-secondary__input" type="text" name="attr_wound_mod" placeholder="0" spellcheck="false"/>
+            <input class="sheet-extra-secondary__input" type="text" name="attr_wound" placeholder="0" spellcheck="false"/>
             <div class="sheet-label"><span data-i18n="extra-wounds">WDS</span></div>
           </div>
           <div class="sheet-extra-secondary__field">
-            <input class="sheet-extra-secondary__input" type="text" name="attr_fatigue_mod" placeholder="0" spellcheck="false"/>
+            <input class="sheet-extra-secondary__input" type="text" name="attr_fatigue" placeholder="0" spellcheck="false"/>
             <div class="sheet-label"><span data-i18n="extra-fatigue">FTG</span></div>
           </div>
           <div class="sheet-simple-trait sheet-simple-trait--attribute">
@@ -6152,7 +6152,7 @@ on('change:incap', (e) => {
       </div>
       <input class="sheet-toggle sheet-toggle--block" type="checkbox" name="attr_toggle_vehicles_block"/>
       <div class="sheet-block sheet-vehicles">
-        <div class="sheet-header"><span class="sheet-header__title sheet-vehicles__name" name="attr_rename_block_vehicles" data-i18n="vehicles">Vehicles</span>
+        <div class="sheet-header"><span class="sheet-header__title sheet-vehicles__name" name="attr_rename_block_vehicles" data-i18n="vehicles">Véhicules</span>
           <div class="sheet-header__labels">
             <div class="sheet-vehicles__size" data-i18n="vehicles-size">Size</div>
             <div class="sheet-vehicles__handling" data-i18n="vehicles-handling">Handling</div>
@@ -6935,7 +6935,7 @@ on('change:incap', (e) => {
         <input class="sheet-hidden" type="hidden" name="attr_toggle_engrams_block"/>
         <input class="sheet-hidden" type="hidden" name="attr_toggle_powerarmors_block"/>
         <label class="sheet-extra-settings__item">
-          <input class="sheet-hidden" type="checkbox" name="attr_toggle_vehicles_block"/><span name="attr_rename_block_vehicles" data-i18n="vehicles">Vehicles</span>
+          <input class="sheet-hidden" type="checkbox" name="attr_toggle_vehicles_block"/><span name="attr_rename_block_vehicles" data-i18n="vehicles">Véhicules</span>
         </label>
         <input class="sheet-hidden" type="hidden" name="attr_toggle_walkers_block"/>
       </div>
