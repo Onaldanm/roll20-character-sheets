@@ -41,12 +41,16 @@
            name='roll_raise_calculator',
            value!='@{gm_roll} &{template:InfoBox} {{content=^{roll-of} (?{@{query_roll_result}}) ^{vs-tn} (?{@{query_target_number}|4}) = [[ floor((?{@{query_roll_result}} - ?{@{query_target_number}|4}) / 4) ]] ^{raises}}}')
       span(data-i18n='raise-calculator') Raise Calculator
-
   .sheet-raise-calculator
     button(type='roll',
            name='roll_sequels',
            value!='@{gm_roll} &{template:RunRoll} {{header=@{name} ^{table-sequels}}} {{content=[[1t[sequelles]]]}}')
       span(data-i18n='sequels') Sequels 
+  .sheet-raise-calculator
+    button(type='roll',
+           name='roll_fear',
+           value!='@{gm_roll} &{template:RunRoll} {{header=@{name} ^{fear-ellipsis} [[ d20 + ?{@{query_modifier}|0} ]]^{exclamation-mark}}} {{content=d20 + ^{mod} (?{@{query_modifier}|0})}}')
+      span(data-i18n='dice-fear') Fear
 
   label.sheet-label-toggle
     input(type='hidden', name=`attr_query_global_rof`, value='1')

@@ -392,7 +392,7 @@
   "language": "Langue",
   "level": "Niveau",
   "magic": "MAGIE",
-  "mod": "Modérer",
+  "mod": "Modificateur",
   "modifier": "Modificateurs",
   "multiplier": "Multiplicateur",
   "name": "Nom",
@@ -679,6 +679,7 @@
   "toughness-mod": "Mod.",
   "tokens": "Convictions",
   "etat-fire": "En feu",
+  "etat-incap": "Incapacité",
   "etat-malade": "Malade",
   "etat-hemorragie": "Hémorragie",
   "etat-cancel": "Secoué",
@@ -713,5 +714,7 @@
   "powers-modifiers-placeholder": "Cibles supplémentaires, altérations du sorts, etc...",
   "resist": "Jet de résistance",
   "powers-resist-placeholder": "Jet d'âme à la fin du tour, etc...",
-  "power-trapping": "Aspects"
+  "power-trapping": "Aspects",
+  "fear-ellipsis": "commence à avoir des sueurs froide...",
+  "dice-fear": "Terreur"
 }

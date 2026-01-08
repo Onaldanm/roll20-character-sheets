@@ -2192,6 +2192,9 @@
 .ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-tooltip--top--fire {
   left: 76px;
 }
+.ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-tooltip--top--incap {
+  left: 13px;
+}
 .ui-dialog .tab-content .charsheet .sheet-health__icons .sheet-tooltip--top--malade {
   left: 108px;
 }

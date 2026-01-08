@@ -82,6 +82,16 @@ on("sheet:opened", (e) => {
       parseCodes[v] = parseCodes[a.replace('rename_', '')];
     });
   });
+
+  // update token bars
+  getAttrs(['character_name'], (values) => {
+    let characterName = values['character_name'] || '';
+    let roll = `!token-mod --set compact_bar|compact bar1_link|fatigue bar1_max|2 bar3_link|wounds bar3_max|3 --ids @{${characterName}|character_id} --ignore-selected`;
+    console.log(roll);
+    startRoll(roll, (results) => {
+      finishRoll(results.rollId, {});
+    });
+  });
 });
 
 /* #############################################################################
@@ -843,4 +853,41 @@ on('change:toggle_halve_untrained', (e) => {
   let update = e.newValue == 'on' ? '+1' : '';
 
   setAttrs({ ['adjust_untrained']: update });
+});
+
+const healthMarkersMap = {
+  fire: 'En_feu::7613985',
+  hit: 'Malade::7613983',
+  herromagie: 'Hemmoragie::7613982',
+  cancel: 'Secoué::7613967',
+  rad: 'Distrait::7613976',
+  tools: '2-Vulnerable::7613981',
+  ecg: 'Sonné::7613980'
+};
+
+on(Object.keys(healthMarkersMap).map(s => `change:health_icon_${s}`).join(' '), (e) => {
+  getAttrs(['character_name'], (values) => {
+    let characterName = values['character_name'] || '';
+    let key = e.sourceAttribute.split('health_icon_').pop();
+    let marker = healthMarkersMap[key] || key;
+    let tokenMarkers = e.newValue == 'on' ? marker : `-${marker}`;
+    let roll = `!token-mod --set statusmarkers|${tokenMarkers} --ids @{${characterName}|character_id} --ignore-selected`;
+    console.log(roll);
+    startRoll(roll, (results) => {
+      finishRoll(results.rollId, {});
+    });
+  });
+});
+
+on('change:incap', (e) => {
+  getAttrs(['character_name'], (values) => {
+    let characterName = values['character_name'] || '';
+    let marker = 'Incapacité::7613968';
+    let tokenMarkers = e.newValue == 'on' ? marker : `-${marker}`;
+    let roll = `!token-mod --set statusmarkers|${tokenMarkers} --ids @{${characterName}|character_id} --ignore-selected`;
+    console.log(roll);
+    startRoll(roll, (results) => {
+      finishRoll(results.rollId, {});
+    });
+  });
 });
